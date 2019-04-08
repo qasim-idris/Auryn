@@ -1,0 +1,442 @@
+activecomp {
+  name: "Auryn_Splash"
+  width: 1920
+  height: 1080
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "Background-Gradient.png"
+    id: 187
+    sourceid: 831
+    transform {
+      anchorPoint {
+        x: 0.5
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1920
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Deep Royal Blue Solid 13"
+    id: 188
+    sourceid: 259802
+    transform {
+      anchorPoint {
+        x: 960
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Logo-TMDB-DB.png"
+    id: 189
+    sourceid: 259795
+    transform {
+      anchorPoint {
+        x: 100
+        y: 64.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -574
+        y: 172
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 196
+  }
+  layer {
+    name: "Logo-TMDB-Movie.png"
+    id: 190
+    sourceid: 259796
+    transform {
+      anchorPoint {
+        x: 241
+        y: 65
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -434
+        y: 24
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 196
+  }
+  layer {
+    name: "Logo-TMDB-The.png"
+    id: 191
+    sourceid: 259797
+    transform {
+      anchorPoint {
+        x: 140.5
+        y: 69
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -547.5
+        y: -126
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 196
+  }
+  layer {
+    name: "Deep Royal Blue Solid 13"
+    id: 192
+    sourceid: 259802
+    transform {
+      anchorPoint {
+        x: 960
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -1146
+        y: 50
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 196
+  }
+  layer {
+    name: "Logo-TMDB-Outline.png"
+    id: 193
+    sourceid: 259793
+    transform {
+      anchorPoint {
+        x: 400
+        y: 355
+        z: 0
+      }
+      scale {
+        x: 2.74
+        y: 2.74
+        z: 1
+      }
+      position {
+        x: 50
+        y: 50
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 196
+  }
+  layer {
+    name: "Loader"
+    id: 194
+    sourceid: 212
+    transform {
+      anchorPoint {
+        x: 50
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 90
+        y: 184
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 195
+  }
+  layer {
+    name: "ScalePropBottomLeftAnchor"
+    id: 195
+    sourceid: 690011406
+    transform {
+      anchorPoint {
+        x: 0
+        y: 100
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 1080
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScalePropCenterAnchor"
+    id: 196
+    sourceid: 690011406
+    transform {
+      anchorPoint {
+        x: 50
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  childtemplates: "Auryn_Loader"
+}
+sources {
+  uid: 831
+  srctype: AE_IMAGE_SRC
+  name: "Background-Gradient.png"
+  width: 1
+  height: 1080
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 259802
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.0784313753247261
+    green: 0.21176470816135406
+    blue: 0.44705882668495178
+  }
+  width: 1920
+  height: 1080
+  copy_source: false
+}
+sources {
+  uid: 259795
+  srctype: AE_IMAGE_SRC
+  name: "Logo-TMDB-DB.png"
+  width: 200
+  height: 129
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 259796
+  srctype: AE_IMAGE_SRC
+  name: "Logo-TMDB-Movie.png"
+  width: 482
+  height: 130
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 259797
+  srctype: AE_IMAGE_SRC
+  name: "Logo-TMDB-The.png"
+  width: 281
+  height: 138
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 259793
+  srctype: AE_IMAGE_SRC
+  name: "Logo-TMDB-Outline.png"
+  width: 800
+  height: 710
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 212
+  srctype: AE_COMP_SRC
+  name: "Auryn_Loader.layout"
+  width: 100
+  height: 100
+  copy_source: true
+}
+sources {
+  uid: 690011406
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

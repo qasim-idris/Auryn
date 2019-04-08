@@ -1,0 +1,311 @@
+activecomp {
+  name: "Auryn_TextInput"
+  width: 1024
+  height: 74
+  defaultcameradistance: 1422.2222
+  layer {
+    name: "InputProperties"
+    id: 1023
+    sourceid: 1040
+    transform {
+      anchorPoint {
+        x: 25
+        y: 72.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 919.84839
+        y: -9.3947754
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1026
+  }
+  layer {
+    name: "Text-BG 3"
+    id: 1024
+    sourceid: 259237
+    transform {
+      anchorPoint {
+        x: 512
+        y: 37
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 511.9375
+        y: 36.9375
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Text-BG 2"
+    id: 1025
+    sourceid: 1044
+    transform {
+      anchorPoint {
+        x: 508
+        y: 33
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 511.9375
+        y: 36.9375
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Text"
+    id: 1026
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 72.901642
+        y: 49.088196
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 36
+      fontColor {
+        alpha: 1
+        red: 0.69020003080368042
+        green: 0.68234997987747192
+        blue: 0.73332995176315308
+      }
+      fontName: "Raleway-Medium"
+      isPointText: true
+      isLabel: true
+      text: "Find a series, movie, or episode"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Icon-Search.png"
+    id: 1027
+    sourceid: 963
+    transform {
+      anchorPoint {
+        x: 17.5
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 41
+        y: 37
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Icon-Search-Active.png"
+    id: 1028
+    sourceid: 980
+    transform {
+      anchorPoint {
+        x: 17.5
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 41
+        y: 37
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIPasswordTextEditView"
+  bgcolor {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+  properties {
+    key: "componentType"
+    value: "input"
+  }
+  properties {
+    key: "componentSubtype"
+    value: "protected"
+  }
+}
+sources {
+  uid: 1040
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.97647058963775635
+    green: 0.97647058963775635
+    blue: 0.98039215803146362
+  }
+  width: 50
+  height: 145
+  copy_source: false
+}
+sources {
+  uid: 259237
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.90588235855102539
+    green: 0.20000000298023224
+    blue: 0.23529411852359772
+  }
+  width: 1024
+  height: 74
+  copy_source: false
+}
+sources {
+  uid: 1044
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.058823529630899429
+    green: 0.20784313976764679
+    blue: 0.43921568989753723
+  }
+  width: 1016
+  height: 66
+  copy_source: false
+}
+sources {
+  uid: 4
+  srctype: AE_FONT_SRC
+  name: "Raleway-Medium"
+  copy_source: true
+  file_name: "yi_Raleway-Medium.ttf"
+  style_name: "Medium"
+}
+sources {
+  uid: 963
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Search.png"
+  width: 35
+  height: 35
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 980
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Search-Active.png"
+  width: 35
+  height: 35
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}

@@ -1,0 +1,103 @@
+build/
+
+# a lot of these are now covered by directory level ignoring
+.deps
+.libs
+.dirstamp
+autom4te.cache
+*.o
+*.d
+*.dia
+*.lo
+*.la
+*.gcda
+*.gcno
+*.obj
+*.sbr
+*.idb
+*.pdb
+*.bsc
+*.ncb
+*.suo
+*.user
+*.orig
+*.ilk
+.DS_Store
+*.manifest
+*.manifest.res
+*.dep
+*.VC.db
+*.ninja
+YouiEngineManifest.json
+
+# CMake dirs and files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+*.dir/
+
+# CMAKE_BUILD_TYPE dirs created on Linux and Windows
+# don't include them at this top level (You.i Engine) dir since thirdparty prebuilts are under revision control
+# "our" src dirs (core/build, demos, samples, Test/UnitTest) include them in their gitignore files
+#Debug/
+#Release/
+
+# CMake generated Visual Studio solution and project files
+# don't include them at this top level (You.i Engine) dir since thirdparty ones are under revision control
+# "our" src dirs (core/build, demos, samples, Test/UnitTest) include them in their gitignore files
+#*.sln
+#*.vcproj
+
+# Android binary output and intermediate dirs
+bin/
+gen/
+libs/
+obj/
+**/app/.externalNativeBuild/
+
+# Eclipse (todo: there are many others that we should include here)
+.classpath
+.settings/
+
+# Custom CMake build directories
+!tools/cmake/bin/
+
+# Projects dir
+projects/
+
+#xcode stuff
+*xcuserdata/
+*xcworkspacedata
+
+# AE auto saves
+*auto-save*.aep
+
+#misc IDE/text editor stuff
+/*.autosave
+
+#QtCreator Deployment file
+QtCreatorDeployment.txt
+
+tools/import/AEPlugIn/PlugIn/Export/Mac/.idea
+Test/UnitTest/build/osx/.idea
+
+core/build/vs2013/x86/*.vcxproj
+core/build/vs2013/x86/*.filters
+core/build/vs2013/x86/pbbindings
+core/build/vs2013/x86_64/*.vcxproj
+core/build/vs2013/x86_64/*.filters
+core/build/vs2013/x86_64/pbbindings
+# Visual studio lock file 
+*VC.opendb
+
+# VS Studio cache
+.vs/
+.vscode/
+
+.klocwork
+.kwlp
+.kwps
+YouiEngineConfigVersion.cmake
+
+include/

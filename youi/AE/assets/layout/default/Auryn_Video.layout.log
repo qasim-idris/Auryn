@@ -1,0 +1,150 @@
+activecomp {
+  name: "Auryn_Video"
+  width: 1920
+  height: 1080
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "VideoSurface"
+    id: 306
+    sourceid: 423
+    transform {
+      anchorPoint {
+        x: 960
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Player-Controls"
+    id: 307
+    sourceid: 519919
+    transform {
+      anchorPoint {
+        x: 960
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ActivityIndicator"
+    id: 308
+    sourceid: 520033
+    transform {
+      anchorPoint {
+        x: 960
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIPushButtonView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentSubtype"
+    value: "push"
+  }
+  properties {
+    key: "componentType"
+    value: "button"
+  }
+  childtemplates: "Auryn_VideoSurface"
+  childtemplates: "Auryn_Player-Controls"
+  childtemplates: "Auryn_ActivityIndicator"
+}
+sources {
+  uid: 423
+  srctype: AE_COMP_SRC
+  name: "Auryn_VideoSurface.layout"
+  width: 1920
+  height: 1080
+  copy_source: true
+}
+sources {
+  uid: 519919
+  srctype: AE_COMP_SRC
+  name: "Auryn_Player-Controls.layout"
+  width: 1920
+  height: 1080
+  copy_source: true
+}
+sources {
+  uid: 520033
+  srctype: AE_COMP_SRC
+  name: "Auryn_ActivityIndicator.layout"
+  width: 1920
+  height: 1080
+  copy_source: true
+}

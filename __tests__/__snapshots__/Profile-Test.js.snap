@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Composition
+  onTimelinesLoaded={[Function]}
+  source="Auryn_Profile"
+>
+  <YiPushButtonView
+    name="Btn-Back"
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+    visible={true}
+  />
+  <TimelineRef
+    direction="forward"
+    loop={false}
+    name="ProfileIn"
+    onAborted={[Function]}
+    onCompleted={[Function]}
+    onCompletedForward={[Function]}
+    onCompletedReverse={[Function]}
+    onLoad={[Function]}
+    onPaused={[Function]}
+    onPausedForward={[Function]}
+    onPausedReverse={[Function]}
+    onPlay={[Function]}
+    onPlayForward={[Function]}
+    onPlayReverse={[Function]}
+    onStarted={[Function]}
+    onStartedForward={[Function]}
+    onStartedReverse={[Function]}
+  />
+  <TimelineRef
+    direction="forward"
+    loop={false}
+    name="ProfileOut"
+    onAborted={[Function]}
+    onCompleted={[Function]}
+    onCompletedForward={[Function]}
+    onCompletedReverse={[Function]}
+    onLoad={[Function]}
+    onPaused={[Function]}
+    onPausedForward={[Function]}
+    onPausedReverse={[Function]}
+    onPlay={[Function]}
+    onPlayForward={[Function]}
+    onPlayReverse={[Function]}
+    onStarted={[Function]}
+    onStartedForward={[Function]}
+    onStartedReverse={[Function]}
+  />
+  <YiPushButtonView
+    name="Btn-Profile1"
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <YiTextSceneNode
+      name="Active User"
+      text="Active User"
+    />
+  </YiPushButtonView>
+  <YiPushButtonView
+    name="Btn-Profile2"
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <YiTextSceneNode
+      name="Active User"
+      text=""
+    />
+  </YiPushButtonView>
+  <YiPushButtonView
+    name="Btn-Profile3"
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <YiTextSceneNode
+      name="Active User"
+      text=""
+    />
+  </YiPushButtonView>
+</Composition>
+`;

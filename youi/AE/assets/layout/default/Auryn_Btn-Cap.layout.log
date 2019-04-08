@@ -1,0 +1,153 @@
+activecomp {
+  name: "Auryn_Btn-Cap"
+  width: 140
+  height: 131
+  defaultcameradistance: 194.44444
+  layer {
+    name: "Btn-Cap.png"
+    id: 690011385
+    sourceid: 690011825
+    transform {
+      anchorPoint {
+        x: 70
+        y: 65.5
+        z: 0
+      }
+      scale {
+        x: 0.8
+        y: 0.8
+        z: 1
+      }
+      position {
+        x: 0
+        y: -3.1111112
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.6
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690011387
+  }
+  layer {
+    name: "Btn-X.png"
+    id: 690011386
+    sourceid: 690011384
+    transform {
+      anchorPoint {
+        x: 17
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 0.8
+        y: 0.8
+        z: 1
+      }
+      position {
+        x: 69.5
+        y: 45
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.6
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Null 2"
+    id: 690011387
+    sourceid: 690011400
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 70
+        y: 65.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIPushButtonView"
+  bgcolor {
+    alpha: 1
+    red: 0.8784313725490196
+    green: 0.8784313725490196
+    blue: 0.8784313725490196
+  }
+  properties {
+    key: "componentSubtype"
+    value: "push"
+  }
+  properties {
+    key: "componentType"
+    value: "button"
+  }
+}
+sources {
+  uid: 690011825
+  srctype: AE_IMAGE_SRC
+  name: "Btn-Cap.png"
+  width: 140
+  height: 131
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690011384
+  srctype: AE_IMAGE_SRC
+  name: "Btn-X.png"
+  width: 34
+  height: 35
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690011400
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

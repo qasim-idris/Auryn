@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<TimelineRef
+  direction="forward"
+  loop={false}
+  name="In"
+  onAborted={[Function]}
+  onCompleted={[Function]}
+  onCompletedForward={[Function]}
+  onCompletedReverse={[Function]}
+  onLoad={[Function]}
+  onPaused={[Function]}
+  onPausedForward={[Function]}
+  onPausedReverse={[Function]}
+  onPlay={[Function]}
+  onPlayForward={[Function]}
+  onPlayReverse={[Function]}
+  onStarted={[Function]}
+  onStartedForward={[Function]}
+  onStartedReverse={[Function]}
+/>
+`;

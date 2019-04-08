@@ -1,0 +1,64 @@
+activecomp {
+  name: "Auryn_Image-Dynamic-Half"
+  width: 534
+  height: 300
+  defaultcameradistance: 741.66669
+  layer {
+    name: "ImageNode"
+    id: 144
+    sourceid: 157
+    transform {
+      anchorPoint {
+        x: 267
+        y: 150
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 267
+        y: 150
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIImageView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentType"
+    value: "image"
+  }
+}
+sources {
+  uid: 157
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.058823529630899429
+    green: 0.20784313976764679
+    blue: 0.43921568989753723
+  }
+  width: 534
+  height: 300
+  copy_source: false
+}

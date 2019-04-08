@@ -1,0 +1,609 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Composition
+  onTimelinesLoaded={[Function]}
+  source="Auryn_Lander"
+>
+  <YiPushButtonView
+    name="Btn-Nav-Discover"
+    onFocus={[Function]}
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <TimelineRef
+      direction="forward"
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+  </YiPushButtonView>
+  <YiPushButtonView
+    name="Btn-Nav-Movies"
+    onFocus={[Function]}
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <TimelineRef
+      direction="reverse"
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+  </YiPushButtonView>
+  <YiPushButtonView
+    name="Btn-Nav-Shows"
+    onFocus={[Function]}
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <TimelineRef
+      direction="reverse"
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+  </YiPushButtonView>
+  <YiPushButtonView
+    name="Btn-Nav-Live"
+    onFocus={[Function]}
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <TimelineRef
+      direction="reverse"
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+  </YiPushButtonView>
+  <YiPushButtonView
+    name="Btn-Nav-Search"
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  />
+  <YiPushButtonView
+    name="Btn-Nav-Profile"
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  />
+  <TimelineRef
+    direction="forward"
+    loop={false}
+    name="LanderIn"
+    onAborted={[Function]}
+    onCompleted={[Function]}
+    onCompletedForward={[Function]}
+    onCompletedReverse={[Function]}
+    onLoad={[Function]}
+    onPaused={[Function]}
+    onPausedForward={[Function]}
+    onPausedReverse={[Function]}
+    onPlay={[Function]}
+    onPlayForward={[Function]}
+    onPlayReverse={[Function]}
+    onStarted={[Function]}
+    onStartedForward={[Function]}
+    onStartedReverse={[Function]}
+  />
+  <TimelineRef
+    direction="forward"
+    loop={false}
+    name="LanderOut"
+    onAborted={[Function]}
+    onCompleted={[Function]}
+    onCompletedForward={[Function]}
+    onCompletedReverse={[Function]}
+    onLoad={[Function]}
+    onPaused={[Function]}
+    onPausedForward={[Function]}
+    onPausedReverse={[Function]}
+    onPlay={[Function]}
+    onPlayForward={[Function]}
+    onPlayReverse={[Function]}
+    onStarted={[Function]}
+    onStartedForward={[Function]}
+    onStartedReverse={[Function]}
+  />
+  <ListRef
+    DEPRECATED_sendUpdatedChildFrames={false}
+    alwaysBounceHorizontal={false}
+    alwaysBounceVertical={true}
+    focusable={false}
+    horizontal={false}
+    name="Stack"
+    onContentSizeChange={null}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    onScrollShouldSetResponder={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    scrollBarThumbImage={null}
+    scrollEnabled={false}
+    sendMomentumEvents={false}
+    style={
+      Array [
+        Object {
+          "flexDirection": "column",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "overflow": "scroll",
+        },
+        undefined,
+      ]
+    }
+  >
+    <ScrollContentData
+      collapsable={false}
+      style={
+        Array [
+          false,
+          undefined,
+        ]
+      }
+    >
+      <View>
+        <Composition
+          onTimelinesLoaded={[Function]}
+          source="Auryn_Container-Discover"
+        >
+          <ListRef
+            DEPRECATED_sendUpdatedChildFrames={false}
+            alwaysBounceHorizontal={true}
+            alwaysBounceVertical={false}
+            data={Array []}
+            disableVirtualization={false}
+            getItem={[Function]}
+            getItemCount={[Function]}
+            getItemLayout={[Function]}
+            horizontal={true}
+            initialNumToRender={2}
+            keyExtractor={[Function]}
+            maxToRenderPerBatch={10}
+            name="Discover"
+            numColumns={1}
+            onContentSizeChange={null}
+            onEndReachedThreshold={2}
+            onLayout={[Function]}
+            onMomentumScrollBegin={[Function]}
+            onMomentumScrollEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onScroll={[Function]}
+            onScrollBeginDrag={[Function]}
+            onScrollEndDrag={[Function]}
+            onScrollShouldSetResponder={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            onTimelinesLoaded={[Function]}
+            onTouchCancel={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            renderItem={[Function]}
+            renderScrollComponent={[Function]}
+            scrollBarThumbImage={null}
+            scrollEnabled={true}
+            scrollEventThrottle={50}
+            sendMomentumEvents={true}
+            stickyHeaderIndices={Array []}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "overflow": "scroll",
+                },
+                undefined,
+              ]
+            }
+            updateCellsBatchingPeriod={50}
+            viewabilityConfigCallbackPairs={Array []}
+            windowSize={21}
+          >
+            <ScrollContentData
+              collapsable={false}
+              onLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </ListRef>
+          <ViewRef
+            name="Discover"
+            onLoad={[Function]}
+            onTimelinesLoaded={[Function]}
+          />
+        </Composition>
+        <Composition
+          onTimelinesLoaded={[Function]}
+          source="Auryn_Container-Movies"
+        >
+          <ListRef
+            DEPRECATED_sendUpdatedChildFrames={false}
+            alwaysBounceHorizontal={true}
+            alwaysBounceVertical={false}
+            data={Array []}
+            disableVirtualization={false}
+            getItem={[Function]}
+            getItemCount={[Function]}
+            getItemLayout={[Function]}
+            horizontal={true}
+            initialNumToRender={2}
+            keyExtractor={[Function]}
+            maxToRenderPerBatch={10}
+            name="Movies"
+            numColumns={1}
+            onContentSizeChange={null}
+            onEndReachedThreshold={2}
+            onLayout={[Function]}
+            onMomentumScrollBegin={[Function]}
+            onMomentumScrollEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onScroll={[Function]}
+            onScrollBeginDrag={[Function]}
+            onScrollEndDrag={[Function]}
+            onScrollShouldSetResponder={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            onTimelinesLoaded={[Function]}
+            onTouchCancel={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            renderItem={[Function]}
+            renderScrollComponent={[Function]}
+            scrollBarThumbImage={null}
+            scrollEnabled={true}
+            scrollEventThrottle={50}
+            sendMomentumEvents={true}
+            stickyHeaderIndices={Array []}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "overflow": "scroll",
+                },
+                undefined,
+              ]
+            }
+            updateCellsBatchingPeriod={50}
+            viewabilityConfigCallbackPairs={Array []}
+            windowSize={21}
+          >
+            <ScrollContentData
+              collapsable={false}
+              onLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </ListRef>
+          <ViewRef
+            name="Movies"
+            onLoad={[Function]}
+            onTimelinesLoaded={[Function]}
+          />
+        </Composition>
+        <Composition
+          onTimelinesLoaded={[Function]}
+          source="Auryn_Container-Shows"
+        >
+          <ListRef
+            DEPRECATED_sendUpdatedChildFrames={false}
+            alwaysBounceHorizontal={true}
+            alwaysBounceVertical={false}
+            data={Array []}
+            disableVirtualization={false}
+            getItem={[Function]}
+            getItemCount={[Function]}
+            getItemLayout={[Function]}
+            horizontal={true}
+            initialNumToRender={2}
+            keyExtractor={[Function]}
+            maxToRenderPerBatch={10}
+            name="Shows"
+            numColumns={1}
+            onContentSizeChange={null}
+            onEndReachedThreshold={2}
+            onLayout={[Function]}
+            onMomentumScrollBegin={[Function]}
+            onMomentumScrollEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onScroll={[Function]}
+            onScrollBeginDrag={[Function]}
+            onScrollEndDrag={[Function]}
+            onScrollShouldSetResponder={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            onTimelinesLoaded={[Function]}
+            onTouchCancel={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            renderItem={[Function]}
+            renderScrollComponent={[Function]}
+            scrollBarThumbImage={null}
+            scrollEnabled={true}
+            scrollEventThrottle={50}
+            sendMomentumEvents={true}
+            stickyHeaderIndices={Array []}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "overflow": "scroll",
+                },
+                undefined,
+              ]
+            }
+            updateCellsBatchingPeriod={50}
+            viewabilityConfigCallbackPairs={Array []}
+            windowSize={21}
+          >
+            <ScrollContentData
+              collapsable={false}
+              onLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </ListRef>
+          <ViewRef
+            name="Shows"
+            onLoad={[Function]}
+            onTimelinesLoaded={[Function]}
+          />
+        </Composition>
+        <Composition
+          onTimelinesLoaded={[Function]}
+          source="Auryn_Container-Live"
+        >
+          <ListRef
+            DEPRECATED_sendUpdatedChildFrames={false}
+            alwaysBounceHorizontal={true}
+            alwaysBounceVertical={false}
+            data={Array []}
+            disableVirtualization={false}
+            getItem={[Function]}
+            getItemCount={[Function]}
+            getItemLayout={[Function]}
+            horizontal={true}
+            initialNumToRender={2}
+            keyExtractor={[Function]}
+            maxToRenderPerBatch={10}
+            name="Live"
+            numColumns={1}
+            onContentSizeChange={null}
+            onEndReachedThreshold={2}
+            onLayout={[Function]}
+            onMomentumScrollBegin={[Function]}
+            onMomentumScrollEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onScroll={[Function]}
+            onScrollBeginDrag={[Function]}
+            onScrollEndDrag={[Function]}
+            onScrollShouldSetResponder={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            onTimelinesLoaded={[Function]}
+            onTouchCancel={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            renderItem={[Function]}
+            renderScrollComponent={[Function]}
+            scrollBarThumbImage={null}
+            scrollEnabled={true}
+            scrollEventThrottle={50}
+            sendMomentumEvents={true}
+            stickyHeaderIndices={Array []}
+            style={
+              Array [
+                Object {
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "overflow": "scroll",
+                },
+                undefined,
+              ]
+            }
+            updateCellsBatchingPeriod={50}
+            viewabilityConfigCallbackPairs={Array []}
+            windowSize={21}
+          >
+            <ScrollContentData
+              collapsable={false}
+              onLayout={[Function]}
+              style={
+                Array [
+                  Object {
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </ListRef>
+          <ViewRef
+            name="Live"
+            onLoad={[Function]}
+            onTimelinesLoaded={[Function]}
+          />
+        </Composition>
+      </View>
+    </ScrollContentData>
+  </ListRef>
+  <ViewRef
+    name="Nav"
+    onLoad={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <TimelineRef
+      direction="forward"
+      loop={false}
+      name="In"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+    <TimelineRef
+      direction="forward"
+      loop={false}
+      name="Out"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+  </ViewRef>
+  <ViewRef
+    name="Nav-Logo"
+    onLoad={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <TimelineRef
+      direction="forward"
+      loop={true}
+      name="Loop"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+  </ViewRef>
+</Composition>
+`;

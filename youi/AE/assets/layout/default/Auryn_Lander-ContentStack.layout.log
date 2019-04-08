@@ -1,0 +1,221 @@
+activecomp {
+  name: "Auryn_Lander-ContentStack"
+  width: 1920
+  height: 900
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "Container-Live"
+    id: 259843
+    sourceid: 259897
+    transform {
+      anchorPoint {
+        x: 960
+        y: 450
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 3162
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "placeholder"
+      value: "true"
+    }
+  }
+  layer {
+    name: "Movies 2"
+    id: 259844
+    sourceid: 259885
+    transform {
+      anchorPoint {
+        x: 960
+        y: 450
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 2258
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "placeholder"
+      value: "true"
+    }
+  }
+  layer {
+    name: "Movies"
+    id: 259845
+    sourceid: 259873
+    transform {
+      anchorPoint {
+        x: 960
+        y: 450
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 1354
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "placeholder"
+      value: "true"
+    }
+  }
+  layer {
+    name: "Container-Discover"
+    id: 259846
+    sourceid: 259861
+    transform {
+      anchorPoint {
+        x: 960
+        y: 450
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 450
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "placeholder"
+      value: "true"
+    }
+  }
+  classname: "CYIListView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentSubtype"
+    value: "streaming"
+  }
+  properties {
+    key: "componentType"
+    value: "list"
+  }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
+  }
+  properties {
+    key: "gravity"
+    value: "top"
+  }
+  properties {
+    key: "insert-after-layer-id"
+    value: "-1"
+  }
+  childtemplates: "Auryn_Container-Live"
+  childtemplates: "Auryn_Container-Shows"
+  childtemplates: "Auryn_Container-Movies"
+  childtemplates: "Auryn_Container-Discover"
+}
+sources {
+  uid: 259897
+  srctype: AE_COMP_SRC
+  name: "Auryn_Container-Live.layout"
+  width: 1920
+  height: 900
+  copy_source: true
+}
+sources {
+  uid: 259885
+  srctype: AE_COMP_SRC
+  name: "Auryn_Container-Shows.layout"
+  width: 1920
+  height: 900
+  copy_source: true
+}
+sources {
+  uid: 259873
+  srctype: AE_COMP_SRC
+  name: "Auryn_Container-Movies.layout"
+  width: 1920
+  height: 900
+  copy_source: true
+}
+sources {
+  uid: 259861
+  srctype: AE_COMP_SRC
+  name: "Auryn_Container-Discover.layout"
+  width: 1920
+  height: 900
+  copy_source: true
+}

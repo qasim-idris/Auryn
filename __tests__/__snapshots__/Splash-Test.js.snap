@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#143672",
+      "flex": 1,
+    }
+  }
+>
+  <Composition
+    onTimelinesLoaded={[Function]}
+    source="Auryn_Splash"
+  >
+    <TimelineRef
+      direction="forward"
+      loop={false}
+      name="SplashIn"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+    <TimelineRef
+      direction="forward"
+      loop={false}
+      name="SplashOut"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+    />
+    <ViewRef
+      name="Loader"
+      onLoad={[Function]}
+      onTimelinesLoaded={[Function]}
+    >
+      <TimelineRef
+        direction="forward"
+        loop={true}
+        name="Loop"
+        onAborted={[Function]}
+        onCompleted={[Function]}
+        onCompletedForward={[Function]}
+        onCompletedReverse={[Function]}
+        onLoad={[Function]}
+        onPaused={[Function]}
+        onPausedForward={[Function]}
+        onPausedReverse={[Function]}
+        onPlay={[Function]}
+        onPlayForward={[Function]}
+        onPlayReverse={[Function]}
+        onStarted={[Function]}
+        onStartedForward={[Function]}
+        onStartedReverse={[Function]}
+      />
+    </ViewRef>
+  </Composition>
+</View>
+`;
