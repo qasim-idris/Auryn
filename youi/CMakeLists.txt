@@ -1,9 +1,13 @@
-# =============================================================================
-# © You i Labs Inc. 2000-2017. All rights reserved.
+###
+# Copyright (c) You i Labs Inc.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+#
+###
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 # Pre-defined options
-option(YI_TREAT_WARNINGS_AS_ERRORS "Warnings will result in failure to compile when set to ON." ON)
 option(YI_BUILD_CLOUD_SERVER "Build the application as a cloud server (for cloud-based Roku)" OFF)
 
 set(YI_PROJECT_NAME "Auryn") # The name of the project. When building for Android, this is passed from Android Studio.
@@ -209,23 +213,11 @@ yi_configure_instrumented_build(TARGET ${PROJECT_NAME})
 
 # === START OF COMPILER SETUP =================================================
 
-if(MSVC)
-    target_compile_options(${PROJECT_NAME}
-        PRIVATE $<$<BOOL:${YI_TREAT_WARNINGS_AS_ERRORS}>:/WX>
-    )
-else()
-    target_compile_options(${PROJECT_NAME}
-        PRIVATE -Wall
-            -Wextra
-            -Wno-float-equal
-            -Wpointer-arith
-            -Wwrite-strings
-            -Wunused-variable
-            -Wno-unused-parameter # for JSExecutor header
-        PRIVATE -Wno-unused-result -Wno-unused-function
-        PRIVATE $<$<BOOL:${YI_TREAT_WARNINGS_AS_ERRORS}>:-Werror>
-    )
-endif()
+include(Modules/YiConfigureWarningsAsErrors)
+yi_configure_warnings_as_errors(TARGET ${PROJECT_NAME})
+
+include(Modules/YiConfigureCompileOptions)
+yi_configure_compile_options(PROJECT_TARGET ${PROJECT_NAME})
 
 # The configuration method is made available for a platform to set up any specific
 # functionality that requires use of the target variables, such as PROJECT_NAME, etc.

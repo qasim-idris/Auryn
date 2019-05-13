@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
 #ifndef _APP_H_
 #define _APP_H_
 
@@ -26,7 +25,6 @@ protected:
     virtual void UserUpdate() override;
 
 private:
-
 };
 
 #endif // _APP_H_

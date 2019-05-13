@@ -1,3 +1,10 @@
+###
+# Copyright (c) You i Labs Inc.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+#
+###
 include(${YouiEngine_DIR}/cmake/Modules/android/YiModuleUtilities.cmake)
 
 get_filename_component(_PROJECT_DIR ${CMAKE_CURRENT_LIST_DIR}/../../.. ABSOLUTE)

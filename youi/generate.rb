@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 ###
 # Copyright (c) You i Labs Inc.
 #
@@ -30,6 +29,7 @@ class GenerateOptions
         options.jsbundle_directory = []
         options.jsbundle_file = []
         options.jsbundle_working_directory = nil
+        options.jsbundle_staging_dir = nil
 
         platformList = ["Android", "Bluesky2", "Bluesky4", "Ios", "Linux", "Osx", "Ps4", "Tizen-Nacl", "Tvos", "Uwp", "Vs2017", "Webos3", "Webos4"]
         configurationList = ["Debug", "Release"]
@@ -239,9 +239,10 @@ class GenerateOptions
 
             if options.use_jsbundle
                 options.jsbundle_working_directory = File.expand_path(File.join(__dir__, ".."))
+                options.jsbundle_staging_dir = File.expand_path(File.join(options.build_directory, "Staging", "generated"))
 
                 options.defines["YI_LOCAL_JS"] = "ON"
-                options.defines["YI_BUNDLED_ASSETS_DEST"] = File.expand_path(File.join(options.build_directory, "Staging", "generated", "bundled_assets"))
+                options.defines["YI_BUNDLED_ASSETS_DEST"] = File.expand_path(File.join(options.jsbundle_staging_dir, "bundled_assets"))
 
                 unless options.jsbundle_file.length > 0 || options.jsbundle_directory.length > 0
                     puts "ERROR: The --file or --directory argument is missing. Add one of these to specify the file/directory to include within the JS bundle."
@@ -472,17 +473,19 @@ class GenerateOptions
             command << " --input_directories \"#{options.jsbundle_directory}\""
         end
 
-        if options.defines.has_key?("CMAKE_BUILD_TYPE")
+        if options.defines.has_key?("CMAKE_BUILD_TYPE") && options.dev_jsbundle
             if options.defines["CMAKE_BUILD_TYPE"].match(/Debug/i)
                 command << " --dev"
             end
         end
 
-        output_dir = File.expand_path(File.join(options.build_directory, "Staging", "generated", "jsbundles"))
+        output_dir = File.expand_path(File.join(options.jsbundle_staging_dir, "jsbundles"))
         if options.inline_jsbundle
             command << " --minify"
             command << " --inline"
             output_dir = File.expand_path(File.join(output_dir, "InlineJSBundleGenerated"))
+        elsif options.minify_jsbundle
+            command << " --minify"
         end
 
         command << " --output \"#{output_dir}\""

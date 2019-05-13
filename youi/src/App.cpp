@@ -49,7 +49,6 @@ bool App::UserInit()
     }
 #endif
 
-
 #if defined(YI_LOCAL_JS_APP)
     #if defined(YI_INLINE_JS_APP)
         std::unique_ptr<JsBundleLoader> pBundleLoader(new JsBundleLoaderInlineString(INLINE_JS_BUNDLE_STRING));
