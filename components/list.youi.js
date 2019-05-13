@@ -114,6 +114,7 @@ export default class List extends Component {
         initialNumToRender={global.isRoku ? 100 : 2}
         getItemLayout={this.getItemLayout}
         renderItem={this.renderItem}
+        extraData={this.props.focusable}
       />
     );
   }
