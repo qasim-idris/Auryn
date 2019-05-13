@@ -6,6 +6,13 @@
  *
  */
 
+import { fromApi } from '../adapters/tmdbAdapter';
+
+const normalize = (array, length = 10, imagePath = 'backdrop_path') =>
+  array.filter(asset => asset.original_language === 'en' && asset[imagePath] && !asset.adult)
+    .slice(0, length)
+    .map(it => fromApi(it));
+
 export default function tmdbReducer(state = { // eslint-disable-line max-lines-per-function
   discover: {
     data: [],
@@ -43,7 +50,7 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
       return {
         ...state,
         discover: {
-          data: action.payload,
+          data: normalize(action.payload, 12),
           fetching: false,
           fetched: true,
         },
@@ -71,7 +78,7 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
       return {
         ...state,
         movies: {
-          data: action.payload,
+          data: normalize(action.payload.results, 10, 'poster_path'),
           fetching: false,
           fetched: true,
         },
@@ -96,7 +103,7 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
       return {
         ...state,
         tv: {
-          data: action.payload,
+          data: normalize(action.payload.results),
           fetching: false,
           fetched: true,
         },
@@ -121,7 +128,7 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
       return {
         ...state,
         details: {
-          data: action.payload,
+          data: fromApi(action.payload),
           fetching: false,
           fetched: true,
         },
@@ -149,10 +156,14 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
     };
 
     case 'TMDB_SEARCH_FULFILLED':
+      const data = {
+        movies: normalize(action.payload.results.filter(it => it.media_type === 'movie'), 10),
+        tv: normalize(action.payload.results.filter(it => it.media_type === 'tv'), 10),
+      };
       return {
         ...state,
         search: {
-          data: action.payload,
+          data,
           fetching: false,
           fetched: true,
         },

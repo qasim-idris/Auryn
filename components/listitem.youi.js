@@ -6,11 +6,11 @@
  *
  */
 
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { Composition, TextRef, ButtonRef, ImageRef } from '@youi/react-native-youi';
 import PropTypes from 'prop-types';
 
-export default class ListItem extends PureComponent {
+export default class ListItem extends Component {
   static defaultProps = {
     onFocus: () => {},
     onPress: () => {},
@@ -22,8 +22,6 @@ export default class ListItem extends PureComponent {
     super(props);
     this.buttonName = `Btn-${this.props.imageType}-${this.props.size}`;
     this.compositionName = `Auryn_Container-${this.buttonName}`;
-    this.imageUri = this.props.size === 'Small' ? 'http://image.tmdb.org/t/p/w500/' : 'http://image.tmdb.org/t/p/w1280/';
-    this.imageUri += this.props.imageType === 'Poster' ? this.props.data.poster_path : this.props.data.backdrop_path;
   }
 
   shouldComponentUpdate(nextProps) {
@@ -31,22 +29,23 @@ export default class ListItem extends PureComponent {
   }
 
   render() {
+    const { data, imageType, shouldChangeFocus, size, onFocus, onPress, focusable } = this.props;
+
     return (
       <Composition source={this.compositionName} loadSync={true}>
         <ButtonRef
-          focusable={this.props.focusable}
+          focusable={focusable}
           ref={ref => this.ref = ref}
-          onFocus={() => this.props.onFocus(this.ref, this.props.data.id, this.props.data.type)}
-          onPress={() => this.props.onPress(this.props.data.id, this.props.data.type, this.ref)}
+          onFocus={() => onFocus(this.ref, data.id, data.type)}
+          onPress={() => onPress(data.id, data.type, this.ref)}
           name={this.buttonName}
-          shouldChangeFocus={this.props.shouldChangeFocus}
+          shouldChangeFocus={shouldChangeFocus}
         >
           <ImageRef
             name="Image-Dynamic"
-            source={ { uri: this.imageUri } } />
-        <TextRef name="Text-Details" text={this.props.data.overview} />
-        <TextRef name="Text-Title" text={this.props.data.name || this.props.data.title} />
-
+            source={ { uri: size.toLowerCase() === 'small' ? data.thumbs[imageType.toLowerCase()] : data.images[imageType.toLowerCase()] } } />
+          <TextRef name="Text-Details" text={data.details} />
+          <TextRef name="Text-Title" text={data.title} />
         </ButtonRef>
       </Composition>
     );

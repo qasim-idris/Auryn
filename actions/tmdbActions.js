@@ -6,22 +6,10 @@
  *
  */
 
-import { chunk } from 'lodash';
 import { tmdbApiKey } from '../secrets';
 
 const familyFilter = false;
 const familyGenre = 10751;
-
-const groupItems = (array, numPerGroup = 3) =>
-  chunk(array, numPerGroup).map((data, index) => ({
-    key: index.toString(),
-    data,
-  }));
-
-const normalize = (array, length = 10, imagePath = 'backdrop_path') =>
-  array.filter(asset => asset.original_language === 'en' && asset[imagePath])
-    .slice(0, length)
-    .map(it => ({ ...it, key: it.id.toString(), type: 'name' in it ? 'tv' : 'movie' }));
 
 export const getDiscover = () => dispatch => {
   let movies = [];
@@ -35,23 +23,20 @@ export const getDiscover = () => dispatch => {
         return fetch(`http://api.themoviedb.org/3/discover/tv?api_key=${tmdbApiKey}&with_original_language=en&with_genres=${familyFilter ? familyGenre : ''}`);
       })
       .then(response => response.json())
-      .then(tv => movies.concat(tv.results.slice(0, 12)).sort(() => 0.5 - Math.random()))
-      .then(json => groupItems(normalize(json, 12), 3)),
+      .then(tv => movies.concat(tv.results.slice(0, 12)).sort(() => 0.5 - Math.random())),
   });
 };
 
 export const getMovies = () => dispatch => dispatch({
   type: 'TMDB_MOVIES',
   payload: fetch(`http://api.themoviedb.org/3/movie/popular?api_key=${tmdbApiKey}&with_original_language=en`)
-    .then(response => response.json())
-    .then(json => normalize(json.results, 10, 'poster_path')),
+    .then(response => response.json()),
 });
 
 export const getTv = () => dispatch => dispatch({
   type: 'TMDB_TV',
   payload: fetch(`http://api.themoviedb.org/3/tv/popular?api_key=${tmdbApiKey}&with_original_language=en`)
-    .then(response => response.json())
-    .then(json => groupItems(normalize(json.results), 2)),
+    .then(response => response.json()),
 });
 
 export const getDetailsByIdAndType = (id, type) => (dispatch, getState) => {
@@ -70,8 +55,6 @@ export const getDetailsByIdAndType = (id, type) => (dispatch, getState) => {
       .then(response => response.json())
       .then(json => {
         json.type = type;
-        json.youtubeId = json.videos.results.length ? json.videos.results[0].key : 'nO_DIwuGBnA';
-        json.similar.results = json.similar.results.slice(0, 5).map(it => ({ ...it, key: it.id.toString(), type }));
         return json;
       }),
   });
@@ -85,9 +68,5 @@ export const search = query => dispatch => dispatch({
     },
   },
   payload: fetch(`http://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&api_key=${tmdbApiKey}`)
-    .then(response => response.json())
-    .then(json => ({
-        movies: normalize(json.results.filter(it => it.media_type === 'movie'), 10),
-        tv: normalize(json.results.filter(it => it.media_type === 'tv'), 10),
-    })),
+    .then(response => response.json()),
 });

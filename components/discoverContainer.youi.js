@@ -18,66 +18,48 @@ export default class DiscoverContainer extends React.PureComponent {
 
   render() { // eslint-disable-line max-lines-per-function
     const { data, onPress, onFocus, focusable, index } = this.props;
+
     if (data.length !== 3) return null;
+
+    const smallItems = <View style={{ flexDirection: 'row' }}>
+        <ListItem
+          focusable={focusable}
+          onPress={onPress}
+          onFocus={onFocus}
+          imageType="Backdrop" size="Small"
+          data={data[0]}
+        />
+        <ListItem
+          focusable={focusable}
+          onPress={onPress}
+          onFocus={onFocus}
+          imageType="Backdrop" size="Small"
+          data={data[1]}
+        />
+      </View>;
+
+    const largeItem = <ListItem
+      focusable={focusable}
+      onPress={onPress}
+      onFocus={onFocus}
+      shouldChangeFocus={false}
+      imageType="Backdrop" size="Large"
+      data={data[2]}
+    />;
 
     if (index % 2) {
       return (
         <View>
-          <View style={{ flexDirection: 'row' }}>
-            <ListItem
-              focusable={focusable}
-              onPress={onPress}
-              onFocus={onFocus}
-              imageType="Backdrop" size="Small"
-              data={data[0]}
-            />
-            <ListItem
-              focusable={focusable}
-              onPress={onPress}
-              onFocus={onFocus}
-              imageType="Backdrop" size="Small"
-              data={data[1]}
-            />
-          </View>
-          <ListItem
-            focusable={focusable}
-            onPress={onPress}
-            onFocus={onFocus}
-            shouldChangeFocus={false}
-            imageType="Backdrop" size="Large"
-            data={data[2]}
-          />
+          {smallItems}
+          {largeItem}
         </View>
       );
     }
 
     return (
       <View>
-        <ListItem
-          focusable={focusable}
-          onPress={onPress}
-          imageType="Backdrop" size="Large"
-          onFocus={onFocus}
-          data={data[0]}
-        />
-        <View style={{ flexDirection: 'row' }}>
-          <ListItem
-            focusable={focusable}
-            onPress={onPress}
-            onFocus={onFocus}
-            shouldChangeFocus={false}
-            imageType="Backdrop" size="Small"
-            data={data[1]}
-          />
-          <ListItem
-            focusable={focusable}
-            onPress={onPress}
-            onFocus={onFocus}
-            shouldChangeFocus={false}
-            imageType="Backdrop" size="Small"
-            data={data[2]}
-          />
-        </View>
+        {largeItem}
+        {smallItems}
       </View>
     );
   }

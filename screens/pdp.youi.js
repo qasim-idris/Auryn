@@ -126,7 +126,7 @@ class PDP extends Component {
           />
           <List
             name="List-PDP"
-            data={asset.similar.results}
+            data={asset.similar}
             focusable={isFocused}
             onPressItem={this.onPressItem}
             onFocusItem={this.onFocusItem}
@@ -148,19 +148,19 @@ class PDP extends Component {
           >
             <ImageRef
               name="Image-Dynamic"
-              source={{ uri: `http://image.tmdb.org/t/p/w500${asset.poster_path}` }}
+              source={{ uri: asset.thumbs.poster }}
             />
           </ButtonRef>
 
           <ImageRef
             name="Image-Dynamic-Background"
-            source={{ uri: `http://image.tmdb.org/t/p/w1280${asset.backdrop_path}` }}
+            source={{ uri: asset.images.backdrop }}
           />
 
           <ViewRef name="Layout-PDP-Meta">
-            <TextRef name="Text-Title" text={asset.title || asset.name} />
-            <TextRef name="Text-Overview" text={asset.overview} />
-            <TextRef name="Text-Featured" text={this.getFeaturedText(asset.credits)} />
+            <TextRef name="Text-Title" text={asset.title} />
+            <TextRef name="Text-Overview" text={asset.details} />
+            <TextRef name="Text-Featured" text={asset.extra} />
             <Timeline name="In2" ref={timeline => this.pdpMetaInTimeline = timeline} onLoad={ref => ref.play()} />
           </ViewRef>
 

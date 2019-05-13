@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import { ListRef } from '@youi/react-native-youi';
 import { DiscoverContainer, ListItem, TvContainer } from '.';
 import PropTypes from 'prop-types';
-import { isEqual } from 'lodash';
+import { isEqual, chunk } from 'lodash';
 
 export default class List extends Component {
   static defaultProps = {
@@ -58,7 +58,7 @@ export default class List extends Component {
           focusable={this.props.focusable}
           onPress={this.props.onPressItem}
           onFocus={this.props.onFocusItem}
-          data={item.data}
+          data={item}
           index={index}
           name={this.props.name}
         />
@@ -71,7 +71,7 @@ export default class List extends Component {
           focusable={this.props.focusable}
           onPress={this.props.onPressItem}
           onFocus={this.props.onFocusItem}
-          data={item.data}
+          data={item}
           name={this.props.name}
         />
       );
@@ -92,10 +92,24 @@ export default class List extends Component {
   }
 
   render() {
+    const { data, name } = this.props;
+
+    let items;
+    switch (name.toLowerCase()) {
+      case 'discover':
+        items = chunk(data, 3);
+        break;
+      case 'shows':
+        items = chunk(data, 2);
+        break;
+      default:
+        items = data;
+    }
+
     return (
       <ListRef
-        name={this.props.name}
-        data={this.props.data}
+        name={name}
+        data={items}
         horizontal={true}
         initialNumToRender={global.isRoku ? 100 : 2}
         getItemLayout={this.getItemLayout}

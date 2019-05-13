@@ -8,6 +8,7 @@
 
 import React from 'react';
 import { View } from '@youi/react-native-youi';
+import { chunk } from 'lodash';
 import ListItem from './listitem.youi';
 import PropTypes from 'prop-types';
 
@@ -16,8 +17,15 @@ export default class TvContainer extends React.PureComponent {
     super(props);
   }
 
+  groupItems = (array, numPerGroup = 2) =>
+    chunk(array, numPerGroup).map((data, index) => ({
+      key: index.toString(),
+      data,
+    }));
+
   render() { // eslint-disable-line max-lines-per-function
     const { data, onPress, onFocus, focusable } = this.props;
+
     if (data.length !== 2) return null;
     return (
       <View>
