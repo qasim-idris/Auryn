@@ -21,7 +21,7 @@ import {
 
 import { connect } from 'react-redux';
 import { Timeline, List, BackButton } from '../components';
-import { youtube, cache, tmdb } from '../actions';
+import { youtube, tmdb } from '../actions';
 import PropTypes from 'prop-types';
 
 class PDP extends Component {
@@ -50,7 +50,7 @@ class PDP extends Component {
       });
   }
 
-  onFocusItem = (ref, id, type) => this.props.dispatch(cache.saveDetailsByIdAndType(id, type));
+  onFocusItem = (ref, id, type) => this.props.dispatch(tmdb.prefetchDetails(id, type));
 
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {

@@ -11,7 +11,7 @@ import { Composition, ViewRef, ScrollRef, ButtonRef, View, FocusManager, BackHan
 import { Timeline, ToggleGroup, List } from '../components';
 import { withNavigationFocus, NavigationActions } from 'react-navigation';
 import { connect } from 'react-redux';
-import { tmdb, cache, lander } from '../actions';
+import { tmdb } from '../actions';
 import PropTypes from 'prop-types';
 
 class Lander extends Component {
@@ -20,6 +20,7 @@ class Lander extends Component {
     this.lists = [];
     this.lastFocusItem = null;
     this.navButtonNames = ['Discover', 'Movies', 'Shows', 'Live'];
+    this.state = { currentListIndex: 0 };
   }
 
   componentDidMount() {
@@ -44,7 +45,7 @@ class Lander extends Component {
   }
 
   navigateBack = () => {
-    FocusManager.focus(this.menuButtons.getButtonRef(this.props.lander.currentListIndex));
+    FocusManager.focus(this.menuButtons.getButtonRef(this.state.currentListIndex));
     return true;
   }
 
@@ -78,7 +79,7 @@ class Lander extends Component {
       FocusManager.setNextFocus(this.lists[index], this.menuButtons.getButtonRef(index), 'up');
     }
 
-    this.props.dispatch(lander.setListIndex(index));
+    this.setState({ currentListIndex: index });
     this.scroller.scrollTo({
       x: 0,
       y: (index * 900) + 1, // eslint-disable-line no-extra-parens
@@ -87,12 +88,12 @@ class Lander extends Component {
   }
 
   onFocusItem = (ref, id, type) => {
-    this.props.dispatch(cache.saveDetailsByIdAndType(id, type));
+    this.props.dispatch(tmdb.prefetchDetails(id, type));
     this.lastFocusItem = ref;
 
     if (ref.props.shouldChangeFocus === false || global.isRoku) return;
 
-    FocusManager.setNextFocus(ref, this.menuButtons.getButtonRef(this.props.lander.currentListIndex), 'up');
+    FocusManager.setNextFocus(ref, this.menuButtons.getButtonRef(this.state.currentListIndex), 'up');
     for (let index = 0; index < this.lists.length; index++)
       FocusManager.setNextFocus(this.menuButtons.getButtonRef(index), ref, 'down');
 
@@ -116,7 +117,7 @@ class Lander extends Component {
 
   render() { // eslint-disable-line max-lines-per-function, max-statements
     const { isFocused, tv, movies, discover } = this.props;
-    const { currentListIndex } = this.props.lander;
+    const { currentListIndex } = this.state;
 
     // null list is used for Roku
     const nullList = <Composition source="Auryn_Container-NullList">
@@ -236,7 +237,6 @@ const mapStateToProps = store => ({
   discover: store.tmdbReducer.discover.data,
   movies: store.tmdbReducer.movies.data,
   tv: store.tmdbReducer.tv.data,
-  lander: store.landerReducer,
 });
 
 export default withNavigationFocus(connect(mapStateToProps)(Lander));

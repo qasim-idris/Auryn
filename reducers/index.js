@@ -10,12 +10,8 @@ import { combineReducers } from 'redux';
 
 import tmdbReducer from './tmdbReducer';
 import youtubeReducer from './youtubeReducer';
-import cacheReducer from './cacheReducer';
-import landerReducer from './landerReducer';
 
 export default combineReducers({
   tmdbReducer,
   youtubeReducer,
-  cacheReducer,
-  landerReducer,
 });

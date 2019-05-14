@@ -6,6 +6,7 @@
  *
  */
 
+ /* eslint-disable complexity */
 import { fromApi } from '../adapters/tmdbAdapter';
 
 const normalize = (array, length = 10, imagePath = 'backdrop_path') =>
@@ -33,6 +34,12 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
     error: null,
   },
   details: {
+    data: {},
+    fetching: false,
+    fetched: false,
+    error: null,
+  },
+  cache: {
     data: [],
     fetching: false,
     fetched: false,
@@ -154,6 +161,41 @@ export default function tmdbReducer(state = { // eslint-disable-line max-lines-p
       ...state,
       details: { asset: null },
     };
+
+    case 'TMDB_CACHE_FULFILLED':
+      const cache = [...state.cache.data];
+      const index = cache.findIndex(it => it && it.id === action.payload.id);
+      if (index >= 0) {
+        const asset = cache.splice(index, 1);
+        cache.unshift(asset[0]);
+      } else
+        cache.unshift(action.payload);
+
+      if (cache.length > 5) cache.pop();
+
+      return {
+        ...state,
+        cache: {
+          data: cache,
+          fetching: false,
+          fetched: true,
+        },
+      };
+
+    case 'TMDB_CACHE_REJECTED':
+      return {
+        ...state,
+        cache: {
+          fetching: false,
+          error: action.payload,
+        },
+      };
+
+    case 'TMDB_CACHE':
+      return {
+        ...state,
+        cache: { fetching: true, fetched: false },
+      };
 
     case 'TMDB_SEARCH_FULFILLED':
       const data = {

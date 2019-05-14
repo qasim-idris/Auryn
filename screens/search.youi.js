@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import { View, Composition, BackHandler, TextInputRef, FocusManager } from '@youi/react-native-youi';
-import { tmdb, cache } from '../actions';
+import { tmdb } from '../actions';
 import { Timeline, List, BackButton } from '../components';
 import { NavigationActions, withNavigationFocus } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -58,7 +58,7 @@ class Search extends Component {
     this.outTimeline.play().then(() => this.props.navigation.dispatch(navigateAction));
   }
 
-  onFocusItem = (ref, id, type) => this.props.dispatch(cache.saveDetailsByIdAndType(id, type));
+  onFocusItem = (ref, id, type) => this.props.dispatch(tmdb.prefetchDetails(id, type));
 
   search = query => this.props.dispatch(tmdb.search(query));
 

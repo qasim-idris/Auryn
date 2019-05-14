@@ -39,9 +39,40 @@ export const getTv = () => dispatch => dispatch({
     .then(response => response.json()),
 });
 
+export const prefetchDetails = (id, type) => (dispatch, getState) => {
+  const { tmdbReducer: { cache: { data, fetching } } } = getState();
+
+  if (fetching || !data)
+    return dispatch({ type: 'NOOP' });
+
+  const cachedPayload = data.find(it => it && (it.id === id && it.type === type));
+  if (cachedPayload) {
+    return dispatch({
+      type: 'TMDB_CACHE',
+      payload: Promise.resolve(cachedPayload),
+    });
+  }
+
+  return dispatch({
+    type: 'TMDB_CACHE',
+    meta: {
+      debounce: {
+        time: 500,
+        key: 'CACHE_DETAILS',
+      },
+    },
+    payload: fetch(`http://api.themoviedb.org/3/${type}/${id}?append_to_response=similar,videos,credits&api_key=${tmdbApiKey}`)
+      .then(response => response.json())
+      .then(json => {
+        json.type = type;
+        return json;
+      }),
+  });
+};
+
 export const getDetailsByIdAndType = (id, type) => (dispatch, getState) => {
-  const { cacheReducer: { cache } } = getState();
-  const cachedPayload = cache.find(it => it.id === id && it.type === type);
+  const { tmdbReducer: { cache: { data } } } = getState();
+  const cachedPayload = data.find(it => it.id === id && it.type === type);
   if (cachedPayload) {
     return dispatch({
       type: 'TMDB_DETAILS',
