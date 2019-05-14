@@ -26,6 +26,7 @@ export default class DiscoverContainer extends React.PureComponent {
           focusable={focusable}
           onPress={onPress}
           onFocus={onFocus}
+          shouldChangeFocus={index % 2 !== 0}
           imageType="Backdrop" size="Small"
           data={data[0]}
         />
@@ -33,6 +34,7 @@ export default class DiscoverContainer extends React.PureComponent {
           focusable={focusable}
           onPress={onPress}
           onFocus={onFocus}
+          shouldChangeFocus={index % 2 !== 0}
           imageType="Backdrop" size="Small"
           data={data[1]}
         />
@@ -42,7 +44,7 @@ export default class DiscoverContainer extends React.PureComponent {
       focusable={focusable}
       onPress={onPress}
       onFocus={onFocus}
-      shouldChangeFocus={false}
+      shouldChangeFocus={index % 2 === 0}
       imageType="Backdrop" size="Large"
       data={data[2]}
     />;
