@@ -32,20 +32,20 @@ class Search extends Component {
     this.backHandlerListener.remove();
   }
 
-  navigateBack = () => {
+  navigateBack = async () => {
     this.outPromise = this.outTimeline ? this.outTimeline.play : Promise.resolve;
-    this.outPromise().then(() => {
-      if (global.isRoku)
-        this.props.navigation.navigate({ routeName: 'Lander' });
-      else
-        this.props.navigation.goBack(null);
-    });
+    await this.outPromise();
+
+    if (global.isRoku)
+      this.props.navigation.navigate({ routeName: 'Lander' });
+    else
+      this.props.navigation.goBack(null);
 
     this.search('');
     return true;
   }
 
-  onPressItem = (id, type) => {
+  onPressItem = async (id, type) => {
     this.props.dispatch(tmdb.getDetailsByIdAndType(id, type));
     const navigateAction = NavigationActions.navigate({
       routeName: 'PDP',
@@ -55,7 +55,8 @@ class Search extends Component {
       },
       key: id,
     });
-    this.outTimeline.play().then(() => this.props.navigation.dispatch(navigateAction));
+    await this.outTimeline.play();
+    this.props.navigation.dispatch(navigateAction);
   }
 
   onFocusItem = (ref, id, type) => this.props.dispatch(tmdb.prefetchDetails(id, type));

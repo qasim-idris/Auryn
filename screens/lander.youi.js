@@ -55,7 +55,7 @@ class Lander extends Component {
     this.backHandlerListener.remove();
   }
 
-  navigateToScreen = screen => {
+  navigateToScreen = async screen => {
     const navigateAction = NavigationActions.navigate({
       routeName: screen,
     });
@@ -67,7 +67,8 @@ class Lander extends Component {
     else
       this.lastFocusNavItem = null;
 
-    this.outTimeline.play().then(() => this.props.navigation.dispatch(navigateAction));
+    await this.outTimeline.play();
+    this.props.navigation.dispatch(navigateAction);
   }
 
   scrollToViewByIndex = (index, animated = true) => {
@@ -101,7 +102,7 @@ class Lander extends Component {
     FocusManager.setNextFocus(this.profileButton, ref, 'down');
   }
 
-  onPressItem = (id, type, ref) => {
+  onPressItem = async (id, type, ref) => {
     this.lastFocusItem = ref;
     this.lastFocusNavItem = null;
     const navigateAction = NavigationActions.navigate({
@@ -112,7 +113,8 @@ class Lander extends Component {
       },
     });
     this.props.dispatch(tmdb.getDetailsByIdAndType(id, type));
-    this.outTimeline.play().then(() => this.props.navigation.dispatch(navigateAction));
+    await this.outTimeline.play();
+    this.props.navigation.dispatch(navigateAction);
   }
 
   render() { // eslint-disable-line max-lines-per-function, max-statements

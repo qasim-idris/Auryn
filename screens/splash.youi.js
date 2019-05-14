@@ -16,28 +16,24 @@ import PropTypes from 'prop-types';
 
 
 class Splash extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.dispatch(tmdb.getDiscover());
     this.props.dispatch(tmdb.getMovies());
     this.props.dispatch(tmdb.getTv());
   }
 
-  render() {
-    const { fetched } = this.props;
-    if (fetched) {
-      const navigate = () => {
-        const landerNavigationAction = NavigationActions.navigate({
-          routeName: 'Lander',
-        });
-        this.props.navigation.dispatch(landerNavigationAction);
-      };
-      this.outTimeline ? this.outTimeline.play().then(navigate) : navigate();
+  async componentDidUpdate() {
+    if (this.props.fetched) {
+      if (!global.isRoku)
+        await this.outTimeline.play();
+      const landerNavigationAction = NavigationActions.navigate({
+        routeName: 'Lander',
+      });
+      this.props.navigation.dispatch(landerNavigationAction);
     }
+  }
 
+  render() {
     return (
       <View style={styles.container}
       >
@@ -49,7 +45,7 @@ class Splash extends Component {
           <Timeline
             name="SplashOut"
             ref={timeline => {
-              if (!global.isRoku) this.outTimeline = timeline;
+              this.outTimeline = timeline;
             }}
           />
           <ViewRef name="Loader">

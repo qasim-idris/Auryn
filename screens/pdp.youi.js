@@ -29,25 +29,24 @@ class PDP extends Component {
     super(props);
   }
 
-  navigateBack = () => {
+  navigateBack = async () => {
     this.outPromise = this.outTimeline ? this.outTimeline.play : Promise.resolve;
-    this.outPromise().then(() => {
-      if (global.isRoku)
-        this.props.navigation.navigate({ routeName: 'Lander' });
-      else
-        this.props.navigation.popToTop();
-    });
+    await this.outPromise();
+
+    if (global.isRoku)
+      this.props.navigation.navigate({ routeName: 'Lander' });
+    else
+      this.props.navigation.popToTop();
+
     return true;
   }
 
-  onPressItem = (id, type) => {
+  onPressItem = async (id, type) => {
     this.props.dispatch(tmdb.getDetailsByIdAndType(id, type));
-    this.contentOutTimeline.play()
-      .then(() => this.props.navigation.navigate({ routeName: 'PDP', params: { id, type }, key: id }))
-      .then(() => {
-        FocusManager.focus(this.posterButton);
-        this.contentInTimeline.play();
-      });
+    await this.contentOutTimeline.play();
+    await this.props.navigation.navigate({ routeName: 'PDP', params: { id, type }, key: id });
+    FocusManager.focus(this.posterButton);
+    this.contentInTimeline.play();
   }
 
   onFocusItem = (ref, id, type) => this.props.dispatch(tmdb.prefetchDetails(id, type));
@@ -82,12 +81,12 @@ class PDP extends Component {
     return nextProps.asset.id === nextProps.navigation.getParam('id');
   }
 
-  playVideo = () => {
-    this.videoInTimeline.play().then(() =>
-      this.props.navigation.dispatch(NavigationActions.navigate({
-          routeName: 'Video',
-          params: { videoSource: this.props.asset.videoSource },
-        })));
+  playVideo = async () => {
+    await this.videoInTimeline.play();
+    this.props.navigation.dispatch(NavigationActions.navigate({
+      routeName: 'Video',
+      params: { videoSource: this.props.asset.videoSource },
+    }));
   }
 
   getFeaturedText = credits => {

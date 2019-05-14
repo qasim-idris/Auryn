@@ -31,14 +31,15 @@ class Profile extends Component {
     this.backHandlerListener.remove();
   }
 
-  navigateBack = () => {
+  navigateBack = async () => {
     this.outPromise = this.outTimeline ? this.outTimeline.play : Promise.resolve;
-    this.outPromise().then(() => {
-      if (global.isRoku)
-        this.props.navigation.navigate({ routeName: 'Lander' });
-      else
-        this.props.navigation.goBack(null);
-    });
+    await this.outPromise();
+
+    if (global.isRoku)
+      this.props.navigation.navigate({ routeName: 'Lander' });
+    else
+      this.props.navigation.goBack(null);
+
     return true;
   }
 

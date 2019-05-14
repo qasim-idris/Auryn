@@ -122,19 +122,18 @@ class Video extends Component {
     this.state.paused ? this.videoPlayer.play() : this.videoPlayer.pause();
   }
 
-  navigateBack = () => {
+  navigateBack = async () => {
     if (this.state.mediaState === 'preparing') return true;
     if (this.activityTimeout)
       clearTimeout(this.activityTimeout);
     this.keys.forEach(key => Input.removeEventListener(key, this.registerUserActivity));
     this.outPromise = this.outTimeline ? this.outTimeline.play : Promise.resolve;
-    this.outPromise().then(() => {
-      this.videoPlayer.stop();
-      if (global.isRoku)
-        this.props.navigation.navigate({ routeName: 'PDP' });
-      else
-        this.props.navigation.goBack(null);
-    });
+    await this.outPromise();
+    this.videoPlayer.stop();
+    if (global.isRoku)
+      this.props.navigation.navigate({ routeName: 'PDP' });
+    else
+      this.props.navigation.goBack(null);
 
     return true;
   }
