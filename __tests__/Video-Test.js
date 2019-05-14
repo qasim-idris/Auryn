@@ -9,8 +9,15 @@
 import React from 'react';
 import { VideoTest } from '../screens/video.youi';
 import renderer from 'react-test-renderer';
+import { fromApi } from '../adapters/dummyAdapter';
+
+const asset = fromApi(false);
 
 test('renders correctly', () => {
-  const tree = renderer.create(<VideoTest navigation={global.navigation} dispatch={jest.fn()} />).toJSON();
+  const tree = renderer.create(<VideoTest
+      asset={asset}
+      navigation={global.navigation}
+      dispatch={jest.fn()}
+    />).toJSON();
   expect(tree).toMatchSnapshot();
 });

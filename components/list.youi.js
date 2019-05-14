@@ -94,7 +94,7 @@ export default class List extends Component {
   render() {
     const { data, name } = this.props;
 
-    let items;
+    let items = [];
     switch (name.toLowerCase()) {
       case 'discover':
         items = chunk(data, 3);
@@ -121,12 +121,11 @@ export default class List extends Component {
 }
 
 List.propTypes = {
-  type: PropTypes.oneOf(['Discover', 'Movies', 'Shows']).isRequired,
-  name: PropTypes.string,
+  type: PropTypes.oneOf(['Discover', 'Movies', 'Shows', 'Live']).isRequired,
+  name: PropTypes.string.isRequired,
   focusable: PropTypes.bool,
   onPressItem: PropTypes.func,
   onFocusItem: PropTypes.func,
   data: PropTypes.array.isRequired,
-  ref: PropTypes.func,
   extraData: PropTypes.any,
 };

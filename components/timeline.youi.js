@@ -15,7 +15,6 @@ export default class Timeline extends PureComponent {
     onLoad: () => {},
     onCompleted: () => {},
     direction: 'forward',
-    ref: () => {},
   }
 
   render() {

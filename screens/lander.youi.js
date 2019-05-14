@@ -126,6 +126,7 @@ class Lander extends Component {
       <List
         name="NullList"
         type="Movies"
+        data={[]}
         focusable={false}
       />
     </Composition>;
@@ -251,5 +252,4 @@ Lander.propTypes = {
   discover: PropTypes.array.isRequired,
   movies: PropTypes.array.isRequired,
   tv: PropTypes.array.isRequired,
-  lander: PropTypes.object,
 };

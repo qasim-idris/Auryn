@@ -12,6 +12,6 @@ import { List } from '../components';
 import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
-  const tree = renderer.create(<List type="Discover" data={[]}/>).toJSON();
+  const tree = renderer.create(<List type="Discover" name="List" data={[]}/>).toJSON();
   expect(tree).toMatchSnapshot();
 });

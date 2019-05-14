@@ -9,8 +9,14 @@
 import React from 'react';
 import { PdpTest } from '../screens/pdp.youi';
 import renderer from 'react-test-renderer';
+import { fromApi } from '../adapters/dummyAdapter';
+
+const asset = fromApi(false);
 
 test('renders correctly', () => {
-  const tree = renderer.create(<PdpTest navigation={global.navigation} dispatch={jest.fn()} />).toJSON();
+  const tree = renderer.create(<PdpTest asset={asset}
+    navigation={global.navigation}
+    dispatch={jest.fn()}
+  />).toJSON();
   expect(tree).toMatchSnapshot();
 });
