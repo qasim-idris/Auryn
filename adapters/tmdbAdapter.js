@@ -10,7 +10,7 @@ const fromApi = item => ({
     'title': item.name || item.title,
     'details': item.overview,
     'extra': getFeaturedText(item.credits),
-    'similar': item.similar ? item.similar.results.map(it => fromApi(it)) : [],
+    'similar': item.similar && item.similar.results ? item.similar.results.map(it => fromApi(it)) : [],
     'key': item.id.toString(),
     'id': item.id,
     'youtubeId': item.videos ? item.videos.results[0].key : 'nO_DIwuGBnA',
