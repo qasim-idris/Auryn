@@ -14,6 +14,7 @@ exports[`renders correctly 1`] = `
     source="Auryn_Splash"
   >
     <TimelineRef
+      autoplay={true}
       direction="forward"
       loop={false}
       name="SplashIn"
@@ -31,9 +32,9 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={true}
     />
     <TimelineRef
+      autoplay={false}
       direction="forward"
       loop={false}
       name="SplashOut"
@@ -51,7 +52,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
     <ViewRef
       name="Loader"
@@ -59,6 +59,7 @@ exports[`renders correctly 1`] = `
       onTimelinesLoaded={[Function]}
     >
       <TimelineRef
+        autoplay={true}
         direction="forward"
         loop={true}
         name="Loop"
@@ -76,7 +77,6 @@ exports[`renders correctly 1`] = `
         onStarted={[Function]}
         onStartedForward={[Function]}
         onStartedReverse={[Function]}
-        playOnLoad={true}
       />
     </ViewRef>
   </Composition>

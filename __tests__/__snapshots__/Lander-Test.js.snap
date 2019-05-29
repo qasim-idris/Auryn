@@ -13,6 +13,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={true}
       direction="forward"
       loop={false}
       name="Toggle-On"
@@ -30,7 +31,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={true}
     />
   </YiPushButtonView>
   <YiPushButtonView
@@ -41,6 +41,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="reverse"
       loop={false}
       name="Toggle-On"
@@ -58,7 +59,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </YiPushButtonView>
   <YiPushButtonView
@@ -69,6 +69,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="reverse"
       loop={false}
       name="Toggle-On"
@@ -86,7 +87,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </YiPushButtonView>
   <YiPushButtonView
@@ -97,6 +97,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="reverse"
       loop={false}
       name="Toggle-On"
@@ -114,7 +115,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </YiPushButtonView>
   <YiPushButtonView
@@ -130,6 +130,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   />
   <TimelineRef
+    autoplay={false}
     direction="forward"
     loop={false}
     name="LanderIn"
@@ -147,9 +148,9 @@ exports[`renders correctly 1`] = `
     onStarted={[Function]}
     onStartedForward={[Function]}
     onStartedReverse={[Function]}
-    playOnLoad={false}
   />
   <TimelineRef
+    autoplay={false}
     direction="forward"
     loop={false}
     name="LanderOut"
@@ -167,7 +168,6 @@ exports[`renders correctly 1`] = `
     onStarted={[Function]}
     onStartedForward={[Function]}
     onStartedReverse={[Function]}
-    playOnLoad={false}
   />
   <ListRef
     DEPRECATED_sendUpdatedChildFrames={false}
@@ -548,6 +548,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="forward"
       loop={false}
       name="In"
@@ -565,9 +566,9 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
     <TimelineRef
+      autoplay={false}
       direction="forward"
       loop={false}
       name="Out"
@@ -585,7 +586,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </ViewRef>
   <ViewRef
@@ -594,6 +594,7 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="forward"
       loop={true}
       name="Loop"
@@ -611,7 +612,6 @@ exports[`renders correctly 1`] = `
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </ViewRef>
 </Composition>

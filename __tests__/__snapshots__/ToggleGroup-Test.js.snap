@@ -9,6 +9,7 @@ Array [
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="reverse"
       loop={false}
       name="Toggle-On"
@@ -26,7 +27,6 @@ Array [
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </YiPushButtonView>,
   <YiPushButtonView
@@ -36,6 +36,7 @@ Array [
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="reverse"
       loop={false}
       name="Toggle-On"
@@ -53,7 +54,6 @@ Array [
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </YiPushButtonView>,
   <YiPushButtonView
@@ -63,6 +63,7 @@ Array [
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
+      autoplay={false}
       direction="reverse"
       loop={false}
       name="Toggle-On"
@@ -80,7 +81,6 @@ Array [
       onStarted={[Function]}
       onStartedForward={[Function]}
       onStartedReverse={[Function]}
-      playOnLoad={false}
     />
   </YiPushButtonView>,
 ]

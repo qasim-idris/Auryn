@@ -9,6 +9,7 @@ exports[`renders correctly 1`] = `
   onTimelinesLoaded={[Function]}
 >
   <TimelineRef
+    autoplay={false}
     direction="reverse"
     loop={false}
     name="Toggle-On"
@@ -26,7 +27,6 @@ exports[`renders correctly 1`] = `
     onStarted={[Function]}
     onStartedForward={[Function]}
     onStartedReverse={[Function]}
-    playOnLoad={false}
   />
 </YiPushButtonView>
 `;

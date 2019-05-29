@@ -2,6 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <TimelineRef
+  autoplay={false}
   direction="forward"
   loop={false}
   name="In"
@@ -19,6 +20,5 @@ exports[`renders correctly 1`] = `
   onStarted={[Function]}
   onStartedForward={[Function]}
   onStartedReverse={[Function]}
-  playOnLoad={false}
 />
 `;
