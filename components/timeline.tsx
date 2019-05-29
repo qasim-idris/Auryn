@@ -8,7 +8,6 @@
 
 import * as React from 'react';
 import { TimelineRef, TimelineRefProps } from '@youi/react-native-youi';
-import console = require('console');
 
 interface TimelineProps extends TimelineRefProps {
   onCompleted: () => void;
