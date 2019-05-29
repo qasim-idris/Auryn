@@ -11,8 +11,7 @@ import { TimelineRef, TimelineRefProps } from '@youi/react-native-youi';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 
-interface TimelineProps extends Omit<TimelineRefProps, 'onLoad'>{
-  onLoad: (ref: Timeline) => void;
+interface TimelineProps extends Omit<TimelineRefProps, 'onLoad'> {
   onCompleted: () => void;
   name: string;
   playOnLoad: boolean;
@@ -20,7 +19,6 @@ interface TimelineProps extends Omit<TimelineRefProps, 'onLoad'>{
 
 export class Timeline extends React.PureComponent<TimelineProps> {
   static defaultProps = {
-    onLoad: () => {},
     onCompleted: () => {},
     direction: 'forward',
     playOnLoad: false,
@@ -30,17 +28,17 @@ export class Timeline extends React.PureComponent<TimelineProps> {
 
   resolve?: (value?: string) => void;
 
+  componentDidMount() {
+    if (this.props.playOnLoad && this.innerRef.current)
+      this.innerRef.current.play();
+  }
+
   render() {
     return (
       <TimelineRef
         {...this.props}
         name={this.props.name}
         ref={this.innerRef}
-        onLoad={() => {
-          if (this.props.playOnLoad && this.innerRef.current)
-            this.innerRef.current.play();
-          this.props.onLoad(this);
-        }}
         loop={this.props.loop || this.props.name.toLowerCase() === 'loop'}
         onCompleted={this.onCompleted}
       />

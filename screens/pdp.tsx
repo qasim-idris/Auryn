@@ -79,7 +79,6 @@ class PDP extends React.Component<PdpProps> {
   }
 
   componentDidMount() {
-
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
       this.backHandlerListener = BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
 
@@ -87,6 +86,9 @@ class PDP extends React.Component<PdpProps> {
     });
 
     this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
+
+    if (this.posterButton.current)
+      FocusManager.focus(this.posterButton.current);
   }
 
   componentWillUnmount() {
@@ -119,11 +121,6 @@ class PDP extends React.Component<PdpProps> {
     this.props.getVideoSourceByYoutubeId(this.props.asset.youtubeId);
   }
 
-  onLoad = () => {
-    if (this.posterButton.current)
-      FocusManager.focus(this.posterButton.current);
-  }
-
   render() { // eslint-disable-line max-lines-per-function
     const { asset, fetched, isFocused } = this.props;
 
@@ -154,7 +151,8 @@ class PDP extends React.Component<PdpProps> {
           <Timeline
             name="ContentIn"
             ref={this.contentInTimeline}
-            onLoad={ref => ref.play()} />
+            playOnLoad
+          />
           <Timeline name="ContentOut" ref={this.contentOutTimeline} />
 
           <ButtonRef
@@ -162,7 +160,6 @@ class PDP extends React.Component<PdpProps> {
             focusable={isFocused}
             onPress={this.playVideo}
             ref={this.posterButton}
-            onLoad={this.onLoad}
             onFocus={this.onFocusPoster}
           >
             <ImageRef
