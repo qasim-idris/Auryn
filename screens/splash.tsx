@@ -51,10 +51,10 @@ class Splash extends React.Component<SplashProps> {
     return (
       <View style={styles.container}>
         <Composition source="Auryn_Splash">
-          <Timeline name="SplashIn" playOnLoad />
+          <Timeline name="SplashIn" autoplay />
           <Timeline name="SplashOut" ref={this.outTimeline} />
           <ViewRef name="Loader">
-            <Timeline name="Loop" playOnLoad={!Config.isRoku} />
+            <Timeline name="Loop" autoplay={!Config.isRoku} />
           </ViewRef>
         </Composition>
       </View>

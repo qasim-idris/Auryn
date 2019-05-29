@@ -79,7 +79,7 @@ class Profile extends React.Component<ProfileProps, ProfileState> {
           focusable={this.props.isFocused}
           onPress={this.navigateBack}
         />
-        <Timeline name="ProfileIn" playOnLoad />
+        <Timeline name="ProfileIn" autoplay />
         <Timeline name="ProfileOut" ref={this.outTimeline} />
         {buttons}
       </Composition>

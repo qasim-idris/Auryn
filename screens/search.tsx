@@ -125,7 +125,7 @@ class Search extends React.Component<SearchProps> {
         : null}
 
         <Timeline name="SearchOut" ref={this.outTimeline} />
-        <Timeline name="SearchIn" playOnLoad/>
+        <Timeline name="SearchIn" autoplay/>
       </Composition>
     );
   }

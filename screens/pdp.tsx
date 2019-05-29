@@ -131,7 +131,7 @@ class PDP extends React.Component<PdpProps> {
       <Composition source="Auryn_PDP">
         <Timeline name="VideoIn" ref={this.videoInTimeline} />
         <Timeline name="VideoOut" ref={this.videoOutTimeline} />
-        <Timeline name="PDPIn" playOnLoad />
+        <Timeline name="PDPIn" autoplay />
         <Timeline name="PDPOut" ref={this.outTimeline} />
 
         <ViewRef name="PDP-Scroller" visible={isFocused && fetched}>
@@ -151,7 +151,7 @@ class PDP extends React.Component<PdpProps> {
           <Timeline
             name="ContentIn"
             ref={this.contentInTimeline}
-            playOnLoad
+            autoplay
           />
           <Timeline name="ContentOut" ref={this.contentOutTimeline} />
 
@@ -177,7 +177,7 @@ class PDP extends React.Component<PdpProps> {
             <TextRef name="Text-Title" text={asset.title} />
             <TextRef name="Text-Overview" text={asset.details} />
             <TextRef name="Text-Featured" text={asset.extra} />
-            <Timeline name="In2" playOnLoad />
+            <Timeline name="In2" autoplay />
           </ViewRef>
 
         </ViewRef>

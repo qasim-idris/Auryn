@@ -76,7 +76,7 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
           name="Toggle-On"
           direction={this.props.toggled || Config.isRoku ? 'forward' : 'reverse'}
           ref={this.toggleOnTimeline}
-          playOnLoad={this.props.toggled}
+          autoplay={this.props.toggled}
         />
         {Config.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
       </ButtonRef>

@@ -8,20 +8,19 @@
 
 import * as React from 'react';
 import { TimelineRef, TimelineRefProps } from '@youi/react-native-youi';
+import console = require('console');
 
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
-
-interface TimelineProps extends Omit<TimelineRefProps, 'onLoad'> {
+interface TimelineProps extends TimelineRefProps {
   onCompleted: () => void;
   name: string;
-  playOnLoad: boolean;
+  autoplay: boolean;
 };
 
 export class Timeline extends React.PureComponent<TimelineProps> {
   static defaultProps = {
     onCompleted: () => {},
     direction: 'forward',
-    playOnLoad: false,
+    autoplay: false,
   };
 
   innerRef = React.createRef<TimelineRef>();
@@ -29,8 +28,8 @@ export class Timeline extends React.PureComponent<TimelineProps> {
   resolve?: (value?: string) => void;
 
   componentDidMount() {
-    if (this.props.playOnLoad && this.innerRef.current)
-      this.innerRef.current.play();
+    if (this.props.autoplay)
+      this.play();
   }
 
   render() {
