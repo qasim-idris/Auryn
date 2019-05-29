@@ -63,7 +63,7 @@ export class ListItem extends React.Component<ListItemProps> {
     const { data, imageType, focusable } = this.props;
 
     return (
-      <Composition source={this.compositionName} loadSync={true}>
+      <Composition source={this.compositionName}>
         <ButtonRef
           focusable={focusable}
           ref={this.innerRef}
