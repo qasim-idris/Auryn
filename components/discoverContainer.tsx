@@ -64,7 +64,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
   );
   if (index % 2) {
     return (
-      <View>
+      <View style={{ backgroundColor: 'black' }}>
         {smallItems}
         {largeItem}
       </View>
@@ -72,7 +72,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
   }
 
   return (
-    <View>
+    <View style={{ backgroundColor: 'black' }}>
       {largeItem}
       {smallItems}
     </View>

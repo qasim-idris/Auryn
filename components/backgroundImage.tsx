@@ -24,14 +24,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderColor: 'black',
-    borderWidth: 3,
+    borderWidth: 2,
   },
   background: {
     width: 1920,
     height: 1080,
     resizeMode: 'repeat',
     position: 'absolute',
-    borderColor: 'black',
-    borderWidth: 5,
   },
 });
