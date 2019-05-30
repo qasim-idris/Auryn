@@ -1,6 +1,6 @@
 import { Asset, AssetType } from './asset';
 
-const fromApi = (fillSimilar: boolean = true): Asset => ({
+const fromApi = (fillSimilar = true): Asset => ({
   images: {
     Poster: 'https://via.placeholder.com/200x300',
     Backdrop: 'https://via.placeholder.com/1068x600',
@@ -14,10 +14,10 @@ const fromApi = (fillSimilar: boolean = true): Asset => ({
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   extra: 'Director: Alan Smithee | Starring: John Doe, Jane Doe',
   similar: fillSimilar ? Array(5).fill(fromApi(false)) : [],
-  key: Date.now().toString(),
-  id: Date.now(),
+  key: 'keystring',
+  id: 1234567,
   youtubeId: 'nO_DIwuGBnA',
-  type: [AssetType.TV, AssetType.MOVIE][Math.round(Math.random())],
+  type: AssetType.TV,
 });
 
 export { fromApi };
