@@ -5,7 +5,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable max-lines */
 declare module '@youi/react-native-youi' {
-  import * as React from 'react';
+  import React from 'react';
   import { TextInputProps, TextStyle, ScrollViewProps, NativeEventSubscription, NativeSyntheticEvent, ScrollView } from 'react-native';
 
   export interface BackHandlerConstructor {

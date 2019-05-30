@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Composition, ViewRef, VideoRef, ButtonRef, TextRef, Input, FocusManager, BackHandler, VideoUriSource, InputEventObject } from '@youi/react-native-youi';
 import { View, NativeEventSubscription, NativeSyntheticEvent } from 'react-native';
 import { Timeline, ToggleButton, BackButton } from '../components';
@@ -70,7 +70,7 @@ const keys = [
 ];
 
 
-class Video extends React.Component<VideoProps, VideoState> {
+class VideoScreen extends React.Component<VideoProps, VideoState> {
 
   fallbackVideo: VideoUriSource = {
     uri: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
@@ -293,5 +293,4 @@ const mapStateToProps = (store: AurynAppState) => ({
   fetched: store.youtubeReducer.fetched || false,
 });
 
-export default withNavigationFocus(connect(mapStateToProps)(Video as any));
-export { Video as VideoTest };
+export const Video = withNavigationFocus(connect(mapStateToProps)(VideoScreen as any));

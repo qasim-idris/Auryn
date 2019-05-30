@@ -9,13 +9,12 @@
 import * as React from 'react';
 import { Composition, ViewRef } from '@youi/react-native-youi';
 import { View, StyleSheet } from 'react-native';
-import { Timeline } from '../components';
+import { Timeline, Error } from '../components';
 import { NavigationActions, NavigationScreenProps } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Config } from '../config';
 import { AurynAppState } from '../reducers';
 import { tmdbApiKey } from '../secrets';
-import { Error } from './error';
 import { getDiscover, getMovies, getTv } from '../actions/tmdbActions';
 
 type SplashDispatchProps = typeof mapDispatchToProps;
@@ -24,7 +23,7 @@ interface SplashProps extends NavigationScreenProps, SplashDispatchProps {
   fetched: boolean;
 };
 
-class Splash extends React.Component<SplashProps> {
+class SplashScreen extends React.Component<SplashProps> {
   outTimeline: React.RefObject<Timeline> = React.createRef<Timeline>();
 
   componentDidMount() {
@@ -82,5 +81,4 @@ const mapDispatchToProps = {
   getTv,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Splash as any);
-export { Splash as SplashTest };
+export const Splash = connect(mapStateToProps, mapDispatchToProps)(SplashScreen as any);

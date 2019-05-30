@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { ButtonRef, RefProps } from '@youi/react-native-youi';
 import { Timeline } from '.';
 import { Config } from '../config';

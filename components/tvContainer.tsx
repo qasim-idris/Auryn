@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { ListItem, ListItemPressEvent, ListItemFocusEvent } from './listitem';
 import { Asset } from '../adapters/asset';

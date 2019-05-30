@@ -6,18 +6,9 @@
  *
  */
 
-import Splash from './splash';
-import Lander from './lander';
-import PDP from './pdp';
-import Search from './search';
-import Profile from './profile';
-import Video from './video';
-
-export {
-  Splash,
-  Lander,
-  PDP,
-  Search,
-  Profile,
-  Video,
-};
+export { Splash }   from './splash';
+export { Lander }   from './lander';
+export { Pdp }      from './pdp';
+export { Search }   from './search';
+export { Profile }  from './profile';
+export { Video }    from './video';

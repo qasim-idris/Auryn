@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import SplashTest from '../screens/splash';
+import { Splash } from '../screens';
 import store from '../store';
 
 import renderer from 'react-test-renderer';
@@ -16,8 +16,8 @@ import renderer from 'react-test-renderer';
 test('renders correctly', () => {
   const tree = renderer
     .create(<Provider store={store}>
-        <SplashTest navigation={global.navigation} />
-      </Provider>,)
+        <Splash navigation={global.navigation} />
+      </Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

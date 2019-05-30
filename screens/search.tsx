@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Composition, BackHandler, TextInputRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline, List, BackButton } from '../components';
 import { NavigationActions, withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
@@ -24,7 +24,7 @@ interface SearchProps extends NavigationFocusInjectedProps, SearchDispatchProps 
   data: { tv: Asset[]; movies: Asset[] };
 }
 
-class Search extends React.Component<SearchProps> {
+class SearchScreen extends React.Component<SearchProps> {
   focusListener!: NavigationEventSubscription;
 
   blurListener!: NavigationEventSubscription;
@@ -141,5 +141,4 @@ const mapDispatchToProps = {
   search,
 };
 
-export default withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(Search as any));
-export { Search as SearchTest };
+export const Search = withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(SearchScreen as any));

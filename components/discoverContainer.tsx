@@ -8,7 +8,7 @@
 
  /* eslint-disable max-len */
 
-import * as React from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { ListItem } from '.';
 import { Asset } from '../adapters/asset';

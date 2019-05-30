@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { withNavigationFocus, NavigationActions, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import {
   BackHandler,
@@ -35,7 +35,7 @@ interface PdpProps extends NavigationFocusInjectedProps, PdpDispatchProps {
   fetched: boolean;
 }
 
-class PDP extends React.Component<PdpProps> {
+class PdpScreen extends React.Component<PdpProps> {
   outTimeline = React.createRef<Timeline>();
 
   videoOutTimeline = React.createRef<Timeline>();
@@ -197,5 +197,4 @@ const mapDispatchToProps = {
   getDetailsByIdAndType,
 };
 
-export default withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(PDP as any));
-export { PDP as PdpTest };
+export const Pdp = withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(PdpScreen as any));

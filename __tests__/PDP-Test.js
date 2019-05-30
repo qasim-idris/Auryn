@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { PdpTest } from '../screens/pdp';
+import { Pdp } from '../screens';
 import { Provider } from 'react-redux';
 import store from '../store';
 import { fromApi } from '../adapters/dummyAdapter';
@@ -18,9 +18,8 @@ const asset = fromApi(false);
 
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-    <PdpTest asset={asset}
+    <Pdp asset={asset}
       navigation={global.navigation}
-      dispatch={jest.fn()}
     />
   </Provider>).toJSON();
   expect(tree).toMatchSnapshot();

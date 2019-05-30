@@ -7,16 +7,20 @@
  */
 
 import React from 'react';
-import { VideoTest } from '../screens/video';
+import { Video } from '../screens';
 import renderer from 'react-test-renderer';
 import { fromApi } from '../adapters/dummyAdapter';
+import { Provider } from 'react-redux';
+import store from '../store';
 
 const asset = fromApi(false);
 
 test('renders correctly', () => {
-  const tree = renderer.create(<VideoTest
-      asset={asset}
-      navigation={global.navigation}
-    />).toJSON();
+  const tree = renderer.create(<Provider store={store}>
+      <Video
+        asset={asset}
+        navigation={global.navigation}
+      />
+    </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

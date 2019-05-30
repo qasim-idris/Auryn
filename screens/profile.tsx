@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Composition, BackHandler, ButtonRef, TextRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline, BackButton } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
@@ -19,7 +19,7 @@ interface ProfileState {
   activeButtonIndex: number;
 }
 
-class Profile extends React.Component<ProfileProps, ProfileState> {
+class ProfileScreen extends React.Component<ProfileProps, ProfileState> {
   state = { activeButtonIndex: 1 }
 
   focusListener!: NavigationEventSubscription;
@@ -87,4 +87,4 @@ class Profile extends React.Component<ProfileProps, ProfileState> {
   }
 }
 
-export default withNavigationFocus(Profile);
+export const Profile = withNavigationFocus(ProfileScreen);

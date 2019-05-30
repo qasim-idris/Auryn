@@ -15,3 +15,4 @@ export { Timeline } from './timeline';
 export { ToggleButton } from './toggleButton';
 export { ToggleGroup } from './toggleGroup';
 export { TvContainer } from './tvContainer';
+export { Error } from './error';

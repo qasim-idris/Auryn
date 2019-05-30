@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { ListRef, ListItem as ListItemType } from '@youi/react-native-youi';
 import { DiscoverContainer, ListItem, TvContainer } from '.';
 import { isEqual, chunk } from 'lodash';

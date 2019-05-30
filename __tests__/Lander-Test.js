@@ -7,22 +7,15 @@
  */
 
 import React from 'react';
-import { LanderTest } from '../screens/lander';
+import { Lander } from '../screens';
 import { Provider } from 'react-redux';
 import store from '../store';
 
 import renderer from 'react-test-renderer';
 
-const data = {
-  discover: [],
-  movies: [],
-  tv: [],
-  lander: jest.fn(),
-};
-
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-    <LanderTest navigation={global.navigation} dispatch={jest.fn()} {...data}/>
+    <Lander navigation={global.navigation}/>
   </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

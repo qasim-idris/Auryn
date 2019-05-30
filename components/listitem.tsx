@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Composition, TextRef, ButtonRef, ImageRef } from '@youi/react-native-youi';
 import { Asset, AssetType } from '../adapters/asset';
 

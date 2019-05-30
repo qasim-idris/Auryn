@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { TimelineRef, TimelineRefProps } from '@youi/react-native-youi';
 
 interface TimelineProps extends TimelineRefProps {

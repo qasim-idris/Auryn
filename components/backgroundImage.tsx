@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { View, Image, StyleSheet, ImageURISource } from 'react-native';
 
 interface BackgroundImageProps {

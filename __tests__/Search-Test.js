@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { SearchTest } from '../screens/search';
+import { Search } from '../screens';
 import { Provider } from 'react-redux';
 import store from '../store';
 
@@ -20,7 +20,7 @@ const data = {
 
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-    <SearchTest navigation={global.navigation} dispatch={jest.fn()} data={data} />
+    <Search navigation={global.navigation} dispatch={jest.fn()} data={data} />
   </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

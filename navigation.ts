@@ -31,7 +31,7 @@ const createNavigator = Config.isRoku ? createSwitchNavigator : createStackNavig
 const AppStack = createNavigator(
   {
     Lander: { screen: Screens.Lander },
-    PDP: { screen: Screens.PDP },
+    PDP: { screen: Screens.Pdp },
     Search: { screen: Screens.Search },
     Profile: { screen: Screens.Profile },
     Video: { screen: Screens.Video },

@@ -6,7 +6,7 @@
  *
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Composition, ViewRef, ScrollRef, ButtonRef, FocusManager, BackHandler } from '@youi/react-native-youi';
 import { View, NativeEventSubscription } from 'react-native';
 import { Timeline, ToggleGroup, List } from '../components';
@@ -37,7 +37,7 @@ interface LanderState {
   currentListIndex: number;
 }
 
-class Lander extends React.Component<LanderProps, LanderState> {
+class LanderScreen extends React.Component<LanderProps, LanderState> {
   state = { currentListIndex: 0 };
 
   lists = Array.from(Array(4)).map(() => React.createRef<List>());
@@ -289,5 +289,4 @@ const mapDispatchToProps = {
   getDetailsByIdAndType,
 };
 
-export default withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(Lander as any));
-export { Lander as LanderTest };
+export const Lander = withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(LanderScreen as any));
