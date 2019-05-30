@@ -18,7 +18,7 @@ interface DiscoverContainerProps {
   data: Asset[];
   onPressItem?: ListItemPressEvent;
   onFocusItem?: ListItemFocusEvent;
-  focusable: boolean;
+  focusable?: boolean;
   index: number;
 }
 

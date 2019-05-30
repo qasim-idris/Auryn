@@ -20,7 +20,7 @@ export enum ListType {
 
 interface ListProps<T>  {
   type: ListType;
-  focusable: boolean;
+  focusable?: boolean;
   onPressItem?: ListItemPressEvent;
   onFocusItem?: ListItemFocusEvent;
   name: string;

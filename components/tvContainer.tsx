@@ -15,7 +15,7 @@ interface TvContainerProps {
   data: Asset[];
   onPressItem?: ListItemPressEvent;
   onFocusItem?: ListItemFocusEvent;
-  focusable: boolean;
+  focusable?: boolean;
 }
 
 // eslint-disable-next-line max-len
