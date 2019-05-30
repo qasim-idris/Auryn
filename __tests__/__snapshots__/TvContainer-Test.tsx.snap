@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <Composition
+    onTimelinesLoaded={[Function]}
+    source="Auryn_Container-Btn-Backdrop-Small"
+  >
+    <YiPushButtonView
+      name="Btn-Backdrop-Small"
+      onFocus={[Function]}
+      onLoad={[Function]}
+      onPress={[Function]}
+      onTimelinesLoaded={[Function]}
+    >
+      <YiImageView
+        name="Image-Dynamic"
+        onTimelinesLoaded={[Function]}
+        source={
+          Object {
+            "uri": "https://via.placeholder.com/534x300",
+          }
+        }
+      />
+      <YiTextSceneNode
+        name="Text-Details"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+      <YiTextSceneNode
+        name="Text-Title"
+        text="You.i TV"
+      />
+    </YiPushButtonView>
+  </Composition>
+  <Composition
+    onTimelinesLoaded={[Function]}
+    source="Auryn_Container-Btn-Backdrop-Small"
+  >
+    <YiPushButtonView
+      name="Btn-Backdrop-Small"
+      onFocus={[Function]}
+      onLoad={[Function]}
+      onPress={[Function]}
+      onTimelinesLoaded={[Function]}
+    >
+      <YiImageView
+        name="Image-Dynamic"
+        onTimelinesLoaded={[Function]}
+        source={
+          Object {
+            "uri": "https://via.placeholder.com/534x300",
+          }
+        }
+      />
+      <YiTextSceneNode
+        name="Text-Details"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+      <YiTextSceneNode
+        name="Text-Title"
+        text="You.i TV"
+      />
+    </YiPushButtonView>
+  </Composition>
+</View>
+`;

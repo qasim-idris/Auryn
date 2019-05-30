@@ -7,11 +7,11 @@
  */
 
 import React from 'react';
-import { List } from '../components';
+import { Error } from '../components';
 
 import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
-  const tree = renderer.create(<List type="Discover" name="List" data={[]}/>).toJSON();
+  const tree = renderer.create(<Error text="This is an error"/>).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#143672",
+      "borderColor": "black",
+      "borderWidth": 3,
+      "flex": 1,
+      "flexWrap": "wrap",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 36,
+      }
+    }
+  >
+    This is an error
+  </Text>
+</View>
+`;

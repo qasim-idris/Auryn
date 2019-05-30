@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Composition
+  onTimelinesLoaded={[Function]}
+  source="Auryn_Container-Btn-Backdrop-Large"
+>
+  <YiPushButtonView
+    name="Btn-Backdrop-Large"
+    onFocus={[Function]}
+    onLoad={[Function]}
+    onPress={[Function]}
+    onTimelinesLoaded={[Function]}
+  >
+    <YiImageView
+      name="Image-Dynamic"
+      onTimelinesLoaded={[Function]}
+      source={
+        Object {
+          "uri": "https://via.placeholder.com/1068x600",
+        }
+      }
+    />
+    <YiTextSceneNode
+      name="Text-Details"
+      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    />
+    <YiTextSceneNode
+      name="Text-Title"
+      text="You.i TV"
+    />
+  </YiPushButtonView>
+</Composition>
+`;
