@@ -189,7 +189,7 @@ class GenerateOptions
                 when /vs2017|UWP/i
                     options.generator = "Visual Studio 15 Win64"
                 when /ps4/i
-                    options.generator = "Visual Studio 14"
+                    options.generator = "Visual Studio 15 ORBIS"
                 when /Tizen-NaCl/i
                     ninja = system('ninja', [:out, :err] => File::NULL)
                     make = system('make', [:out, :err] => File::NULL)

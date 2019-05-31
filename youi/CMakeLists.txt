@@ -16,7 +16,6 @@ set(YI_DISPLAY_NAME "Auryn") # The name of the application displayed on the devi
 set(YI_EXCLUDED_ASSET_FILE_EXTENSIONS ".log,.aep" CACHE STRING "Comma-delimited list of file extensions whose files should be omitted during asset copying.")
 set(YI_YOUI_ENGINE_VERSION 4.999.0 CACHE STRING "Version required for the You.i Engine.")
 set(YI_VERSION_NUMBER 1.0.0.0 CACHE STRING "Build version of the application. This is the version that will be displayed to the end user in the store.")
-set(YI_BUILD_NUMBER "ENG-unversioned" CACHE STRING "Release version number that needs to be incremented for each store submission. For Apple platforms, this is the CFBundleVersion. For Android, this is the Version Code.")
 
 set(YI_BUNDLE_URL_SCHEME "yirnapp")
 set(IOS_BUNDLE_URL_SCHEME "<string>${YI_BUNDLE_URL_SCHEME}</string>")
@@ -30,12 +29,14 @@ if(NOT (CMAKE_GENERATOR MATCHES "Visual Studio" OR CMAKE_GENERATOR MATCHES Xcode
     message(FATAL_ERROR "CMAKE_BUILD_TYPE needs to be set for single configuration generators. Default builds are not allowed.")
 endif()
 
-# This is used solely for projects that are built within the You.i Engine repository and can be removed for commercial projects.
 include(${YouiEngine_DIR}/cmake/Hunter/YiInitializeHunter.cmake OPTIONAL)
 project(${YI_PROJECT_NAME} LANGUAGES C CXX)
 
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${YouiEngine_DIR}/cmake)
 include(Modules/YiUtility)
+
+include(Modules/YiConfigureCCache)
+yi_setup_ccache()
 
 yi_print_app_names(YI_PROJECT_NAME YI_PACKAGE_NAME YI_DISPLAY_NAME)
 yi_print_vars(YI_TREAT_WARNINGS_AS_ERRORS  YI_VERSION_NUMBER YI_YOUI_ENGINE_VERSION)
@@ -102,12 +103,12 @@ include(Modules/YiPlatformSourceFiles)
 set(YI_PROJECT_CODE_FILES
     ${YI_APP_SOURCE_FILES}
     ${YI_APP_SOURCE_HEADERS}
+    ${YI_PROJECT_SOURCE}
+    ${YI_PROJECT_HEADERS}
     ${PLATFORM_SOURCE_FILES_${YI_PLATFORM_UPPER}}
     ${PLATFORM_SOURCE_FILES_${YI_PLATFORM_UPPER}_${YI_RENDER_TYPE}}
     ${PLATFORM_SOURCE_HEADERS_${YI_PLATFORM_UPPER}}
     ${PLATFORM_SOURCE_HEADERS_${YI_PLATFORM_UPPER}_${YI_RENDER_TYPE}}
-    ${YI_PROJECT_SOURCE}
-    ${YI_PROJECT_HEADERS}
 )
 
 # Not all platforms will need to perform some kind of initialization. Because this is optional,
@@ -164,7 +165,6 @@ if(YI_BUILD_CLOUD_SERVER)
 
 endif()
 
-
 target_include_directories(${PROJECT_NAME}
     PRIVATE ${_SRC_DIR}
     PRIVATE ${APPCOMMON_INCLUDE_DIR}
@@ -177,11 +177,6 @@ target_link_libraries(${YI_PROJECT_NAME}
         $<$<BOOL:${YI_BUILD_CLOUD_SERVER}>:youi::cloud-utilities>
         youi::react
 )
-
-include(Modules/${YI_PLATFORM_LOWER}/YiLinkExternalLibraries OPTIONAL RESULT_VARIABLE _EXTERNAL_LIBS_PATH)
-if(NOT _EXTERNAL_LIBS_PATH MATCHES NOTFOUND)
-    yi_link_external_libraries(TARGET ${PROJECT_NAME})
-endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RESOURCE "${YI_PLATFORM_RESOURCES_${YI_PLATFORM_UPPER}}"
@@ -261,6 +256,7 @@ yi_configure_common_react_assets(PROJECT_TARGET ${PROJECT_NAME}
 # is optional only if the platform's CMake file implements the yi_configure_packaging_for_platform
 # function.
 include(Modules/${YI_PLATFORM_LOWER}/YiConfigurePackagingForPlatform OPTIONAL)
+
 if (COMMAND yi_configure_packaging_for_platform)
     include(Modules/YiGenerateUniqueTargetName)
     yi_generate_unique_target_name(TARGET Package PREFIX "${PROJECT_NAME}_" RESULT_VARIABLE _PACKAGE_TARGET)
@@ -272,3 +268,8 @@ if (COMMAND yi_configure_packaging_for_platform)
 endif()
 
 # === END OF PROJECT PACKAGING ================================================
+
+include(Modules/YiCodeSanitizer OPTIONAL)
+if (COMMAND yi_sanitize_code)
+    yi_sanitize_code(PROJECT_TARGET ${PROJECT_NAME})
+endif()

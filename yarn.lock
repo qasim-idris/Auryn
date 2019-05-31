@@ -886,10 +886,10 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@youi/react-native-youi@5.1.1":
-  version "5.1.1"
-  resolved "https://youi.jfrog.io/youi/api/npm/jspkg/@youi/react-native-youi/-/@youi/react-native-youi-5.1.1.tgz#a9581848166eb7755664cc5d422a0be7e8fa7136"
-  integrity sha1-qVgYSBZut3VWZMxdQioL5+j6cTY=
+"@youi/react-native-youi@5.2.1":
+  version "5.2.1"
+  resolved "https://youi.jfrog.io/youi/api/npm/jspkg/@youi/react-native-youi/-/@youi/react-native-youi-5.2.1.tgz#ffa5b055ca8c8096952ca3d54bf4d73ce8833a8c"
+  integrity sha1-/6WwVcqMgJaVLKPVS/TXPOiDOow=
   dependencies:
     create-react-class "^15.6.3"
     keymirror "0.1.1"

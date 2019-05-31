@@ -5,6 +5,6 @@
 # LICENSE file in the root directory of this source tree.
 #
 ###
-file(GLOB_RECURSE YI_PROJECT_SOURCE "src/*.cpp")
 
+file(GLOB_RECURSE YI_PROJECT_SOURCE "src/*.cpp")
 file(GLOB_RECURSE YI_PROJECT_HEADERS "src/*.h")

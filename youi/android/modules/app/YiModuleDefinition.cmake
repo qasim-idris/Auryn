@@ -29,8 +29,8 @@ yi_define_module(Auryn
     PROJECT_DIR ${_PROJECT_DIR}
     VARIABLES
         "YI_PROJECT_NAME=Auryn"
-        "YI_PACKAGE_NAME=tv.youi.auryn"
         "YI_DISPLAY_NAME=\"Auryn\""
+        "YI_PACKAGE_NAME=tv.youi.auryn"
         "YI_BUILD_NUMBER=1"
         "YI_VERSION_NUMBER=1.0.0"
         "YI_API_LEVEL=21"
