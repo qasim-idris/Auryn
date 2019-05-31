@@ -36,7 +36,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 85
+    parentid: 82
   }
   layer {
     name: "Btn-Nav-Search"
@@ -71,15 +71,15 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 85
+    parentid: 82
   }
   layer {
-    name: "Btn-Nav-Live"
+    name: "Nav-List"
     id: 80
-    sourceid: 570
+    sourceid: 690012230
     transform {
       anchorPoint {
-        x: 100
+        x: 725
         y: 30
         z: 0
       }
@@ -89,8 +89,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 357
-        y: 44
+        x: 960
+        y: 107.24235
         z: 0
       }
       orientation {
@@ -101,121 +101,15 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 86
-  }
-  layer {
-    name: "Btn-Nav-Shows"
-    id: 81
-    sourceid: 555
-    transform {
-      anchorPoint {
-        x: 100
-        y: 30
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 152
-        y: 44
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 86
-  }
-  layer {
-    name: "Btn-Nav-Movies"
-    id: 82
-    sourceid: 539
-    transform {
-      anchorPoint {
-        x: 100
-        y: 30
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: -53
-        y: 44
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 86
-  }
-  layer {
-    name: "Btn-Nav-Discover"
-    id: 83
-    sourceid: 521
-    transform {
-      anchorPoint {
-        x: 100
-        y: 30
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: -258
-        y: 44
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 86
   }
   layer {
     name: "Nav-Logo"
-    id: 84
+    id: 81
     sourceid: 259819
     transform {
       anchorPoint {
@@ -246,11 +140,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 87
+    parentid: 83
   }
   layer {
     name: "ScalePropTopRightAnchor"
-    id: 85
+    id: 82
     sourceid: 690011406
     transform {
       anchorPoint {
@@ -283,42 +177,8 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "ScalePropTopAnchor"
-    id: 86
-    sourceid: 690011406
-    transform {
-      anchorPoint {
-        x: 50
-        y: 0
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 960
-        y: 0
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
     name: "ScalePropTopLeftAnchor"
-    id: 87
+    id: 83
     sourceid: 690011406
     transform {
       anchorPoint {
@@ -362,10 +222,7 @@ activecomp {
   }
   childtemplates: "Auryn_Btn-Nav-Profile"
   childtemplates: "Auryn_Btn-Nav-Search"
-  childtemplates: "Auryn_Btn-Nav-Live"
-  childtemplates: "Auryn_Btn-Nav-Shows"
-  childtemplates: "Auryn_Btn-Nav-Movies"
-  childtemplates: "Auryn_Btn-Nav-Discover"
+  childtemplates: "Auryn_Nav-List"
   childtemplates: "Auryn_Nav-Logo"
 }
 sources {
@@ -385,34 +242,10 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 570
+  uid: 690012230
   srctype: AE_COMP_SRC
-  name: "Auryn_Btn-Nav-Live.layout"
-  width: 200
-  height: 60
-  copy_source: true
-}
-sources {
-  uid: 555
-  srctype: AE_COMP_SRC
-  name: "Auryn_Btn-Nav-Shows.layout"
-  width: 200
-  height: 60
-  copy_source: true
-}
-sources {
-  uid: 539
-  srctype: AE_COMP_SRC
-  name: "Auryn_Btn-Nav-Movies.layout"
-  width: 200
-  height: 60
-  copy_source: true
-}
-sources {
-  uid: 521
-  srctype: AE_COMP_SRC
-  name: "Auryn_Btn-Nav-Discover.layout"
-  width: 200
+  name: "Auryn_Nav-List.layout"
+  width: 1450
   height: 60
   copy_source: true
 }

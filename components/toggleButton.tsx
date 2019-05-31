@@ -6,8 +6,8 @@
  *
  */
 
-import React from 'react';
-import { ButtonRef, RefProps } from '@youi/react-native-youi';
+import React, { Fragment } from 'react';
+import { ButtonRef, RefProps, TextRef } from '@youi/react-native-youi';
 import { Timeline } from '.';
 import { Config } from '../config';
 
@@ -20,6 +20,7 @@ export interface ToggleButtonProps extends RefProps {
     onFocus?: (buttonRef: React.RefObject<ButtonRef>) => void;
     onPress?: ToggleButtonPress;
     isRadio?: boolean;
+    title?: string;
   };
 
 export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggled?: boolean }> {
@@ -78,6 +79,10 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
           ref={this.toggleOnTimeline}
           autoplay={this.props.toggled}
         />
+        {this.props.title ? <Fragment>
+          <TextRef name="title" text={this.props.title}/>
+          <TextRef name="title2" text={this.props.title}/>
+        </Fragment> : null}
         {Config.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
       </ButtonRef>
     );
