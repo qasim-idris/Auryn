@@ -9,7 +9,7 @@
 import React from 'react';
 import { Composition, ViewRef, ScrollRef, ButtonRef, FocusManager, BackHandler } from '@youi/react-native-youi';
 import { View, NativeEventSubscription } from 'react-native';
-import { Timeline, ToggleGroup, List } from '../components';
+import { Timeline, ToggleGroup, List, ToggleGroupList } from '../components';
 import {
   withNavigationFocus,
   NavigationActions,
@@ -85,7 +85,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     });
     this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
 
-    if (this.menuButtons[0].current) FocusManager.focus(this.menuButtons[0].current);
+    setTimeout(() => FocusManager.focus(this.menuButtons[0].current!), 0);
   }
 
   navigateBack = () => {
@@ -235,12 +235,12 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     ];
     return (
       <Composition source="Auryn_Lander">
-        <ToggleGroup onPressItem={this.scrollToViewByIndex} initialToggleIndex={0}>
-          <ToggleButton name="Btn-Nav-Discover" focusable={isFocused} ref={this.menuButtons[0]} />
-          <ToggleButton name="Btn-Nav-Movies" focusable={isFocused} ref={this.menuButtons[1]} />
-          <ToggleButton name="Btn-Nav-Shows" focusable={isFocused} ref={this.menuButtons[2]} />
-          <ToggleButton name="Btn-Nav-Live" focusable={isFocused} ref={this.menuButtons[3]} />
-        </ToggleGroup>
+        <ToggleGroupList name="Nav-List" onPressItem={this.scrollToViewByIndex} initialToggleIndex={0}>
+          <ToggleButton name="Btn-Nav-List" title="Discover" focusable={isFocused} ref={this.menuButtons[0]} />
+          <ToggleButton name="Btn-Nav-List" title="Movies" focusable={isFocused} ref={this.menuButtons[1]} />
+          <ToggleButton name="Btn-Nav-List" title="Shows" focusable={isFocused} ref={this.menuButtons[2]} />
+          <ToggleButton name="Btn-Nav-List" title="Live" focusable={isFocused} ref={this.menuButtons[3]} />
+        </ToggleGroupList>
         <ButtonRef
           name="Btn-Nav-Search"
           focusable={isFocused}

@@ -1,0 +1,21 @@
+activecomp {
+  name: "Auryn_Nav-List"
+  width: 1450
+  height: 60
+  defaultcameradistance: 2013.8889
+  classname: "CYIListView"
+  bgcolor {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+  properties {
+    key: "componentSubtype"
+    value: "streaming"
+  }
+  properties {
+    key: "componentType"
+    value: "list"
+  }
+}

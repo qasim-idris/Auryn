@@ -14,5 +14,6 @@ export { ListItem } from './listitem';
 export { Timeline } from './timeline';
 export { ToggleButton } from './toggleButton';
 export { ToggleGroup } from './toggleGroup';
+export { ToggleGroupList } from './toggleGroupList';
 export { TvContainer } from './tvContainer';
 export { Error } from './error';
