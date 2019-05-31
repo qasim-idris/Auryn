@@ -9,18 +9,13 @@
 import React from 'react';
 import { Search } from '../screens';
 import { Provider } from 'react-redux';
+import { navigationProp } from '../__mocks__/navigation';
 import store from '../store';
-
 import renderer from 'react-test-renderer';
-
-const data = {
-  movies: [],
-  tv: [],
-};
 
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-    <Search navigation={global.navigation} dispatch={jest.fn()} data={data} />
+    <Search {...navigationProp} />
   </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -7,16 +7,16 @@
  */
 
 import React from 'react';
-import { Provider } from 'react-redux';
 import { Splash } from '../screens';
+import { Provider } from 'react-redux';
+import { navigationProp } from '../__mocks__/navigation';
 import store from '../store';
-
 import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
   const tree = renderer
     .create(<Provider store={store}>
-        <Splash navigation={global.navigation} />
+        <Splash {...navigationProp} />
       </Provider>)
     .toJSON();
 

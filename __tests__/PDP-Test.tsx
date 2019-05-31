@@ -6,21 +6,17 @@
  *
  */
 
+
 import React from 'react';
 import { Pdp } from '../screens';
 import { Provider } from 'react-redux';
+import { navigationProp } from '../__mocks__/navigation';
 import store from '../store';
-import { fromApi } from '../adapters/dummyAdapter';
-
 import renderer from 'react-test-renderer';
-
-const asset = fromApi(false);
 
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-    <Pdp asset={asset}
-      navigation={global.navigation}
-    />
+    <Pdp {...navigationProp}/>
   </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

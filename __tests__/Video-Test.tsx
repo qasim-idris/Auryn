@@ -8,19 +8,14 @@
 
 import React from 'react';
 import { Video } from '../screens';
-import renderer from 'react-test-renderer';
-import { fromApi } from '../adapters/dummyAdapter';
 import { Provider } from 'react-redux';
+import { navigationProp } from '../__mocks__/navigation';
 import store from '../store';
-
-const asset = fromApi(false);
+import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-      <Video
-        asset={asset}
-        navigation={global.navigation}
-      />
+      <Video {...navigationProp}/>
     </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });
