@@ -25,6 +25,9 @@ export const getDiscover = () => (dispatch: Dispatch<TmdbActionTypes>) => {
     payload: fetch(`http://api.themoviedb.org/3/discover/movie?api_key=${tmdbApiKey}&with_original_language=en&with_genres=${familyFilter ? familyGenre : ''}`)
       .then(response => response.json())
       .then(json => {
+        if (json.success === false)
+          return Promise.reject(json.status_message);
+
         movies = json.results.slice(0, 12);
         return fetch(`http://api.themoviedb.org/3/discover/tv?api_key=${tmdbApiKey}&with_original_language=en&with_genres=${familyFilter ? familyGenre : ''}`);
       })

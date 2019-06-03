@@ -21,6 +21,7 @@ type SplashDispatchProps = typeof mapDispatchToProps;
 
 interface SplashProps extends NavigationScreenProps, SplashDispatchProps {
   fetched: boolean;
+  error: string;
 };
 
 class SplashScreen extends React.Component<SplashProps> {
@@ -46,6 +47,9 @@ class SplashScreen extends React.Component<SplashProps> {
   render() {
     if (!tmdbApiKey)
       return <Error text="Missing Tmdb API token, please add a token to secrets.ts"/>;
+
+    if (this.props.error)
+      return <Error text={this.props.error}/>;
 
     return (
       <View style={styles.container}>
@@ -73,6 +77,10 @@ const mapStateToProps = (store: AurynAppState) => ({
     (store.tmdbReducer.discover.fetched
     && store.tmdbReducer.movies.fetched
     && store.tmdbReducer.tv.fetched) || false,
+  error:
+    store.tmdbReducer.discover.error
+    || store.tmdbReducer.movies.error
+    || store.tmdbReducer.tv.error || '',
 });
 
 const mapDispatchToProps = {
