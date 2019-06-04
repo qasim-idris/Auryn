@@ -3,8 +3,8 @@
 exports[`renders correctly 1`] = `
 <YiPushButtonView
   name="Button1"
+  onCompositionDidLoad={[Function]}
   onFocus={[Function]}
-  onLoad={[Function]}
   onPress={[Function]}
   onTimelinesLoaded={[Function]}
 >
@@ -17,7 +17,7 @@ exports[`renders correctly 1`] = `
     onCompleted={[Function]}
     onCompletedForward={[Function]}
     onCompletedReverse={[Function]}
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPaused={[Function]}
     onPausedForward={[Function]}
     onPausedReverse={[Function]}

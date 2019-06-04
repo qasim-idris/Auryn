@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
 >
   <YiPushButtonView
     name="Btn-Back"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
     visible={false}
@@ -21,7 +21,7 @@ exports[`renders correctly 1`] = `
     onCompleted={[Function]}
     onCompletedForward={[Function]}
     onCompletedReverse={[Function]}
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPaused={[Function]}
     onPausedForward={[Function]}
     onPausedReverse={[Function]}
@@ -41,7 +41,7 @@ exports[`renders correctly 1`] = `
     onCompleted={[Function]}
     onCompletedForward={[Function]}
     onCompletedReverse={[Function]}
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPaused={[Function]}
     onPausedForward={[Function]}
     onPausedReverse={[Function]}
@@ -54,7 +54,7 @@ exports[`renders correctly 1`] = `
   />
   <YiPushButtonView
     name="Btn-Profile1"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   >
@@ -65,7 +65,7 @@ exports[`renders correctly 1`] = `
   </YiPushButtonView>
   <YiPushButtonView
     name="Btn-Profile2"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   >
@@ -76,7 +76,7 @@ exports[`renders correctly 1`] = `
   </YiPushButtonView>
   <YiPushButtonView
     name="Btn-Profile3"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   >

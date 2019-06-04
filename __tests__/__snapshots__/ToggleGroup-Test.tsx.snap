@@ -3,21 +3,22 @@
 exports[`renders correctly 1`] = `
 Array [
   <YiPushButtonView
+    name="Btn-Nav-List"
+    onCompositionDidLoad={[Function]}
     onFocus={[Function]}
-    onLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
-      autoplay={false}
-      direction="reverse"
+      autoplay={true}
+      direction="forward"
       loop={false}
       name="Toggle-On"
       onAborted={[Function]}
       onCompleted={[Function]}
       onCompletedForward={[Function]}
       onCompletedReverse={[Function]}
-      onLoad={[Function]}
+      onCompositionDidLoad={[Function]}
       onPaused={[Function]}
       onPausedForward={[Function]}
       onPausedReverse={[Function]}
@@ -30,8 +31,9 @@ Array [
     />
   </YiPushButtonView>,
   <YiPushButtonView
+    name="Btn-Nav-List"
+    onCompositionDidLoad={[Function]}
     onFocus={[Function]}
-    onLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   >
@@ -44,7 +46,7 @@ Array [
       onCompleted={[Function]}
       onCompletedForward={[Function]}
       onCompletedReverse={[Function]}
-      onLoad={[Function]}
+      onCompositionDidLoad={[Function]}
       onPaused={[Function]}
       onPausedForward={[Function]}
       onPausedReverse={[Function]}
@@ -57,8 +59,9 @@ Array [
     />
   </YiPushButtonView>,
   <YiPushButtonView
+    name="Btn-Nav-List"
+    onCompositionDidLoad={[Function]}
     onFocus={[Function]}
-    onLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   >
@@ -71,7 +74,7 @@ Array [
       onCompleted={[Function]}
       onCompletedForward={[Function]}
       onCompletedReverse={[Function]}
-      onLoad={[Function]}
+      onCompositionDidLoad={[Function]}
       onPaused={[Function]}
       onPausedForward={[Function]}
       onPausedReverse={[Function]}

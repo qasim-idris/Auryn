@@ -8,8 +8,8 @@ exports[`renders correctly 1`] = `
   >
     <YiPushButtonView
       name="Btn-Backdrop-Small"
+      onCompositionDidLoad={[Function]}
       onFocus={[Function]}
-      onLoad={[Function]}
       onPress={[Function]}
       onTimelinesLoaded={[Function]}
     >
@@ -38,8 +38,8 @@ exports[`renders correctly 1`] = `
   >
     <YiPushButtonView
       name="Btn-Backdrop-Small"
+      onCompositionDidLoad={[Function]}
       onFocus={[Function]}
-      onLoad={[Function]}
       onPress={[Function]}
       onTimelinesLoaded={[Function]}
     >
