@@ -1,0 +1,68 @@
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012230
+  targetname: "Btn-Nav-List"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 10
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012231
+  targetname: "Btn-Nav-List"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 10
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012232
+  targetname: "Btn-Nav-List"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 10
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012233
+  targetname: "Btn-Nav-List"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 10
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
