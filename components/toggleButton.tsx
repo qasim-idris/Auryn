@@ -7,13 +7,14 @@
  */
 
 import React, { Fragment } from 'react';
-import { ButtonRef, RefProps, TextRef } from '@youi/react-native-youi';
+import { ButtonRef, RefProps, TextRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline } from '.';
 import { Config } from '../config';
 
 export type ToggleButtonPress = (index: number) => void;
 
-export interface ToggleButtonProps extends RefProps {
+export interface ToggleButtonProps extends Omit<RefProps, 'name'> {
+    name?: string;
     index: number;
     toggled?: boolean;
     onToggle?: (index: number) => void;
@@ -21,6 +22,7 @@ export interface ToggleButtonProps extends RefProps {
     onPress?: ToggleButtonPress;
     isRadio?: boolean;
     title?: string;
+    focusOnMount?: boolean;
   };
 
 export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggled?: boolean }> {
@@ -38,6 +40,13 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
   toggleOnTimeline = React.createRef<Timeline>();
 
   innerRef = React.createRef<ButtonRef>();
+
+  componentDidMount() {
+    // setTimeout to get around timing issue when focusing within a ScrollRef
+    // The alternative is to use onCompositionDidLoad on the ButtonRef.
+    if (this.props.focusOnMount)
+     setTimeout(() => FocusManager.focus(this.innerRef.current), 0);
+  }
 
   componentDidUpdate(prevProps: ToggleButtonProps) {
     if (this.props.toggled !== prevProps.toggled) {
@@ -68,7 +77,7 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
   render = () => (
       <ButtonRef
         focusable={this.props.focusable}
-        name={this.props.name}
+        name={this.props.name || 'Btn-Nav-List'}
         ref={this.innerRef}
         onFocus={this.onFocus}
         onPress={this.onPress}

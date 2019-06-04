@@ -10,15 +10,16 @@ import React from 'react';
 import { ToggleButton } from '.';
 import { ToggleButtonProps } from './toggleButton';
 import { Composition, ScrollRef } from '@youi/react-native-youi';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollViewProps } from 'react-native';
 
-interface ToggleGroupListProps {
+interface NavigationBarProps extends ScrollViewProps {
   initialToggleIndex: number;
   onPressItem: (index: number) => void;
   name: string;
+  focusable?: boolean;
 };
 
-export class ToggleGroupList extends React.PureComponent<ToggleGroupListProps, { activeButtonIndex: number }> {
+export class NavigationBar extends React.PureComponent<NavigationBarProps, { activeButtonIndex: number }> {
   state = { activeButtonIndex: -1 };
 
   initialToggleIndex = this.props.initialToggleIndex;
@@ -41,13 +42,18 @@ export class ToggleGroupList extends React.PureComponent<ToggleGroupListProps, {
              typedChild.props.onPress(index);
           },
           toggled: this.initialToggleIndex === index || this.state.activeButtonIndex === index,
+          focusOnMount: this.initialToggleIndex === index,
+          focusable: this.props.focusable,
+          name: 'Btn-Nav-List',
         });
-        return <View style={styles.buttonContainer}><Composition source="Auryn_Btn-Nav-List-Container">{button}</Composition></View>;
+        return <View><Composition source="Auryn_Btn-Nav-List-Container">{button}</Composition></View>;
       };
     });
 
-    return <ScrollRef scrollEnabled={false} name={this.props.name} horizontal={true}>
-        {data}
+    return <ScrollRef {...this.props}>
+        <View style={styles.buttonContainer}>
+          {data}
+        </View>
       </ScrollRef>;
   }
 }
@@ -57,5 +63,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
   },
 });

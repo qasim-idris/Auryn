@@ -38,6 +38,7 @@ export class ToggleGroup extends React.PureComponent<ToggleGroupProps, { activeB
              typedChild.props.onPress(index);
           },
           toggled: this.initialToggleIndex === index || this.state.activeButtonIndex === index,
+          focusOnMount: this.initialToggleIndex === index,
         });
       };
     });

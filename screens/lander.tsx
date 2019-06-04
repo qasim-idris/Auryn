@@ -9,7 +9,7 @@
 import React from 'react';
 import { Composition, ViewRef, ScrollRef, ButtonRef, FocusManager, BackHandler } from '@youi/react-native-youi';
 import { View, NativeEventSubscription } from 'react-native';
-import { Timeline, ToggleGroup, List, ToggleGroupList } from '../components';
+import { Timeline, List } from '../components';
 import {
   withNavigationFocus,
   NavigationActions,
@@ -24,6 +24,7 @@ import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
 import { ToggleButtonPress, ToggleButton } from '../components/toggleButton';
 import { ListType } from '../components/list';
 import { prefetchDetails, getDetailsByIdAndType } from '../actions/tmdbActions';
+import { NavigationBar } from '../components/navigationBar';
 
 type LanderDispatchProps = typeof mapDispatchToProps;
 
@@ -84,8 +85,6 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       }
     });
     this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
-
-    setTimeout(() => FocusManager.focus(this.menuButtons[0].current!), 0);
   }
 
   navigateBack = () => {
@@ -235,12 +234,19 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     ];
     return (
       <Composition source="Auryn_Lander">
-        <ToggleGroupList name="Nav-List" onPressItem={this.scrollToViewByIndex} initialToggleIndex={0}>
-          <ToggleButton name="Btn-Nav-List" title="Discover" focusable={isFocused} ref={this.menuButtons[0]} />
-          <ToggleButton name="Btn-Nav-List" title="Movies" focusable={isFocused} ref={this.menuButtons[1]} />
-          <ToggleButton name="Btn-Nav-List" title="Shows" focusable={isFocused} ref={this.menuButtons[2]} />
-          <ToggleButton name="Btn-Nav-List" title="Live" focusable={isFocused} ref={this.menuButtons[3]} />
-        </ToggleGroupList>
+        <NavigationBar
+            name="Nav-List"
+            scrollEnabled={false}
+            horizontal={true}
+            focusable={isFocused}
+            onPressItem={this.scrollToViewByIndex}
+            initialToggleIndex={0}
+        >
+          <ToggleButton title="Discover" ref={this.menuButtons[0]} />
+          <ToggleButton title="Movies" ref={this.menuButtons[1]} />
+          <ToggleButton title="Shows" ref={this.menuButtons[2]} />
+          <ToggleButton title="Live" ref={this.menuButtons[3]} />
+        </NavigationBar>
         <ButtonRef
           name="Btn-Nav-Search"
           focusable={isFocused}
