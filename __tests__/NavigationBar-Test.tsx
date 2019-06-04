@@ -7,17 +7,20 @@
  */
 
 import React from 'react';
-import { ToggleGroup, ToggleButton } from '../components';
+import { NavigationBar, ToggleButton } from '../components';
 
 import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
-  const tree = renderer.create(<ToggleGroup
-    onPressItem={jest.fn()}
-    initialToggleIndex={0}>
+  const tree = renderer.create(<NavigationBar name="Nav-List"
+  scrollEnabled={false}
+  horizontal={true}
+  focusable={true}
+  onPressItem={jest.fn()}
+  initialToggleIndex={0}>
       <ToggleButton/>
       <ToggleButton/>
       <ToggleButton/>
-    </ToggleGroup>).toJSON();
+    </NavigationBar>).toJSON();
   expect(tree).toMatchSnapshot();
 });

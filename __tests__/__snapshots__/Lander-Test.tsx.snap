@@ -5,127 +5,276 @@ exports[`renders correctly 1`] = `
   onTimelinesLoaded={[Function]}
   source="Auryn_Lander"
 >
-  <YiPushButtonView
-    name="Btn-Nav-Discover"
-    onFocus={[Function]}
-    onLoad={[Function]}
-    onPress={[Function]}
-    onTimelinesLoaded={[Function]}
+  <ListRef
+    DEPRECATED_sendUpdatedChildFrames={false}
+    alwaysBounceHorizontal={true}
+    alwaysBounceVertical={false}
+    horizontal={true}
+    initialToggleIndex={0}
+    name="Nav-List"
+    onContentSizeChange={null}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onPressItem={[Function]}
+    onResponderGrant={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    onScrollShouldSetResponder={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    onTouchCancel={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    scrollBarThumbImage={null}
+    scrollEnabled={false}
+    sendMomentumEvents={false}
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "overflow": "scroll",
+        },
+        undefined,
+      ]
+    }
   >
-    <TimelineRef
-      autoplay={true}
-      direction="forward"
-      loop={false}
-      name="Toggle-On"
-      onAborted={[Function]}
-      onCompleted={[Function]}
-      onCompletedForward={[Function]}
-      onCompletedReverse={[Function]}
-      onLoad={[Function]}
-      onPaused={[Function]}
-      onPausedForward={[Function]}
-      onPausedReverse={[Function]}
-      onPlay={[Function]}
-      onPlayForward={[Function]}
-      onPlayReverse={[Function]}
-      onStarted={[Function]}
-      onStartedForward={[Function]}
-      onStartedReverse={[Function]}
-    />
-  </YiPushButtonView>
-  <YiPushButtonView
-    name="Btn-Nav-Movies"
-    onFocus={[Function]}
-    onLoad={[Function]}
-    onPress={[Function]}
-    onTimelinesLoaded={[Function]}
-  >
-    <TimelineRef
-      autoplay={false}
-      direction="reverse"
-      loop={false}
-      name="Toggle-On"
-      onAborted={[Function]}
-      onCompleted={[Function]}
-      onCompletedForward={[Function]}
-      onCompletedReverse={[Function]}
-      onLoad={[Function]}
-      onPaused={[Function]}
-      onPausedForward={[Function]}
-      onPausedReverse={[Function]}
-      onPlay={[Function]}
-      onPlayForward={[Function]}
-      onPlayReverse={[Function]}
-      onStarted={[Function]}
-      onStartedForward={[Function]}
-      onStartedReverse={[Function]}
-    />
-  </YiPushButtonView>
-  <YiPushButtonView
-    name="Btn-Nav-Shows"
-    onFocus={[Function]}
-    onLoad={[Function]}
-    onPress={[Function]}
-    onTimelinesLoaded={[Function]}
-  >
-    <TimelineRef
-      autoplay={false}
-      direction="reverse"
-      loop={false}
-      name="Toggle-On"
-      onAborted={[Function]}
-      onCompleted={[Function]}
-      onCompletedForward={[Function]}
-      onCompletedReverse={[Function]}
-      onLoad={[Function]}
-      onPaused={[Function]}
-      onPausedForward={[Function]}
-      onPausedReverse={[Function]}
-      onPlay={[Function]}
-      onPlayForward={[Function]}
-      onPlayReverse={[Function]}
-      onStarted={[Function]}
-      onStartedForward={[Function]}
-      onStartedReverse={[Function]}
-    />
-  </YiPushButtonView>
-  <YiPushButtonView
-    name="Btn-Nav-Live"
-    onFocus={[Function]}
-    onLoad={[Function]}
-    onPress={[Function]}
-    onTimelinesLoaded={[Function]}
-  >
-    <TimelineRef
-      autoplay={false}
-      direction="reverse"
-      loop={false}
-      name="Toggle-On"
-      onAborted={[Function]}
-      onCompleted={[Function]}
-      onCompletedForward={[Function]}
-      onCompletedReverse={[Function]}
-      onLoad={[Function]}
-      onPaused={[Function]}
-      onPausedForward={[Function]}
-      onPausedReverse={[Function]}
-      onPlay={[Function]}
-      onPlayForward={[Function]}
-      onPlayReverse={[Function]}
-      onStarted={[Function]}
-      onStartedForward={[Function]}
-      onStartedReverse={[Function]}
-    />
-  </YiPushButtonView>
+    <ScrollContentData
+      collapsable={false}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "marginHorizontal": 4,
+            }
+          }
+        >
+          <Composition
+            onTimelinesLoaded={[Function]}
+            source="Auryn_Btn-Nav-List-Container"
+          >
+            <YiPushButtonView
+              name="Btn-Nav-List"
+              onCompositionDidLoad={[Function]}
+              onFocus={[Function]}
+              onPress={[Function]}
+              onTimelinesLoaded={[Function]}
+            >
+              <TimelineRef
+                autoplay={true}
+                direction="forward"
+                loop={false}
+                name="Toggle-On"
+                onAborted={[Function]}
+                onCompleted={[Function]}
+                onCompletedForward={[Function]}
+                onCompletedReverse={[Function]}
+                onCompositionDidLoad={[Function]}
+                onPaused={[Function]}
+                onPausedForward={[Function]}
+                onPausedReverse={[Function]}
+                onPlay={[Function]}
+                onPlayForward={[Function]}
+                onPlayReverse={[Function]}
+                onStarted={[Function]}
+                onStartedForward={[Function]}
+                onStartedReverse={[Function]}
+              />
+              <YiTextSceneNode
+                name="title"
+                text="Discover"
+              />
+              <YiTextSceneNode
+                name="title2"
+                text="Discover"
+              />
+            </YiPushButtonView>
+          </Composition>
+        </View>
+        <View
+          style={
+            Object {
+              "marginHorizontal": 4,
+            }
+          }
+        >
+          <Composition
+            onTimelinesLoaded={[Function]}
+            source="Auryn_Btn-Nav-List-Container"
+          >
+            <YiPushButtonView
+              name="Btn-Nav-List"
+              onCompositionDidLoad={[Function]}
+              onFocus={[Function]}
+              onPress={[Function]}
+              onTimelinesLoaded={[Function]}
+            >
+              <TimelineRef
+                autoplay={false}
+                direction="reverse"
+                loop={false}
+                name="Toggle-On"
+                onAborted={[Function]}
+                onCompleted={[Function]}
+                onCompletedForward={[Function]}
+                onCompletedReverse={[Function]}
+                onCompositionDidLoad={[Function]}
+                onPaused={[Function]}
+                onPausedForward={[Function]}
+                onPausedReverse={[Function]}
+                onPlay={[Function]}
+                onPlayForward={[Function]}
+                onPlayReverse={[Function]}
+                onStarted={[Function]}
+                onStartedForward={[Function]}
+                onStartedReverse={[Function]}
+              />
+              <YiTextSceneNode
+                name="title"
+                text="Movies"
+              />
+              <YiTextSceneNode
+                name="title2"
+                text="Movies"
+              />
+            </YiPushButtonView>
+          </Composition>
+        </View>
+        <View
+          style={
+            Object {
+              "marginHorizontal": 4,
+            }
+          }
+        >
+          <Composition
+            onTimelinesLoaded={[Function]}
+            source="Auryn_Btn-Nav-List-Container"
+          >
+            <YiPushButtonView
+              name="Btn-Nav-List"
+              onCompositionDidLoad={[Function]}
+              onFocus={[Function]}
+              onPress={[Function]}
+              onTimelinesLoaded={[Function]}
+            >
+              <TimelineRef
+                autoplay={false}
+                direction="reverse"
+                loop={false}
+                name="Toggle-On"
+                onAborted={[Function]}
+                onCompleted={[Function]}
+                onCompletedForward={[Function]}
+                onCompletedReverse={[Function]}
+                onCompositionDidLoad={[Function]}
+                onPaused={[Function]}
+                onPausedForward={[Function]}
+                onPausedReverse={[Function]}
+                onPlay={[Function]}
+                onPlayForward={[Function]}
+                onPlayReverse={[Function]}
+                onStarted={[Function]}
+                onStartedForward={[Function]}
+                onStartedReverse={[Function]}
+              />
+              <YiTextSceneNode
+                name="title"
+                text="Shows"
+              />
+              <YiTextSceneNode
+                name="title2"
+                text="Shows"
+              />
+            </YiPushButtonView>
+          </Composition>
+        </View>
+        <View
+          style={
+            Object {
+              "marginHorizontal": 4,
+            }
+          }
+        >
+          <Composition
+            onTimelinesLoaded={[Function]}
+            source="Auryn_Btn-Nav-List-Container"
+          >
+            <YiPushButtonView
+              name="Btn-Nav-List"
+              onCompositionDidLoad={[Function]}
+              onFocus={[Function]}
+              onPress={[Function]}
+              onTimelinesLoaded={[Function]}
+            >
+              <TimelineRef
+                autoplay={false}
+                direction="reverse"
+                loop={false}
+                name="Toggle-On"
+                onAborted={[Function]}
+                onCompleted={[Function]}
+                onCompletedForward={[Function]}
+                onCompletedReverse={[Function]}
+                onCompositionDidLoad={[Function]}
+                onPaused={[Function]}
+                onPausedForward={[Function]}
+                onPausedReverse={[Function]}
+                onPlay={[Function]}
+                onPlayForward={[Function]}
+                onPlayReverse={[Function]}
+                onStarted={[Function]}
+                onStartedForward={[Function]}
+                onStartedReverse={[Function]}
+              />
+              <YiTextSceneNode
+                name="title"
+                text="Live"
+              />
+              <YiTextSceneNode
+                name="title2"
+                text="Live"
+              />
+            </YiPushButtonView>
+          </Composition>
+        </View>
+      </View>
+    </ScrollContentData>
+  </ListRef>
   <YiPushButtonView
     name="Btn-Nav-Search"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   />
   <YiPushButtonView
     name="Btn-Nav-Profile"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPress={[Function]}
     onTimelinesLoaded={[Function]}
   />
@@ -138,7 +287,7 @@ exports[`renders correctly 1`] = `
     onCompleted={[Function]}
     onCompletedForward={[Function]}
     onCompletedReverse={[Function]}
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPaused={[Function]}
     onPausedForward={[Function]}
     onPausedReverse={[Function]}
@@ -158,7 +307,7 @@ exports[`renders correctly 1`] = `
     onCompleted={[Function]}
     onCompletedForward={[Function]}
     onCompletedReverse={[Function]}
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onPaused={[Function]}
     onPausedForward={[Function]}
     onPausedReverse={[Function]}
@@ -295,7 +444,7 @@ exports[`renders correctly 1`] = `
           </ListRef>
           <ViewRef
             name="Discover"
-            onLoad={[Function]}
+            onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
@@ -375,7 +524,7 @@ exports[`renders correctly 1`] = `
           </ListRef>
           <ViewRef
             name="Movies"
-            onLoad={[Function]}
+            onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
@@ -455,7 +604,7 @@ exports[`renders correctly 1`] = `
           </ListRef>
           <ViewRef
             name="Shows"
-            onLoad={[Function]}
+            onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
@@ -535,7 +684,7 @@ exports[`renders correctly 1`] = `
           </ListRef>
           <ViewRef
             name="Live"
-            onLoad={[Function]}
+            onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
@@ -544,7 +693,7 @@ exports[`renders correctly 1`] = `
   </ListRef>
   <ViewRef
     name="Nav"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
@@ -556,7 +705,7 @@ exports[`renders correctly 1`] = `
       onCompleted={[Function]}
       onCompletedForward={[Function]}
       onCompletedReverse={[Function]}
-      onLoad={[Function]}
+      onCompositionDidLoad={[Function]}
       onPaused={[Function]}
       onPausedForward={[Function]}
       onPausedReverse={[Function]}
@@ -576,7 +725,7 @@ exports[`renders correctly 1`] = `
       onCompleted={[Function]}
       onCompletedForward={[Function]}
       onCompletedReverse={[Function]}
-      onLoad={[Function]}
+      onCompositionDidLoad={[Function]}
       onPaused={[Function]}
       onPausedForward={[Function]}
       onPausedReverse={[Function]}
@@ -590,7 +739,7 @@ exports[`renders correctly 1`] = `
   </ViewRef>
   <ViewRef
     name="Nav-Logo"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
@@ -602,7 +751,7 @@ exports[`renders correctly 1`] = `
       onCompleted={[Function]}
       onCompletedForward={[Function]}
       onCompletedReverse={[Function]}
-      onLoad={[Function]}
+      onCompositionDidLoad={[Function]}
       onPaused={[Function]}
       onPausedForward={[Function]}
       onPausedReverse={[Function]}

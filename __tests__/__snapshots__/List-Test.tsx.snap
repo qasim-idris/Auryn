@@ -285,8 +285,8 @@ Array [
           >
             <YiPushButtonView
               name="Btn-Backdrop-Large"
+              onCompositionDidLoad={[Function]}
               onFocus={[Function]}
-              onLoad={[Function]}
               onPress={[Function]}
               onTimelinesLoaded={[Function]}
             >
@@ -322,8 +322,8 @@ Array [
             >
               <YiPushButtonView
                 name="Btn-Backdrop-Small"
+                onCompositionDidLoad={[Function]}
                 onFocus={[Function]}
-                onLoad={[Function]}
                 onPress={[Function]}
                 onTimelinesLoaded={[Function]}
               >
@@ -352,8 +352,8 @@ Array [
             >
               <YiPushButtonView
                 name="Btn-Backdrop-Small"
+                onCompositionDidLoad={[Function]}
                 onFocus={[Function]}
-                onLoad={[Function]}
                 onPress={[Function]}
                 onTimelinesLoaded={[Function]}
               >
@@ -409,8 +409,8 @@ Array [
             >
               <YiPushButtonView
                 name="Btn-Backdrop-Small"
+                onCompositionDidLoad={[Function]}
                 onFocus={[Function]}
-                onLoad={[Function]}
                 onPress={[Function]}
                 onTimelinesLoaded={[Function]}
               >
@@ -439,8 +439,8 @@ Array [
             >
               <YiPushButtonView
                 name="Btn-Backdrop-Small"
+                onCompositionDidLoad={[Function]}
                 onFocus={[Function]}
-                onLoad={[Function]}
                 onPress={[Function]}
                 onTimelinesLoaded={[Function]}
               >
@@ -470,8 +470,8 @@ Array [
           >
             <YiPushButtonView
               name="Btn-Backdrop-Large"
+              onCompositionDidLoad={[Function]}
               onFocus={[Function]}
-              onLoad={[Function]}
               onPress={[Function]}
               onTimelinesLoaded={[Function]}
             >
@@ -507,7 +507,7 @@ Array [
   </ListRef>,
   <ViewRef
     name="Discover"
-    onLoad={[Function]}
+    onCompositionDidLoad={[Function]}
     onTimelinesLoaded={[Function]}
   />,
 ]
