@@ -10,7 +10,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"@youi/react-native-youi": "5.2.1",
+		"@youi/react-native-youi": "5.3.0",
 		"react": "^16.6.3",
 		"react-native": "0.55.3",
 		"react-navigation": "^2.12.1",
