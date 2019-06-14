@@ -32,7 +32,7 @@ build and run this application.**
 There are a few dependencies that needs to be pre-installed before building the
 app, depending on your platform. Please follow the installation instructions at
 [our Developer
-Portal](https://developer.youi.tv/5.1/Content/InstallationCommon/H1IntroToInstallSection.htm)
+Portal](https://developer.youi.tv/latest/Content/InstallationCommon/H1IntroToInstallSection.htm)
 before continuing.
 
 ### 3rd party API keys
@@ -64,7 +64,7 @@ For example, to build for OSX:
 ./build.rb -b build/osx [-c debug|release]
 ```
 For additional information on the build scripts please refer to [this
-page.](https://developer.youi.tv/5.1/Content/RN_BuildingAppsTopics/H2RNBuildProc.htm)
+page.](https://developer.youi.tv/latest/Content/RN_BuildingAppsTopics/H2RNBuildProc.htm)
 
 Finally, start Metro bundler and run the app:
 ```shell
