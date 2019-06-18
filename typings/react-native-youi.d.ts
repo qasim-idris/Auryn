@@ -132,9 +132,9 @@ declare module '@youi/react-native-youi' {
 
     onFinalized?: () => void;
 
-    onCurrentTimeUpdated?: (event: NativeSyntheticEvent<number>) => void;
+    onCurrentTimeUpdated?: (event: number) => void;
 
-    onDurationChanged?: (event: NativeSyntheticEvent<number>) => void;
+    onDurationChanged?: (event: number) => void;
 
     onStateChanged?: (evt: any) => void;
 

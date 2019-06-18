@@ -201,9 +201,9 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
     return true;
   }
 
-  onCurrentTimeUpdated = (currentTime: NativeSyntheticEvent<number>) => { // eslint-disable-line max-statements
-    if (isNaN(currentTime.nativeEvent)) return;
-    let sec = Math.floor(currentTime.nativeEvent / 1000);
+  onCurrentTimeUpdated = (currentTime: number) => { // eslint-disable-line max-statements
+    if (isNaN(currentTime)) return;
+    let sec = Math.floor(currentTime / 1000);
     let min = Math.floor(sec / 60);
     const hour = Math.floor(sec / 3600);
     sec %= 60;
@@ -212,9 +212,9 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
     const minSting = min < 10 ? `0${min}` : min;
     const secString = sec < 10 ? `0${sec}` : sec;
     this.setState({
-      currentTime: currentTime.nativeEvent,
+      currentTime,
       formattedTime: `${hourString}${minSting}:${secString}`,
-      percent: currentTime.nativeEvent / this.state.duration,
+      percent: currentTime / this.state.duration,
     });
   }
 
@@ -228,7 +228,7 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
 
   onPlayerError = () => this.setState({ error: true, videoSource: this.fallbackVideo });
 
-  onDurationChanged = (duration: NativeSyntheticEvent<number>) => this.setState({ duration: duration.nativeEvent });
+  onDurationChanged = (duration: number) => this.setState({ duration });
 
   render() { // eslint-disable-line max-lines-per-function
     const { fetched, asset, isFocused } = this.props;
