@@ -171,6 +171,10 @@ activecomp {
     value: "list"
   }
   properties {
+    key: "useComponentScrollingView"
+    value: "true"
+  }
+  properties {
     key: "insert-after-layer-id"
     value: "-1"
   }

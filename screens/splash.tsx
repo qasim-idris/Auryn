@@ -34,7 +34,7 @@ class SplashScreen extends React.Component<SplashProps> {
   }
 
   async componentDidUpdate() {
-    if (this.props.fetched && !Config.isRoku) {
+    if (this.props.fetched) {
       if (!Config.isRoku && this.outTimeline.current)
         await this.outTimeline.current.play();
       const landerNavigationAction = NavigationActions.navigate({
