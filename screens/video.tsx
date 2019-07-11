@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { Composition, ViewRef, VideoRef, ButtonRef, TextRef, Input, FocusManager, BackHandler, VideoUriSource, InputEventObject } from '@youi/react-native-youi';
-import { View, NativeEventSubscription, NativeSyntheticEvent } from 'react-native';
+import { View, NativeEventSubscription } from 'react-native';
 import { Timeline, ToggleButton, BackButton } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -49,24 +49,24 @@ const initialState: VideoState = {
 };
 
 const mediaKeys = [
-  'YI_KEY_SPACE',
-  'YI_KEY_PLAY',
-  'YI_KEY_MEDIA_PLAY',
-  'YI_KEY_MEDIA_PLAY_PAUSE',
+  'Space',
+  'Play',
+  'MediaPlay',
+  'MediaPlayPause',
 ];
 
 const keys = [
-  'YI_KEY_ENTER',
-  'YI_KEY_SELECT',
-  'YI_KEY_PAGEDOWN',
-  'YI_KEY_ARROW_DOWN',
-  'YI_KEY_ARROW_UP',
-  'YI_KEY_ARROW_LEFT',
-  'YI_KEY_ARROW_RIGHT',
-  'YI_KEY_ARROW_UP_LEFT',
-  'YI_KEY_ARROW_UP_RIGHT',
-  'YI_KEY_ARROW_DOWN_LEFT',
-  'YI_KEY_ARROW_DOWN_RIGHT',
+  'Enter',
+  'Select',
+  'PageDown',
+  'ArrowDown',
+  'ArrowUp',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowUpLeft',
+  'ArrowUpRight',
+  'ArrowDownLeft',
+  'ArrowUpRight',
 ];
 
 

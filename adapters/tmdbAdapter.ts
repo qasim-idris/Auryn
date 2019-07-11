@@ -63,7 +63,7 @@ const fromApi = (item: TmdbApi): Asset => ({
   similar: item.similar && item.similar.results ? item.similar.results.map((it: TmdbApi) => fromApi(it)) : [],
   key: item.id.toString(),
   id: item.id,
-  youtubeId: item.videos ? item.videos.results[0].key : 'nO_DIwuGBnA',
+  youtubeId: item.videos && item.videos.results.length ? item.videos.results[0].key : 'nO_DIwuGBnA',
   type: 'name' in item ? AssetType.TV : AssetType.MOVIE,
 });
 
