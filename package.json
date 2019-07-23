@@ -62,6 +62,7 @@
 	"resolutions": {
     "axios": "^0.19.0",
     "lodash-es": "^4.17.14",
+    "lodash": "^4.17.13",
     "mem": "4.0.0"
 	}
 }
