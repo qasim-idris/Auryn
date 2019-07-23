@@ -27,7 +27,7 @@ export const youtubeReducer = (state = initalState, action: YoutubeApiActions): 
   switch (action.type) {
     case 'YOUTUBE_VIDEO_FULFILLED': {
       const format = action.payload.formats ?
-        action.payload.formats.find(fmt => fmt.type.indexOf('mp4') > 0 && fmt.quality === 'hd720')
+        action.payload.formats.find(fmt => fmt.type && fmt.type.indexOf('mp4') > 0 && fmt.quality === 'hd720')
         : null;
       if (format) {
         return {
