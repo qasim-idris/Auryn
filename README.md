@@ -40,7 +40,7 @@ Auryn uses free data from [The Movie Database](https://www.themoviedb.org/)
 You will need to provide your own API key for the app to run. API keys can be
 requested [here](https://developers.themoviedb.org/3/getting-started/introduction)
 
-Once you aquire the API key, add it to the `secrets.js` file.
+Once you aquire the API key, add it to the existing `secrets.ts` file in the root of the Auryn project.
 
 ## Usage
 
@@ -51,8 +51,14 @@ cd Auryn
 yarn install
 ```
 
-Building The app is done via the `generate` and `build` scripts in the `youi`
-folder. `generate` will create the relevant project based on platform (Xcode,
+Building the app is done via the `generate` and `build` scripts in the `youi`
+folder. Change directories to the `youi` folder.
+
+```shell
+cd youi/
+```
+
+`generate` will create the relevant project based on platform (Xcode,
 Android Studio, Visual Studio, etc.) in the corrosponding `build` folder.
 
 Additional supported platforms are: `osx, android, ios, tvos, tizen-nacl, uwp,
@@ -66,10 +72,15 @@ For example, to build for OSX:
 For additional information on the build scripts please refer to [this
 page.](https://developer.youi.tv/latest/Content/RN_BuildingAppsTopics/H2RNBuildProc.htm)
 
-Finally, start Metro bundler and run the app:
+Next, open a new terminal window, navigate back to the Auryn root directory and start the Metro bundler server. The Metro bundler will need it's own window to run the server:
 ```shell
+cd <PathToAurynRootDirectory>/
 yarn start
-open youi/build/osx/Debug/Auryn
+```
+
+Finally, in your other terminal window, start the app (the other terminal window should be still in the `Auryn/youi` directory):
+```shell
+open build/osx/Debug/Auryn
 ```
 
 ## Debugging
