@@ -10,7 +10,6 @@ import React from 'react';
 import { Composition, BackHandler, ButtonRef, TextRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline, BackButton } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
-import { NativeEventSubscription } from 'react-native';
 import { Config } from '../config';
 
 type ProfileProps = NavigationFocusInjectedProps;
@@ -26,17 +25,15 @@ class ProfileScreen extends React.Component<ProfileProps, ProfileState> {
 
   blurListener!: NavigationEventSubscription;
 
-  backHandlerListener!: NativeEventSubscription;
-
   outTimeline = React.createRef<Timeline>();
 
   activeButton = React.createRef<ButtonRef>();
 
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
-      this.backHandlerListener = BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
+      BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
     });
-    this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
+    this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
 
     if (this.activeButton.current)
       FocusManager.focus(this.activeButton.current);
@@ -45,7 +42,7 @@ class ProfileScreen extends React.Component<ProfileProps, ProfileState> {
   componentWillUnmount() {
     this.focusListener.remove();
     this.blurListener.remove();
-    this.backHandlerListener.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
   }
 
   navigateBack = async () => {

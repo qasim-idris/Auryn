@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const blacklist = require('metro/src/blacklist');
+const blacklist = require('metro-config/src/defaults/blacklist')
 
 module.exports = {
   getTransformModulePath() {
@@ -9,6 +9,6 @@ module.exports = {
     return ['ts', 'tsx'];
   },
   getBlacklistRE () {
-    return blacklist([/\/youi\/build\/.*/u]);
+    return blacklist([/\/youi\/build\/.*/]);
   },
 };

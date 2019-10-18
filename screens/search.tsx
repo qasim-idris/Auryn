@@ -12,7 +12,7 @@ import { Timeline, List, BackButton } from '../components';
 import { NavigationActions, withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Asset, AssetType } from '../adapters/asset';
-import { NativeEventSubscription, View } from 'react-native';
+import { View } from 'react-native';
 import { Config } from '../config';
 import { AurynAppState } from '../reducers';
 import { getDetailsByIdAndType, prefetchDetails, search } from '../actions/tmdbActions';
@@ -29,17 +29,15 @@ class SearchScreen extends React.Component<SearchProps> {
 
   blurListener!: NavigationEventSubscription;
 
-  backHandlerListener!: NativeEventSubscription;
-
   outTimeline = React.createRef<Timeline>();
 
   searchTextInput = React.createRef<TextInputRef>();
 
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
-      this.backHandlerListener = BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
+      BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
     });
-    this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
+    this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
 
     if (this.searchTextInput.current)
       FocusManager.focus(this.searchTextInput.current);
@@ -48,7 +46,7 @@ class SearchScreen extends React.Component<SearchProps> {
   componentWillUnmount() {
     this.focusListener.remove();
     this.blurListener.remove();
-    this.backHandlerListener.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
   }
 
   navigateBack = async () => {

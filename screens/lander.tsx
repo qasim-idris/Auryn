@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { Composition, ViewRef, ScrollRef, ButtonRef, FocusManager, BackHandler } from '@youi/react-native-youi';
-import { View, NativeEventSubscription } from 'react-native';
+import { View } from 'react-native';
 import { Timeline, List } from '../components';
 import {
   withNavigationFocus,
@@ -51,8 +51,6 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
   blurListener!: NavigationEventSubscription;
 
-  backHandlerListener!: NativeEventSubscription;
-
   outTimeline = React.createRef<Timeline>();
 
   navInTimeline = React.createRef<Timeline>();
@@ -69,7 +67,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
-      this.backHandlerListener = BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
+      BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
 
       if (this.lastFocusNavItem && this.lastFocusNavItem.current) {
         FocusManager.enableFocus(this.lastFocusNavItem.current);
@@ -84,7 +82,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
         this.inTimeline.current.play();
       }
     });
-    this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
+    this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
   }
 
   navigateBack = () => {
@@ -96,7 +94,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
   componentWillUnmount() {
     this.focusListener.remove();
     this.blurListener.remove();
-    this.backHandlerListener.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
   }
 
   navigateToScreen = async (screen: string) => {

@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { Composition, ViewRef, VideoRef, ButtonRef, TextRef, Input, FocusManager, BackHandler, VideoUriSource, InputEventObject } from '@youi/react-native-youi';
-import { View, NativeEventSubscription } from 'react-native';
+import { View } from 'react-native';
 import { Timeline, ToggleButton, BackButton } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -81,8 +81,6 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
 
   blurListener!: NavigationEventSubscription;
 
-  backHandlerListener!: NativeEventSubscription;
-
   inTimeline: React.RefObject<Timeline> = React.createRef();
 
   outTimeline: React.RefObject<Timeline> = React.createRef();
@@ -110,16 +108,16 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
 
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
-      this.backHandlerListener = BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
+      BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
     });
-    this.blurListener = this.props.navigation.addListener('didBlur', () => this.backHandlerListener.remove());
+    this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
     keys.concat(mediaKeys).forEach(key => Input.addEventListener(key, this.registerUserActivity));
   }
 
   componentWillUnmount() {
     this.focusListener.remove();
     this.blurListener.remove();
-    this.backHandlerListener.remove();
+    BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
     keys.concat(mediaKeys).forEach(key => Input.removeEventListener(key, this.registerUserActivity));
   }
 
