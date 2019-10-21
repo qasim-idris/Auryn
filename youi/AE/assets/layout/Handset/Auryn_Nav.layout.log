@@ -1,0 +1,310 @@
+activecomp {
+  name: "Auryn_Nav"
+  width: 1080
+  height: 1920
+  defaultcameradistance: 1500
+  layer {
+    name: "Nav-Backing_2.png"
+    id: 1673
+    sourceid: 120
+    transform {
+      anchorPoint {
+        x: 510
+        y: 70
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 50
+        y: -30
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1679
+  }
+  layer {
+    name: "Btn-Nav-Profile"
+    id: 1674
+    sourceid: 672
+    transform {
+      anchorPoint {
+        x: 30
+        y: 30
+        z: 0
+      }
+      scale {
+        x: 1.5
+        y: 1.5
+        z: 1
+      }
+      position {
+        x: -0.031791847
+        y: 123.78576
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1677
+  }
+  layer {
+    name: "Nav-List"
+    id: 1675
+    sourceid: 690014353
+    transform {
+      anchorPoint {
+        x: 391
+        y: 70
+        z: 0
+      }
+      scale {
+        x: 1.142
+        y: 1.142
+        z: 1
+      }
+      position {
+        x: 50
+        y: -29.25
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1679
+  }
+  layer {
+    name: "Nav-Logo"
+    id: 1676
+    sourceid: 1701
+    transform {
+      anchorPoint {
+        x: 89
+        y: 80
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 167.78577
+        y: 158.78577
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1678
+  }
+  layer {
+    name: "ScalePropTopRightAnchor"
+    id: 1677
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 100
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1080
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScalePropTopLeftAnchor"
+    id: 1678
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScalePropBottomAnchor"
+    id: 1679
+    sourceid: 2418
+    transform {
+      anchorPoint {
+        x: 50
+        y: 100
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 1920
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "clip"
+    value: "true"
+  }
+  childtemplates: "Auryn_Btn-Nav-Profile"
+  childtemplates: "Auryn_Nav-List"
+  childtemplates: "Auryn_Nav-Logo"
+}
+sources {
+  uid: 120
+  srctype: AE_IMAGE_SRC
+  name: "Nav-Backing_2.png"
+  width: 1020
+  height: 140
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 672
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Nav-Profile.layout"
+  width: 60
+  height: 60
+  copy_source: true
+}
+sources {
+  uid: 690014353
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav-List.layout"
+  width: 782
+  height: 140
+  copy_source: true
+}
+sources {
+  uid: 1701
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav-Logo.layout"
+  width: 178
+  height: 160
+  copy_source: true
+}
+sources {
+  uid: 2419
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}
+sources {
+  uid: 2418
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

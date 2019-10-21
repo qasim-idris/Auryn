@@ -1,0 +1,102 @@
+activecomp {
+  name: "Auryn_Max-Track"
+  width: 1400
+  height: 12
+  defaultcameradistance: 1944.4445
+  layer {
+    name: "BarBG"
+    id: 690012527
+    sourceid: 519941
+    transform {
+      anchorPoint {
+        x: 700
+        y: 6
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 700
+        y: 6
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Min-Track"
+    id: 690012528
+    sourceid: 690012515
+    transform {
+      anchorPoint {
+        x: 700
+        y: 6
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 700
+        y: 6
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  childtemplates: "Auryn_Min-Track"
+}
+sources {
+  uid: 519941
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 1
+    green: 1
+    blue: 1
+  }
+  width: 1400
+  height: 12
+  copy_source: false
+}
+sources {
+  uid: 690012515
+  srctype: AE_COMP_SRC
+  name: "Auryn_Min-Track.layout"
+  width: 1400
+  height: 12
+  copy_source: true
+}

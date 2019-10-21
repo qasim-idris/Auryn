@@ -1,0 +1,229 @@
+activecomp {
+  name: "Auryn_Live-Player-Controls"
+  width: 1920
+  height: 1080
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "Gradient-Player_2.png"
+    id: 1512
+    sourceid: 96
+    transform {
+      anchorPoint {
+        x: 0.5
+        y: 274
+        z: 0
+      }
+      scale {
+        x: 1920
+        y: 1.080292
+        z: 1
+      }
+      position {
+        x: 960
+        y: 1044
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Live-Video-TextDetails"
+    id: 1513
+    sourceid: 1559
+    transform {
+      anchorPoint {
+        x: 700
+        y: 200
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 790
+        y: 1102
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Btn-MIniGuide"
+    id: 1514
+    sourceid: 462
+    transform {
+      anchorPoint {
+        x: 200
+        y: 40
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1630
+        y: 1262
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Btn-Back"
+    id: 1515
+    sourceid: 305
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 68
+        y: -113
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Live-MiniGuide-List"
+    id: 1516
+    sourceid: 1500
+    transform {
+      anchorPoint {
+        x: 444
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1710
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  childtemplates: "Auryn_Live-Video-TextDetails"
+  childtemplates: "Auryn_Btn-MIniGuide"
+  childtemplates: "Auryn_Btn-Back"
+  childtemplates: "Auryn_Live-MiniGuide-List"
+}
+sources {
+  uid: 96
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Player_2.png"
+  width: 1
+  height: 548
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 1559
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-Video-TextDetails.layout"
+  width: 1400
+  height: 400
+  copy_source: true
+}
+sources {
+  uid: 462
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-MIniGuide.layout"
+  width: 400
+  height: 80
+  copy_source: true
+}
+sources {
+  uid: 305
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Back.layout"
+  width: 100
+  height: 100
+  copy_source: true
+}
+sources {
+  uid: 1500
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-MiniGuide-List.layout"
+  width: 888
+  height: 1080
+  copy_source: true
+}

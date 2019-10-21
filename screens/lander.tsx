@@ -185,9 +185,9 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     );
 
     const lists = [
-      <Composition source="Auryn_Container-Discover" key="discover">
+      <Composition source="Auryn_Container-Lander-List" key="discover">
         <List
-          name="Discover"
+          name="Lander-List"
           type={ListType.Featured}
           data={discover}
           ref={this.lists[0]}
@@ -196,9 +196,9 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           onPressItem={this.onPressItem}
         />
       </Composition>,
-      <Composition source="Auryn_Container-Movies" key="movies">
+      <Composition source="Auryn_Container-Lander-List" key="movies">
         <List
-          name="Movies"
+          name="Lander-List"
           type={ListType.Poster}
           data={movies}
           ref={this.lists[1]}
@@ -207,9 +207,9 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           onPressItem={this.onPressItem}
         />
       </Composition>,
-      <Composition source="Auryn_Container-Shows" key="shows">
+      <Composition source="Auryn_Container-Lander-List" key="shows">
         <List
-          name="Shows"
+          name="Lander-List"
           type={ListType.Grid}
           data={tv}
           ref={this.lists[2]}
@@ -218,9 +218,9 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           onPressItem={this.onPressItem}
         />
       </Composition>,
-      <Composition source="Auryn_Container-Live" key="live">
+      <Composition source="Auryn_Container-Lander-List" key="live">
         <List
-          name="Live"
+          name="Lander-List"
           type={ListType.LargeBackdrop}
           data={movies.slice(0, 2)}
           ref={this.lists[3]}

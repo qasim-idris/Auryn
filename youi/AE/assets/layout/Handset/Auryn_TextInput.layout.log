@@ -1,0 +1,221 @@
+activecomp {
+  name: "Auryn_TextInput"
+  width: 860
+  height: 140
+  defaultcameradistance: 1194.4445
+  layer {
+    name: "Text-BG 3"
+    id: 1920
+    sourceid: 2507
+    transform {
+      anchorPoint {
+        x: 430
+        y: 70
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 429.9375
+        y: 69.9375
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Text-BG 2"
+    id: 1921
+    sourceid: 2441
+    transform {
+      anchorPoint {
+        x: 422
+        y: 62
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 429.9375
+        y: 69.9375
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Text"
+    id: 1922
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 58
+        y: 86
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 55
+      fontColor {
+        alpha: 1
+        red: 0.69020003080368042
+        green: 0.68234997987747192
+        blue: 0.73332995176315308
+      }
+      fontName: "Raleway-Bold"
+      isPointText: true
+      isLabel: true
+      text: "Search"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "InputProperties"
+    id: 1923
+    sourceid: 2459
+    transform {
+      anchorPoint {
+        x: 25
+        y: 72.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 776.75
+        y: -11.177275
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1922
+  }
+  classname: "CYIPasswordTextEditView"
+  bgcolor {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+  properties {
+    key: "componentType"
+    value: "input"
+  }
+  properties {
+    key: "componentSubtype"
+    value: "protected"
+  }
+}
+sources {
+  uid: 2507
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.90588235855102539
+    green: 0.20000000298023224
+    blue: 0.23529411852359772
+  }
+  width: 860
+  height: 140
+  copy_source: false
+}
+sources {
+  uid: 2441
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0
+    green: 0.015530876815319061
+    blue: 0.039644606411457062
+  }
+  width: 844
+  height: 124
+  copy_source: false
+}
+sources {
+  uid: 3
+  srctype: AE_FONT_SRC
+  name: "Raleway-Bold"
+  copy_source: true
+  file_name: "yi_Raleway-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 2459
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.97647058963775635
+    green: 0.97647058963775635
+    blue: 0.98039215803146362
+  }
+  width: 50
+  height: 145
+  copy_source: false
+}

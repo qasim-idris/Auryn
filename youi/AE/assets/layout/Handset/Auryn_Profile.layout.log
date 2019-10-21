@@ -1,0 +1,383 @@
+activecomp {
+  name: "Auryn_Profile"
+  width: 1080
+  height: 1920
+  defaultcameradistance: 1500
+  layer {
+    name: "Btn-Profile3"
+    id: 1828
+    sourceid: 950
+    transform {
+      anchorPoint {
+        x: 125
+        y: 200
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 346
+        y: 180
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1834
+  }
+  layer {
+    name: "Btn-Profile2"
+    id: 1829
+    sourceid: 932
+    transform {
+      anchorPoint {
+        x: 125
+        y: 200
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 50
+        y: 180
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1834
+  }
+  layer {
+    name: "Btn-Profile1"
+    id: 1830
+    sourceid: 907
+    transform {
+      anchorPoint {
+        x: 125
+        y: 200
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -256
+        y: 180
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1834
+  }
+  layer {
+    name: "Title"
+    id: 1831
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 440
+        y: 60
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 119.72
+        y: 800.28015
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 80
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Raleway-Bold"
+      isPointText: false
+      boundsWidth: 1722
+      boundsHeight: 68
+      isLabel: true
+      text: "Who\342\200\231s Watching?"
+      multiline: true
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Message"
+    id: 1832
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 440
+        y: 60
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 119.72
+        y: 1430.2802
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 33
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Raleway-Bold"
+      isPointText: false
+      boundsWidth: 1722
+      boundsHeight: 48
+      isLabel: true
+      text: "Manage account settings at TheMovieDB.org/MyAccount"
+      multiline: true
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Btn-Back"
+    id: 1833
+    sourceid: 305
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -948
+        y: -91
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1835
+  }
+  layer {
+    name: "ScalePropCenterAnchor"
+    id: 1834
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 50
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScalePropTopRightAnchor"
+    id: 1835
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 100
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1080
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "gravity"
+    value: "left"
+  }
+  properties {
+    key: "rows"
+    value: "2"
+  }
+  childtemplates: "Auryn_Btn-Profile3"
+  childtemplates: "Auryn_Btn-Profile2"
+  childtemplates: "Auryn_Btn-Profile1"
+  childtemplates: "Auryn_Btn-Back"
+}
+sources {
+  uid: 950
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Profile3.layout"
+  width: 250
+  height: 400
+  copy_source: true
+}
+sources {
+  uid: 932
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Profile2.layout"
+  width: 250
+  height: 400
+  copy_source: true
+}
+sources {
+  uid: 907
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Profile1.layout"
+  width: 250
+  height: 400
+  copy_source: true
+}
+sources {
+  uid: 4
+  srctype: AE_FONT_SRC
+  name: "Raleway-Bold"
+  copy_source: true
+  file_name: "yi_Raleway-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 305
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Back.layout"
+  width: 100
+  height: 100
+  copy_source: true
+}
+sources {
+  uid: 2419
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

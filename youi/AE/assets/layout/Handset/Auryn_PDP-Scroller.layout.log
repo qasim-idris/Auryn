@@ -1,0 +1,430 @@
+activecomp {
+  name: "Auryn_PDP-Scroller"
+  width: 1080
+  height: 1920
+  defaultcameradistance: 1500
+  layer {
+    name: "Image-Dynamic-Background"
+    id: 1741
+    sourceid: 1234
+    transform {
+      anchorPoint {
+        x: 540
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 2
+        y: 2
+        z: 1
+      }
+      position {
+        x: 50.000004
+        y: -1656.6053
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1747
+    properties {
+      key: "layoutable"
+      value: "false"
+    }
+    properties {
+      key: "item-gravity"
+      value: "center"
+    }
+    properties {
+      key: "background"
+      value: "true"
+    }
+  }
+  layer {
+    name: "List-PDP-Container"
+    id: 1742
+    sourceid: 1382
+    transform {
+      anchorPoint {
+        x: 540
+        y: 275
+        z: 0
+      }
+      scale {
+        x: 1.78
+        y: 1.78
+        z: 1
+      }
+      position {
+        x: 50
+        y: 99.652733
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1746
+  }
+  layer {
+    name: "Layout-PDP-Meta"
+    id: 1743
+    sourceid: 1355
+    transform {
+      anchorPoint {
+        x: 450
+        y: 275
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540.28619
+        y: 1315.6969
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Btn-Poster-Large-Comp"
+    id: 1744
+    sourceid: 857
+    transform {
+      anchorPoint {
+        x: 200
+        y: 300
+        z: 0
+      }
+      scale {
+        x: 2.5
+        y: 2.5
+        z: 2.5
+      }
+      position {
+        x: 47.900276
+        y: 912.05023
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: -101.9912
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1748
+    properties {
+      key: "margin-top"
+      value: "90"
+    }
+  }
+  layer {
+    name: "Btn-Back"
+    id: 1745
+    sourceid: 305
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1.78
+        y: 1.78
+        z: 1
+      }
+      position {
+        x: 49.888855
+        y: -157.55556
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1749
+    properties {
+      key: "layoutable"
+      value: "false"
+    }
+    properties {
+      key: "item-gravity"
+      value: "top-left"
+    }
+  }
+  layer {
+    name: "ScaleWidthPropBottomAnchor"
+    id: 1746
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 50
+        y: 100
+        z: 0
+      }
+      scale {
+        x: 0.5625
+        y: 0.5625
+        z: 1
+      }
+      position {
+        x: 540
+        y: 1920
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropCenterAnchor"
+    id: 1747
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 50
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 0.5625
+        y: 0.5625
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropTopAnchor"
+    id: 1748
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 50
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 0.5625
+        y: 0.5625
+        z: 1
+      }
+      position {
+        x: 540
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropTopLeftAnchor"
+    id: 1749
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 0.5625
+        y: 0.5625
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "horizontal-scroll"
+    value: "false"
+  }
+  properties {
+    key: "vertical-scroll"
+    value: "true"
+  }
+  properties {
+    key: "spacing"
+    value: "40"
+  }
+  properties {
+    key: "clip"
+    value: "false"
+  }
+  properties {
+    key: "vertical-overpull"
+    value: "100"
+  }
+  properties {
+    key: "gravity"
+    value: "left"
+  }
+  properties {
+    key: "height"
+    value: "fit-content"
+  }
+  properties {
+    key: "padding-bottom"
+    value: "50"
+  }
+  childtemplates: "Auryn_Image-Dynamic-Background"
+  childtemplates: "Auryn_List-PDP-Contianer"
+  childtemplates: "Auryn_Layout-PDP-Meta"
+  childtemplates: "Auryn_Btn-Poster-Large-Comp"
+  childtemplates: "Auryn_Btn-Back"
+}
+sources {
+  uid: 1234
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-Dynamic-Background.layout"
+  width: 1080
+  height: 1920
+  copy_source: true
+}
+sources {
+  uid: 1382
+  srctype: AE_COMP_SRC
+  name: "Auryn_List-PDP-Contianer.layout"
+  width: 1080
+  height: 550
+  copy_source: true
+}
+sources {
+  uid: 1355
+  srctype: AE_COMP_SRC
+  name: "Auryn_Layout-PDP-Meta.layout"
+  width: 900
+  height: 550
+  copy_source: true
+}
+sources {
+  uid: 857
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Poster-Large-Comp.layout"
+  width: 400
+  height: 600
+  copy_source: true
+}
+sources {
+  uid: 305
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Back.layout"
+  width: 100
+  height: 100
+  copy_source: true
+}
+sources {
+  uid: 2419
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

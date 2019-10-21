@@ -1,0 +1,57 @@
+activecomp {
+  name: "Auryn_Nav-Logo"
+  width: 178
+  height: 160
+  defaultcameradistance: 247.22223
+  layer {
+    name: "Youi_Filled_logo-large_2.png"
+    id: 1701
+    sourceid: 174
+    transform {
+      anchorPoint {
+        x: 957
+        y: 884
+        z: 0
+      }
+      scale {
+        x: 0.092
+        y: 0.092
+        z: 1
+      }
+      position {
+        x: 89
+        y: 80
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+}
+sources {
+  uid: 174
+  srctype: AE_IMAGE_SRC
+  name: "Youi_Filled_logo-large_2.png"
+  width: 1914
+  height: 1768
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}

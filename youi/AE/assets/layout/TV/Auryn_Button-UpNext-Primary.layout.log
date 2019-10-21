@@ -1,0 +1,559 @@
+activecomp {
+  name: "Auryn_Button-UpNext-Primary"
+  width: 860
+  height: 198
+  defaultcameradistance: 1194.4445
+  layer {
+    name: "Dark Gray Solid 1"
+    id: 223
+    sourceid: 1481
+    transform {
+      anchorPoint {
+        x: 426
+        y: 95
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0.020833334
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Duration"
+    id: 224
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 30
+        y: 157.36313
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 16
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Helvetica"
+      isPointText: true
+      isLabel: true
+      text: " 39m"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Subhead"
+    id: 225
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 30
+        y: 94.025635
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 20
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Poppins-Bold"
+      isPointText: true
+      isLabel: true
+      text: "S2 E1  \342\200\242  Sorry Baby"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Title"
+    id: 226
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 201.5
+        y: 19.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 231.5
+        y: 55.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 28
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Poppins-Bold"
+      isPointText: false
+      boundsWidth: 403
+      boundsHeight: 39
+      isLabel: true
+      text: "Killing Eve"
+      multiline: true
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Image-UpNext-Primary"
+    id: 227
+    sourceid: 547
+    transform {
+      anchorPoint {
+        x: 273
+        y: 95
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 153
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Live-Asset-Gradient-2.png"
+    id: 228
+    sourceid: 690012664
+    transform {
+      anchorPoint {
+        x: 136.5
+        y: 99
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 0.96
+        z: 1
+      }
+      position {
+        x: 432
+        y: 99
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Focus-Left-Button-Primary"
+    id: 229
+    sourceid: 1483
+    transform {
+      anchorPoint {
+        x: 4
+        y: 99
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -428
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Focus-Left-Button-Primary 2"
+    id: 230
+    sourceid: 690012546
+    transform {
+      anchorPoint {
+        x: 4
+        y: 99
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 428
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Focus-Top-Button-Primary"
+    id: 231
+    sourceid: 1484
+    transform {
+      anchorPoint {
+        x: 432
+        y: 4
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: -97
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Focus-Top-Button-Primary 2"
+    id: 232
+    sourceid: 690012544
+    transform {
+      anchorPoint {
+        x: 432
+        y: 4
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 97
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Scale_Ctrl"
+    id: 233
+    sourceid: 1492
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 430
+        y: 99
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIPushButtonView"
+  bgcolor {
+    alpha: 1
+    red: 1
+    green: 1
+    blue: 1
+  }
+  properties {
+    key: "componentSubtype"
+    value: "push"
+  }
+  properties {
+    key: "componentType"
+    value: "button"
+  }
+  childtemplates: "Auryn_Image-UpNext-Primary"
+}
+sources {
+  uid: 1481
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.0941176488995552
+    green: 0.0941176488995552
+    blue: 0.0941176488995552
+  }
+  width: 852
+  height: 190
+  copy_source: false
+}
+sources {
+  uid: 2
+  srctype: AE_FONT_SRC
+  name: "Helvetica"
+  copy_source: true
+  file_name: "yi_Helvetica.ttc"
+  style_name: "Regular"
+}
+sources {
+  uid: 3
+  srctype: AE_FONT_SRC
+  name: "Poppins-Bold"
+  copy_source: true
+  file_name: "yi_Poppins-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 547
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-UpNext-Primary.layout"
+  width: 546
+  height: 190
+  copy_source: true
+}
+sources {
+  uid: 690012664
+  srctype: AE_IMAGE_SRC
+  name: "Live-Asset-Gradient-2.png"
+  width: 273
+  height: 198
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 1483
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.91372549533843994
+    green: 0.0313725508749485
+    blue: 0.33725491166114807
+  }
+  width: 8
+  height: 198
+  copy_source: false
+}
+sources {
+  uid: 690012546
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.91372549533843994
+    green: 0.0313725508749485
+    blue: 0.33725491166114807
+  }
+  width: 8
+  height: 198
+  copy_source: false
+}
+sources {
+  uid: 1484
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.91372549533843994
+    green: 0.0313725508749485
+    blue: 0.33725491166114807
+  }
+  width: 864
+  height: 8
+  copy_source: false
+}
+sources {
+  uid: 690012544
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.91372549533843994
+    green: 0.0313725508749485
+    blue: 0.33725491166114807
+  }
+  width: 864
+  height: 8
+  copy_source: false
+}
+sources {
+  uid: 1492
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

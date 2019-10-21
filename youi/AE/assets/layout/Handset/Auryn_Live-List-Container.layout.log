@@ -1,0 +1,174 @@
+activecomp {
+  name: "Auryn_Live-List-Container"
+  width: 1080
+  height: 1350
+  defaultcameradistance: 1500
+  layer {
+    name: "LiveList"
+    id: 1453
+    sourceid: 1587
+    transform {
+      anchorPoint {
+        x: 490
+        y: 600
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 750
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Live-Indicator"
+    id: 1454
+    sourceid: 1439
+    transform {
+      anchorPoint {
+        x: 50
+        y: 20
+        z: 0
+      }
+      scale {
+        x: 1.5
+        y: 1.5
+        z: 1
+      }
+      position {
+        x: 124.99997
+        y: 58.44442
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Text-Title"
+    id: 1455
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0.25
+        y: 14.9375
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 240.94836
+        y: 53.032158
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 55
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Raleway-Bold"
+      isPointText: false
+      boundsWidth: 337
+      boundsHeight: 48
+      isLabel: true
+      text: "All Channels"
+      multiline: true
+      isAllCaps: false
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "gravity"
+    value: "top"
+  }
+  properties {
+    key: "rows"
+    value: "2"
+  }
+  properties {
+    key: "useComponentScrollingView"
+    value: "true"
+  }
+  properties {
+    key: "spacing"
+    value: "25.0"
+  }
+  childtemplates: "Auryn_LiveList"
+  childtemplates: "Auryn_Live-Indicator"
+}
+sources {
+  uid: 1587
+  srctype: AE_COMP_SRC
+  name: "Auryn_LiveList.layout"
+  width: 980
+  height: 1200
+  copy_source: true
+}
+sources {
+  uid: 1439
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-Indicator.layout"
+  width: 100
+  height: 40
+  copy_source: true
+}
+sources {
+  uid: 3
+  srctype: AE_FONT_SRC
+  name: "Raleway-Bold"
+  copy_source: true
+  file_name: "yi_Raleway-Bold.otf"
+  style_name: "Bold"
+}

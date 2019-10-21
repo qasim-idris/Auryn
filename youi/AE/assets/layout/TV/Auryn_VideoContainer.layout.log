@@ -1,0 +1,229 @@
+activecomp {
+  name: "Auryn_VideoContainer"
+  width: 1920
+  height: 1080
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "Image-Background"
+    id: 690012089
+    sourceid: 467
+    transform {
+      anchorPoint {
+        x: 960
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Gradient-Squeeze.png"
+    id: 690012090
+    sourceid: 801
+    transform {
+      anchorPoint {
+        x: 480
+        y: 0.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1080
+        z: 1
+      }
+      position {
+        x: -270
+        y: 539.078
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "UpNext-Countdown"
+    id: 690012091
+    sourceid: 767
+    transform {
+      anchorPoint {
+        x: 136
+        y: 32
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 146
+        y: 725
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Button-UpNext-Primary"
+    id: 690012092
+    sourceid: 223
+    transform {
+      anchorPoint {
+        x: 430
+        y: 99
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 412
+        y: 893
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Video"
+    id: 690012093
+    sourceid: 306
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  childtemplates: "Auryn_Image-Background"
+  childtemplates: "Auryn_UpNext-Countdown"
+  childtemplates: "Auryn_Button-UpNext-Primary"
+  childtemplates: "Auryn_Video"
+}
+sources {
+  uid: 467
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-Background.layout"
+  width: 1920
+  height: 1080
+  copy_source: true
+}
+sources {
+  uid: 801
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Squeeze.png"
+  width: 960
+  height: 1
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 767
+  srctype: AE_COMP_SRC
+  name: "Auryn_UpNext-Countdown.layout"
+  width: 272
+  height: 64
+  copy_source: true
+}
+sources {
+  uid: 223
+  srctype: AE_COMP_SRC
+  name: "Auryn_Button-UpNext-Primary.layout"
+  width: 860
+  height: 198
+  copy_source: true
+}
+sources {
+  uid: 306
+  srctype: AE_COMP_SRC
+  name: "Auryn_Video.layout"
+  width: 1920
+  height: 1080
+  copy_source: true
+}

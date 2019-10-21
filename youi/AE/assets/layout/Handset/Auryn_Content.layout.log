@@ -1,0 +1,141 @@
+activecomp {
+  name: "Auryn_Content"
+  width: 1080
+  height: 1920
+  defaultcameradistance: 1500
+  layer {
+    name: "PDP"
+    id: 1158
+    sourceid: 1728
+    transform {
+      anchorPoint {
+        x: 540
+        y: 960
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Lander"
+    id: 1159
+    sourceid: 1318
+    transform {
+      anchorPoint {
+        x: 540
+        y: 960
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Splash"
+    id: 1160
+    sourceid: 1898
+    transform {
+      anchorPoint {
+        x: 540
+        y: 960
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.2627450980392157
+    green: 0
+    blue: 0.53725490196078429
+  }
+  childtemplates: "Auryn_PDP"
+  childtemplates: "Auryn_Lander"
+  childtemplates: "Auryn_Splash"
+}
+sources {
+  uid: 1728
+  srctype: AE_COMP_SRC
+  name: "Auryn_PDP.layout"
+  width: 1080
+  height: 1920
+  copy_source: true
+}
+sources {
+  uid: 1318
+  srctype: AE_COMP_SRC
+  name: "Auryn_Lander.layout"
+  width: 1080
+  height: 1920
+  copy_source: true
+}
+sources {
+  uid: 1898
+  srctype: AE_COMP_SRC
+  name: "Auryn_Splash.layout"
+  width: 1080
+  height: 1920
+  copy_source: true
+}

@@ -1,0 +1,99 @@
+activecomp {
+  name: "Auryn_Loader"
+  width: 100
+  height: 100
+  defaultcameradistance: 138.88889
+  layer {
+    name: "ActivityIndicator.png"
+    id: 212
+    sourceid: 690012397
+    transform {
+      anchorPoint {
+        x: 55
+        y: 55
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: -90
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 213
+  }
+  layer {
+    name: "Null 3"
+    id: 213
+    sourceid: 259737
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 50
+        y: 50
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+}
+sources {
+  uid: 690012397
+  srctype: AE_IMAGE_SRC
+  name: "ActivityIndicator.png"
+  width: 110
+  height: 110
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 259737
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

@@ -1,0 +1,414 @@
+activecomp {
+  name: "Auryn_Button-UpNext-Primary"
+  width: 787
+  height: 325
+  defaultcameradistance: 1093.0555
+  layer {
+    name: "Dark Gray Solid 1"
+    id: 1012
+    sourceid: 2432
+    transform {
+      anchorPoint {
+        x: 393.5
+        y: 162.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -36.5
+        y: 63.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1019
+  }
+  layer {
+    name: "Image-UpNext-Primary"
+    id: 1013
+    sourceid: 1306
+    transform {
+      anchorPoint {
+        x: 310
+        y: 162.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 47
+        y: 63
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1019
+  }
+  layer {
+    name: "Gradient-Left-Gray_2.png"
+    id: 1014
+    sourceid: 94
+    transform {
+      anchorPoint {
+        x: 516
+        y: 163
+        z: 0
+      }
+      scale {
+        x: 1.1996124
+        y: 1
+        z: 1
+      }
+      position {
+        x: 354
+        y: 63.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1019
+  }
+  layer {
+    name: "Gradient-Left-Black_2.png"
+    id: 1015
+    sourceid: 92
+    transform {
+      anchorPoint {
+        x: 6.6484391e-15
+        y: 163
+        z: 0
+      }
+      scale {
+        x: 0.60975611
+        y: 1
+        z: 1
+      }
+      position {
+        x: -430
+        y: 63.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1019
+  }
+  layer {
+    name: "Duration"
+    id: 1016
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 30
+        y: 293
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 28
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Helvetica"
+      isPointText: true
+      isLabel: true
+      text: " 39m"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Subhead"
+    id: 1017
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 31.5
+        y: 124.02563
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 33
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Poppins-Bold"
+      isPointText: true
+      isLabel: true
+      text: "S2 E1  \342\200\242  Sorry Baby"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Title"
+    id: 1018
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 201.5
+        y: 19.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 231.5
+        y: 55.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 55
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Poppins-Bold"
+      isPointText: false
+      boundsWidth: 397
+      boundsHeight: 48
+      isLabel: true
+      text: "Killing Eve"
+      multiline: true
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "Scale_Ctrl"
+    id: 1019
+    sourceid: 2483
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 430
+        y: 99
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIPushButtonView"
+  bgcolor {
+    alpha: 1
+    red: 1
+    green: 1
+    blue: 1
+  }
+  properties {
+    key: "componentSubtype"
+    value: "push"
+  }
+  properties {
+    key: "componentType"
+    value: "button"
+  }
+  childtemplates: "Auryn_Image-UpNext-Primary"
+}
+sources {
+  uid: 2432
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.0941176488995552
+    green: 0.0941176488995552
+    blue: 0.0941176488995552
+  }
+  width: 787
+  height: 325
+  copy_source: false
+}
+sources {
+  uid: 1306
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-UpNext-Primary.layout"
+  width: 620
+  height: 325
+  copy_source: true
+}
+sources {
+  uid: 94
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Left-Gray_2.png"
+  width: 516
+  height: 325
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 92
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Left-Black_2.png"
+  width: 451
+  height: 325
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 5
+  srctype: AE_FONT_SRC
+  name: "Helvetica"
+  copy_source: true
+  file_name: "yi_Helvetica.ttc"
+  style_name: "Regular"
+}
+sources {
+  uid: 6
+  srctype: AE_FONT_SRC
+  name: "Poppins-Bold"
+  copy_source: true
+  file_name: "yi_Poppins-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 2483
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

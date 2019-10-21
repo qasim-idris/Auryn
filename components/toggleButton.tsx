@@ -90,7 +90,6 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
         />
         {this.props.title ? <Fragment>
           <TextRef name="title" text={this.props.title}/>
-          <TextRef name="title2" text={this.props.title}/>
         </Fragment> : null}
         {Config.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
       </ButtonRef>

@@ -1,0 +1,59 @@
+activecomp {
+  name: "Auryn_Container-Shows"
+  width: 1080
+  height: 1350
+  defaultcameradistance: 1500
+  layer {
+    name: "Shows"
+    id: 1146
+    sourceid: 1887
+    transform {
+      anchorPoint {
+        x: 540
+        y: 675
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 675
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
+  }
+  childtemplates: "Auryn_Shows"
+}
+sources {
+  uid: 1887
+  srctype: AE_COMP_SRC
+  name: "Auryn_Shows.layout"
+  width: 1080
+  height: 1350
+  copy_source: true
+}

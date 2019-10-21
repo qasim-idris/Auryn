@@ -1,0 +1,100 @@
+activecomp {
+  name: "Auryn_LiveList"
+  width: 980
+  height: 1200
+  defaultcameradistance: 1361.1111
+  layer {
+    name: "Live-Asset-Root"
+    id: 1587
+    sourceid: 690014183
+    transform {
+      anchorPoint {
+        x: 438
+        y: 125
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 490
+        y: 153
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "placeholder"
+      value: "true"
+    }
+  }
+  classname: "CYIListView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
+  }
+  properties {
+    key: "columns"
+    value: "2"
+  }
+  properties {
+    key: "padding-top"
+    value: "15"
+  }
+  properties {
+    key: "padding-left"
+    value: "5"
+  }
+  properties {
+    key: "padding-right"
+    value: "5"
+  }
+  properties {
+    key: "horizontal-scroll"
+    value: "false"
+  }
+  properties {
+    key: "vertical-scroll"
+    value: "true"
+  }
+  properties {
+    key: "componentType"
+    value: "list"
+  }
+  properties {
+    key: "componentSubtype"
+    value: "streaming"
+  }
+  properties {
+    key: "insert-after-layer-id"
+    value: "-1"
+  }
+  childtemplates: "Auryn_Live-Asset-Root"
+}
+sources {
+  uid: 690014183
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-Asset-Root.layout"
+  width: 876
+  height: 250
+  copy_source: true
+}

@@ -1,0 +1,7 @@
+{
+  "treeObserverConfig" : {
+    "propertyChangesActive" : false,
+    "propertyObserverType": "legacyPropertyObserver",
+    "useLocalHTTPServer": true
+  }
+}

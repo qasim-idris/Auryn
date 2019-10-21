@@ -1,0 +1,412 @@
+activecomp {
+  name: "Auryn_Player-Controls"
+  width: 1920
+  height: 1080
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "Gradient-Player_2.png"
+    id: 1767
+    sourceid: 96
+    transform {
+      anchorPoint {
+        x: 0.5
+        y: 274
+        z: 0
+      }
+      scale {
+        x: 1920
+        y: 1.080292
+        z: 1
+      }
+      position {
+        x: 960
+        y: 1044
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Duration"
+    id: 1768
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 84
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -67
+        y: 273.36017
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 36
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Raleway-Bold"
+      isPointText: false
+      boundsWidth: 224
+      boundsHeight: 52
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: true
+    }
+    parentid: 1774
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+  }
+  layer {
+    name: "Bar"
+    id: 1769
+    sourceid: 1813
+    transform {
+      anchorPoint {
+        x: 795
+        y: 30
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 885
+        y: 244
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1775
+  }
+  layer {
+    name: "Video-TextDetails"
+    id: 1770
+    sourceid: 1977
+    transform {
+      anchorPoint {
+        x: 700
+        y: 200
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 790
+        y: -2
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1775
+  }
+  layer {
+    name: "Btn-PlayPause"
+    id: 1771
+    sourceid: 781
+    transform {
+      anchorPoint {
+        x: 75
+        y: 75
+        z: 0
+      }
+      scale {
+        x: 2
+        y: 2
+        z: 1
+      }
+      position {
+        x: 960
+        y: -440
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1775
+  }
+  layer {
+    name: "Btn-Back"
+    id: 1772
+    sourceid: 305
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -1752
+        y: -113
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1773
+  }
+  layer {
+    name: "ScalePropTopRightAnchor"
+    id: 1773
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 100
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1920
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropBottomRightAnchor"
+    id: 1774
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 100
+        y: 100
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1920
+        y: 1080
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropBottomLeftAnchor"
+    id: 1775
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 0
+        y: 100
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 1080
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  childtemplates: "Auryn_Player-Scrubber"
+  childtemplates: "Auryn_Video-TextDetails"
+  childtemplates: "Auryn_Btn-PlayPause"
+  childtemplates: "Auryn_Btn-Back"
+}
+sources {
+  uid: 96
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Player_2.png"
+  width: 1
+  height: 548
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 2
+  srctype: AE_FONT_SRC
+  name: "Raleway-Bold"
+  copy_source: true
+  file_name: "yi_Raleway-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 1813
+  srctype: AE_COMP_SRC
+  name: "Auryn_Player-Scrubber.layout"
+  width: 1590
+  height: 60
+  copy_source: true
+}
+sources {
+  uid: 1977
+  srctype: AE_COMP_SRC
+  name: "Auryn_Video-TextDetails.layout"
+  width: 1400
+  height: 400
+  copy_source: true
+}
+sources {
+  uid: 781
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-PlayPause.layout"
+  width: 150
+  height: 150
+  copy_source: true
+}
+sources {
+  uid: 305
+  srctype: AE_COMP_SRC
+  name: "Auryn_Btn-Back.layout"
+  width: 100
+  height: 100
+  copy_source: true
+}
+sources {
+  uid: 2419
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

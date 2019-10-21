@@ -1,0 +1,128 @@
+activecomp {
+  name: "Auryn_UpNext-Countdown"
+  width: 272
+  height: 64
+  defaultcameradistance: 377.77777
+  layer {
+    name: "Timer"
+    id: 767
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 263
+        y: 49.51593
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 58
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Poppins-Bold"
+      isPointText: true
+      isLabel: true
+      text: "10s"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  layer {
+    name: "UpNext-Text"
+    id: 768
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 49.278809
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 58
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Poppins-Bold"
+      isPointText: true
+      isLabel: true
+      text: "Up Next"
+      multiline: false
+      isAllCaps: true
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.25098039215686274
+    green: 0.23921568627450981
+    blue: 0.23921568627450981
+  }
+  properties {
+    key: "gravity"
+    value: "left"
+  }
+  properties {
+    key: "spacing"
+    value: "20"
+  }
+}
+sources {
+  uid: 1
+  srctype: AE_FONT_SRC
+  name: "Poppins-Bold"
+  copy_source: true
+  file_name: "yi_Poppins-Bold.otf"
+  style_name: "Bold"
+}

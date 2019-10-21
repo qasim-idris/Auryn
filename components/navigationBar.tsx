@@ -46,7 +46,7 @@ export class NavigationBar extends React.PureComponent<NavigationBarProps, { act
           focusable: this.props.focusable,
           name: 'Btn-Nav-List',
         });
-        return <View style={{ marginHorizontal: 4 }}><Composition source="Auryn_Btn-Nav-List-Container">{button}</Composition></View>;
+        return <View style={{ marginHorizontal: 4 }}><Composition source="Auryn_Container-Btn-Nav-List">{button}</Composition></View>;
       };
     });
 

@@ -1,0 +1,11 @@
+tracks {
+  binding: IS_VISIBLE
+  targetid: 1649
+  targetname: "Magenta-Red Solid 4"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}

@@ -42,6 +42,7 @@ class PdpScreen extends React.Component<PdpProps> {
 
   videoInTimeline = React.createRef<Timeline>();
 
+  // TODO: Roku export strategy
   contentOutTimeline = React.createRef<Timeline>();
 
   contentInTimeline = React.createRef<Timeline>();

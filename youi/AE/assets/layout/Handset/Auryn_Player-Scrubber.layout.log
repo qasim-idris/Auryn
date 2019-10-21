@@ -1,0 +1,196 @@
+activecomp {
+  name: "Auryn_Player-Scrubber"
+  width: 1590
+  height: 60
+  defaultcameradistance: 2208.3333
+  layer {
+    name: "Max-Track"
+    id: 1813
+    sourceid: 1624
+    transform {
+      anchorPoint {
+        x: 0
+        y: 6
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 30
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.4
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "MinTrack"
+    id: 1814
+    sourceid: 1649
+    transform {
+      anchorPoint {
+        x: 0
+        y: 6
+        z: 0
+      }
+      scale {
+        x: 0.02
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 30
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Thumb"
+    id: 1815
+    sourceid: 1938
+    transform {
+      anchorPoint {
+        x: 24
+        y: 24
+        z: 0
+      }
+      scale {
+        x: 0.6
+        y: 0.6
+        z: 1
+      }
+      position {
+        x: -685.66791
+        y: 50
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 1816
+  }
+  layer {
+    name: "ScalePropCenterAnchor"
+    id: 1816
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 50
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1.0599068
+        y: 1.0599068
+        z: 1
+      }
+      position {
+        x: 795
+        y: 30
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIScrollBarView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentSubtype"
+    value: "scrollBar"
+  }
+  properties {
+    key: "componentType"
+    value: "bar"
+  }
+  properties {
+    key: "clip"
+    value: "false"
+  }
+  childtemplates: "Auryn_Max-Track"
+  childtemplates: "Auryn_Min-Track"
+  childtemplates: "Auryn_Thumb"
+}
+sources {
+  uid: 1624
+  srctype: AE_COMP_SRC
+  name: "Auryn_Max-Track.layout"
+  width: 1590
+  height: 12
+  copy_source: true
+}
+sources {
+  uid: 1649
+  srctype: AE_COMP_SRC
+  name: "Auryn_Min-Track.layout"
+  width: 1590
+  height: 12
+  copy_source: true
+}
+sources {
+  uid: 1938
+  srctype: AE_COMP_SRC
+  name: "Auryn_Thumb.layout"
+  width: 48
+  height: 48
+  copy_source: true
+}
+sources {
+  uid: 2419
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}

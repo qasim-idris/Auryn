@@ -1,0 +1,72 @@
+activecomp {
+  name: "Auryn_Image-Dynamic-Live-Asset"
+  width: 694
+  height: 250
+  defaultcameradistance: 963.88892
+  layer {
+    name: "ImageNode"
+    id: 1270
+    sourceid: 690014118
+    transform {
+      anchorPoint {
+        x: 347
+        y: 125
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 347
+        y: 125
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIImageView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentType"
+    value: "image"
+  }
+  properties {
+    key: "clip"
+    value: "false"
+  }
+  properties {
+    key: "scale-mode"
+    value: "fill-with-overflow"
+  }
+}
+sources {
+  uid: 690014118
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.767754316329956
+    green: 0.76186209917068481
+    blue: 0.76186209917068481
+  }
+  width: 694
+  height: 250
+  copy_source: false
+}

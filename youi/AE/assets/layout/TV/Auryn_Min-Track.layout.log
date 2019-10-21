@@ -1,0 +1,59 @@
+activecomp {
+  name: "Auryn_Min-Track"
+  width: 1400
+  height: 12
+  defaultcameradistance: 1944.4445
+  layer {
+    name: "Magenta-Red Solid 4"
+    id: 690012515
+    sourceid: 519935
+    transform {
+      anchorPoint {
+        x: 700
+        y: 6
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 700
+        y: 6
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+}
+sources {
+  uid: 519935
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.91286766529083252
+    green: 0.032904054969549179
+    blue: 0.33563414216041565
+  }
+  width: 1400
+  height: 12
+  copy_source: false
+}

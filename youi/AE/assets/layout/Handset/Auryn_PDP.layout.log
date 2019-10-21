@@ -1,0 +1,137 @@
+activecomp {
+  name: "Auryn_PDP"
+  width: 1080
+  height: 1920
+  defaultcameradistance: 1500
+  layer {
+    name: "Gradient-Bottom_2.png"
+    id: 1728
+    sourceid: 91
+    transform {
+      anchorPoint {
+        x: 0.5
+        y: 250
+        z: 0
+      }
+      scale {
+        x: 1080
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 1670
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "layoutable"
+      value: "false"
+    }
+    properties {
+      key: "item-gravity"
+      value: "bottom"
+    }
+  }
+  layer {
+    name: "PDP-Scroller"
+    id: 1729
+    sourceid: 1741
+    transform {
+      anchorPoint {
+        x: 540
+        y: 960
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIScrollingView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "horizontal-scroll"
+    value: "false"
+  }
+  properties {
+    key: "vertical-scroll"
+    value: "true"
+  }
+  properties {
+    key: "vertical-overpull"
+    value: "100"
+  }
+  properties {
+    key: "clip"
+    value: "false"
+  }
+  properties {
+    key: "componentSubtype"
+    value: "scrolling"
+  }
+  properties {
+    key: "layout"
+    value: "CYIStackLayout"
+  }
+  properties {
+    key: "padding-bottom"
+    value: "250"
+  }
+  childtemplates: "Auryn_PDP-Scroller"
+}
+sources {
+  uid: 91
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Bottom_2.png"
+  width: 1
+  height: 500
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 1741
+  srctype: AE_COMP_SRC
+  name: "Auryn_PDP-Scroller.layout"
+  width: 1080
+  height: 1920
+  copy_source: true
+}

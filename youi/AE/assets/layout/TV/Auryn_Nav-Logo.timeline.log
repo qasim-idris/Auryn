@@ -1,0 +1,18 @@
+tracks {
+  binding: IS_VISIBLE
+  targetid: 259819
+  targetname: "Youi_Filled_logo-small.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+markers {
+  starttime: 1
+  duration: 6.0166669
+  name: "Loop"
+  alltracks: false
+  looping: false
+}
