@@ -11,14 +11,11 @@ import { AppRegistry } from '@youi/react-native-youi';
 import { Provider } from 'react-redux';
 import store from './store';
 import Stack from './navigation';
-import { BackgroundImage } from './components';
 
 export default class YiReactApp extends Component {
   render = () =>
     <Provider store={store}>
-      <BackgroundImage source={{ 'uri': 'res://drawable/default/Background-Gradient.png' }}>
-        <Stack />
-      </BackgroundImage>
+      <Stack />
     </Provider>
 }
 

@@ -7,7 +7,6 @@
  */
 
 export { BackButton } from './backButton';
-export { BackgroundImage } from './backgroundImage';
 export { DiscoverContainer } from './discoverContainer';
 export { List } from './list';
 export { ListItem } from './listitem';
