@@ -11,6 +11,21 @@ require 'fileutils'
 require 'optparse'
 require 'ostruct'
 require 'json'
+require 'socket'
+
+def GetIpAddress()
+    ip = "localhost"
+
+    begin
+        TCPSocket.open('www.youi.tv',80) do |sock|
+            ip = sock.addr[3]
+        end
+    rescue
+        puts "Unable to open socket, using localhost as default ip"
+    end
+
+    return ip
+end
 
 class GenerateOptions
     def self.parse(args)
@@ -23,9 +38,11 @@ class GenerateOptions
         options.engine_hint = nil
         options.use_jsbundle = false
         options.inline_jsbundle = false
+        options.remote_jsbundle = false
         options.iterate_jsbundle = false
         options.dev_jsbundle = false
         options.minify_jsbundle = false
+        options.ip_address = GetIpAddress()
         options.jsbundle_directory = []
         options.jsbundle_file = []
         options.jsbundle_working_directory = nil
@@ -145,6 +162,14 @@ class GenerateOptions
                 options.inline_jsbundle = true
             end
 
+            opts.on("--remote [ipaddress]",
+                "If included, will be fetched from a yarn server, this is enabled by default.") do |ipaddress|
+                options.remote_jsbundle = true
+                unless ipaddress.nil?
+                    options.ip_address = ipaddress
+                end
+            end
+
             opts.on("--iterate",
                 "If included, Only JS bundles that need to be updated by changes to their source JS file will be re-bundled.",
                 "  (If omitted, all JS bundles will be deleted before creating all required bundles.)",
@@ -232,6 +257,56 @@ class GenerateOptions
                     options.build_directory = File.join(options.build_directory, "#{options.defines["CMAKE_BUILD_TYPE"]}")
                 end
             end
+            unless(options.inline_jsbundle || options.use_jsbundle)
+                options.defines["YI_IP_CONFIG"] = options.ip_address
+            end
+
+            # If any of these options aren't set we can try to get them from the package.json
+            packagejson = nil
+                            unless (options.inline_jsbundle || options.use_jsbundle || options.remote_jsbundle) && (options.jsbundle_file.length > 0 || options.jsbundle_directory.length > 0)
+                    packagedir =  File.join("..", "package.json")
+
+                    unless File.exist?(packagedir)
+                        packagedir =  File.join(".", "package.json")
+                    end
+
+                    if File.exist?(packagedir)
+                        packagedata = File.read(packagedir)
+                        packagejson = JSON.parse(packagedata)
+                        if packagejson.key?('youi')
+                            packagejson = packagejson['youi']
+                        else
+                            packagejson = nil
+                        end
+                    end
+                end
+
+                unless  packagejson.nil?
+                    unless options.inline_jsbundle || options.use_jsbundle || options.remote_jsbundle
+
+                        bundlemode = nil
+
+                        begin
+                            bundlemode = packagejson['platformSpecificBundleModes'][options.platform]
+                        rescue
+                            if packagejson.key?('defaultBundleMode')
+                                bundlemode = packagejson['defaultBundleMode']
+                            end
+                        end
+
+                        unless bundlemode.nil?
+                            options.remote_jsbundle = bundlemode == "remote"
+                            options.inline_jsbundle = bundlemode == "inline"
+                            options.use_jsbundle    = bundlemode == "local" || bundlemode == "inline"
+                        end
+                    end
+                end
+
+
+            if options.inline_jsbundle || options.use_jsbundle || options.remote_jsbundle || options.dev_jsbundle || options.minify_jsbundle
+                options.defines["YI_DEV_JS"] = options.dev_jsbundle ? "true" : "false"
+                options.defines["YI_MINIFY_JS"] = options.minify_jsbundle ? "true" : "false"
+            end
 
             if options.inline_jsbundle
                 options.defines["YI_LOCAL_JS_INLINE"] = "ON"
@@ -239,16 +314,42 @@ class GenerateOptions
 
             if options.use_jsbundle
                 options.jsbundle_working_directory = File.expand_path(File.join(__dir__, ".."))
+                unless File.exist?(File.join(options.jsbundle_working_directory, "package.json"))
+                    options.jsbundle_working_directory =  File.expand_path(".")
+                end
+
                 options.jsbundle_staging_dir = File.expand_path(File.join(options.build_directory, "Staging", "generated"))
 
                 options.defines["YI_LOCAL_JS"] = "ON"
+                options.defines["YI_REMOTE_JS"] = "OFF"
                 options.defines["YI_BUNDLED_ASSETS_DEST"] = File.expand_path(File.join(options.jsbundle_staging_dir, "bundled_assets"))
 
-                unless options.jsbundle_file.length > 0 || options.jsbundle_directory.length > 0
-                    puts "ERROR: The --file or --directory argument is missing. Add one of these to specify the file/directory to include within the JS bundle."
-                    abort
+                unless packagejson.nil?
+                    unless options.jsbundle_file.length > 0 || options.jsbundle_directory.length > 0 && packagejson.nil?
+                        if packagejson.key?('entryFile')
+                            options.jsbundle_file = packagejson['entryFile']
+
+                            if packagejson.key?('bundleFileName')
+                                options.defines['YI_DEFAULT_FILENAME_JS'] = packagejson['bundleFileName']
+                            elsif /(.*?)\.js/ =~ options.jsbundle_file
+
+                                options.defines['YI_DEFAULT_FILENAME_JS'] = $1 + '.bundle'
+                            end
+
+                        elsif packagejson.key?('entryDir')
+                            options.jsbundle_directory = packagejson['entryDir']
+                        else
+                            puts "ERROR: The --file or --directory argument is missing. Add one of these to specify the file/directory to include within the JS bundle."
+                            abort
+                        end
+                    end
                 end
+            else
+                options.defines["YI_REMOTE_JS"] = "ON"
+                options.defines["YI_LOCAL_JS"] = "OFF"
+                options.defines["YI_LOCAL_JS_INLINE"] = "OFF"
             end
+
 
             return options
         rescue OptionParser::ParseError => e
@@ -398,8 +499,8 @@ class GenerateOptions
         engine_dir = GenerateOptions.get_engine_dir(options)
 
         case options.platform
-        when /ps4/i
-            # PS4 uses the built-in version of CMake, so we need to reference that
+        when /ps4|uwp/i
+            # PS4 and UWP use the built-in version of CMake, so we need to reference that
             # version instead of the standard one installed on the host machine.
             command = "\"#{File.absolute_path(File.join(engine_dir, "tools", "build", "cmake", "bin", "cmake.exe"))}\""
         else
@@ -473,10 +574,8 @@ class GenerateOptions
             command << " --input_directories \"#{options.jsbundle_directory}\""
         end
 
-        if options.defines.has_key?("CMAKE_BUILD_TYPE") && options.dev_jsbundle
-            if options.defines["CMAKE_BUILD_TYPE"].match(/Debug/i)
-                command << " --dev"
-            end
+        if options.dev_jsbundle
+            command << " --dev"
         end
 
         output_dir = File.expand_path(File.join(options.jsbundle_staging_dir, "jsbundles"))
@@ -513,6 +612,11 @@ puts "  #{command}"
 puts ""
 puts "Platform: #{options.platform}"
 
+engine_dir = GenerateOptions.get_engine_dir(options)
+rn_script_name = "#{engine_dir}/tools/cli/scripts/create_nativemodules_cmake/index.js"
+if File.file?(rn_script_name)
+    system("node #{rn_script_name}")
+end
 if !options.generator.nil?
     puts "Generator: #{options.generator}"
 end
@@ -533,4 +637,22 @@ if command_result == false || command_result == nil
         puts "Generation failed -- could not execute cmake command. Ensure that cmake is installed and available in your PATH."
     end
     abort()
+end
+if options.use_jsbundle || options.defines['YI_LOCAL_JS'] == 'ON'
+    puts "#=============================================="
+    if options.inline_jsbundle || options.defines['YI_LOCAL_JS_INLINE'] == 'ON'
+        puts "inline bundling done using:"
+    else
+        puts "local bundling done using:"
+    end
+    puts (options.jsbundle_file.length > 0 ? "-- entry file: #{options.jsbundle_file}" : "") +
+        (options.jsbundle_directory.length > 0 ? "\n-- entry file: #{options.jsbundle_directory}" : "") +
+        (options.defines.key?('YI_DEFAULT_FILENAME_JS') ? "\n-- bundle filename: " + options.defines['YI_DEFAULT_FILENAME_JS'] : "")
+
+    puts "#=============================================="
+elsif options.remote_jsbundle || options.defines['YI_REMOTE_JS'] == 'ON'
+    puts "#=============================================="
+    puts "remote bundling done using: \n-- ip: #{options.ip_address}"+
+        (options.defines.key?('YI_DEFAULT_FILENAME_JS') ? "\n-- bundle filename: " + options.defines['YI_DEFAULT_FILENAME_JS'] : "")
+    puts "#=============================================="
 end

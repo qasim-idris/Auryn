@@ -7,9 +7,20 @@
  */
 
 #include "App.h"
+
+#include <JSBundlingStrings.h>
 #include <automation/YiWebDriverLocator.h>
 #include <cxxreact/JSBigString.h>
 #include <glog/logging.h>
+
+// Native Modules
+#if (YI_CLOUD_SERVER)
+  #include <YiCloudConfigModule.h>
+#endif
+#include <YiCloudModule.h>
+#include "TrackpadModule.h"
+#include "DimensionsModule.h"
+#include "OrientationLockModule.h"
 
 #if defined(YI_LOCAL_JS_APP)
     #if defined(YI_INLINE_JS_APP)
@@ -49,18 +60,21 @@ bool App::UserInit()
     }
 #endif
 
-#if defined(YI_LOCAL_JS_APP)
-    #if defined(YI_INLINE_JS_APP)
-        std::unique_ptr<JsBundleLoader> pBundleLoader(new JsBundleLoaderInlineString(INLINE_JS_BUNDLE_STRING));
-    #else
-        std::unique_ptr<JsBundleLoader> pBundleLoader(new JsBundleLoaderLocalAsset());
-    #endif
-#else
-    std::unique_ptr<JsBundleLoader> pBundleLoader(new JsBundleLoaderRemote(CYIUrl("http://localhost:8081/index.youi.bundle?platform=ios&dev=false&hot=false&minify=false")));
-#endif
+    std::unique_ptr<JsBundleLoader> pBundleLoader(GetBundler());
 
     PlatformApp::SetJsBundleLoader(std::move(pBundleLoader));
-    return PlatformApp::UserInit();
+
+    bool b_platformInit = PlatformApp::UserInit();
+    GetReactNativeViewController().AddModule<Cloud>();
+    GetReactNativeViewController().AddModule<TrackpadModule>();
+    GetReactNativeViewController().AddModule<OrientationLockModule>();
+    GetReactNativeViewController().AddModule<DimensionsModule>();
+
+    #if (YI_CLOUD_SERVER)
+        GetReactNativeViewController().AddModule<CloudConfig>();
+    #endif
+
+    return b_platformInit;
 }
 
 bool App::UserStart()
