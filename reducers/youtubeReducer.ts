@@ -11,6 +11,7 @@ import { VideoUriSource } from '@youi/react-native-youi';
 
 interface YoutubeReducerState {
   videoSource: VideoUriSource;
+  videoId: string;
   fetching: boolean;
   fetched: boolean;
   error: Error | null;
@@ -18,6 +19,7 @@ interface YoutubeReducerState {
 
 const initalState: YoutubeReducerState = {
   videoSource: { uri: 'http://www.streambox.fr/playlists/x31jrg1/x31jrg1.m3u8', type: 'HLS' },
+  videoId: Date.now().toString(),
   fetching: false,
   fetched: false,
   error: null,
@@ -27,7 +29,10 @@ export const youtubeReducer = (state = initalState, action: YoutubeApiActions): 
   switch (action.type) {
     case 'YOUTUBE_VIDEO_FULFILLED': {
       const format = action.payload.formats ?
-        action.payload.formats.find(fmt => fmt.type && fmt.type.indexOf('mp4') > 0 && fmt.quality === 'hd720')
+        action.payload.formats.find(fmt => {
+          const type = fmt.type || fmt.mimeType;
+          return type && type.indexOf('mp4') > 0 && fmt.quality === 'hd720';
+        })
         : null;
       if (format) {
         return {
@@ -36,6 +41,7 @@ export const youtubeReducer = (state = initalState, action: YoutubeApiActions): 
             uri: format.url,
             type: 'MP4',
           },
+          videoId: action.payload.video_id === 'nO_DIwuGBnA' ? Date.now().toString() : action.payload.video_id,
           fetching: false,
           fetched: true,
         };
@@ -45,6 +51,7 @@ export const youtubeReducer = (state = initalState, action: YoutubeApiActions): 
       return {
         ...state,
         videoSource: initalState.videoSource,
+        videoId: Date.now().toString(),
         fetching: false,
         fetched: true,
       };

@@ -12,6 +12,7 @@ declare module 'youtube-stream-url' {
     quality: string;
     itag: string;
     type: string;
+    mimeType: string;
   }
 
   export interface YoutubeResponse {
@@ -23,5 +24,5 @@ declare module 'youtube-stream-url' {
     allow_embed: boolean;
     author: string;
     formats: YoutubeFormat[];
-}
+  }
 }

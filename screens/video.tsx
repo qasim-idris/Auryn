@@ -287,6 +287,7 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
 
 const mapStateToProps = (store: AurynAppState) => ({
   videoSource: store.youtubeReducer.videoSource || { uri: '', type: '' },
+  videoId: store.youtubeReducer.videoId || '',
   asset: store.tmdbReducer.details.data || {},
   fetched: store.youtubeReducer.fetched || false,
 });
