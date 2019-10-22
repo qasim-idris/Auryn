@@ -16,3 +16,4 @@ export { ToggleGroup } from './toggleGroup';
 export { NavigationBar } from './navigationBar';
 export { TvContainer } from './tvContainer';
 export { Error } from './error';
+export { withOrientation } from './withOrientation';

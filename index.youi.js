@@ -7,10 +7,12 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry } from '@youi/react-native-youi';
+import { AppRegistry, FormFactor } from '@youi/react-native-youi';
 import { Provider } from 'react-redux';
 import store from './store';
 import Stack from './navigation';
+import { withOrientation } from './components';
+import { RotationMode } from './components/withOrientation';
 
 export default class YiReactApp extends Component {
   render = () =>
@@ -19,4 +21,7 @@ export default class YiReactApp extends Component {
     </Provider>
 }
 
-AppRegistry.registerComponent('YiReactApp', () => YiReactApp);
+// eslint-disable-next-line no-negated-condition
+const rotationMode = !FormFactor.isHandset ? RotationMode.Landscape : RotationMode.Portrait;
+
+AppRegistry.registerComponent('YiReactApp', () => withOrientation(YiReactApp, rotationMode));

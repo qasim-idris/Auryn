@@ -7,16 +7,17 @@
  */
 
 import React from 'react';
-import { Composition, ViewRef, VideoRef, ButtonRef, TextRef, Input, FocusManager, BackHandler, VideoUriSource, InputEventObject } from '@youi/react-native-youi';
+import { Composition, ViewRef, VideoRef, ButtonRef, TextRef, Input, FocusManager, BackHandler, VideoUriSource, InputEventObject, FormFactor } from '@youi/react-native-youi';
 import { View } from 'react-native';
-import { Timeline, ToggleButton, BackButton } from '../components';
+import { Timeline, ToggleButton, BackButton, withOrientation } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Config } from '../config';
 import { Asset } from '../adapters/asset';
 import { AurynAppState } from '../reducers/index';
+import { RotationMode, OrientationLock } from '../components/withOrientation';
 
-interface VideoProps extends NavigationFocusInjectedProps {
+interface VideoProps extends NavigationFocusInjectedProps, OrientationLock {
   asset: Asset;
   fetched: boolean;
   videoSource: VideoUriSource;
@@ -196,6 +197,9 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
     else
       this.props.navigation.goBack(null);
 
+    if (FormFactor.isHandset)
+      this.props.setRotationMode(RotationMode.Portrait);
+
     return true;
   }
 
@@ -292,4 +296,4 @@ const mapStateToProps = (store: AurynAppState) => ({
   fetched: store.youtubeReducer.fetched || false,
 });
 
-export const Video = withNavigationFocus(connect(mapStateToProps)(VideoScreen as any));
+export const Video = withOrientation(withNavigationFocus(connect(mapStateToProps)(VideoScreen as any)), RotationMode.Landscape);
