@@ -19,21 +19,7 @@
 #endif
 #include <YiCloudModule.h>
 #include "TrackpadModule.h"
-#include "DimensionsModule.h"
 #include "OrientationLockModule.h"
-
-#if defined(YI_LOCAL_JS_APP)
-    #if defined(YI_INLINE_JS_APP)
-        #include "youireact/JsBundleLoaderInlineString.h"
-        const char INLINE_JS_BUNDLE_STRING[] =
-            #include "InlineJSBundleGenerated/index.youi.bundle"
-            ;
-    #else
-        #include "youireact/JsBundleLoaderLocalAsset.h"
-    #endif
-#else
-    #include "youireact/JsBundleLoaderRemote.h"
-#endif
 
 App::App() = default;
 
@@ -68,7 +54,6 @@ bool App::UserInit()
     GetReactNativeViewController().AddModule<Cloud>();
     GetReactNativeViewController().AddModule<TrackpadModule>();
     GetReactNativeViewController().AddModule<OrientationLockModule>();
-    GetReactNativeViewController().AddModule<DimensionsModule>();
 
     #if (YI_CLOUD_SERVER)
         GetReactNativeViewController().AddModule<CloudConfig>();
