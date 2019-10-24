@@ -7,11 +7,31 @@
  */
 
 import React from 'react';
-import { Composition, ViewRef, VideoRef, ButtonRef, TextRef, Input, FocusManager, BackHandler, VideoUriSource, InputEventObject, FormFactor } from '@youi/react-native-youi';
-import { View } from 'react-native';
-import { Timeline, ToggleButton, BackButton, withOrientation } from '../components';
-import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
+import {
+  Composition,
+  ViewRef,
+  VideoRef,
+  ButtonRef,
+  TextRef,
+  Input,
+  FocusManager,
+  BackHandler,
+  VideoUriSource,
+  InputEventObject,
+  FormFactor,
+  SliderRef,
+} from '@youi/react-native-youi';
 import { connect } from 'react-redux';
+import {
+  withNavigationFocus,
+  NavigationEventSubscription,
+  NavigationFocusInjectedProps,
+} from 'react-navigation';
+import { View } from 'react-native';
+import { debounce } from 'lodash';
+import URLSearchParams from '@ungap/url-search-params';
+
+import { Timeline, ToggleButton, BackButton, withOrientation } from '../components';
 import { Config } from '../config';
 import { Asset } from '../adapters/asset';
 import { AurynAppState } from '../reducers/index';
@@ -21,11 +41,11 @@ interface VideoProps extends NavigationFocusInjectedProps, OrientationLock {
   asset: Asset;
   fetched: boolean;
   videoSource: VideoUriSource;
+  isLive: boolean;
 }
 
 interface VideoState {
   videoSource?: VideoUriSource | {};
-  controlsVisible?: boolean;
   formattedTime?: string;
   paused?: boolean;
   error?: boolean;
@@ -34,11 +54,13 @@ interface VideoState {
   mediaState?: string;
   currentTime?: number;
   duration: number;
+  controlsActive: boolean;
+  scrubbingEngaged: boolean;
+  pausedByScrubbing: boolean;
 }
 
 const initialState: VideoState = {
   videoSource: {},
-  controlsVisible: false,
   formattedTime: '00:00',
   paused: true,
   error: false,
@@ -47,6 +69,9 @@ const initialState: VideoState = {
   mediaState: '',
   currentTime: 0,
   duration: 1,
+  controlsActive: false,
+  scrubbingEngaged: false,
+  pausedByScrubbing: false,
 };
 
 const mediaKeys = [
@@ -70,8 +95,8 @@ const keys = [
   'ArrowUpRight',
 ];
 
-
 class VideoScreen extends React.Component<VideoProps, VideoState> {
+  MIN_DURATION = 3000;
 
   fallbackVideo: VideoUriSource = {
     uri: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
@@ -118,6 +143,8 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
   componentWillUnmount() {
     this.focusListener.remove();
     this.blurListener.remove();
+    this.onScrub.cancel();
+    this.debounceHidingControls.cancel();
     BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
     keys.concat(mediaKeys).forEach(key => Input.removeEventListener(key, this.registerUserActivity));
   }
@@ -138,24 +165,17 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
   }
 
   shouldComponentUpdate(nextProps: VideoProps, nextState: VideoState) {
-    if (nextProps.fetched !== this.props.fetched)
-      return true;
+    if (nextProps.fetched !== this.props.fetched) return true;
 
-    if (nextState.error)
-      return true;
+    if (nextState.error) return true;
 
-    if (nextState.controlsVisible) return true;
+    if (nextState.controlsActive) return true;
 
     return false;
   }
 
-  inactivityDetected = () => {
-    if (this.controlsHideTimeline.current) this.controlsHideTimeline.current.play();
-    this.setState({ controlsVisible: false });
-  }
-
   showControls = () => {
-    this.setState({ controlsVisible: true });
+    this.setState({ controlsActive: true });
     if (this.playButton.current)
       FocusManager.focus(this.playButton.current);
     if (this.controlsShowTimeline.current)
@@ -168,12 +188,9 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
       this.playPause();
     }
 
-    if (!this.state.controlsVisible) this.showControls();
+    if (!this.state.controlsActive) this.showControls();
 
-    if (this.activityTimeout)
-      clearTimeout(this.activityTimeout);
-
-    this.activityTimeout = setTimeout(() => this.inactivityDetected(), 3000);
+    this.debounceHidingControls();
   }
 
   playPause = () => {
@@ -230,7 +247,61 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
 
   onPlayerError = () => this.setState({ error: true, videoSource: this.fallbackVideo });
 
-  onDurationChanged = (duration: number) => this.setState({ duration });
+  getDurationFromVideoUri = (): number => {
+    const sourceParams = new URLSearchParams(this.props.videoSource.uri);
+    return Math.round(Number(sourceParams.get('dur')) * 1000);
+  }
+
+  onDurationChanged = (value: number) => {
+    const duration = value > this.MIN_DURATION ? value : this.getDurationFromVideoUri();
+    this.setState({ duration });
+  };
+
+  seekAndResume = (time: number) => {
+    if (!this.videoPlayer.current) return;
+
+    this.videoPlayer.current.seek(time);
+
+    if (!this.state.pausedByScrubbing) return;
+
+    this.videoPlayer.current.play();
+    this.setState({ pausedByScrubbing: false });
+  };
+
+  onScrub = debounce((value: number) => {
+    if (!this.videoPlayer.current) return;
+
+    this.setState({ scrubbingEngaged: true });
+    const newTime = value * this.state.duration;
+
+    if (!this.state.paused) {
+      this.setState({ pausedByScrubbing: true });
+      this.videoPlayer.current.pause();
+    }
+
+    this.seekAndResume(Number(newTime.toFixed(0)));
+
+    this.debounceHidingControls();
+  }, 100);
+
+  onSlidingComplete = (value: number) => {
+    this.setState({ scrubbingEngaged: false });
+
+    if (!this.videoPlayer.current) return;
+
+    if (this.state.duration <= this.MIN_DURATION) return;
+
+    this.videoPlayer.current.seek(Math.round(value * this.state.duration));
+  }
+
+  debounceHidingControls = debounce(() => {
+    if (!this.props.isLive) FocusManager.focus(this.playButton.current);
+
+    if (!this.controlsHideTimeline.current) return;
+
+    this.controlsHideTimeline.current.play();
+    this.setState({ controlsActive: false });
+  }, 3000);
 
   render() { // eslint-disable-line max-lines-per-function
     const { fetched, asset, isFocused } = this.props;
@@ -270,11 +341,22 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
             <ToggleButton
               name="Btn-PlayPause"
               onPress={this.playPause}
-              toggled={!this.state.paused}
+              toggled={!this.state.paused || this.state.pausedByScrubbing}
               focusable={isFocused}
               ref={this.playButton}
             />
             <TextRef name="Duration" text={this.state.formattedTime} />
+            <SliderRef
+              visible={this.state.duration > this.MIN_DURATION}
+              name="Bar"
+              minimumTrackTintColor="#DA1B5B"
+              thumbImage={{ uri: 'res://drawable/default/Player-Thumb.png' }}
+              onSlidingComplete={this.onSlidingComplete}
+              onValueChange={this.onScrub}
+            >
+              <Timeline name="ScrollStart" ref={this.scrubberTimeline} />
+            </SliderRef>
+
             <ViewRef name="Bar">
               <Timeline name="ScrollStart" ref={this.scrubberTimeline} />
             </ViewRef>
@@ -289,11 +371,17 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
   }
 }
 
-const mapStateToProps = (store: AurynAppState) => ({
-  videoSource: store.youtubeReducer.videoSource || { uri: '', type: '' },
-  videoId: store.youtubeReducer.videoId || '',
-  asset: store.tmdbReducer.details.data || {},
-  fetched: store.youtubeReducer.fetched || false,
-});
+const mapStateToProps = (store: AurynAppState, ownProps: VideoProps) => {
+  const live = ownProps.navigation.getParam('live');
 
-export const Video = withOrientation(withNavigationFocus(connect(mapStateToProps)(VideoScreen as any)), RotationMode.Landscape);
+  return {
+    videoSource: store.youtubeReducer.videoSource || { uri: '', type: '' },
+    videoId: store.youtubeReducer.videoId || '',
+    asset: store.tmdbReducer.details.data || {},
+    fetched: store.youtubeReducer.fetched || false,
+    isLive: Boolean(live),
+  };
+};
+
+const withNavigationAndRedux = withNavigationFocus(connect(mapStateToProps)(VideoScreen as any));
+export const Video = withOrientation(withNavigationAndRedux, RotationMode.Landscape);

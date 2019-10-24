@@ -43,9 +43,13 @@ declare module '@youi/react-native-youi' {
 
     disabled?: boolean;
 
+    visible?: boolean;
+
     style?: React.CSSProperties;
 
     value?: number;
+
+    thumbImage?: ImageURISource;
 
     thumbTintColor?: string;
 
@@ -55,7 +59,7 @@ declare module '@youi/react-native-youi' {
 
     onValueChange?: (value: number) => void;
 
-    onSlidingComplete?: () => void;
+    onSlidingComplete?: (value: number) => void;
 
     onFocus?: () => void;
 
@@ -143,6 +147,8 @@ declare module '@youi/react-native-youi' {
     onAvailableClosedCaptionsTracksChanged?: () => void;
 
     source: VideoUriSource;
+
+    muted?: boolean;
   }
 
   export class VideoRef extends React.Component<RefProps & VideoRefProps> {
