@@ -3,5 +3,6 @@ export const navigationProp = {
     addListener: jest.fn(),
     isFocused: jest.fn(),
     navigate: jest.fn(),
+    getParam: jest.fn(),
   },
 };

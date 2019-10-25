@@ -13,27 +13,29 @@ exports[`renders correctly 1`] = `
     initialToggleIndex={0}
     name="Nav-List"
     onContentSizeChange={null}
-    onLayout={[Function]}
-    onMomentumScrollBegin={[Function]}
-    onMomentumScrollEnd={[Function]}
+    onLayout={[MockFunction]}
+    onMomentumScrollBegin={[MockFunction]}
+    onMomentumScrollEnd={[MockFunction]}
     onPressItem={[Function]}
-    onResponderGrant={[Function]}
-    onResponderReject={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    onScrollShouldSetResponder={[Function]}
-    onStartShouldSetResponder={[Function]}
-    onStartShouldSetResponderCapture={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
+    onResponderGrant={[MockFunction]}
+    onResponderReject={[MockFunction]}
+    onResponderRelease={[MockFunction]}
+    onResponderTerminationRequest={[MockFunction]}
+    onScroll={[MockFunction]}
+    onScrollBeginDrag={[MockFunction]}
+    onScrollEndDrag={[MockFunction]}
+    onScrollShouldSetResponder={[MockFunction]}
+    onStartShouldSetResponder={[MockFunction]}
+    onStartShouldSetResponderCapture={[MockFunction]}
+    onTouchCancel={[MockFunction]}
+    onTouchEnd={[MockFunction]}
+    onTouchMove={[MockFunction]}
+    onTouchStart={[MockFunction]}
     scrollBarThumbImage={null}
     scrollEnabled={false}
     sendMomentumEvents={false}
+    snapToEnd={true}
+    snapToStart={true}
     style={
       Array [
         Object {
@@ -76,7 +78,7 @@ exports[`renders correctly 1`] = `
         >
           <Composition
             onTimelinesLoaded={[Function]}
-            source="Auryn_Btn-Nav-List-Container"
+            source="Auryn_Container-Btn-Nav-List"
           >
             <YiPushButtonView
               name="Btn-Nav-List"
@@ -109,10 +111,6 @@ exports[`renders correctly 1`] = `
                 name="title"
                 text="Discover"
               />
-              <YiTextSceneNode
-                name="title2"
-                text="Discover"
-              />
             </YiPushButtonView>
           </Composition>
         </View>
@@ -125,7 +123,7 @@ exports[`renders correctly 1`] = `
         >
           <Composition
             onTimelinesLoaded={[Function]}
-            source="Auryn_Btn-Nav-List-Container"
+            source="Auryn_Container-Btn-Nav-List"
           >
             <YiPushButtonView
               name="Btn-Nav-List"
@@ -158,10 +156,6 @@ exports[`renders correctly 1`] = `
                 name="title"
                 text="Movies"
               />
-              <YiTextSceneNode
-                name="title2"
-                text="Movies"
-              />
             </YiPushButtonView>
           </Composition>
         </View>
@@ -174,7 +168,7 @@ exports[`renders correctly 1`] = `
         >
           <Composition
             onTimelinesLoaded={[Function]}
-            source="Auryn_Btn-Nav-List-Container"
+            source="Auryn_Container-Btn-Nav-List"
           >
             <YiPushButtonView
               name="Btn-Nav-List"
@@ -207,10 +201,6 @@ exports[`renders correctly 1`] = `
                 name="title"
                 text="Shows"
               />
-              <YiTextSceneNode
-                name="title2"
-                text="Shows"
-              />
             </YiPushButtonView>
           </Composition>
         </View>
@@ -223,7 +213,7 @@ exports[`renders correctly 1`] = `
         >
           <Composition
             onTimelinesLoaded={[Function]}
-            source="Auryn_Btn-Nav-List-Container"
+            source="Auryn_Container-Btn-Nav-List"
           >
             <YiPushButtonView
               name="Btn-Nav-List"
@@ -254,10 +244,6 @@ exports[`renders correctly 1`] = `
               />
               <YiTextSceneNode
                 name="title"
-                text="Live"
-              />
-              <YiTextSceneNode
-                name="title2"
                 text="Live"
               />
             </YiPushButtonView>
@@ -326,26 +312,28 @@ exports[`renders correctly 1`] = `
     horizontal={false}
     name="Stack"
     onContentSizeChange={null}
-    onLayout={[Function]}
-    onMomentumScrollBegin={[Function]}
-    onMomentumScrollEnd={[Function]}
-    onResponderGrant={[Function]}
-    onResponderReject={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onScroll={[Function]}
-    onScrollBeginDrag={[Function]}
-    onScrollEndDrag={[Function]}
-    onScrollShouldSetResponder={[Function]}
-    onStartShouldSetResponder={[Function]}
-    onStartShouldSetResponderCapture={[Function]}
-    onTouchCancel={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
+    onLayout={[MockFunction]}
+    onMomentumScrollBegin={[MockFunction]}
+    onMomentumScrollEnd={[MockFunction]}
+    onResponderGrant={[MockFunction]}
+    onResponderReject={[MockFunction]}
+    onResponderRelease={[MockFunction]}
+    onResponderTerminationRequest={[MockFunction]}
+    onScroll={[MockFunction]}
+    onScrollBeginDrag={[MockFunction]}
+    onScrollEndDrag={[MockFunction]}
+    onScrollShouldSetResponder={[MockFunction]}
+    onStartShouldSetResponder={[MockFunction]}
+    onStartShouldSetResponderCapture={[MockFunction]}
+    onTouchCancel={[MockFunction]}
+    onTouchEnd={[MockFunction]}
+    onTouchMove={[MockFunction]}
+    onTouchStart={[MockFunction]}
     scrollBarThumbImage={null}
     scrollEnabled={false}
     sendMomentumEvents={false}
+    snapToEnd={true}
+    snapToStart={true}
     style={
       Array [
         Object {
@@ -370,7 +358,7 @@ exports[`renders correctly 1`] = `
       <View>
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Container-Discover"
+          source="Auryn_Container-Lander-List"
         >
           <ListRef
             DEPRECATED_sendUpdatedChildFrames={false}
@@ -385,34 +373,35 @@ exports[`renders correctly 1`] = `
             initialNumToRender={2}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            name="Discover"
+            name="Lander-List"
             numColumns={1}
             onContentSizeChange={null}
             onEndReachedThreshold={2}
-            onLayout={[Function]}
-            onMomentumScrollBegin={[Function]}
-            onMomentumScrollEnd={[Function]}
-            onResponderGrant={[Function]}
-            onResponderReject={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onScroll={[Function]}
-            onScrollBeginDrag={[Function]}
-            onScrollEndDrag={[Function]}
-            onScrollShouldSetResponder={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onStartShouldSetResponderCapture={[Function]}
-            onTimelinesLoaded={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
+            onLayout={[MockFunction]}
+            onMomentumScrollBegin={[MockFunction]}
+            onMomentumScrollEnd={[MockFunction]}
+            onResponderGrant={[MockFunction]}
+            onResponderReject={[MockFunction]}
+            onResponderRelease={[MockFunction]}
+            onResponderTerminationRequest={[MockFunction]}
+            onScroll={[MockFunction]}
+            onScrollBeginDrag={[MockFunction]}
+            onScrollEndDrag={[MockFunction]}
+            onScrollShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponderCapture={[MockFunction]}
+            onTouchCancel={[MockFunction]}
+            onTouchEnd={[MockFunction]}
+            onTouchMove={[MockFunction]}
+            onTouchStart={[MockFunction]}
             renderItem={[Function]}
             renderScrollComponent={[Function]}
             scrollBarThumbImage={null}
             scrollEnabled={true}
             scrollEventThrottle={50}
             sendMomentumEvents={true}
+            snapToEnd={true}
+            snapToStart={true}
             stickyHeaderIndices={Array []}
             style={
               Array [
@@ -431,7 +420,7 @@ exports[`renders correctly 1`] = `
           >
             <ScrollContentData
               collapsable={false}
-              onLayout={[Function]}
+              onLayout={[MockFunction]}
               style={
                 Array [
                   Object {
@@ -443,14 +432,14 @@ exports[`renders correctly 1`] = `
             />
           </ListRef>
           <ViewRef
-            name="Discover"
+            name="Lander-List"
             onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Container-Movies"
+          source="Auryn_Container-Lander-List"
         >
           <ListRef
             DEPRECATED_sendUpdatedChildFrames={false}
@@ -465,34 +454,35 @@ exports[`renders correctly 1`] = `
             initialNumToRender={2}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            name="Movies"
+            name="Lander-List"
             numColumns={1}
             onContentSizeChange={null}
             onEndReachedThreshold={2}
-            onLayout={[Function]}
-            onMomentumScrollBegin={[Function]}
-            onMomentumScrollEnd={[Function]}
-            onResponderGrant={[Function]}
-            onResponderReject={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onScroll={[Function]}
-            onScrollBeginDrag={[Function]}
-            onScrollEndDrag={[Function]}
-            onScrollShouldSetResponder={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onStartShouldSetResponderCapture={[Function]}
-            onTimelinesLoaded={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
+            onLayout={[MockFunction]}
+            onMomentumScrollBegin={[MockFunction]}
+            onMomentumScrollEnd={[MockFunction]}
+            onResponderGrant={[MockFunction]}
+            onResponderReject={[MockFunction]}
+            onResponderRelease={[MockFunction]}
+            onResponderTerminationRequest={[MockFunction]}
+            onScroll={[MockFunction]}
+            onScrollBeginDrag={[MockFunction]}
+            onScrollEndDrag={[MockFunction]}
+            onScrollShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponderCapture={[MockFunction]}
+            onTouchCancel={[MockFunction]}
+            onTouchEnd={[MockFunction]}
+            onTouchMove={[MockFunction]}
+            onTouchStart={[MockFunction]}
             renderItem={[Function]}
             renderScrollComponent={[Function]}
             scrollBarThumbImage={null}
             scrollEnabled={true}
             scrollEventThrottle={50}
             sendMomentumEvents={true}
+            snapToEnd={true}
+            snapToStart={true}
             stickyHeaderIndices={Array []}
             style={
               Array [
@@ -511,7 +501,7 @@ exports[`renders correctly 1`] = `
           >
             <ScrollContentData
               collapsable={false}
-              onLayout={[Function]}
+              onLayout={[MockFunction]}
               style={
                 Array [
                   Object {
@@ -523,14 +513,14 @@ exports[`renders correctly 1`] = `
             />
           </ListRef>
           <ViewRef
-            name="Movies"
+            name="Lander-List"
             onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Container-Shows"
+          source="Auryn_Container-Lander-List"
         >
           <ListRef
             DEPRECATED_sendUpdatedChildFrames={false}
@@ -545,34 +535,35 @@ exports[`renders correctly 1`] = `
             initialNumToRender={2}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            name="Shows"
+            name="Lander-List"
             numColumns={1}
             onContentSizeChange={null}
             onEndReachedThreshold={2}
-            onLayout={[Function]}
-            onMomentumScrollBegin={[Function]}
-            onMomentumScrollEnd={[Function]}
-            onResponderGrant={[Function]}
-            onResponderReject={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onScroll={[Function]}
-            onScrollBeginDrag={[Function]}
-            onScrollEndDrag={[Function]}
-            onScrollShouldSetResponder={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onStartShouldSetResponderCapture={[Function]}
-            onTimelinesLoaded={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
+            onLayout={[MockFunction]}
+            onMomentumScrollBegin={[MockFunction]}
+            onMomentumScrollEnd={[MockFunction]}
+            onResponderGrant={[MockFunction]}
+            onResponderReject={[MockFunction]}
+            onResponderRelease={[MockFunction]}
+            onResponderTerminationRequest={[MockFunction]}
+            onScroll={[MockFunction]}
+            onScrollBeginDrag={[MockFunction]}
+            onScrollEndDrag={[MockFunction]}
+            onScrollShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponderCapture={[MockFunction]}
+            onTouchCancel={[MockFunction]}
+            onTouchEnd={[MockFunction]}
+            onTouchMove={[MockFunction]}
+            onTouchStart={[MockFunction]}
             renderItem={[Function]}
             renderScrollComponent={[Function]}
             scrollBarThumbImage={null}
             scrollEnabled={true}
             scrollEventThrottle={50}
             sendMomentumEvents={true}
+            snapToEnd={true}
+            snapToStart={true}
             stickyHeaderIndices={Array []}
             style={
               Array [
@@ -591,7 +582,7 @@ exports[`renders correctly 1`] = `
           >
             <ScrollContentData
               collapsable={false}
-              onLayout={[Function]}
+              onLayout={[MockFunction]}
               style={
                 Array [
                   Object {
@@ -603,14 +594,14 @@ exports[`renders correctly 1`] = `
             />
           </ListRef>
           <ViewRef
-            name="Shows"
+            name="Lander-List"
             onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
         </Composition>
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Container-Live"
+          source="Auryn_Container-Lander-List"
         >
           <ListRef
             DEPRECATED_sendUpdatedChildFrames={false}
@@ -625,34 +616,35 @@ exports[`renders correctly 1`] = `
             initialNumToRender={2}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            name="Live"
+            name="Lander-List"
             numColumns={1}
             onContentSizeChange={null}
             onEndReachedThreshold={2}
-            onLayout={[Function]}
-            onMomentumScrollBegin={[Function]}
-            onMomentumScrollEnd={[Function]}
-            onResponderGrant={[Function]}
-            onResponderReject={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onScroll={[Function]}
-            onScrollBeginDrag={[Function]}
-            onScrollEndDrag={[Function]}
-            onScrollShouldSetResponder={[Function]}
-            onStartShouldSetResponder={[Function]}
-            onStartShouldSetResponderCapture={[Function]}
-            onTimelinesLoaded={[Function]}
-            onTouchCancel={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
+            onLayout={[MockFunction]}
+            onMomentumScrollBegin={[MockFunction]}
+            onMomentumScrollEnd={[MockFunction]}
+            onResponderGrant={[MockFunction]}
+            onResponderReject={[MockFunction]}
+            onResponderRelease={[MockFunction]}
+            onResponderTerminationRequest={[MockFunction]}
+            onScroll={[MockFunction]}
+            onScrollBeginDrag={[MockFunction]}
+            onScrollEndDrag={[MockFunction]}
+            onScrollShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponder={[MockFunction]}
+            onStartShouldSetResponderCapture={[MockFunction]}
+            onTouchCancel={[MockFunction]}
+            onTouchEnd={[MockFunction]}
+            onTouchMove={[MockFunction]}
+            onTouchStart={[MockFunction]}
             renderItem={[Function]}
             renderScrollComponent={[Function]}
             scrollBarThumbImage={null}
             scrollEnabled={true}
             scrollEventThrottle={50}
             sendMomentumEvents={true}
+            snapToEnd={true}
+            snapToStart={true}
             stickyHeaderIndices={Array []}
             style={
               Array [
@@ -671,7 +663,7 @@ exports[`renders correctly 1`] = `
           >
             <ScrollContentData
               collapsable={false}
-              onLayout={[Function]}
+              onLayout={[MockFunction]}
               style={
                 Array [
                   Object {
@@ -683,7 +675,7 @@ exports[`renders correctly 1`] = `
             />
           </ListRef>
           <ViewRef
-            name="Live"
+            name="Lander-List"
             onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />

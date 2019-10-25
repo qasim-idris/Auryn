@@ -2,12 +2,12 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
 interface ErrorProps {
-  text: string;
+  message: string;
 }
 
-export const Error: React.FunctionComponent<ErrorProps> = ({ text }) => (
+export const Error: React.FunctionComponent<ErrorProps> = ({ message }) => (
   <View style={styles.container}>
-    <Text style={styles.text}>{text}</Text>
+    <Text style={styles.text}>{message}</Text>
   </View>
 );
 

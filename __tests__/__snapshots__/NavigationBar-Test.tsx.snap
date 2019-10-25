@@ -10,27 +10,29 @@ exports[`renders correctly 1`] = `
   initialToggleIndex={0}
   name="Nav-List"
   onContentSizeChange={null}
-  onLayout={[Function]}
-  onMomentumScrollBegin={[Function]}
-  onMomentumScrollEnd={[Function]}
+  onLayout={[MockFunction]}
+  onMomentumScrollBegin={[MockFunction]}
+  onMomentumScrollEnd={[MockFunction]}
   onPressItem={[MockFunction]}
-  onResponderGrant={[Function]}
-  onResponderReject={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onScroll={[Function]}
-  onScrollBeginDrag={[Function]}
-  onScrollEndDrag={[Function]}
-  onScrollShouldSetResponder={[Function]}
-  onStartShouldSetResponder={[Function]}
-  onStartShouldSetResponderCapture={[Function]}
-  onTouchCancel={[Function]}
-  onTouchEnd={[Function]}
-  onTouchMove={[Function]}
-  onTouchStart={[Function]}
+  onResponderGrant={[MockFunction]}
+  onResponderReject={[MockFunction]}
+  onResponderRelease={[MockFunction]}
+  onResponderTerminationRequest={[MockFunction]}
+  onScroll={[MockFunction]}
+  onScrollBeginDrag={[MockFunction]}
+  onScrollEndDrag={[MockFunction]}
+  onScrollShouldSetResponder={[MockFunction]}
+  onStartShouldSetResponder={[MockFunction]}
+  onStartShouldSetResponderCapture={[MockFunction]}
+  onTouchCancel={[MockFunction]}
+  onTouchEnd={[MockFunction]}
+  onTouchMove={[MockFunction]}
+  onTouchStart={[MockFunction]}
   scrollBarThumbImage={null}
   scrollEnabled={false}
   sendMomentumEvents={false}
+  snapToEnd={true}
+  snapToStart={true}
   style={
     Array [
       Object {
@@ -73,7 +75,7 @@ exports[`renders correctly 1`] = `
       >
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Btn-Nav-List-Container"
+          source="Auryn_Container-Btn-Nav-List"
         >
           <YiPushButtonView
             focusable={true}
@@ -115,7 +117,7 @@ exports[`renders correctly 1`] = `
       >
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Btn-Nav-List-Container"
+          source="Auryn_Container-Btn-Nav-List"
         >
           <YiPushButtonView
             focusable={true}
@@ -157,7 +159,7 @@ exports[`renders correctly 1`] = `
       >
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Btn-Nav-List-Container"
+          source="Auryn_Container-Btn-Nav-List"
         >
           <YiPushButtonView
             focusable={true}

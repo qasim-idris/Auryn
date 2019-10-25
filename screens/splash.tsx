@@ -46,10 +46,10 @@ class SplashScreen extends React.Component<SplashProps> {
 
   render() {
     if (!tmdbApiKey)
-      return <Error text="Missing Tmdb API token, please add a token to secrets.ts"/>;
+      return <Error message="Missing Tmdb API token, please add a token to secrets.ts"/>;
 
     if (this.props.error)
-      return <Error text={this.props.error}/>;
+      return <Error message={this.props.error}/>;
 
     return (
       <View style={styles.container}>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = (store: AurynAppState) => ({
+const mapStateToProps = (store: AurynAppState, ownProps: SplashProps) => ({
   fetched:
     (store.tmdbReducer.discover.fetched
     && store.tmdbReducer.movies.fetched
@@ -80,7 +80,7 @@ const mapStateToProps = (store: AurynAppState) => ({
   error:
     store.tmdbReducer.discover.error
     || store.tmdbReducer.movies.error
-    || store.tmdbReducer.tv.error || '',
+    || store.tmdbReducer.tv.error || ownProps.error || '',
 });
 
 const mapDispatchToProps = {

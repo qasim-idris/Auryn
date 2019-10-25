@@ -1,31 +1,33 @@
+const { defaults: tsjPreset } = require('ts-jest/presets');
+
 module.exports = {
+  ...tsjPreset,
   automock: false,
-  setupFiles: ['./jest-setup.js'],
+  setupFiles: ['<rootDir>/jest.setup.js'],
   preset: '@youi/react-native-youi',
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.tsx?$': 'ts-jest',
-    '\\.(ts|tsx)$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+    ...tsjPreset.transform,
+    '\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
+  },
+  globals: {
+    'ts-jest': {
+      babelConfig: true,
+    },
   },
   transformIgnorePatterns: ['node_modules/(?!(jest-)?react-native|react-navigation|@youi)'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  testPathIgnorePatterns: [
-    '\\.snap$',
-    '<rootDir>/node_modules/',
-    '<rootDir>/appium-tests/',
-  ],
   moduleFileExtensions: [
     'ts',
     'tsx',
     'js',
-    'jsx',
-    'json',
-    'node',
+  ],
+  // transform: {
+  //   '^.+\\.(js)$': '<rootDir>/node_modules/babel-jest',
+  //   '\\.(ts|tsx)$': '<rootDir>/node_modules/ts-jest/preprocessor.js',
+  // },
+  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
+  testPathIgnorePatterns: [
+    '\\.snap$',
+    '<rootDir>/node_modules/',
   ],
   cacheDirectory: '.jest/cache',
-  globals: {
-    'ts-jest': {
-      'useBabelrc': true,
-    },
-  },
 };
