@@ -60,3 +60,5 @@ youi/Release
 secrets.native.js
 secrets.native.ts
 .jest/
+
+RokuClient.zip

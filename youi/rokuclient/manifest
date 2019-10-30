@@ -1,0 +1,70 @@
+# Mandatory:
+#=========
+# Channel Details
+title=Auryn
+major_version=1
+minor_version=1
+build_version=1
+ 
+# HD 720p assets
+mm_icon_focus_hd=pkg:/images/Icon-210.png
+splash_screen_hd=pkg:/images/splashscreen720.png
+
+# Optional HD 1080p assets
+splash_screen_fhd=pkg:/images/splashscreen1080.png
+
+# SD 480p assets
+# Note: By specifying the HD 720p assets here, Roku will know to scale both the assets and the app
+#       This allows for universal scaling support
+mm_icon_focus_sd=pkg:/images/Icon-210.png
+splash_screen_sd=pkg:/images/splashscreen720.png
+
+# Optional Splash Background Color / Display Time Configuration
+splash_color=#dc234b
+splash_min_time=0
+
+## Resolution
+#ui_resolutions=sd,hd,fhd
+ 
+#confirm_partner_button=1
+
+#bs_libs_required=roku_ads_lib
+
+##DRM Options
+#requires_aaxs_drm=1
+#requires_aaxs_version=1.0
+#requires_verimatrix_drm=1
+#requires_verimatrix_version=1.0
+requires_widevine_drm=1
+requires_widevine_version=1.0
+
+## See manifest params at https://sdkdocs.roku.com/display/sdkdoc/Roku+Channel+Manifest
+
+# start youi specific stuff
+
+host=hostAddress
+port=80
+sessionTimeoutSeconds=14400
+
+#DEBUG_PRINT_VIDEO_DRM: Print videoheader and drmparams to the Roku console.
+bs_const=ENABLE_DEBUG_JSON=false;ENABLE_IAP_START_UP=false;ENABLE_RALE=false;EXPORT_PROFILER=false;DEBUG_PRINT_VIDEO_DRM=true;ENABLE_DEBUG_ERROR_DIALOG=false;ENABLE_TIMERS=false
+
+secure=true
+shared_secret=testSharedSecret
+
+supports_input_launch=1
+
+background_color=0xDF1D46FF
+
+#analytics_providers=ConvivaAnalytics
+
+# Conviva configuration
+#conviva_gateway_url=
+#conviva_api_key=
+
+#ads_class=AuditudeAds
+## Roku's default App Id (if not working with Nielsen directly)
+#nielsen_application_id=
+
+## Roku SceneGraph version: 1.2 gains huge performance improvement.
+rsg_version=1.2
