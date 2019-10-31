@@ -11,7 +11,7 @@
 	},
 	"dependencies": {
 		"@ungap/url-search-params": "^0.1.2",
-		"@youi/react-native-youi": "5.7.0",
+		"@youi/react-native-youi": "5.8.0",
 		"react": "16.6.3",
 		"react-native": "0.58.6",
 		"react-navigation": "^2.12.1",

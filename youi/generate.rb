@@ -42,11 +42,14 @@ class GenerateOptions
         options.iterate_jsbundle = false
         options.dev_jsbundle = false
         options.minify_jsbundle = false
-        options.ip_address = GetIpAddress()
+        options.ram_bundle = false
+        options.ip_address = nil
         options.jsbundle_directory = []
         options.jsbundle_file = []
         options.jsbundle_working_directory = nil
         options.jsbundle_staging_dir = nil
+        options.jsbundle_sourcemap_output = nil
+        options.jsbundle_config = nil
 
         platformList = ["Android", "Bluesky2", "Bluesky4", "Ios", "Linux", "Osx", "Ps4", "Tizen-Nacl", "Tvos", "Uwp", "Vs2017", "Webos3", "Webos4"]
         configurationList = ["Debug", "Release"]
@@ -187,6 +190,20 @@ class GenerateOptions
                 options.jsbundle_directory = directory
             end
 
+            opts.on("--ram_bundle",
+                    "If included, will use ram-bundle instead of bundle when using --local.") do
+                options.ram_bundle = true
+                options.use_jsbundle = true
+            end
+
+            opts.on("--sourcemap_output file", String, "File name to store the sourcemap for resulting bundle in, ex. /tmp/index.map") do |file|
+                options.jsbundle_sourcemap_output = file
+            end
+
+            opts.on("--bundler_configuration file", String, "Pass a config file to Metro, ex. path/to/config.js") do |file|
+                options.jsbundle_config = file
+            end
+
 
             opts.on_tail("-h", "--help", "Show usage and options list") do
                 puts opts
@@ -257,7 +274,21 @@ class GenerateOptions
                     options.build_directory = File.join(options.build_directory, "#{options.defines["CMAKE_BUILD_TYPE"]}")
                 end
             end
-            unless(options.inline_jsbundle || options.use_jsbundle)
+
+            if(options.ram_bundle)
+                options.defines["YI_RAM_JS"]="ON"
+            end
+
+            unless(options.inline_jsbundle || options.use_jsbundle || options.ram_bundle)
+                manualIpPlatforms = ["osx", "linux", "vs2017"]
+
+                if (options.ip_address == nil)
+                  unless (manualIpPlatforms.include?(options.platform))
+                    options.ip_address = GetIpAddress()
+                  else
+                    options.ip_address = 'localhost'
+                  end
+                end
                 options.defines["YI_IP_CONFIG"] = options.ip_address
             end
 
@@ -298,6 +329,7 @@ class GenerateOptions
                             options.remote_jsbundle = bundlemode == "remote"
                             options.inline_jsbundle = bundlemode == "inline"
                             options.use_jsbundle    = bundlemode == "local" || bundlemode == "inline"
+                            options.ram_bundle      = bundlemode == "ram_bundle"
                         end
                     end
                 end
@@ -585,6 +617,18 @@ class GenerateOptions
             output_dir = File.expand_path(File.join(output_dir, "InlineJSBundleGenerated"))
         elsif options.minify_jsbundle
             command << " --minify"
+        end
+
+        if options.ram_bundle
+            command << " --ram_bundle"
+        end
+
+        if(options.jsbundle_sourcemap_output)
+            command << " --sourcemap_output \"#{options.jsbundle_sourcemap_output}\""
+        end
+
+        if(options.jsbundle_config)
+            command << " --config \"#{options.jsbundle_config}\""
         end
 
         command << " --output \"#{output_dir}\""

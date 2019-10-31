@@ -6,5 +6,15 @@
 #
 ###
 
-file(GLOB_RECURSE YI_PROJECT_SOURCE "src/*.cpp")
-file(GLOB_RECURSE YI_PROJECT_HEADERS "src/*.h")
+set (YI_PROJECT_SOURCE
+    src/App.cpp
+    src/AppFactory.cpp
+    src/OrientationLockModule.cpp
+    src/TrackpadModule.cpp
+)
+
+set (YI_PROJECT_HEADERS
+    src/App.h
+    src/OrientationLockModule.h
+    src/TrackpadModule.h
+)
