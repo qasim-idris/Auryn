@@ -8,16 +8,20 @@
 
 import React, { Component } from 'react';
 import { AppRegistry, FormFactor } from '@youi/react-native-youi';
+import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 import Stack from './navigation';
 import { withOrientation } from './components';
 import { RotationMode } from './components/withOrientation';
+import { CloudUtil } from './components/cloudUtil';
 
 export default class YiReactApp extends Component {
   render = () =>
     <Provider store={store}>
-      <Stack />
+      <View style={{ backgroundColor: CloudUtil.isRoku ? 'black' : 'transparent', flex: 1 }}>
+        <Stack />
+      </View>
     </Provider>
 }
 

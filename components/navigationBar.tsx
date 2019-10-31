@@ -60,7 +60,7 @@ export class NavigationBar extends React.PureComponent<NavigationBarProps, { act
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    flex: 1,
+    minWidth: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',

@@ -262,8 +262,6 @@ declare module '@youi/react-native-youi' {
   export interface CompositionProps {
     source: string;
 
-    loadSync?: boolean;
-
     onTimelinesLoaded?(): void;
   }
 
@@ -463,7 +461,15 @@ declare module '@youi/react-native-youi' {
     keyExtractor?(item: T, index: number): string;
   }
 
-  export class ListRef<T> extends React.Component<ListRefProps<T> & RefProps> {}
+  export class ListRef<T> extends React.Component<ListRefProps<T> & RefProps> {
+    scrollToEnd: (params?: { animated?: boolean }) => void;
+
+    scrollToIndex: (params: { animated?: boolean; index: number; viewOffset?: number; viewPosition?: number }) => void;
+
+    scrollToItem: (params: { animated?: boolean; item: T; viewPosition?: number }) => void;
+
+    scrollToOffset: (params: { animated?: boolean; offset: number }) => void;
+  }
 
   export class ScrollRef extends React.Component<RefProps & ScrollViewProps> {
     scrollTo(arg0: { x: number; y: number; animated: boolean }): void;

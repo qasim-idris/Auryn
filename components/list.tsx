@@ -11,8 +11,8 @@ import { ListRef, ListItem as ListItemType } from '@youi/react-native-youi';
 import { DiscoverContainer, ListItem, TvContainer } from '.';
 import { isEqual, chunk } from 'lodash';
 import { ImageType, ListItemPressEvent, ListItemFocusEvent } from './listitem';
-import { Config } from '../config';
 import { Asset } from '../adapters/asset';
+import { CloudUtil } from './cloudUtil';
 
 export enum ListType {
   Featured, Poster, Grid, LargeBackdrop, SmallBackdrop, None
@@ -36,6 +36,8 @@ export class List extends React.Component<ListProps<Asset>> {
     type: ListType.None,
   };
 
+  listRef = React.createRef<ListRef<Asset>>();
+
   getImageSettings = (): ImageSettings => {
     switch (this.props.type) {
       case ListType.Poster:
@@ -55,11 +57,17 @@ export class List extends React.Component<ListProps<Asset>> {
   chunkSize: number = this.props.type === ListType.Featured ? 3 : 2;
 
   shouldComponentUpdate(nextProps: ListProps<Asset>) {
-    if (Config.isRoku) return true;
+    if (CloudUtil.isRoku) return true;
 
     if (!isEqual(nextProps.extraData, this.props.extraData)) return true;
 
     return nextProps.focusable !== this.props.focusable;
+  }
+
+  componentDidUpdate(prevProps: ListProps<Asset>) {
+    if (this.listRef.current && !this.props.focusable || this.props.extraData !== prevProps.extraData)
+      CloudUtil.updateScene(this.listRef);
+
   }
 
   getItemLayout = (_: object, index: number) => ({
@@ -115,8 +123,9 @@ export class List extends React.Component<ListProps<Asset>> {
         <ListRef
           name={name}
           data={chunk(data, this.chunkSize)}
+          ref={this.listRef}
           horizontal={true}
-          initialNumToRender={Config.isRoku ? 100 : 2}
+          initialNumToRender={CloudUtil.isRoku ? 100 : 2}
           getItemLayout={this.getItemLayout}
           renderItem={this.renderMultipleItems}
           extraData={this.props.focusable}
@@ -129,7 +138,7 @@ export class List extends React.Component<ListProps<Asset>> {
         name={name}
         data={data}
         horizontal={true}
-        initialNumToRender={Config.isRoku ? 100 : 2}
+        initialNumToRender={CloudUtil.isRoku ? 100 : 2}
         getItemLayout={this.getItemLayout}
         renderItem={this.renderItem}
         extraData={this.props.focusable}
