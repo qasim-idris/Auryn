@@ -14,12 +14,12 @@ import store from './store';
 import Stack from './navigation';
 import { withOrientation } from './components';
 import { RotationMode } from './components/withOrientation';
-import { CloudUtil } from './components/cloudUtil';
+import { AurynHelper } from '../aurynHelper';
 
 export default class YiReactApp extends Component {
   render = () =>
     <Provider store={store}>
-      <View style={{ backgroundColor: CloudUtil.isRoku ? 'black' : 'transparent', flex: 1 }}>
+      <View style={{ backgroundColor: AurynHelper.isRoku ? 'black' : 'transparent', flex: 1 }}>
         <Stack />
       </View>
     </Provider>

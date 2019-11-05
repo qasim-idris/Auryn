@@ -10,7 +10,7 @@ import React from 'react';
 import { Composition, BackHandler, ButtonRef, TextRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline, BackButton } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 
 type ProfileProps = NavigationFocusInjectedProps;
 
@@ -49,7 +49,7 @@ class ProfileScreen extends React.Component<ProfileProps, ProfileState> {
     if (this.outTimeline.current)
       await this.outTimeline.current.play();
 
-    if (Config.isRoku)
+    if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });
     else
       this.props.navigation.goBack(null);

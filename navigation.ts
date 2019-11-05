@@ -8,7 +8,7 @@
 
 import * as Screens from './screens';
 import { createStackNavigator, createSwitchNavigator, StackNavigatorConfig } from 'react-navigation';
-import { Config } from './config';
+import { AurynHelper } from './aurynHelper';
 
 const stackOptions: StackNavigatorConfig = {
   headerMode: 'none',
@@ -27,7 +27,7 @@ const stackOptions: StackNavigatorConfig = {
   }),
 };
 
-const createNavigator = Config.isRoku ? createSwitchNavigator : createStackNavigator;
+const createNavigator = AurynHelper.isRoku ? createSwitchNavigator : createStackNavigator;
 const AppStack = createNavigator(
   {
     Lander: { screen: Screens.Lander },

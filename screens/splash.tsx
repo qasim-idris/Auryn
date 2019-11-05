@@ -12,7 +12,7 @@ import { View, StyleSheet } from 'react-native';
 import { Timeline, Error } from '../components';
 import { NavigationActions, NavigationScreenProps } from 'react-navigation';
 import { connect } from 'react-redux';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
 import { tmdbApiKey } from '../secrets';
 import { getDiscover, getMovies, getTv } from '../actions/tmdbActions';
@@ -35,13 +35,14 @@ class SplashScreen extends React.Component<SplashProps> {
 
   async componentDidUpdate() {
     if (this.props.fetched) {
-      if (!Config.isRoku && this.outTimeline.current)
+      if (!AurynHelper.isRoku && this.outTimeline.current)
         await this.outTimeline.current.play();
       const landerNavigationAction = NavigationActions.navigate({
         routeName: 'Lander',
       });
       this.props.navigation.dispatch(landerNavigationAction);
     }
+
   }
 
   render() {
@@ -57,7 +58,7 @@ class SplashScreen extends React.Component<SplashProps> {
           <Timeline name="SplashIn" autoplay />
           <Timeline name="SplashOut" ref={this.outTimeline} />
           <ViewRef name="Loader">
-            <Timeline name="Loop" autoplay={!Config.isRoku} />
+            <Timeline name="Loop" autoplay />
           </ViewRef>
         </Composition>
       </View>

@@ -8,7 +8,6 @@
 
 import React from 'react';
 import { Composition, ViewRef, ButtonRef, FocusManager, BackHandler, ListRef, FormFactor } from '@youi/react-native-youi';
-import { findNodeHandle, NativeModules } from 'react-native';
 import { Timeline, List } from '../components';
 import {
   withNavigationFocus,
@@ -18,16 +17,13 @@ import {
 } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Asset } from '../adapters/asset';
-import { Config } from '../config';
 import { AurynAppState } from '../reducers';
 import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
 import { ToggleButtonPress, ToggleButton } from '../components/toggleButton';
 import { ListType } from '../components/list';
 import { prefetchDetails, getDetailsByIdAndType } from '../actions/tmdbActions';
 import { NavigationBar } from '../components/navigationBar';
-import { CloudUtil } from '../components/cloudUtil';
-
-const { Cloud } = NativeModules;
+import { AurynHelper } from '../aurynHelper';
 
 type LanderDispatchProps = typeof mapDispatchToProps;
 
@@ -72,7 +68,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
       BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
 
-      CloudUtil.updateScene(this.scroller);
+      AurynHelper.updateCloudScene(this.scroller);
 
       if (this.lastFocusNavItem && this.lastFocusNavItem.current) {
         FocusManager.enableFocus(this.lastFocusNavItem.current);
@@ -119,7 +115,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
   scrollToViewByIndex: ToggleButtonPress = index => {
     this.setState({ currentListIndex: index });
 
-    if (CloudUtil.isRoku) return;
+    if (AurynHelper.isRoku) return;
 
     if (this.menuButtons[index].current) {
       for (let i = 0; i < this.lists.length; i++)
@@ -139,7 +135,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     if (this.scroller.current) {
       this.scroller.current.scrollToIndex({
         index,
-        animated: !CloudUtil.isRoku,
+        animated: !AurynHelper.isRoku,
       });
     }
 
@@ -151,7 +147,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     this.props.prefetchDetails(id, type);
     this.lastFocusItem = ref;
 
-    if (shouldChangeFocus === false || CloudUtil.isRoku || !ref.current) return;
+    if (shouldChangeFocus === false || AurynHelper.isRoku || !ref.current) return;
 
     if (this.menuButtons[this.state.currentListIndex].current) {
       FocusManager.setNextFocus(ref.current, this.menuButtons[this.state.currentListIndex].current, 'up');
@@ -181,18 +177,17 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
   componentDidUpdate(_prevProps: LanderProps, prevState: LanderState) {
     if (this.state.currentListIndex !== prevState.currentListIndex)
-      CloudUtil.updateScene(this.scroller);
+      AurynHelper.updateCloudScene(this.scroller);
   }
 
   onViewableItemsChanged = () => {
-    CloudUtil.updateScene(this.scroller);
+    AurynHelper.updateCloudScene(this.scroller);
   }
 
 
   // eslint-disable-next-line max-lines-per-function
   render() {
     const { isFocused, tv, movies, discover } = this.props;
-    const data = [discover, movies, tv, movies];
     const { currentListIndex } = this.state;
 
     const lists = [
@@ -279,7 +274,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           scrollEnabled={false}
           horizontal={FormFactor.isHandset}
           focusable={false}
-          data={CloudUtil.isRoku ? rokuList : lists}
+          data={AurynHelper.isRoku ? rokuList : lists}
           renderItem={({ item }) => item}
           onViewableItemsChanged={this.onViewableItemsChanged}
         />

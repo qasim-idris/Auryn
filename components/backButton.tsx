@@ -8,13 +8,13 @@
 
 import React from 'react';
 import { ButtonRef, ButtonRefProps } from '@youi/react-native-youi';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 
 export const BackButton: React.FunctionComponent<Partial<ButtonRefProps>> = ({ focusable, ...otherProps }) => (
   <ButtonRef
     {...otherProps}
     name="Btn-Back"
-    visible={!Config.hasHardwareBackButton}
-    focusable={focusable && !Config.hasHardwareBackButton}
+    visible={!AurynHelper.hasHardwareBackButton}
+    focusable={focusable && !AurynHelper.hasHardwareBackButton}
   />
 );

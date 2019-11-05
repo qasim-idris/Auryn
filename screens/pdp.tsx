@@ -21,7 +21,7 @@ import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { Timeline, List, BackButton } from '../components';
 import { Asset, AssetType } from '../adapters/asset';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
 import { ListType } from '../components/list';
 import { prefetchDetails, getDetailsByIdAndType } from '../actions/tmdbActions';
@@ -56,7 +56,7 @@ class PdpScreen extends React.Component<PdpProps> {
     if (this.outTimeline.current)
       await this.outTimeline.current.play();
 
-    if (Config.isRoku)
+    if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });
     else
       this.props.navigation.popToTop();

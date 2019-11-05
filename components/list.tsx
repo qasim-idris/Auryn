@@ -12,7 +12,7 @@ import { DiscoverContainer, ListItem, TvContainer } from '.';
 import { isEqual, chunk } from 'lodash';
 import { ImageType, ListItemPressEvent, ListItemFocusEvent } from './listitem';
 import { Asset } from '../adapters/asset';
-import { CloudUtil } from './cloudUtil';
+import { AurynHelper } from '../aurynHelper';
 
 export enum ListType {
   Featured, Poster, Grid, LargeBackdrop, SmallBackdrop, None
@@ -57,7 +57,7 @@ export class List extends React.Component<ListProps<Asset>> {
   chunkSize: number = this.props.type === ListType.Featured ? 3 : 2;
 
   shouldComponentUpdate(nextProps: ListProps<Asset>) {
-    if (CloudUtil.isRoku) return true;
+    if (AurynHelper.isRoku) return true;
 
     if (!isEqual(nextProps.extraData, this.props.extraData)) return true;
 
@@ -66,7 +66,7 @@ export class List extends React.Component<ListProps<Asset>> {
 
   componentDidUpdate(prevProps: ListProps<Asset>) {
     if (this.listRef.current && !this.props.focusable || this.props.extraData !== prevProps.extraData)
-      CloudUtil.updateScene(this.listRef);
+      AurynHelper.updateCloudScene(this.listRef);
 
   }
 
@@ -125,7 +125,7 @@ export class List extends React.Component<ListProps<Asset>> {
           data={chunk(data, this.chunkSize)}
           ref={this.listRef}
           horizontal={true}
-          initialNumToRender={CloudUtil.isRoku ? 100 : 2}
+          initialNumToRender={AurynHelper.isRoku ? 100 : 2}
           getItemLayout={this.getItemLayout}
           renderItem={this.renderMultipleItems}
           extraData={this.props.focusable}
@@ -138,7 +138,7 @@ export class List extends React.Component<ListProps<Asset>> {
         name={name}
         data={data}
         horizontal={true}
-        initialNumToRender={CloudUtil.isRoku ? 100 : 2}
+        initialNumToRender={AurynHelper.isRoku ? 100 : 2}
         getItemLayout={this.getItemLayout}
         renderItem={this.renderItem}
         extraData={this.props.focusable}

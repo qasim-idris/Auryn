@@ -13,7 +13,7 @@ import { NavigationActions, withNavigationFocus, NavigationEventSubscription, Na
 import { connect } from 'react-redux';
 import { Asset, AssetType } from '../adapters/asset';
 import { View } from 'react-native';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
 import { getDetailsByIdAndType, prefetchDetails, search } from '../actions/tmdbActions';
 import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
@@ -53,7 +53,7 @@ class SearchScreen extends React.Component<SearchProps> {
     if (this.outTimeline.current)
       await this.outTimeline.current.play();
 
-    if (Config.isRoku)
+    if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });
     else
       this.props.navigation.goBack(null);
@@ -102,7 +102,7 @@ class SearchScreen extends React.Component<SearchProps> {
           onChangeText={this.search}
         />
 
-        {tv || !Config.isRoku ? <List
+        {tv || !AurynHelper.isRoku ? <List
             name="List-PDP"
             data={tv}
             focusable={isFocused}
@@ -112,7 +112,7 @@ class SearchScreen extends React.Component<SearchProps> {
           />
           : null
         }
-        {movies || !Config.isRoku ? <List
+        {movies || !AurynHelper.isRoku ? <List
           name="List-Movies"
           data={movies}
           focusable={isFocused}

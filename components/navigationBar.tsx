@@ -11,6 +11,7 @@ import { ToggleButton } from '.';
 import { ToggleButtonProps } from './toggleButton';
 import { Composition, ScrollRef } from '@youi/react-native-youi';
 import { View, StyleSheet, ScrollViewProps } from 'react-native';
+import { AurynHelper } from '../aurynHelper';
 
 interface NavigationBarProps extends ScrollViewProps {
   initialToggleIndex: number;
@@ -23,6 +24,12 @@ export class NavigationBar extends React.PureComponent<NavigationBarProps, { act
   state = { activeButtonIndex: -1 };
 
   initialToggleIndex = this.props.initialToggleIndex;
+
+  scrollRef = React.createRef<ScrollRef>();
+
+  componentDidMount() {
+    AurynHelper.updateCloudScene(this.scrollRef);
+  }
 
   render() {
     // eslint-disable-next-line consistent-return
@@ -46,15 +53,15 @@ export class NavigationBar extends React.PureComponent<NavigationBarProps, { act
           focusable: this.props.focusable,
           name: 'Btn-Nav-List',
         });
-        return <View style={{ marginHorizontal: 4 }}><Composition source="Auryn_Container-Btn-Nav-List">{button}</Composition></View>;
+        return <Composition source="Auryn_Container-Btn-Nav-List">{button}</Composition>;
       };
     });
 
-    return <ScrollRef {...this.props}>
-        <View style={styles.buttonContainer}>
-          {data}
-        </View>
-      </ScrollRef>;
+    return <ScrollRef {...this.props} ref={this.scrollRef}>
+      <View style={styles.buttonContainer}>
+        {data}
+      </View>
+    </ScrollRef>;
   }
 }
 

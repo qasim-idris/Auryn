@@ -32,7 +32,7 @@ import { debounce } from 'lodash';
 import URLSearchParams from '@ungap/url-search-params';
 
 import { Timeline, ToggleButton, BackButton, withOrientation } from '../components';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 import { Asset } from '../adapters/asset';
 import { AurynAppState } from '../reducers/index';
 import { RotationMode, OrientationLock } from '../components/withOrientation';
@@ -209,7 +209,7 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
     if (this.videoPlayer.current)
       this.videoPlayer.current.stop();
 
-    if (Config.isRoku)
+    if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'PDP' });
     else
       this.props.navigation.goBack(null);

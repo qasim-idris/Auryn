@@ -9,7 +9,7 @@
 import React, { Fragment } from 'react';
 import { ButtonRef, RefProps, TextRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline } from '.';
-import { Config } from '../config';
+import { AurynHelper } from '../aurynHelper';
 
 export type ToggleButtonPress = (index: number) => void;
 
@@ -50,7 +50,7 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
 
   componentDidUpdate(prevProps: ToggleButtonProps) {
     if (this.props.toggled !== prevProps.toggled) {
-      if ((this.props.toggled || !Config.isRoku) && this.toggleOnTimeline.current)
+      if ((this.props.toggled || !AurynHelper.isRoku) && this.toggleOnTimeline.current)
         this.toggleOnTimeline.current.play();
       else if (this.toggleOffTimeline.current)
         this.toggleOffTimeline.current.play();
@@ -84,14 +84,14 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
       >
         <Timeline
           name="Toggle-On"
-          direction={this.props.toggled || Config.isRoku ? 'forward' : 'reverse'}
+          direction={this.props.toggled || AurynHelper.isRoku ? 'forward' : 'reverse'}
           ref={this.toggleOnTimeline}
           autoplay={this.props.toggled}
         />
         {this.props.title ? <Fragment>
           <TextRef name="title" text={this.props.title}/>
         </Fragment> : null}
-        {Config.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
+        {AurynHelper.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
       </ButtonRef>
     );
 }
