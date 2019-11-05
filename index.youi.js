@@ -14,7 +14,7 @@ import store from './store';
 import Stack from './navigation';
 import { withOrientation } from './components';
 import { RotationMode } from './components/withOrientation';
-import { AurynHelper } from '../aurynHelper';
+import { AurynHelper } from './aurynHelper';
 
 export default class YiReactApp extends Component {
   render = () =>
