@@ -45,20 +45,6 @@ tracks {
   }
   keytimes {
     datatype: AE_FLOAT_DATA
-    timeOffset: 3.03332
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.92410231
-    isCookedKeytime: true
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 3.04998
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.87636155
-    isCookedKeytime: true
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
     timeOffset: 3.06664
     inttype: AE_INTERP_LINEAR
     fvalue1: 0.83091944
