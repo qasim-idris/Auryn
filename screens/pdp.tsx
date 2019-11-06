@@ -53,8 +53,7 @@ class PdpScreen extends React.Component<PdpProps> {
   blurListener!: NavigationEventSubscription;
 
   navigateBack = async () => {
-    if (this.outTimeline.current)
-      await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
 
     if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });
@@ -66,10 +65,10 @@ class PdpScreen extends React.Component<PdpProps> {
 
   onPressItem: ListItemPressEvent = async (id: any, type: AssetType) => {
     this.props.getDetailsByIdAndType(id, type);
-    if (this.contentOutTimeline.current) await this.contentOutTimeline.current.play();
+    await this.contentOutTimeline.current?.play();
     await this.props.navigation.navigate({ routeName: 'PDP', params: { id, type }, key: id });
     if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
-    if (this.contentInTimeline.current) this.contentInTimeline.current.play();
+    this.contentInTimeline.current?.play();
   }
 
   onFocusItem: ListItemFocusEvent = (id: any, type: AssetType) => {
@@ -80,7 +79,7 @@ class PdpScreen extends React.Component<PdpProps> {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
       BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
 
-      if (this.videoOutTimeline.current) this.videoOutTimeline.current.play();
+      this.videoOutTimeline.current?.play();
     });
 
     this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
@@ -108,8 +107,7 @@ class PdpScreen extends React.Component<PdpProps> {
   }
 
   playVideo = async () => {
-    if (this.videoInTimeline.current)
-      await this.videoInTimeline.current.play();
+    await this.videoInTimeline.current?.play();
     this.props.navigation.dispatch(NavigationActions.navigate({
       routeName: 'Video',
     }));

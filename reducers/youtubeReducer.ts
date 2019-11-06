@@ -28,12 +28,10 @@ const initalState: YoutubeReducerState = {
 export const youtubeReducer = (state = initalState, action: YoutubeApiActions): YoutubeReducerState => {
   switch (action.type) {
     case 'YOUTUBE_VIDEO_FULFILLED': {
-      const format = action.payload.formats ?
-        action.payload.formats.find(fmt => {
-          const type = fmt.type || fmt.mimeType;
-          return type && type.indexOf('mp4') > 0 && fmt.quality === 'hd720';
-        })
-        : null;
+      const format = action.payload.formats?.find(fmt => {
+        const type = fmt.type || fmt.mimeType;
+        return type && type.indexOf('mp4') > 0 && fmt.quality === 'hd720';
+      });
       if (format) {
         return {
           ...state,

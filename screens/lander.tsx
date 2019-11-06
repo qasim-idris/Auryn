@@ -70,18 +70,17 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
       AurynHelper.updateCloudScene(this.scroller);
 
-      if (this.lastFocusNavItem && this.lastFocusNavItem.current) {
+      if (this.lastFocusNavItem?.current) {
         FocusManager.enableFocus(this.lastFocusNavItem.current);
         FocusManager.focus(this.lastFocusNavItem.current);
-      } else if (this.lastFocusItem && this.lastFocusItem.current) {
+      } else if (this.lastFocusItem?.current) {
         FocusManager.enableFocus(this.lastFocusItem.current);
         FocusManager.focus(this.lastFocusItem.current);
       }
 
-      if (this.inTimeline.current && this.navInTimeline.current) {
-        this.navInTimeline.current.play();
-        this.inTimeline.current.play();
-      }
+      this.navInTimeline.current?.play();
+      this.inTimeline.current?.play();
+
     });
     this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
   }
@@ -108,7 +107,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     else if (screen === 'Profile')
       this.lastFocusNavItem = this.profileButton;
 
-    if (this.outTimeline.current) await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
     this.props.navigation.dispatch(navigateAction);
   };
 
@@ -132,14 +131,10 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       FocusManager.setNextFocus(this.lists[index].current, this.menuButtons[index].current, 'up');
     }
 
-    if (this.scroller.current) {
-      this.scroller.current.scrollToIndex({
-        index,
-        animated: !AurynHelper.isRoku,
-      });
-    }
-
-
+    this.scroller.current?.scrollToIndex({
+      index,
+      animated: !AurynHelper.isRoku,
+    });
   };
 
   // eslint-disable-next-line max-params
@@ -171,7 +166,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       },
     });
     this.props.getDetailsByIdAndType(id, type);
-    if (this.outTimeline.current) await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
     this.props.navigation.dispatch(navigateAction);
   };
 

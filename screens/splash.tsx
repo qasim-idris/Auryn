@@ -25,18 +25,21 @@ interface SplashProps extends NavigationScreenProps, SplashDispatchProps {
 };
 
 class SplashScreen extends React.Component<SplashProps> {
-  outTimeline: React.RefObject<Timeline> = React.createRef<Timeline>();
+  outTimeline = React.createRef<Timeline>();
 
-  componentDidMount() {
+  inTimeline = React.createRef<Timeline>();
+
+  async componentDidMount() {
     this.props.getDiscover();
     this.props.getMovies();
     this.props.getTv();
+    await this.inTimeline.current?.play();
   }
 
   async componentDidUpdate() {
     if (this.props.fetched) {
-      if (!AurynHelper.isRoku && this.outTimeline.current)
-        await this.outTimeline.current.play();
+      if (!AurynHelper.isRoku)
+        await this.outTimeline.current?.play();
       const landerNavigationAction = NavigationActions.navigate({
         routeName: 'Lander',
       });
@@ -55,7 +58,7 @@ class SplashScreen extends React.Component<SplashProps> {
     return (
       <View style={styles.container}>
         <Composition source="Auryn_Splash">
-          <Timeline name="SplashIn" autoplay />
+          <Timeline name="SplashIn" ref={this.inTimeline} />
           <Timeline name="SplashOut" ref={this.outTimeline} />
           <ViewRef name="Loader">
             <Timeline name="Loop" autoplay />

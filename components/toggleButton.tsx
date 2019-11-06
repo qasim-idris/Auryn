@@ -50,10 +50,10 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
 
   componentDidUpdate(prevProps: ToggleButtonProps) {
     if (this.props.toggled !== prevProps.toggled) {
-      if ((this.props.toggled || !AurynHelper.isRoku) && this.toggleOnTimeline.current)
-        this.toggleOnTimeline.current.play();
-      else if (this.toggleOffTimeline.current)
-        this.toggleOffTimeline.current.play();
+      if (this.props.toggled || !AurynHelper.isRoku)
+        this.toggleOnTimeline.current?.play();
+      else
+        this.toggleOffTimeline.current?.play();
     }
   }
 

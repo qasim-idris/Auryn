@@ -160,8 +160,8 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
       });
     }
 
-    if (this.state.percent !== prevState.percent && this.scrubberTimeline.current)
-      this.scrubberTimeline.current.play(this.state.percent);
+    if (this.state.percent !== prevState.percent)
+      this.scrubberTimeline.current?.play(this.state.percent);
   }
 
   shouldComponentUpdate(nextProps: VideoProps, nextState: VideoState) {
@@ -178,8 +178,8 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
     this.setState({ controlsActive: true });
     if (this.playButton.current)
       FocusManager.focus(this.playButton.current);
-    if (this.controlsShowTimeline.current)
-      this.controlsShowTimeline.current.play();
+
+    this.controlsShowTimeline.current?.play();
   }
 
   registerUserActivity = (keyEvent?: InputEventObject) => {
@@ -194,8 +194,7 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
   }
 
   playPause = () => {
-    if (this.videoPlayer.current)
-      this.state.paused ? this.videoPlayer.current.play() : this.videoPlayer.current.pause();
+    this.state.paused ? this.videoPlayer.current?.play() : this.videoPlayer.current?.pause();
   }
 
   navigateBack = async () => {
@@ -203,11 +202,9 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
     if (this.activityTimeout)
       clearTimeout(this.activityTimeout);
 
-    if (this.outTimeline.current)
-      await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
 
-    if (this.videoPlayer.current)
-      this.videoPlayer.current.stop();
+    this.videoPlayer.current?.stop();
 
     if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'PDP' });
@@ -239,10 +236,8 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
 
   onPlayerReady = () => {
     this.setState({ ready: true });
-    if (this.videoPlayer.current && this.inTimeline.current) {
-      this.videoPlayer.current.play();
-      this.inTimeline.current.play();
-    }
+    this.videoPlayer.current?.play();
+    this.inTimeline.current?.play();
   };
 
   onPlayerError = () => this.setState({ error: true, videoSource: this.fallbackVideo });
@@ -258,25 +253,21 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
   };
 
   seekAndResume = (time: number) => {
-    if (!this.videoPlayer.current) return;
-
-    this.videoPlayer.current.seek(time);
+    this.videoPlayer.current?.seek(time);
 
     if (!this.state.pausedByScrubbing) return;
 
-    this.videoPlayer.current.play();
+    this.videoPlayer.current?.play();
     this.setState({ pausedByScrubbing: false });
   };
 
   onScrub = debounce((value: number) => {
-    if (!this.videoPlayer.current) return;
-
     this.setState({ scrubbingEngaged: true });
     const newTime = value * this.state.duration;
 
     if (!this.state.paused) {
       this.setState({ pausedByScrubbing: true });
-      this.videoPlayer.current.pause();
+      this.videoPlayer.current?.pause();
     }
 
     this.seekAndResume(Number(newTime.toFixed(0)));
@@ -287,19 +278,16 @@ class VideoScreen extends React.Component<VideoProps, VideoState> {
   onSlidingComplete = (value: number) => {
     this.setState({ scrubbingEngaged: false });
 
-    if (!this.videoPlayer.current) return;
-
     if (this.state.duration <= this.MIN_DURATION) return;
 
-    this.videoPlayer.current.seek(Math.round(value * this.state.duration));
+    this.videoPlayer.current?.seek(Math.round(value * this.state.duration));
   }
 
   debounceHidingControls = debounce(() => {
-    if (!this.props.isLive) FocusManager.focus(this.playButton.current);
+    if (!this.props.isLive && this.playButton.current)
+      FocusManager.focus(this.playButton.current);
 
-    if (!this.controlsHideTimeline.current) return;
-
-    this.controlsHideTimeline.current.play();
+    this.controlsHideTimeline.current?.play();
     this.setState({ controlsActive: false });
   }, 3000);
 

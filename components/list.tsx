@@ -38,6 +38,8 @@ export class List extends React.Component<ListProps<Asset>> {
 
   listRef = React.createRef<ListRef<Asset>>();
 
+  chunkedListRef = React.createRef<ListRef<Asset[]>>();
+
   getImageSettings = (): ImageSettings => {
     switch (this.props.type) {
       case ListType.Poster:
@@ -65,9 +67,10 @@ export class List extends React.Component<ListProps<Asset>> {
   }
 
   componentDidUpdate(prevProps: ListProps<Asset>) {
-    if (this.listRef.current && !this.props.focusable || this.props.extraData !== prevProps.extraData)
+    if (!this.props.focusable || this.props.extraData !== prevProps.extraData) {
       AurynHelper.updateCloudScene(this.listRef);
-
+      AurynHelper.updateCloudScene(this.chunkedListRef);
+    }
   }
 
   getItemLayout = (_: object, index: number) => ({
@@ -123,7 +126,7 @@ export class List extends React.Component<ListProps<Asset>> {
         <ListRef
           name={name}
           data={chunk(data, this.chunkSize)}
-          ref={this.listRef}
+          ref={this.chunkedListRef}
           horizontal={true}
           initialNumToRender={AurynHelper.isRoku ? 100 : 2}
           getItemLayout={this.getItemLayout}
@@ -137,6 +140,7 @@ export class List extends React.Component<ListProps<Asset>> {
       <ListRef
         name={name}
         data={data}
+        ref={this.listRef}
         horizontal={true}
         initialNumToRender={AurynHelper.isRoku ? 100 : 2}
         getItemLayout={this.getItemLayout}

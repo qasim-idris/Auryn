@@ -46,8 +46,7 @@ class ProfileScreen extends React.Component<ProfileProps, ProfileState> {
   }
 
   navigateBack = async () => {
-    if (this.outTimeline.current)
-      await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
 
     if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });

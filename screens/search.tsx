@@ -50,8 +50,7 @@ class SearchScreen extends React.Component<SearchProps> {
   }
 
   navigateBack = async () => {
-    if (this.outTimeline.current)
-      await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
 
     if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });
@@ -72,8 +71,7 @@ class SearchScreen extends React.Component<SearchProps> {
       },
       key: id,
     });
-    if (this.outTimeline.current)
-      await this.outTimeline.current.play();
+    await this.outTimeline.current?.play();
     this.props.navigation.dispatch(navigateAction);
   }
 

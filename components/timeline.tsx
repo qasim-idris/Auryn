@@ -46,23 +46,20 @@ export class Timeline extends React.PureComponent<TimelineProps> {
   play = (seek: number = 0) =>
     new Promise(resolve => {
       this.resolve = resolve;
-      if (this.innerRef.current) {
-        if (seek)
-          this.innerRef.current.seek(this.props.direction === 'forward' ? seek : 1 - seek);
-        else
-          this.innerRef.current.play();
-      }
+      if (seek)
+        this.innerRef.current?.seek(this.props.direction === 'forward' ? seek : 1 - seek);
+      else
+        this.innerRef.current?.play();
     });
 
   stop = () =>
     new Promise(resolve => {
       this.resolve = resolve;
-      if (this.innerRef.current)
-        this.innerRef.current.stop();
+      this.innerRef.current?.stop();
     });
 
   onCompleted = () => {
-    if (this.resolve && !this.props.loop) this.resolve('onCompleted');
+    if (!this.props.loop) this.resolve?.('onCompleted');
 
     this.props.onCompleted();
   };

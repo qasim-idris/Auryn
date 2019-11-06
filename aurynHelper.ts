@@ -14,7 +14,7 @@ export const AurynHelper: AurynHelper = {
   hasHardwareBackButton: !['iOS'].includes(systemName),
   isRoku: Cloud.isCloudServer,
   updateCloudScene: component => {
-    if (!Cloud.isCloudServer) return;
+    if (!Cloud.isCloudServer || !component.current) return;
     setTimeout(() => {
       Cloud.exportSubtree(findNodeHandle(component.current), false);
       Cloud.sendFocusMap();
