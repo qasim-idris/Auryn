@@ -14,7 +14,7 @@ exports[`renders correctly 1`] = `
     source="Auryn_Splash"
   >
     <TimelineRef
-      autoplay={true}
+      autoplay={false}
       direction="forward"
       loop={false}
       name="SplashIn"
