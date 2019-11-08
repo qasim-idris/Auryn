@@ -6,7 +6,7 @@
 /* eslint-disable max-lines */
 declare module '@youi/react-native-youi' {
   import React from 'react';
-  import { TextInputProps, TextStyle, ScrollViewProps, NativeEventSubscription, NativeSyntheticEvent, ScrollView } from 'react-native';
+  import { TextInputProps, TextStyle, ScrollViewProps, NativeEventSubscription, NativeSyntheticEvent, ScrollView, SliderProps, StyleProp, ViewStyle } from 'react-native';
 
   export interface BackHandlerConstructor {
     exitApp: () => void;
@@ -35,36 +35,6 @@ declare module '@youi/react-native-youi' {
   }
 
   export const Input: InputConstructor;
-
-  export interface SliderRefProps {
-    ref?: string | SliderRefFunction;
-
-    name: string;
-
-    disabled?: boolean;
-
-    visible?: boolean;
-
-    style?: React.CSSProperties;
-
-    value?: number;
-
-    thumbImage?: ImageURISource;
-
-    thumbTintColor?: string;
-
-    minimumTrackTintColor?: string;
-
-    maximumTrackTintColor?: string;
-
-    onValueChange?: (value: number) => void;
-
-    onSlidingComplete?: (value: number) => void;
-
-    onFocus?: () => void;
-
-    onBlur?: () => void;
-  }
 
   type SliderRefFunction = (slider: React.RefObject<Slider> & SliderRef) => void;
 
@@ -118,6 +88,8 @@ declare module '@youi/react-native-youi' {
   }
 
   export interface VideoRefProps {
+    style?: StyleProp<ViewStyle>;
+
     onBufferingStarted?: () => void;
 
     onBufferingEnded?: () => void;
@@ -140,7 +112,7 @@ declare module '@youi/react-native-youi' {
 
     onDurationChanged?: (event: number) => void;
 
-    onStateChanged?: (evt: any) => void;
+    onStateChanged?: (evt: NativeSyntheticEvent<MediaState>) => void;
 
     onAvailableAudioTracksChanged?: () => void;
 
@@ -149,6 +121,11 @@ declare module '@youi/react-native-youi' {
     source: VideoUriSource;
 
     muted?: boolean;
+  }
+
+  export interface MediaState {
+    playbackState: 'playing' | 'paused' | 'buffering';
+    mediaState: 'ready' | 'preparing' | 'unloaded';
   }
 
   export class VideoRef extends React.Component<RefProps & VideoRefProps> {
@@ -212,17 +189,21 @@ declare module '@youi/react-native-youi' {
   export type VideoRefFunction = (video: VideoRef) => void;
 
   export interface VideoProps {
-    style?: any;
+    style?: StyleProp<ViewStyle>;
 
     paused?: boolean;
 
     source: VideoUriSource;
 
-    ref?: string | VideoRefFunction;
+    ref?: React.RefObject<Video> | VideoRefFunction;
 
     metadata?: RokuVideoContentMetadata;
 
     onReady?: () => void;
+
+    onPlaying?: () => void;
+
+    onPaused?: () => void;
 
     onPreparing?: () => void;
 
@@ -534,11 +515,19 @@ declare module '@youi/react-native-youi' {
 
   export class TimelineRef extends React.Component<RefProps & TimelineRefProps> {}
 
-  export class Video extends React.Component<VideoProps> {}
+  export class Video extends React.Component<VideoRefProps>  {
+    ref: any;
 
-  export class Slider extends React.Component<SliderProps> {}
+    seek: (value: number) => void;
 
-  export class SliderRef extends React.Component<SliderRefProps> {}
+    play: () => void;
+
+    pause: () => void;
+
+    stop: () => void;
+  }
+
+  export class SliderRef extends React.Component<RefProps & SliderProps> {}
 
   export interface ViewRefProps {
     name: string;

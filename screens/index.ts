@@ -11,4 +11,4 @@ export { Lander }   from './lander';
 export { Pdp }      from './pdp';
 export { Search }   from './search';
 export { Profile }  from './profile';
-export { Video }    from './video';
+export { VideoScreen as Video }    from './video';
