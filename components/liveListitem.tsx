@@ -39,11 +39,11 @@ export class LiveListItem extends Component<LiveListItemProps> {
   progressTimeline = React.createRef<Timeline>();
 
   onFocus = () => {
-    this.props.onFocus?.(this.props.data.id, this.props.data.type, this.buttonRef, this.props.shouldChangeFocus);
+    this.props.onFocus?.(this.props.data, this.buttonRef, this.props.shouldChangeFocus);
   }
 
   onPress = () => {
-    this.props.onPress?.(this.props.data.id, this.props.data.type, this.buttonRef);
+    this.props.onPress?.(this.props.data, this.buttonRef);
   }
 
   getGenresString = () => this.props.data.genres?.map(id => movieGenres.find(genre => genre.id === id)?.name).join(', ');

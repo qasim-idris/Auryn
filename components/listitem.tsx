@@ -8,14 +8,14 @@
 
 import React from 'react';
 import { Composition, TextRef, ButtonRef, ImageRef } from '@youi/react-native-youi';
-import { Asset, AssetType } from '../adapters/asset';
+import { Asset } from '../adapters/asset';
 
 export type ListItemFocusEvent =
-  (id: number | string, type: AssetType, innerRef: React.RefObject<ButtonRef>, shouldChangeFocus?: boolean)
+  (asset: Asset, innerRef: React.RefObject<ButtonRef>, shouldChangeFocus?: boolean)
   => void | Promise<void>
 
 export type ListItemPressEvent =
-  (id: number | string, type: AssetType, innerRef: React.RefObject<ButtonRef>)
+  (asset: Asset, innerRef: React.RefObject<ButtonRef>)
   => void | Promise<void>
 
 interface ListItemProps {
@@ -50,11 +50,11 @@ export class ListItem extends React.Component<ListItemProps> {
   }
 
   onFocus = () => {
-    this.props.onFocus?.(this.props.data.id, this.props.data.type, this.innerRef, this.props.shouldChangeFocus);
+    this.props.onFocus?.(this.props.data, this.innerRef, this.props.shouldChangeFocus);
   }
 
   onPress = () => {
-    this.props.onPress?.(this.props.data.id, this.props.data.type, this.innerRef);
+    this.props.onPress?.(this.props.data, this.innerRef);
   }
 
   render() {

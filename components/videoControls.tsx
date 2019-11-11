@@ -73,7 +73,6 @@ export class VideoControls extends React.Component<PlayerControlProps> {
   constructor(props: PlayerControlProps) {
     super(props);
     this.child = React.Children.only(this.props.children) as React.ReactElement<VideoProps>;
-
   }
 
   componentDidMount() {
@@ -200,7 +199,6 @@ export class VideoControls extends React.Component<PlayerControlProps> {
     return (
       <ButtonRef name="Video" onPress={this.registerUserActivity} visible={isFocused}>
           {React.cloneElement(this.child, {
-            // style: [this.child.props.style, { position: 'absolute' }],
             ref: (node: any) => {
               this.videoPlayer = node;
               // @ts-ignore
@@ -209,7 +207,6 @@ export class VideoControls extends React.Component<PlayerControlProps> {
                 ref(node);
                else if (ref !== null)
                 ref.current = node;
-
             },
             onPaused: this.onPaused,
             onPlaying: this.onPlaying,

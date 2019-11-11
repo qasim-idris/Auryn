@@ -20,7 +20,7 @@ import {
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { Timeline, List, BackButton } from '../components';
-import { Asset, AssetType } from '../adapters/asset';
+import { Asset } from '../adapters/asset';
 import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
 import { ListType } from '../components/list';
@@ -63,16 +63,17 @@ class PdpScreen extends React.Component<PdpProps> {
     return true;
   }
 
-  onPressItem: ListItemPressEvent = async (id: any, type: AssetType) => {
+  onPressItem: ListItemPressEvent = async asset => {
+    const { id, type } = asset;
     this.props.getDetailsByIdAndType(id, type);
     await this.contentOutTimeline.current?.play();
-    await this.props.navigation.navigate({ routeName: 'PDP', params: { id, type }, key: id });
+    this.props.navigation.navigate({ routeName: 'PDP', params: { asset }, key: id.toString() });
     if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
     this.contentInTimeline.current?.play();
   }
 
-  onFocusItem: ListItemFocusEvent = (id: any, type: AssetType) => {
-    this.props.prefetchDetails(id, type);
+  onFocusItem: ListItemFocusEvent = asset => {
+    this.props.prefetchDetails(asset.id, asset.type);
   }
 
   componentDidMount() {
@@ -103,7 +104,7 @@ class PdpScreen extends React.Component<PdpProps> {
       return true;
 
     // Only render if the asset.id matches the requested pdp asset id
-    return nextProps.asset.id === nextProps.navigation.getParam('id');
+    return nextProps.asset.id === nextProps.navigation.getParam('asset').id;
   }
 
   playVideo = async () => {

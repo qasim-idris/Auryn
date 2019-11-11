@@ -99,9 +99,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
   }
 
   navigateToScreen = async (screen: string) => {
-    const navigateAction = NavigationActions.navigate({
-      routeName: screen,
-    });
+    const navigateAction = NavigationActions.navigate({ routeName: screen });
 
     if (screen === 'Search')
       this.lastFocusNavItem = this.searchButton;
@@ -139,7 +137,8 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
   };
 
   // eslint-disable-next-line max-params
-  onFocusItem: ListItemFocusEvent = (id, type, ref, shouldChangeFocus) => {
+  onFocusItem: ListItemFocusEvent = (asset, ref, shouldChangeFocus) => {
+    const { id, type } = asset;
     this.props.prefetchDetails(id, type);
     this.lastFocusItem = ref;
 
@@ -157,14 +156,13 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     }
   };
 
-  onPressItem: ListItemPressEvent = async (id, type, ref) => {
+  // eslint-disable-next-line max-params
+  onPressItem: ListItemPressEvent = async (asset, ref) => {
+    const { id, type } = asset;
     this.lastFocusItem = ref;
     const navigateAction = NavigationActions.navigate({
-      routeName: 'PDP',
-      params: {
-        id,
-        type,
-      },
+      routeName: asset.live ? 'Video' : 'PDP',
+      params: { asset },
     });
     this.props.getDetailsByIdAndType(id, type);
     await this.outTimeline.current?.play();

@@ -21,19 +21,20 @@ interface VideoProps extends NavigationFocusInjectedProps, OrientationLock {
   asset: Asset;
   fetched: boolean;
   videoSource: VideoUriSource;
-  isLive: boolean;
 }
 
 interface VideoState {
   videoSource?: VideoUriSource | {};
   error?: boolean;
   mediaState?: MediaState;
+  metadata?: { BookmarkInterval: number };
 }
 
 const initialState: VideoState = {
   videoSource: {},
   error: false,
   mediaState: { mediaState: 'unloaded', playbackState: 'paused' },
+  metadata: { BookmarkInterval: 1 },
 };
 
 class VideoScreenComponent extends React.Component<VideoProps, VideoState> {
@@ -125,7 +126,6 @@ class VideoScreenComponent extends React.Component<VideoProps, VideoState> {
       return <View />;
 
     return (
-        // <View style={{ flex: 1, backgroundColor: 'black' }}>
         <Composition source="Auryn_VideoContainer">
           <Timeline name="In" ref={this.inTimeline} />
           <Timeline name="Out" ref={this.outTimeline} />
@@ -147,15 +147,13 @@ class VideoScreenComponent extends React.Component<VideoProps, VideoState> {
 }
 
 const mapStateToProps = (store: AurynAppState, ownProps: VideoProps) => {
-  const live = ownProps.navigation.getParam('live');
-
-  return {
-    videoSource: store.youtubeReducer.videoSource || { uri: '', type: '' },
+  const asset: Asset = ownProps.navigation.getParam('asset');
+  return ({
+    videoSource: asset?.live?.streams?.[0] ?? (store.youtubeReducer.videoSource || { uri: '', type: '' }),
     videoId: store.youtubeReducer.videoId || '',
     asset: store.tmdbReducer.details.data || {},
     fetched: store.youtubeReducer.fetched || false,
-    isLive: Boolean(live),
-  };
+  });
 };
 
 const withNavigationAndRedux = withNavigationFocus(connect(mapStateToProps)(VideoScreenComponent as any));
