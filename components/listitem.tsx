@@ -50,13 +50,11 @@ export class ListItem extends React.Component<ListItemProps> {
   }
 
   onFocus = () => {
-    if (this.props.onFocus)
-      this.props.onFocus(this.props.data.id, this.props.data.type, this.innerRef, this.props.shouldChangeFocus);
+    this.props.onFocus?.(this.props.data.id, this.props.data.type, this.innerRef, this.props.shouldChangeFocus);
   }
 
   onPress = () => {
-    if (this.props.onPress)
-      this.props.onPress(this.props.data.id, this.props.data.type, this.innerRef);
+    this.props.onPress?.(this.props.data.id, this.props.data.type, this.innerRef);
   }
 
   render() {

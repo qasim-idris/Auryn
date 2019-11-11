@@ -9,7 +9,9 @@
  /* eslint-disable complexity */
 import { fromApi, TmdbApi } from '../adapters/tmdbAdapter';
 import { TmdbReducerState, TmdbActionTypes } from '../typings/tmdbReduxTypes';
+import { liveChannels } from '../data/live';
 import { Asset } from '../adapters/asset';
+import { shuffle } from 'lodash';
 
 const normalize = (array: TmdbApi[], length = 10, imagePath: 'poster' | 'backdrop' = 'backdrop') =>
   array.filter(asset => {
@@ -19,6 +21,37 @@ const normalize = (array: TmdbApi[], length = 10, imagePath: 'poster' | 'backdro
   .slice(0, length)
   .map(it => fromApi(it));
 
+const getLiveData = (movies: TmdbApi[]): Asset[] => {
+  const channels = shuffle(liveChannels);
+  return movies.map((movie, index) => {
+    // Series between 20 and 55min, movies between 1h20 and 2h00
+    const duration = Math.floor(80 + (Math.random() * 40));
+
+    // Elapsed time randomly picked between 5min from the beginning and 5min before the end
+    const elapsed = Math.floor(5 + (Math.random() * (duration - 10)));
+
+    const asset = fromApi(movie);
+    asset.live = {
+      duration,
+      elapsed,
+      channel: channels[index % 15],
+      streams: [
+        {
+          uri: 'https://weather-lh.akamaihd.net/i/twc_1@92006/master.m3u8',
+          type: 'HLS',
+          id: 'weather1',
+        },
+        {
+          uri: 'https://livestream.chdrstatic.com/7ab3250ab8cbce90487ec1d6f5ab5b4de073a4d71ec3fe83d677230882ce5729/cheddar-42620/CheddarOwnedStream/cheddardigital/index.m3u8',
+          type: 'HLS',
+          id: 'cheddar',
+        },
+      ],
+    };
+    return asset;
+  });
+};
+
 const initialState: TmdbReducerState = { // eslint-disable-line max-lines-per-function
   discover: {
     data: [],
@@ -27,6 +60,12 @@ const initialState: TmdbReducerState = { // eslint-disable-line max-lines-per-fu
     error: null,
   },
   movies: {
+    data: [],
+    fetching: false,
+    fetched: false,
+    error: null,
+  },
+  live: {
     data: [],
     fetching: false,
     fetched: false,
@@ -94,6 +133,11 @@ export const tmdbReducer = (state = initialState, action: TmdbActionTypes): Tmdb
         ...state,
         movies: {
           data: normalize(action.payload.results, 10, 'poster'),
+          fetching: false,
+          fetched: true,
+        },
+        live: {
+          data: getLiveData(action.payload.results),
           fetching: false,
           fetched: true,
         },

@@ -33,6 +33,7 @@ export interface TmdbApi {
   adult: boolean;
   media_type: 'tv' | 'movie';
   type: 'tv' | 'movie';
+  genre_ids: number[];
 }
 
 const getFeaturedText = (credits: TmdbCredits): string => {
@@ -65,6 +66,7 @@ const fromApi = (item: TmdbApi): Asset => ({
   id: item.id,
   youtubeId: item.videos && item.videos.results.length ? item.videos.results[0].key : 'nO_DIwuGBnA',
   type: 'name' in item ? AssetType.TV : AssetType.MOVIE,
+  genres: item.genre_ids,
 });
 
 export { fromApi };

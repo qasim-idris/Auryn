@@ -6,7 +6,7 @@
 /* eslint-disable max-lines */
 declare module '@youi/react-native-youi' {
   import React from 'react';
-  import { TextInputProps, TextStyle, ScrollViewProps, NativeEventSubscription, NativeSyntheticEvent, ScrollView, SliderProps, StyleProp, ViewStyle } from 'react-native';
+  import { TextInputProps, TextStyle, ScrollViewProps, NativeEventSubscription, NativeSyntheticEvent, ScrollView, SliderProps, StyleProp, ViewStyle, ImageResizeMode } from 'react-native';
 
   export interface BackHandlerConstructor {
     exitApp: () => void;
@@ -364,6 +364,7 @@ declare module '@youi/react-native-youi' {
     style?: {
       width?: number;
       height?: number;
+      resizeMode?: ImageResizeMode;
     };
 
     resizeMode?: 'contain' | 'cover' | 'stretch' | 'center' | 'repeat';

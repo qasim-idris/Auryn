@@ -18,6 +18,7 @@ const fromApi = (fillSimilar = true): Asset => ({
   id: 1234567,
   youtubeId: 'nO_DIwuGBnA',
   type: AssetType.TV,
+  genres: [28, 12],
 });
 
 export { fromApi };

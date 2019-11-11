@@ -8,14 +8,14 @@
 
 import React from 'react';
 import { ListRef, ListItem as ListItemType } from '@youi/react-native-youi';
-import { DiscoverContainer, ListItem, TvContainer } from '.';
+import { DiscoverContainer, ListItem, TvContainer, LiveContainer } from '.';
 import { isEqual, chunk } from 'lodash';
 import { ImageType, ListItemPressEvent, ListItemFocusEvent } from './listitem';
 import { Asset } from '../adapters/asset';
 import { AurynHelper } from '../aurynHelper';
 
 export enum ListType {
-  Featured, Poster, Grid, LargeBackdrop, SmallBackdrop, None
+  Featured, Poster, Grid, LargeBackdrop, SmallBackdrop, Live, None
 }
 
 interface ListProps<T>  {
@@ -115,19 +115,30 @@ export class List extends React.Component<ListProps<Asset>> {
       );
     }
 
+    if (this.props.type === ListType.Live) {
+      return (
+        <LiveContainer
+          onPress={this.props.onPressItem}
+          onFocus={this.props.onFocusItem}
+          focusable={this.props.focusable}
+          data={item}
+        />
+      );
+    }
+
     return null;
   };
 
   render() {
     const { data, type, name } = this.props;
 
-    if ([ListType.Featured, ListType.Grid].includes(type!)) {
+    if ([ListType.Featured, ListType.Grid, ListType.Live].includes(type!)) {
       return (
         <ListRef
           name={name}
           data={chunk(data, this.chunkSize)}
           ref={this.chunkedListRef}
-          horizontal={true}
+          horizontal={type !== ListType.Live}
           initialNumToRender={AurynHelper.isRoku ? 100 : 2}
           getItemLayout={this.getItemLayout}
           renderItem={this.renderMultipleItems}
@@ -136,6 +147,7 @@ export class List extends React.Component<ListProps<Asset>> {
         />
       );
     }
+
     return (
       <ListRef
         name={name}

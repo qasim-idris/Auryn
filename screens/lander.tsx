@@ -31,6 +31,7 @@ interface LanderProps extends NavigationFocusInjectedProps, LanderDispatchProps 
     tv: Asset[];
     discover: Asset[];
     movies: Asset[];
+    live: Asset[];
   };
 
 interface LanderState {
@@ -182,7 +183,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
   // eslint-disable-next-line max-lines-per-function
   render() {
-    const { isFocused, tv, movies, discover } = this.props;
+    const { isFocused, tv, movies, discover, live } = this.props;
     const { currentListIndex } = this.state;
 
     const lists = [
@@ -222,8 +223,8 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       <Composition source="Auryn_Container-Lander-List" key="live">
         <List
           name="Lander-List"
-          type={ListType.LargeBackdrop}
-          data={movies.slice(0, 2)}
+          type={ListType.Live}
+          data={live}
           ref={this.lists[3]}
           focusable={isFocused && currentListIndex === 3}
           onFocusItem={this.onFocusItem}
@@ -291,6 +292,7 @@ const mapStateToProps = (store: AurynAppState) => ({
   discover: store.tmdbReducer.discover.data,
   movies: store.tmdbReducer.movies.data,
   tv: store.tmdbReducer.tv.data,
+  live: store.tmdbReducer.live.data,
 });
 
 const mapDispatchToProps = {

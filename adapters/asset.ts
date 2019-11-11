@@ -9,6 +9,19 @@ export interface Asset {
   id: number | string;
   youtubeId: string;
   type: AssetType;
+  genres?: number[];
+  live?: Live;
+}
+
+interface Live {
+  duration: number;
+  elapsed: number;
+  channel: { name: string; width: number };
+  streams: {
+    uri: string;
+    type: string;
+    id: string;
+  }[];
 }
 
 export interface AssetImages {
