@@ -70,7 +70,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 690012927
+    parentid: 690012926
   }
   layer {
     name: "Btn-Back"
@@ -105,7 +105,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 690012926
+    parentid: 690012925
   }
   layer {
     name: "Btn-MIniGuide"
@@ -140,45 +140,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 690012925
-  }
-  layer {
-    name: "Live-MiniGuide-List"
-    id: 690012924
-    sourceid: 690013018
-    transform {
-      anchorPoint {
-        x: 444
-        y: 540
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 1710
-        y: 540
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
+    parentid: 690012924
   }
   layer {
     name: "ScalePropBottomRightAnchor"
-    id: 690012925
+    id: 690012924
     sourceid: 690011406
     transform {
       anchorPoint {
@@ -212,7 +178,7 @@ activecomp {
   }
   layer {
     name: "ScalePropTopRightAnchor"
-    id: 690012926
+    id: 690012925
     sourceid: 690011406
     transform {
       anchorPoint {
@@ -246,7 +212,7 @@ activecomp {
   }
   layer {
     name: "ScaleWidthPropBottomLeftAnchor"
-    id: 690012927
+    id: 690012926
     sourceid: 690011406
     transform {
       anchorPoint {
@@ -287,7 +253,6 @@ activecomp {
   childtemplates: "Auryn_Live-Video-TextDetails"
   childtemplates: "Auryn_Btn-Back"
   childtemplates: "Auryn_Btn-MIniGuide"
-  childtemplates: "Auryn_Live-MiniGuide-List"
 }
 sources {
   uid: 891
@@ -322,14 +287,6 @@ sources {
   name: "Auryn_Btn-MIniGuide.layout"
   width: 400
   height: 80
-  copy_source: true
-}
-sources {
-  uid: 690013018
-  srctype: AE_COMP_SRC
-  name: "Auryn_Live-MiniGuide-List.layout"
-  width: 888
-  height: 1080
   copy_source: true
 }
 sources {

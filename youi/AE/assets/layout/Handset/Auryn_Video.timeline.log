@@ -12,7 +12,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 1964
-  targetname: "Player-Controls"
+  targetname: "Live-Player-Controls"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
@@ -23,6 +23,17 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 1965
+  targetname: "Player-Controls"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 1966
   targetname: "ActivityIndicator"
   keytimes {
     datatype: AE_INT_DATA

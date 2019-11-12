@@ -1,0 +1,55 @@
+activecomp {
+  name: "Auryn_Live-MiniGuide"
+  width: 978
+  height: 1080
+  defaultcameradistance: 1358.3334
+  layer {
+    name: "Live-MiniGuide-List"
+    id: 690014557
+    sourceid: 690013018
+    transform {
+      anchorPoint {
+        x: 444
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 768
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  childtemplates: "Auryn_Live-MiniGuide-List"
+}
+sources {
+  uid: 690013018
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-MiniGuide-List.layout"
+  width: 888
+  height: 1080
+  copy_source: true
+}
