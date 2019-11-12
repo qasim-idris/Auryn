@@ -108,7 +108,7 @@ activecomp {
     parentid: 690012925
   }
   layer {
-    name: "Btn-MIniGuide"
+    name: "Btn-MiniGuide"
     id: 690012923
     sourceid: 690012982
     transform {
@@ -252,7 +252,7 @@ activecomp {
   }
   childtemplates: "Auryn_Live-Video-TextDetails"
   childtemplates: "Auryn_Btn-Back"
-  childtemplates: "Auryn_Btn-MIniGuide"
+  childtemplates: "Auryn_Btn-MiniGuide"
 }
 sources {
   uid: 891
@@ -284,7 +284,7 @@ sources {
 sources {
   uid: 690012982
   srctype: AE_COMP_SRC
-  name: "Auryn_Btn-MIniGuide.layout"
+  name: "Auryn_Btn-MiniGuide.layout"
   width: 400
   height: 80
   copy_source: true

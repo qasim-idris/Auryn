@@ -38,13 +38,13 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Duration"
+    name: "Player-Controls-Layout"
     id: 1768
-    sourceid: -1
+    sourceid: 690014663
     transform {
       anchorPoint {
-        x: 84
-        y: 50
+        x: 960
+        y: 540
         z: 0
       }
       scale {
@@ -53,8 +53,8 @@ activecomp {
         z: 1
       }
       position {
-        x: -67
-        y: 273.36017
+        x: 50
+        y: -158
         z: 0
       }
       orientation {
@@ -70,43 +70,16 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 36
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 224
-      boundsHeight: 52
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: true
-    }
     parentid: 1774
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
   }
   layer {
-    name: "Bar"
+    name: "Btn-MIniGuide"
     id: 1769
-    sourceid: 1813
+    sourceid: 462
     transform {
       anchorPoint {
-        x: 795
-        y: 30
+        x: 200
+        y: 40
         z: 0
       }
       scale {
@@ -115,8 +88,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 885
-        y: 244
+        x: -190
+        y: 282
         z: 0
       }
       orientation {
@@ -127,51 +100,16 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1775
-  }
-  layer {
-    name: "Video-TextDetails"
-    id: 1770
-    sourceid: 1977
-    transform {
-      anchorPoint {
-        x: 700
-        y: 200
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 790
-        y: -2
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 1775
+    parentid: 1773
   }
   layer {
     name: "Btn-PlayPause"
-    id: 1771
+    id: 1770
     sourceid: 781
     transform {
       anchorPoint {
@@ -185,8 +123,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 960
-        y: -440
+        x: 50
+        y: 50
         z: 0
       }
       orientation {
@@ -206,7 +144,7 @@ activecomp {
   }
   layer {
     name: "Btn-Back"
-    id: 1772
+    id: 1771
     sourceid: 305
     transform {
       anchorPoint {
@@ -220,7 +158,7 @@ activecomp {
         z: 1
       }
       position {
-        x: -1752
+        x: 68
         y: -113
         z: 0
       }
@@ -237,15 +175,15 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1773
+    parentid: 1772
   }
   layer {
-    name: "ScalePropTopRightAnchor"
-    id: 1773
+    name: "ScalePropTopLeftAnchor"
+    id: 1772
     sourceid: 2419
     transform {
       anchorPoint {
-        x: 100
+        x: 0
         y: 0
         z: 0
       }
@@ -255,7 +193,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 1920
+        x: 0
         y: 0
         z: 0
       }
@@ -275,7 +213,7 @@ activecomp {
   }
   layer {
     name: "ScaleWidthPropBottomRightAnchor"
-    id: 1774
+    id: 1773
     sourceid: 2419
     transform {
       anchorPoint {
@@ -308,12 +246,12 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "ScaleWidthPropBottomLeftAnchor"
-    id: 1775
+    name: "ScaleWidthPropBottomAnchor"
+    id: 1774
     sourceid: 2419
     transform {
       anchorPoint {
-        x: 0
+        x: 50
         y: 100
         z: 0
       }
@@ -323,8 +261,42 @@ activecomp {
         z: 1
       }
       position {
-        x: 0
+        x: 960
         y: 1080
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropCenterAnchor"
+    id: 1775
+    sourceid: 2419
+    transform {
+      anchorPoint {
+        x: 50
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
         z: 0
       }
       orientation {
@@ -347,8 +319,8 @@ activecomp {
     green: 0.11372549019607843
     blue: 0.14509803921568629
   }
-  childtemplates: "Auryn_Player-Scrubber"
-  childtemplates: "Auryn_Video-TextDetails"
+  childtemplates: "Auryn_Player-Controls-Layout"
+  childtemplates: "Auryn_Btn-MIniGuide"
   childtemplates: "Auryn_Btn-PlayPause"
   childtemplates: "Auryn_Btn-Back"
 }
@@ -364,27 +336,19 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 2
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
-}
-sources {
-  uid: 1813
+  uid: 690014663
   srctype: AE_COMP_SRC
-  name: "Auryn_Player-Scrubber.layout"
-  width: 1590
-  height: 60
+  name: "Auryn_Player-Controls-Layout.layout"
+  width: 1920
+  height: 1080
   copy_source: true
 }
 sources {
-  uid: 1977
+  uid: 462
   srctype: AE_COMP_SRC
-  name: "Auryn_Video-TextDetails.layout"
-  width: 1400
-  height: 400
+  name: "Auryn_Btn-MIniGuide.layout"
+  width: 400
+  height: 80
   copy_source: true
 }
 sources {

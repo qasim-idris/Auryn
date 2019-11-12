@@ -1,0 +1,36 @@
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690014663
+  targetname: "Player-Scrubber-Container"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690014664
+  targetname: "Video-TextDetails"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+markers {
+  starttime: 1
+  duration: 0.5
+  name: "Show"
+  alltracks: false
+  looping: false
+}
+markers {
+  starttime: 6
+  duration: 0.5
+  name: "Hide"
+  alltracks: false
+  looping: false
+}

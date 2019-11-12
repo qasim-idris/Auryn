@@ -127,6 +127,40 @@ activecomp {
       value: "true"
     }
   }
+  layer {
+    name: "Live-Metadata"
+    id: 520013
+    sourceid: 690013003
+    transform {
+      anchorPoint {
+        x: 250
+        y: 25
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 250
+        y: 232
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
   bgcolor {
     alpha: 1
     red: 0.086274509803921567
@@ -141,6 +175,7 @@ activecomp {
     key: "gravity"
     value: "bottom-left"
   }
+  childtemplates: "Auryn_Live-Metadata"
 }
 sources {
   uid: 1
@@ -157,4 +192,12 @@ sources {
   copy_source: true
   file_name: "yi_Raleway-Bold.otf"
   style_name: "Bold"
+}
+sources {
+  uid: 690013003
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-Metadata.layout"
+  width: 500
+  height: 50
+  copy_source: true
 }

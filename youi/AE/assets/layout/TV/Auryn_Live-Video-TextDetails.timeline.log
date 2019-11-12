@@ -23,28 +23,6 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 690012968
-  targetname: "Live-dot.png"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 690012969
-  targetname: "Live-Icon"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 690012970
   targetname: "Live-Metadata"
   keytimes {
     datatype: AE_INT_DATA

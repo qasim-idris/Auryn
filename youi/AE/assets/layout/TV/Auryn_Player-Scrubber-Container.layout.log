@@ -1,0 +1,128 @@
+activecomp {
+  name: "Auryn_Player-Scrubber-Container"
+  width: 1920
+  height: 62
+  defaultcameradistance: 2666.6667
+  layer {
+    name: "Duration"
+    id: 690014922
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 84
+        y: 50
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1760
+        y: 323.36017
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 36
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Raleway-Medium"
+      isPointText: false
+      boundsWidth: 224
+      boundsHeight: 52
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: true
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+  }
+  layer {
+    name: "Bar"
+    id: 690014923
+    sourceid: 519942
+    transform {
+      anchorPoint {
+        x: 750
+        y: 30
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 294
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "clip"
+    value: "true"
+  }
+  childtemplates: "Auryn_Player-Scrubber"
+}
+sources {
+  uid: 1
+  srctype: AE_FONT_SRC
+  name: "Raleway-Medium"
+  copy_source: true
+  file_name: "yi_Raleway-Medium.otf"
+  style_name: "Medium"
+}
+sources {
+  uid: 519942
+  srctype: AE_COMP_SRC
+  name: "Auryn_Player-Scrubber.layout"
+  width: 1500
+  height: 60
+  copy_source: true
+}

@@ -177,6 +177,75 @@ activecomp {
       value: "ellipsis"
     }
   }
+  layer {
+    name: "Live-dot.png"
+    id: 690013006
+    sourceid: 690012999
+    transform {
+      anchorPoint {
+        x: 20
+        y: 20
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 17.875
+        y: 17.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690013007
+  }
+  layer {
+    name: "Live-Icon"
+    id: 690013007
+    sourceid: 690012765
+    transform {
+      anchorPoint {
+        x: 17.5
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 19.875
+        y: 25
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
   classname: "CYIPushButtonView"
   bgcolor {
     alpha: 1
@@ -204,10 +273,7 @@ activecomp {
     key: "width"
     value: "fit-content"
   }
-  properties {
-    key: "padding-left"
-    value: "38"
-  }
+  childtemplates: "Auryn_Live-Icon"
 }
 sources {
   uid: 1
@@ -224,4 +290,23 @@ sources {
   copy_source: true
   file_name: "yi_Raleway-Bold.otf"
   style_name: "Bold"
+}
+sources {
+  uid: 690012999
+  srctype: AE_IMAGE_SRC
+  name: "Live-dot.png"
+  width: 40
+  height: 40
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690012765
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-Icon.layout"
+  width: 35
+  height: 35
+  copy_source: true
 }

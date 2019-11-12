@@ -1,5 +1,5 @@
 activecomp {
-  name: "Auryn_Btn-MIniGuide"
+  name: "Auryn_Btn-MiniGuide"
   width: 400
   height: 80
   defaultcameradistance: 555.55554

@@ -38,42 +38,8 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Live-Player-Controls"
-    id: 1964
-    sourceid: 1512
-    transform {
-      anchorPoint {
-        x: 960
-        y: 540
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 960
-        y: 540
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
     name: "Player-Controls"
-    id: 1965
+    id: 1964
     sourceid: 1767
     transform {
       anchorPoint {
@@ -107,7 +73,7 @@ activecomp {
   }
   layer {
     name: "ActivityIndicator"
-    id: 1966
+    id: 1965
     sourceid: 250
     transform {
       anchorPoint {
@@ -155,7 +121,6 @@ activecomp {
     value: "button"
   }
   childtemplates: "Auryn_VideoSurface"
-  childtemplates: "Auryn_Live-Player-Controls"
   childtemplates: "Auryn_Player-Controls"
   childtemplates: "Auryn_ActivityIndicator"
 }
@@ -163,14 +128,6 @@ sources {
   uid: 2006
   srctype: AE_COMP_SRC
   name: "Auryn_VideoSurface.layout"
-  width: 1920
-  height: 1080
-  copy_source: true
-}
-sources {
-  uid: 1512
-  srctype: AE_COMP_SRC
-  name: "Auryn_Live-Player-Controls.layout"
   width: 1920
   height: 1080
   copy_source: true
