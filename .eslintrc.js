@@ -17,6 +17,7 @@ module.exports = {
   ],
   env: {
     "browser": true,
+    "node": true,
     "es6": true
   },
   parserOptions: {
@@ -34,6 +35,14 @@ module.exports = {
       "version": "detect"
     }
   },
+  overrides: [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
   rules: {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-function-return-type": "off",

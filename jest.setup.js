@@ -3,5 +3,5 @@ import { NativeModules } from 'react-native';
 global.fetch = require('jest-fetch-mock');
 
 NativeModules.OrientationLock = {
-    setRotationMode: jest.fn(),
+  setRotationMode: jest.fn(),
 };
