@@ -61,22 +61,19 @@ class SearchScreen extends React.Component<SearchProps> {
     return true;
   }
 
-  onPressItem: ListItemPressEvent = async (id: any, type: AssetType) => {
-    this.props.getDetailsByIdAndType(id, type);
+  onPressItem: ListItemPressEvent = async asset => {
+    this.props.getDetailsByIdAndType(asset.id, asset.type);
     const navigateAction = NavigationActions.navigate({
       routeName: 'PDP',
-      params: {
-        id,
-        type,
-      },
-      key: id,
+      params: { asset },
+      key: asset.id.toString(),
     });
     await this.outTimeline.current?.play();
     this.props.navigation.dispatch(navigateAction);
   }
 
-  onFocusItem: ListItemFocusEvent = (id: any, type: AssetType) => {
-    this.props.prefetchDetails(id, type);
+  onFocusItem: ListItemFocusEvent = asset => {
+    this.props.prefetchDetails(asset.id, asset.type);
   };
 
   search = (query: string) => this.props.search(query);
