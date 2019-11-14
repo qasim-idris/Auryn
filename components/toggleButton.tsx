@@ -14,16 +14,16 @@ import { AurynHelper } from '../aurynHelper';
 export type ToggleButtonPress = (index: number) => void;
 
 export interface ToggleButtonProps extends Omit<RefProps, 'name'> {
-    name?: string;
-    index: number;
-    toggled?: boolean;
-    onToggle?: (index: number) => void;
-    onFocus?: (buttonRef: React.RefObject<ButtonRef>) => void;
-    onPress?: ToggleButtonPress;
-    isRadio?: boolean;
-    title?: string;
-    focusOnMount?: boolean;
-  };
+  name?: string;
+  index: number;
+  toggled?: boolean;
+  onToggle?: (index: number) => void;
+  onFocus?: (buttonRef: React.RefObject<ButtonRef>) => void;
+  onPress?: ToggleButtonPress;
+  isRadio?: boolean;
+  title?: string;
+  focusOnMount?: boolean;
+}
 
 export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggled?: boolean }> {
   static defaultProps = {
@@ -45,7 +45,7 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
     // setTimeout to get around timing issue when focusing within a ScrollRef
     // The alternative is to use onCompositionDidLoad on the ButtonRef.
     if (this.props.focusOnMount)
-     setTimeout(() => FocusManager.focus(this.innerRef.current), 0);
+      setTimeout(() => FocusManager.focus(this.innerRef.current), 0);
   }
 
   componentDidUpdate(prevProps: ToggleButtonProps) {
@@ -75,23 +75,23 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
   };
 
   render = () => (
-      <ButtonRef
-        focusable={this.props.focusable}
-        name={this.props.name || 'Btn-Nav-List'}
-        ref={this.innerRef}
-        onFocus={this.onFocus}
-        onPress={this.onPress}
-      >
-        <Timeline
-          name="Toggle-On"
-          direction={this.props.toggled || AurynHelper.isRoku ? 'forward' : 'reverse'}
-          ref={this.toggleOnTimeline}
-          autoplay={this.props.toggled}
-        />
-        {this.props.title ? <Fragment>
-          <TextRef name="title" text={this.props.title}/>
-        </Fragment> : null}
-        {AurynHelper.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
-      </ButtonRef>
-    );
+    <ButtonRef
+      focusable={this.props.focusable}
+      name={this.props.name || 'Btn-Nav-List'}
+      ref={this.innerRef}
+      onFocus={this.onFocus}
+      onPress={this.onPress}
+    >
+      <Timeline
+        name="Toggle-On"
+        direction={this.props.toggled || AurynHelper.isRoku ? 'forward' : 'reverse'}
+        ref={this.toggleOnTimeline}
+        autoplay={this.props.toggled}
+      />
+      {this.props.title ? <Fragment>
+        <TextRef name="title" text={this.props.title}/>
+      </Fragment> : null}
+      {AurynHelper.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
+    </ButtonRef>
+  );
 }

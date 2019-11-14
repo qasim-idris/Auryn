@@ -13,7 +13,7 @@ interface TimelineProps extends TimelineRefProps {
   onCompleted: () => void;
   name: string;
   autoplay: boolean;
-};
+}
 
 export class Timeline extends React.PureComponent<TimelineProps> {
   static defaultProps = {
@@ -43,7 +43,7 @@ export class Timeline extends React.PureComponent<TimelineProps> {
     );
   }
 
-  play = (seek: number = 0) =>
+  play = (seek = 0) =>
     new Promise(resolve => {
       this.resolve = resolve;
       if (seek)

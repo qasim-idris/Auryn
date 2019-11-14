@@ -15,9 +15,9 @@ test('renders correctly', () => {
   const tree = renderer.create(<ToggleGroup
     onPressItem={jest.fn()}
     initialToggleIndex={0}>
-      <ToggleButton/>
-      <ToggleButton/>
-      <ToggleButton/>
-    </ToggleGroup>).toJSON();
+    <ToggleButton/>
+    <ToggleButton/>
+    <ToggleButton/>
+  </ToggleGroup>).toJSON();
   expect(tree).toMatchSnapshot();
 });

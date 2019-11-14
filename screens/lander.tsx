@@ -28,11 +28,11 @@ import { AurynHelper } from '../aurynHelper';
 type LanderDispatchProps = typeof mapDispatchToProps;
 
 interface LanderProps extends NavigationFocusInjectedProps, LanderDispatchProps {
-    tv: Asset[];
-    discover: Asset[];
-    movies: Asset[];
-    live: Asset[];
-  };
+  tv: Asset[];
+  discover: Asset[];
+  movies: Asset[];
+  live: Asset[];
+}
 
 interface LanderState {
   currentListIndex: number;
@@ -117,7 +117,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
     if (this.menuButtons[index].current) {
       for (let i = 0; i < this.lists.length; i++)
-      FocusManager.setNextFocus(this.menuButtons[i].current, this.lists[index].current, 'down');
+        FocusManager.setNextFocus(this.menuButtons[i].current, this.lists[index].current, 'down');
     }
 
     if (this.menuButtons[index].current
@@ -236,12 +236,12 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     return (
       <Composition source="Auryn_Lander">
         <NavigationBar
-            name="Nav-List"
-            scrollEnabled={false}
-            horizontal={true}
-            focusable={isFocused}
-            onPressItem={this.scrollToViewByIndex}
-            initialToggleIndex={0}
+          name="Nav-List"
+          scrollEnabled={false}
+          horizontal={true}
+          focusable={isFocused}
+          onPressItem={this.scrollToViewByIndex}
+          initialToggleIndex={0}
         >
           <ToggleButton title="Discover" ref={this.menuButtons[0]} />
           <ToggleButton title="Movies" ref={this.menuButtons[1]} />

@@ -11,7 +11,7 @@ import { Composition, BackHandler, TextInputRef, FocusManager } from '@youi/reac
 import { Timeline, List, BackButton } from '../components';
 import { NavigationActions, withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { connect } from 'react-redux';
-import { Asset, AssetType } from '../adapters/asset';
+import { Asset } from '../adapters/asset';
 import { View } from 'react-native';
 import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
@@ -98,13 +98,13 @@ class SearchScreen extends React.Component<SearchProps> {
         />
 
         {tv || !AurynHelper.isRoku ? <List
-            name="List-PDP"
-            data={tv}
-            focusable={isFocused}
-            onPressItem={this.onPressItem}
-            onFocusItem={this.onFocusItem}
-            extraData={tv}
-          />
+          name="List-PDP"
+          data={tv}
+          focusable={isFocused}
+          onPressItem={this.onPressItem}
+          onFocusItem={this.onFocusItem}
+          extraData={tv}
+        />
           : null
         }
         {movies || !AurynHelper.isRoku ? <List
@@ -115,7 +115,7 @@ class SearchScreen extends React.Component<SearchProps> {
           onFocusItem={this.onFocusItem}
           extraData={movies}
         />
-        : null}
+          : null}
 
         <Timeline name="SearchOut" ref={this.outTimeline} />
         <Timeline name="SearchIn" autoplay/>

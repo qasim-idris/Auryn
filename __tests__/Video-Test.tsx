@@ -15,7 +15,7 @@ import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
   const tree = renderer.create(<Provider store={store}>
-      <Video {...navigationProp}/>
-    </Provider>).toJSON();
+    <Video {...navigationProp}/>
+  </Provider>).toJSON();
   expect(tree).toMatchSnapshot();
 });

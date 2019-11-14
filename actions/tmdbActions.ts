@@ -6,7 +6,7 @@
  *
  */
 
- /* eslint-disable max-len */
+/* eslint-disable max-len */
 
 import { tmdbApiKey } from '../secrets';
 import { Dispatch } from 'redux';
@@ -113,5 +113,5 @@ export const search = (query: string) => (dispatch: Dispatch) => {
     },
     payload: fetch(`http://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&api_key=${tmdbApiKey}`)
       .then(response => response.json()),
-    });
+  });
 };

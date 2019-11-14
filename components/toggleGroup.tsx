@@ -13,7 +13,7 @@ import { ToggleButtonProps } from './toggleButton';
 interface ToggleGroupProps {
   initialToggleIndex: number;
   onPressItem: (index: number) => void;
-};
+}
 
 export class ToggleGroup extends React.PureComponent<ToggleGroupProps, { activeButtonIndex: number }> {
   state = { activeButtonIndex: -1 };
@@ -34,13 +34,13 @@ export class ToggleGroup extends React.PureComponent<ToggleGroupProps, { activeB
 
             if (this.props.onPressItem)
               this.props.onPressItem(index);
-             else if (typedChild.props.onPress)
-             typedChild.props.onPress(index);
+            else if (typedChild.props.onPress)
+              typedChild.props.onPress(index);
           },
           toggled: this.initialToggleIndex === index || this.state.activeButtonIndex === index,
           focusOnMount: this.initialToggleIndex === index,
         });
-      };
+      }
     });
   }
 }

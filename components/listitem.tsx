@@ -25,7 +25,7 @@ interface ListItemProps {
   onFocus?: ListItemFocusEvent;
   onPress?: ListItemPressEvent;
   focusable?: boolean;
-};
+}
 
 export interface ImageType {
   type: 'Poster' | 'Backdrop';

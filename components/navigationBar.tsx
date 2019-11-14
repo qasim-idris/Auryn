@@ -18,7 +18,7 @@ interface NavigationBarProps extends ScrollViewProps {
   onPressItem: (index: number) => void;
   name: string;
   focusable?: boolean;
-};
+}
 
 export class NavigationBar extends React.PureComponent<NavigationBarProps, { activeButtonIndex: number }> {
   state = { activeButtonIndex: -1 };
@@ -45,8 +45,8 @@ export class NavigationBar extends React.PureComponent<NavigationBarProps, { act
 
             if (this.props.onPressItem)
               this.props.onPressItem(index);
-             else if (typedChild.props.onPress)
-             typedChild.props.onPress(index);
+            else if (typedChild.props.onPress)
+              typedChild.props.onPress(index);
           },
           toggled: this.initialToggleIndex === index || this.state.activeButtonIndex === index,
           focusOnMount: this.initialToggleIndex === index,
@@ -54,7 +54,7 @@ export class NavigationBar extends React.PureComponent<NavigationBarProps, { act
           name: 'Btn-Nav-List',
         });
         return <Composition source="Auryn_Container-Btn-Nav-List">{button}</Composition>;
-      };
+      }
     });
 
     return <ScrollRef {...this.props} ref={this.scrollRef}>

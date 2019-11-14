@@ -6,7 +6,7 @@
  *
  */
 
- /* eslint-disable complexity */
+/* eslint-disable complexity */
 import { fromApi, TmdbApi } from '../adapters/tmdbAdapter';
 import { TmdbReducerState, TmdbActionTypes } from '../typings/tmdbReduxTypes';
 import { liveChannels } from '../data/live';
@@ -18,8 +18,8 @@ const normalize = (array: TmdbApi[], length = 10, imagePath: 'poster' | 'backdro
     const hasImage = imagePath === 'poster' ? asset.poster_path : asset.backdrop_path;
     return asset.original_language === 'en' && hasImage && !asset.adult;
   })
-  .slice(0, length)
-  .map(it => fromApi(it));
+    .slice(0, length)
+    .map(it => fromApi(it));
 
 const getLiveData = (movies: TmdbApi[]): Asset[] => {
   const channels = shuffle(liveChannels);

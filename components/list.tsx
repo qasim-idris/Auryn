@@ -26,9 +26,9 @@ interface ListProps<T>  {
   name: string;
   data: T[];
   extraData?: any;
-};
+}
 
-interface ImageSettings extends ImageType { length: number };
+interface ImageSettings extends ImageType { length: number }
 
 export class List extends React.Component<ListProps<Asset>> {
   static defaultProps = {
@@ -132,7 +132,7 @@ export class List extends React.Component<ListProps<Asset>> {
   render() {
     const { data, type, name } = this.props;
 
-    if ([ListType.Featured, ListType.Grid, ListType.Live].includes(type!)) {
+    if ([ListType.Featured, ListType.Grid, ListType.Live].includes(type)) {
       return (
         <ListRef
           name={name}

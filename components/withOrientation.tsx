@@ -21,15 +21,15 @@ export enum RotationMode {
 // This function takes a component...
 export const withOrientation = (WrappedComponent: any, InitialRotationMode: RotationMode) =>
   class extends React.Component {
-      componentWillMount() {
-        OrientationLock.setRotationMode(InitialRotationMode || RotationMode.Auto);
-      }
+    componentWillMount() {
+      OrientationLock.setRotationMode(InitialRotationMode || RotationMode.Auto);
+    }
 
-      setRotationMode = (rotationMode: RotationMode) => {
-        OrientationLock.setRotationMode(rotationMode);
-      }
+    setRotationMode = (rotationMode: RotationMode) => {
+      OrientationLock.setRotationMode(rotationMode);
+    }
 
-      render() {
-        return <WrappedComponent setRotationMode={this.setRotationMode} {...this.props} />;
-      }
-    };
+    render() {
+      return <WrappedComponent setRotationMode={this.setRotationMode} {...this.props} />;
+    }
+  };

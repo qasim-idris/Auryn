@@ -22,7 +22,7 @@ type SplashDispatchProps = typeof mapDispatchToProps;
 interface SplashProps extends NavigationScreenProps, SplashDispatchProps {
   fetched: boolean;
   error: string;
-};
+}
 
 class SplashScreen extends React.Component<SplashProps> {
   outTimeline = React.createRef<Timeline>();

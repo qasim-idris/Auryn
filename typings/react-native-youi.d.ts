@@ -433,7 +433,7 @@ declare module '@youi/react-native-youi' {
 
     getItemCount?(): number;
 
-    getItemLayout?({  }: object, index: number): { length: number; offset: number; index: number };
+    getItemLayout?(data: object, index: number): { length: number; offset: number; index: number };
 
     onEndReached?(): void;
 
@@ -458,7 +458,7 @@ declare module '@youi/react-native-youi' {
 
   export class ScrollRef extends React.Component<RefProps & ScrollViewProps> {
     scrollTo(arg0: { x: number; y: number; animated: boolean }): void;
-}
+  }
 
   export interface TimelineRef {
     /**
