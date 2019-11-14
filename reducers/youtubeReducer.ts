@@ -18,7 +18,7 @@ interface YoutubeReducerState {
 }
 
 const initalState: YoutubeReducerState = {
-  videoSource: { uri: 'http://www.streambox.fr/playlists/x31jrg1/x31jrg1.m3u8', type: 'HLS' },
+  videoSource: { uri: 'https://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8', type: 'HLS' },
   videoId: Date.now().toString(),
   fetching: false,
   fetched: false,
