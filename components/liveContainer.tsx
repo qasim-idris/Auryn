@@ -23,7 +23,6 @@ export class LiveContainer extends React.PureComponent<LiveContainerProps> {
           onFocus={onFocus}
           focusable={focusable}
           data={data[0]}
-          shouldChangeFocus={false}
         />
         <View style={{ height: 1, width: 20, marginTop: FormFactor.isHandset ? 20 : 0 }}/>
         <LiveListItem
@@ -31,7 +30,6 @@ export class LiveContainer extends React.PureComponent<LiveContainerProps> {
           focusable={focusable}
           onFocus={onFocus}
           data={data[1]}
-          shouldChangeFocus={false}
         />
       </View>
     );

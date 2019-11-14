@@ -9,9 +9,9 @@ import { ListItemFocusEvent, ListItemPressEvent } from './listitem';
 interface LiveListItemProps {
   onPress?: ListItemPressEvent;
   onFocus?: ListItemFocusEvent;
-  shouldChangeFocus: boolean;
   data: Asset;
   focusable?: boolean;
+  visible?: boolean;
 }
 
 export class LiveListItem extends Component<LiveListItemProps> {
@@ -39,7 +39,7 @@ export class LiveListItem extends Component<LiveListItemProps> {
   progressTimeline = React.createRef<Timeline>();
 
   onFocus = () => {
-    this.props.onFocus?.(this.props.data, this.buttonRef, this.props.shouldChangeFocus);
+    this.props.onFocus?.(this.props.data, this.buttonRef);
   }
 
   onPress = () => {
@@ -57,6 +57,7 @@ export class LiveListItem extends Component<LiveListItemProps> {
           onFocus={this.onFocus}
           onPress={this.onPress}
           focusable={this.props.focusable}
+          visible={this.props.visible}
         >
           <ImageRef
             name="Image-Dynamic-Live-Asset"
