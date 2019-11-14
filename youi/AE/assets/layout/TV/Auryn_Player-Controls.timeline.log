@@ -3862,6 +3862,17 @@ tracks {
     ivalue1: 1
   }
 }
+tracks {
+  binding: IS_VISIBLE
+  targetid: 519928
+  targetname: "Live-MiniGuide"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
 markers {
   starttime: 1
   duration: 0.46666667

@@ -70,11 +70,45 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1774
+    parentid: 1775
+  }
+  layer {
+    name: "Live-MiniGuide"
+    id: 1769
+    sourceid: 690014557
+    transform {
+      anchorPoint {
+        x: 489
+        y: 540
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1431
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
   }
   layer {
     name: "Btn-MIniGuide"
-    id: 1769
+    id: 1770
     sourceid: 462
     transform {
       anchorPoint {
@@ -105,11 +139,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1773
+    parentid: 1774
   }
   layer {
     name: "Btn-PlayPause"
-    id: 1770
+    id: 1771
     sourceid: 781
     transform {
       anchorPoint {
@@ -140,11 +174,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1775
+    parentid: 1776
   }
   layer {
     name: "Btn-Back"
-    id: 1771
+    id: 1772
     sourceid: 305
     transform {
       anchorPoint {
@@ -175,11 +209,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1772
+    parentid: 1773
   }
   layer {
     name: "ScalePropTopLeftAnchor"
-    id: 1772
+    id: 1773
     sourceid: 2419
     transform {
       anchorPoint {
@@ -213,7 +247,7 @@ activecomp {
   }
   layer {
     name: "ScaleWidthPropBottomRightAnchor"
-    id: 1773
+    id: 1774
     sourceid: 2419
     transform {
       anchorPoint {
@@ -247,7 +281,7 @@ activecomp {
   }
   layer {
     name: "ScaleWidthPropBottomAnchor"
-    id: 1774
+    id: 1775
     sourceid: 2419
     transform {
       anchorPoint {
@@ -281,7 +315,7 @@ activecomp {
   }
   layer {
     name: "ScaleWidthPropCenterAnchor"
-    id: 1775
+    id: 1776
     sourceid: 2419
     transform {
       anchorPoint {
@@ -320,6 +354,7 @@ activecomp {
     blue: 0.14509803921568629
   }
   childtemplates: "Auryn_Player-Controls-Layout"
+  childtemplates: "Auryn_Live-MiniGuide"
   childtemplates: "Auryn_Btn-MIniGuide"
   childtemplates: "Auryn_Btn-PlayPause"
   childtemplates: "Auryn_Btn-Back"
@@ -340,6 +375,14 @@ sources {
   srctype: AE_COMP_SRC
   name: "Auryn_Player-Controls-Layout.layout"
   width: 1920
+  height: 1080
+  copy_source: true
+}
+sources {
+  uid: 690014557
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-MiniGuide.layout"
+  width: 978
   height: 1080
   copy_source: true
 }

@@ -1755,6 +1755,17 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 1769
+  targetname: "Live-MiniGuide"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 1770
   targetname: "Btn-MIniGuide"
   keytimes {
     datatype: AE_INT_DATA
@@ -1765,7 +1776,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 1769
+  targetid: 1770
   targetname: "Btn-MIniGuide"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -2189,7 +2200,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 1770
+  targetid: 1771
   targetname: "Btn-PlayPause"
   keytimes {
     datatype: AE_INT_DATA
@@ -2200,7 +2211,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 1770
+  targetid: 1771
   targetname: "Btn-PlayPause"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -2246,7 +2257,7 @@ tracks {
 }
 tracks {
   binding: OPACITY
-  targetid: 1770
+  targetid: 1771
   targetname: "Btn-PlayPause"
   keytimes {
     datatype: AE_FLOAT_DATA
@@ -2576,7 +2587,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 1771
+  targetid: 1772
   targetname: "Btn-Back"
   keytimes {
     datatype: AE_INT_DATA
@@ -2587,7 +2598,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 1771
+  targetid: 1772
   targetname: "Btn-Back"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -3074,7 +3085,7 @@ tracks {
 }
 tracks {
   binding: OPACITY
-  targetid: 1771
+  targetid: 1772
   targetname: "Btn-Back"
   keytimes {
     datatype: AE_FLOAT_DATA
@@ -3502,7 +3513,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 1772
+  targetid: 1773
   targetname: "ScalePropTopLeftAnchor"
   keytimes {
     datatype: AE_INT_DATA
@@ -3513,7 +3524,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 1773
+  targetid: 1774
   targetname: "ScaleWidthPropBottomRightAnchor"
   keytimes {
     datatype: AE_INT_DATA
@@ -3524,7 +3535,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 1774
+  targetid: 1775
   targetname: "ScaleWidthPropBottomAnchor"
   keytimes {
     datatype: AE_INT_DATA
@@ -3535,7 +3546,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 1775
+  targetid: 1776
   targetname: "ScaleWidthPropCenterAnchor"
   keytimes {
     datatype: AE_INT_DATA
@@ -3565,23 +3576,23 @@ markers {
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 1769
-    binding: POSITION
-  }
-  tracksSelection {
     targetid: 1770
     binding: POSITION
   }
   tracksSelection {
-    targetid: 1770
+    targetid: 1771
+    binding: POSITION
+  }
+  tracksSelection {
+    targetid: 1771
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 1771
+    targetid: 1772
     binding: POSITION
   }
   tracksSelection {
-    targetid: 1771
+    targetid: 1772
     binding: OPACITY
   }
   alltracks: false
@@ -3612,23 +3623,23 @@ markers {
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 1769
-    binding: POSITION
-  }
-  tracksSelection {
     targetid: 1770
     binding: POSITION
   }
   tracksSelection {
-    targetid: 1770
+    targetid: 1771
+    binding: POSITION
+  }
+  tracksSelection {
+    targetid: 1771
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 1771
+    targetid: 1772
     binding: POSITION
   }
   tracksSelection {
-    targetid: 1771
+    targetid: 1772
     binding: OPACITY
   }
   alltracks: false
