@@ -34,6 +34,8 @@ export interface TmdbApi {
   media_type: 'tv' | 'movie';
   type: 'tv' | 'movie';
   genre_ids: number[];
+  release_date?: string;
+  first_air_date?: string;
 }
 
 const getFeaturedText = (credits: TmdbCredits): string => {
@@ -67,6 +69,7 @@ const fromApi = (item: TmdbApi): Asset => ({
   youtubeId: item.videos && item.videos.results.length ? item.videos.results[0].key : 'nO_DIwuGBnA',
   type: 'name' in item ? AssetType.TV : AssetType.MOVIE,
   genres: item.genre_ids,
+  releaseDate: item.release_date || item.first_air_date || ''
 });
 
 export { fromApi };

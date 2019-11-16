@@ -11,6 +11,7 @@ export interface Asset {
   type: AssetType;
   genres?: number[];
   live?: Live;
+  releaseDate: string;
 }
 
 interface Live {

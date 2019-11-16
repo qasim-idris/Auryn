@@ -123,9 +123,12 @@ declare module '@youi/react-native-youi' {
     muted?: boolean;
   }
 
+  export type PlaybackStateOptions = 'playing' | 'paused' | 'buffering';
+  export type MediaStateOptions = 'ready' | 'preparing' | 'unloaded';
+
   export interface MediaState {
-    playbackState: 'playing' | 'paused' | 'buffering';
-    mediaState: 'ready' | 'preparing' | 'unloaded';
+    playbackState: PlaybackStateOptions;
+    mediaState: MediaStateOptions;
   }
 
   export class VideoRef extends React.Component<RefProps & VideoRefProps> {
@@ -359,7 +362,7 @@ declare module '@youi/react-native-youi' {
   }
 
   export interface ImageRefProps {
-    source: ImageURISource;
+    source?: ImageURISource;
 
     style?: {
       width?: number;
