@@ -9,11 +9,12 @@
 
 import React from 'react';
 import { ViewRef, TextRef, SliderRef, Video, FocusManager, Input, InputEventObject, MediaState, VideoProps, ButtonRef } from '@youi/react-native-youi';
-import { BackButton, Timeline, ToggleButton } from '.';
+import { BackButton, Timeline, ToggleButton } from './../index';
 import { debounce } from 'lodash';
 import { NativeSyntheticEvent } from 'react-native';
-import { Asset } from '../adapters/asset';
+import { Asset } from './../../adapters/asset';
 import URLSearchParams from '@ungap/url-search-params';
+import { VideoContext } from './index';
 
 interface PlayerControlProps {
   isFocused?: boolean;
@@ -22,16 +23,9 @@ interface PlayerControlProps {
   onBackButton: () => void;
 }
 
-const initialState = {
-  paused: false,
-  pausedByScrubbing: false,
-  controlsActive: false,
-  duration: 0,
-  isLive: false,
-  formattedTime: '',
-  currentTime: 0,
-  mediaState: { mediaState: '', playbackState: '' },
-};
+interface PlayerControlState {
+  hasStartedPlaying: boolean
+}
 
 const mediaKeys = [
   'Space',
@@ -56,9 +50,8 @@ const keys = [
 
 const MIN_DURATION = 3000;
 
-
-export class VideoControls extends React.Component<PlayerControlProps> {
-  state = initialState;
+export class VideoControls extends React.Component<PlayerControlProps, PlayerControlState> {
+  static contextType = VideoContext;
 
   controlsHideTimeline = React.createRef<Timeline>();
 
@@ -73,6 +66,8 @@ export class VideoControls extends React.Component<PlayerControlProps> {
   constructor(props: PlayerControlProps) {
     super(props);
     this.child = React.Children.only(this.props.children) as React.ReactElement<VideoProps>;
+
+    this.state = { hasStartedPlaying: false };
   }
 
   componentDidMount() {
@@ -86,11 +81,15 @@ export class VideoControls extends React.Component<PlayerControlProps> {
   }
 
   playPause = () => {
-    this.state.paused ? this.videoPlayer?.play() : this.videoPlayer?.pause();
+    this.context.paused ? this.videoPlayer?.play() : this.videoPlayer?.pause();
+
+    if(!this.context.paused) {
+      this.context.setContext({ scrubbingEngaged: false });
+    }
   }
 
   showControls = () => {
-    this.setState({ controlsActive: true });
+    this.context.setContext({ controlsActive: true});
     if (this.playButton.current)
       FocusManager.focus(this.playButton.current);
 
@@ -103,28 +102,29 @@ export class VideoControls extends React.Component<PlayerControlProps> {
       this.playPause();
     }
 
-    if (!this.state.controlsActive) this.showControls();
+    if (!this.context.controlsActive) this.showControls();
 
     this.debounceHidingControls();
   }
 
   seekAndResume = (time: number) => {
-    if (this.state.mediaState.mediaState !== 'ready') return;
+    if (this.context.mediaState !== 'ready') return;
     this.videoPlayer?.seek(time);
 
-    if (!this.state.pausedByScrubbing) return;
+    if (!this.context.pausedByScrubbing) return;
 
     this.videoPlayer?.play();
-    this.setState({ pausedByScrubbing: false });
+
+    this.context.setContext({ pausedByScrubbing: false });
   };
 
   onScrub = debounce((value: number) => {
-    if (value === this.state.currentTime) return;
+    if (value === this.context.currentTime) return;
+    
+    this.context.setContext({ scrubbingEngaged: true });
 
-    this.setState({ scrubbingEngaged: true });
-
-    if (!this.state.paused) {
-      this.setState({ pausedByScrubbing: true });
+    if (!this.context.paused) {
+      this.context.setContext({ pausedByScrubbing: true });
       this.videoPlayer?.pause();
     }
 
@@ -134,9 +134,9 @@ export class VideoControls extends React.Component<PlayerControlProps> {
   }, 100);
 
   onSlidingComplete = (value: number) => {
-    this.setState({ scrubbingEngaged: false });
+    this.context.setContext({ scrubbingEngaged: false });
 
-    if (this.state.duration <= MIN_DURATION) return;
+    if (this.context.duration <= MIN_DURATION) return;
 
     this.videoPlayer?.seek(value);
   }
@@ -146,7 +146,7 @@ export class VideoControls extends React.Component<PlayerControlProps> {
       FocusManager.focus(this.playButton.current);
 
     this.controlsHideTimeline.current?.play();
-    this.setState({ controlsActive: false });
+    this.context.setContext({ controlsActive: false});
   }, 5000);
 
   getDurationFromVideoUri = (): number => {
@@ -157,7 +157,7 @@ export class VideoControls extends React.Component<PlayerControlProps> {
   onDurationChanged = (value: number) => {
     this.child?.props?.onDurationChanged?.(value);
     const duration = value > MIN_DURATION ? value : this.getDurationFromVideoUri();
-    this.setState({ duration });
+    this.context.setContext({ duration });
   };
 
   onCurrentTimeUpdated = (currentTime: number) => { // eslint-disable-line max-statements
@@ -171,26 +171,36 @@ export class VideoControls extends React.Component<PlayerControlProps> {
     const hourString = hour < 1 ? '' : `${hour}:`;
     const minSting = min < 10 ? `0${min}` : min;
     const secString = sec < 10 ? `0${sec}` : sec;
-    this.setState({
+    this.context.setContext({
       currentTime,
       formattedTime: `${hourString}${minSting}:${secString}`,
-      percent: currentTime / this.state.duration,
+      percent: currentTime / this.context.duration
     });
   }
 
-  onStateChanged = (mediaState: NativeSyntheticEvent<MediaState>) => {
-    this.child?.props?.onStateChanged?.(mediaState);
-    this.setState({ mediaState: mediaState.nativeEvent });
+  onStateChanged = (playerState: NativeSyntheticEvent<MediaState>) => {
+    this.child?.props?.onStateChanged?.(playerState);
+
+    const { mediaState, playbackState } = playerState.nativeEvent;
+
+    if(!this.state.hasStartedPlaying && mediaState === 'ready' && playbackState === 'playing') {
+      this.setState({ hasStartedPlaying: true });
+      this.context.setContext({ mediaState, playbackState });
+    } else if(!this.state.hasStartedPlaying) {
+      this.context.setContext({ mediaState, playbackState: 'playing' });
+    } else {
+      this.context.setContext({ mediaState, playbackState });
+    }
   }
 
   onPaused = () => {
     this.child?.props?.onPaused?.();
-    this.setState({ paused: true });
+    this.context.setContext({ paused: true });
   };
 
   onPlaying = () => {
     this.child?.props?.onPlaying?.();
-    this.setState({ paused: false });
+    this.context.setContext({ paused: false });
   }
 
   render() {
@@ -224,17 +234,17 @@ export class VideoControls extends React.Component<PlayerControlProps> {
             <ToggleButton
               name="Btn-PlayPause"
               onPress={this.playPause}
-              toggled={!this.state.paused || this.state.pausedByScrubbing}
+              toggled={!this.context.paused || this.context.pausedByScrubbing}
               focusable={this.props.isFocused}
               ref={this.playButton}
             />
-            <TextRef name="Duration" text={this.state.formattedTime} />
+            <TextRef name="Duration" text={this.context.formattedTime} />
             <SliderRef
-              visible={this.state.duration > MIN_DURATION}
+              visible={this.context.duration > MIN_DURATION}
               name="Bar"
               minimumTrackTintColor="#DA1B5B"
-              maximumValue={this.state.duration}
-              value={this.state.currentTime}
+              maximumValue={this.context.duration}
+              value={this.context.currentTime}
               thumbImage={{ uri: 'res://drawable/default/Player-Thumb.png' }}
               onSlidingComplete={this.onSlidingComplete}
               onValueChange={this.onScrub}

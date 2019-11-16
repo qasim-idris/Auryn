@@ -18,6 +18,5 @@ export { NavigationBar } from './navigationBar';
 export { TvContainer } from './tvContainer';
 export { Error } from './error';
 export { withOrientation } from './withOrientation';
-export { VideoControls } from './videoControls';
 export { LiveContainer } from './liveContainer';
 export { LiveListItem } from './liveListitem';
