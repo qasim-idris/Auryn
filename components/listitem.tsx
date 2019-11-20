@@ -15,7 +15,7 @@ export type ListItemFocusEvent =
   => void | Promise<void>
 
 export type ListItemPressEvent =
-  (asset: Asset, innerRef: React.RefObject<ButtonRef>)
+  (asset: Asset, innerRef?: React.RefObject<ButtonRef>)
   => void | Promise<void>
 
 interface ListItemProps {
