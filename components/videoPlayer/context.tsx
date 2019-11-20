@@ -4,22 +4,22 @@ import { MediaStateOptions, PlaybackStateOptions } from '@youi/react-native-youi
 interface ContextProps {}
 
 export interface ContextState {
-  duration?: number,
-  currentTime?: number,
-  formattedTime?: string,
-  mediaState?: MediaStateOptions,
-  playbackState?: PlaybackStateOptions,
-  paused: boolean,
-  controlsActive: boolean,
-  pausedByScrubbing: boolean,
-  scrubbingEngaged: boolean,
-  setContext: ({key:ContextKeys, value:any}:any) => void
+  duration?: number;
+  currentTime?: number;
+  formattedTime?: string;
+  mediaState?: MediaStateOptions;
+  playbackState?: PlaybackStateOptions;
+  paused: boolean;
+  controlsActive: boolean;
+  pausedByScrubbing: boolean;
+  scrubbingEngaged: boolean;
+  setContext: ({key:ContextKeys, value:any}: any) => void;
 }
 
 const Context = React.createContext<Partial<ContextState>>({});
 
 class VideoContextProvider extends Component<ContextProps, ContextState> {
-  constructor(props:ContextProps) {
+  constructor(props: ContextProps) {
     super(props);
 
     this.state = {
@@ -31,7 +31,7 @@ class VideoContextProvider extends Component<ContextProps, ContextState> {
     }
   }
 
-  shouldComponentUpdate(_nextProps:ContextProps, nextState:ContextState) {
+  shouldComponentUpdate(_nextProps: ContextProps, nextState: ContextState) {
     if(nextState.duration !== this.state.duration) return true;
 
     if(nextState.currentTime !== this.state.currentTime) return true;
@@ -47,7 +47,7 @@ class VideoContextProvider extends Component<ContextProps, ContextState> {
     return false;
   }
 
-  setContext = (value:ContextProps) => this.setState(value);
+  setContext = (value: ContextProps) => this.setState(value);
 
   render() {
     const { children } = this.props;

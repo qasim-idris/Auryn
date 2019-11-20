@@ -27,7 +27,7 @@ interface VideoProps extends NavigationFocusInjectedProps, OrientationLock {
   videoId: string;
   videoSource: VideoUriSource;
   isLive: boolean;
-  getDetailsByIdAndType: (id:string, type:AssetType) => void
+  getDetailsByIdAndType: (id: string, type: AssetType) => void;
 }
 
 interface VideoState {

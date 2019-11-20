@@ -5,13 +5,13 @@ import { Timeline } from './../timeline';
 import { VideoContext } from './../videoPlayer/index';
 
 interface Props {
-  name: string,
-  forceShow: boolean,
-  onClose: () => void
+  name: string;
+  forceShow: boolean;
+  onClose: () => void;
 }
 
 interface State {
-  isShowing: boolean
+  isShowing: boolean;
 }
 
 class PauseAd extends Component<Props, State> {
@@ -22,10 +22,10 @@ class PauseAd extends Component<Props, State> {
     forceShow: false
   };
 
-  private adInTimeline:RefObject<Timeline> = createRef();
-  private adOutTimeline:RefObject<Timeline> = createRef();
+  private adInTimeline: RefObject<Timeline> = createRef();
+  private adOutTimeline: RefObject<Timeline> = createRef();
 
-  constructor(props:Props) {
+  constructor(props: Props) {
     super(props);
 
     this.state = { isShowing: false };

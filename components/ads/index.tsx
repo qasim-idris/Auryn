@@ -7,8 +7,8 @@ import { VideoContext } from './../videoPlayer/context';
 const END_SQUEEZE_MS = 15 * 1000;
 
 interface AdProviderProps {
-  pauseAdCompositionName: string | undefined,
-  onPauseAdClosed: () => void
+  pauseAdCompositionName: string | undefined;
+  onPauseAdClosed: () => void;
 }
 
 interface AdProviderState {}
@@ -24,9 +24,9 @@ class AdProvider extends Component<AdProviderProps, AdProviderState> {
 
   static contextType = VideoContext;
 
-  private pausAdRef:RefObject<PauseAd> = createRef();
+  private pausAdRef: RefObject<PauseAd> = createRef();
 
-  constructor(props:AdProviderProps) {
+  constructor(props: AdProviderProps) {
     super(props);
   }
 

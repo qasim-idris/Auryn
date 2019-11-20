@@ -24,7 +24,7 @@ interface PlayerControlProps {
 }
 
 interface PlayerControlState {
-  hasStartedPlaying: boolean
+  hasStartedPlaying: boolean;
 }
 
 const mediaKeys = [
@@ -99,7 +99,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
   registerUserActivity = (keyEvent?: InputEventObject) => {
     if (keyEvent) {
       if (mediaKeys.includes(keyEvent.keyCode) && keyEvent.eventType === 'up')
-      this.playPause();
+        this.playPause();
     }
 
     if (!this.context.controlsActive) this.showControls();
@@ -208,55 +208,55 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
 
     return (
       <ButtonRef name="Video" onPress={this.registerUserActivity} visible={isFocused}>
-          {React.cloneElement(this.child, {
-            ref: (node: any) => {
-              this.videoPlayer = node;
-              // @ts-ignore
-              const { ref } = this.child;
-              if (typeof ref === 'function')
-                ref(node);
-               else if (ref !== null)
-                ref.current = node;
-            },
-            onPaused: this.onPaused,
-            onPlaying: this.onPlaying,
-            onDurationChanged: this.onDurationChanged,
-            onCurrentTimeUpdated: this.onCurrentTimeUpdated,
-            onStateChanged: this.onStateChanged,
-          })}
-          <ViewRef name="Player-Controls">
-            <BackButton
-              focusable={isFocused}
-              onPress={this.props.onBackButton}
-            />
-            <Timeline name="Show" ref={this.controlsShowTimeline} />
-            <Timeline name="Hide" ref={this.controlsHideTimeline} />
-            <ToggleButton
-              name="Btn-PlayPause"
-              onPress={this.playPause}
-              toggled={!this.context.paused || this.context.pausedByScrubbing}
-              focusable={this.props.isFocused}
-              ref={this.playButton}
-            />
-            <TextRef name="Duration" text={this.context.formattedTime} />
-            <SliderRef
-              visible={this.context.duration > MIN_DURATION}
-              name="Bar"
-              minimumTrackTintColor="#DA1B5B"
-              maximumValue={this.context.duration}
-              value={this.context.currentTime}
-              thumbImage={{ uri: 'res://drawable/default/Player-Thumb.png' }}
-              onSlidingComplete={this.onSlidingComplete}
-              onValueChange={this.onScrub}
-              step={1}
-            />
+        {React.cloneElement(this.child, {
+          ref: (node: any) => {
+            this.videoPlayer = node;
+            // @ts-ignore
+            const { ref } = this.child;
+            if (typeof ref === 'function')
+              ref(node);
+            else if (ref !== null)
+              ref.current = node;
+          },
+          onPaused: this.onPaused,
+          onPlaying: this.onPlaying,
+          onDurationChanged: this.onDurationChanged,
+          onCurrentTimeUpdated: this.onCurrentTimeUpdated,
+          onStateChanged: this.onStateChanged,
+        })}
+        <ViewRef name="Player-Controls">
+          <BackButton
+            focusable={isFocused}
+            onPress={this.props.onBackButton}
+          />
+          <Timeline name="Show" ref={this.controlsShowTimeline} />
+          <Timeline name="Hide" ref={this.controlsHideTimeline} />
+          <ToggleButton
+            name="Btn-PlayPause"
+            onPress={this.playPause}
+            toggled={!this.context.paused || this.context.pausedByScrubbing}
+            focusable={this.props.isFocused}
+            ref={this.playButton}
+          />
+          <TextRef name="Duration" text={this.context.formattedTime} />
+          <SliderRef
+            visible={this.context.duration > MIN_DURATION}
+            name="Bar"
+            minimumTrackTintColor="#DA1B5B"
+            maximumValue={this.context.duration}
+            value={this.context.currentTime}
+            thumbImage={{ uri: 'res://drawable/default/Player-Thumb.png' }}
+            onSlidingComplete={this.onSlidingComplete}
+            onValueChange={this.onScrub}
+            step={1}
+          />
 
-            <ViewRef name="Video-TextDetails">
-              <TextRef name="Title" text={asset.title} />
-              <TextRef name="Details" text={asset.details} />
-            </ViewRef>
+          <ViewRef name="Video-TextDetails">
+            <TextRef name="Title" text={asset.title} />
+            <TextRef name="Details" text={asset.details} />
           </ViewRef>
-        </ButtonRef>
+        </ViewRef>
+      </ButtonRef>
     );
   }
 }

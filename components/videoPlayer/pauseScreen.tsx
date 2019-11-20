@@ -6,12 +6,12 @@ import { Timeline } from './../timeline';
 import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
 
 interface VideoPauseScreenManagerProps {
-  related: Asset[],
-  onUpNextPress: (id:string, type:AssetType) => void
+  related: Asset[];
+  onUpNextPress: (id: string, type: AssetType) => void;
 }
 
 interface VideoPauseScreenManagerState {
-  isCompressed: boolean
+  isCompressed: boolean;
 }
 
 class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, VideoPauseScreenManagerState> {
@@ -19,10 +19,10 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
   
   private END_SQUEEZE_MS = 15 * 1000;
 
-  private endSqueezeCompressTimeline:RefObject<Timeline> = createRef();
-  private endSqueezeExpandTimeline:RefObject<Timeline> = createRef();
+  private endSqueezeCompressTimeline: RefObject<Timeline> = createRef();
+  private endSqueezeExpandTimeline: RefObject<Timeline> = createRef();
 
-  constructor(props:VideoPauseScreenManagerProps) {
+  constructor(props: VideoPauseScreenManagerProps) {
     super(props);
 
     this.state = {
@@ -59,7 +59,7 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
     this.endSqueezeExpandTimeline.current?.play();
   }
 
-  playOnNext = async (id:string = '0', type:AssetType = AssetType.MOVIE) => {
+  playOnNext = async (id = '0', type: AssetType = AssetType.MOVIE) => {
     this.expandVideo();
 
     this.props.onUpNextPress(id, type);
@@ -89,8 +89,8 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
           visible={upnext != null}
           onPress={() => this.playOnNext(upnext.id.toString(), upnext.type)}
         >
-        <ImageRef name="Image-UpNext-Primary" source={{ uri: upnext.thumbs.Backdrop  }} />
-        <TextRef name="Title" text={upnext && (upnext.title)} />
+          <ImageRef name="Image-UpNext-Primary" source={{ uri: upnext.thumbs.Backdrop  }} />
+          <TextRef name="Title" text={upnext && (upnext.title)} />
           <TextRef name="Subhead" text={upnext && (upnext.releaseDate)} />
           <TextRef name="Duration" text={'45m'} />
         </ButtonRef>
