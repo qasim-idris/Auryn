@@ -236,7 +236,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
             name="Btn-PlayPause"
             onPress={this.playPause}
             toggled={!this.context.paused || this.context.pausedByScrubbing}
-            focusable={this.props.isFocused}
+            focusable={this.props.isFocused && !this.context.miniGuideOpen}
             ref={this.playButton}
           />
           <TextRef name="Duration" text={this.context.formattedTime} visible={!isLive} />

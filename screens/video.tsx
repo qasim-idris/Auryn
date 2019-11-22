@@ -111,7 +111,7 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
   }
 
   navigateBack = async () => {
-    if (this.state.playerState.mediaState === 'preparing') return true;
+    if (this.state.playerState.mediaState === 'preparing' || this.context.miniGuideOpen) return true;
 
     await this.outTimeline.current?.play();
 
@@ -139,14 +139,14 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
     const { fetched, asset, isFocused, isLive } = this.props;
     const { enablePauseScreen } = this.state;
 
-    if (!fetched) return <View />;
+    if (!fetched && !isLive) return <View />;
 
     return (
       <View style={styles.container}>
         <VideoContextProvider>
           <AdProvider
             // pauseAdCompositionName={'CES_Ads_Ad-Coke-EndSqueeze'}
-            onPauseAdClosed={() => this.videoPlayer.current?.play()}
+            onPauseAdClosed={this.videoPlayer.current?.play}
           >
             <Composition source="Auryn_VideoContainer">
               <Timeline name="In" ref={this.inTimeline} />
@@ -165,7 +165,7 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
                 <VideoRef
                   name="VideoSurface"
                   ref={this.videoPlayer}
-                  onPlaybackComplete={() => this.navigateBack()}
+                  onPlaybackComplete={this.navigateBack}
                   onReady={this.onPlayerReady}
                   source={this.state.videoSource}
                   onErrorOccurred={this.onPlayerError}

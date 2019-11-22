@@ -16,7 +16,7 @@ interface VideoPauseScreenManagerState {
 
 class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, VideoPauseScreenManagerState> {
   static contextType = VideoContext;
-  
+
   private END_SQUEEZE_MS = 15 * 1000;
 
   private endSqueezeCompressTimeline: RefObject<Timeline> = createRef();
@@ -47,14 +47,14 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
 
   compressVideo = () => {
     if(this.state.isCompressed) return;
-    
+
     this.setState({ isCompressed: true });
     this.endSqueezeCompressTimeline.current?.play();
   }
 
   expandVideo = () => {
     if(!this.state.isCompressed) return;
-  
+
     this.setState({ isCompressed: false });
     this.endSqueezeExpandTimeline.current?.play();
   }
@@ -88,6 +88,7 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
           name="Button-UpNext-Primary"
           visible={upnext != null}
           onPress={() => this.playOnNext(upnext.id.toString(), upnext.type)}
+          focusable={this.context.paused}
         >
           <ImageRef name="Image-UpNext-Primary" source={{ uri: upnext.thumbs.Backdrop  }} />
           <TextRef name="Title" text={upnext && (upnext.title)} />

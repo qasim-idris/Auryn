@@ -13,6 +13,7 @@ export interface ContextState {
   controlsActive: boolean;
   pausedByScrubbing: boolean;
   scrubbingEngaged: boolean;
+  miniGuideOpen: boolean;
   setContext: ({key:ContextKeys, value:any}: any) => void;
 }
 
@@ -27,6 +28,7 @@ class VideoContextProvider extends Component<ContextProps, ContextState> {
       controlsActive: false,
       pausedByScrubbing: false,
       scrubbingEngaged: false,
+      miniGuideOpen: false,
       setContext: this.setContext
     }
   }
@@ -61,5 +63,5 @@ class VideoContextProvider extends Component<ContextProps, ContextState> {
 }
 
 export const VideoContext = Context;
-export { VideoContextProvider }; 
+export { VideoContextProvider };
 export const VideoContextConsumer = Context.Consumer;

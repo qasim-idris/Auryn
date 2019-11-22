@@ -5,6 +5,7 @@ import { Timeline, LiveListItem } from '..';
 import { View } from 'react-native';
 import { AurynAppState } from '../../reducers';
 import { ListItemPressEvent } from '../listitem';
+import { VideoContext } from '.';
 import { Asset } from '../../adapters/asset';
 
 interface MiniGuideProps {
@@ -23,6 +24,8 @@ const initialState = {
 };
 
 class MiniGuideComponent extends React.Component<MiniGuideProps> {
+  static contextType = VideoContext;
+
   showGuideTimeline = React.createRef<Timeline>();
 
   hideGuideTimeline = React.createRef<Timeline>();
@@ -49,6 +52,7 @@ class MiniGuideComponent extends React.Component<MiniGuideProps> {
     if (this.state.isOpen) return;
     BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
     this.setState({ isOpen: true });
+    this.context.setContext({ miniGuideOpen: true });
     await this.showGuideTimeline.current?.play();
     this.props.onOpen?.();
     if (this.firstListItem.current)
@@ -60,6 +64,7 @@ class MiniGuideComponent extends React.Component<MiniGuideProps> {
     BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
     this.props.onClose?.();
     this.setState({ isOpen: false });
+    this.context.setContext({ miniGuideOpen: false });
     await this.hideGuideTimeline.current?.play();
   }
 
@@ -88,6 +93,7 @@ class MiniGuideComponent extends React.Component<MiniGuideProps> {
           name="Btn-MiniGuide"
           onPress={this.openMiniGuide}
           visible={this.props.isLive}
+          focusable={!this.context.miniGuideOpen}
         />
 
         <ViewRef name="Live-MiniGuide" visible={this.props.visible}>
