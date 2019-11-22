@@ -15,6 +15,7 @@ import { NativeSyntheticEvent } from 'react-native';
 import { Asset } from './../../adapters/asset';
 import URLSearchParams from '@ungap/url-search-params';
 import { VideoContext } from './index';
+import { MiniGuide } from './miniGuide';
 
 interface PlayerControlProps {
   isFocused?: boolean;
@@ -120,7 +121,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
 
   onScrub = debounce((value: number) => {
     if (value === this.context.currentTime) return;
-    
+
     this.context.setContext({ scrubbingEngaged: true });
 
     if (!this.context.paused) {
@@ -204,7 +205,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
   }
 
   render() {
-    const { asset, isFocused } = this.props;
+    const { asset, isFocused, isLive } = this.props;
 
     return (
       <ButtonRef name="Video" onPress={this.registerUserActivity} visible={isFocused}>
@@ -238,7 +239,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
             focusable={this.props.isFocused}
             ref={this.playButton}
           />
-          <TextRef name="Duration" text={this.context.formattedTime} />
+          <TextRef name="Duration" text={this.context.formattedTime} visible={!isLive} />
           <SliderRef
             visible={this.context.duration > MIN_DURATION}
             name="Bar"
@@ -250,6 +251,8 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
             onValueChange={this.onScrub}
             step={1}
           />
+
+          <MiniGuide isLive={isLive}/>
 
           <ViewRef name="Video-TextDetails">
             <TextRef name="Title" text={asset.title} />

@@ -1,5 +1,5 @@
-import React from 'react';
-import { ListRef, ListItem, ViewRef, FocusManager, BackHandler } from '@youi/react-native-youi';
+import React, { Fragment } from 'react';
+import { ListRef, ListItem, ViewRef, FocusManager, BackHandler, ButtonRef } from '@youi/react-native-youi';
 import { connect } from 'react-redux';
 import { Timeline, LiveListItem } from '..';
 import { View } from 'react-native';
@@ -9,6 +9,7 @@ import { Asset } from '../../adapters/asset';
 
 interface MiniGuideProps {
   liveData: Asset[];
+  isLive: boolean;
   asset: Asset;
   visible: boolean;
   onPressItem: ListItemPressEvent;
@@ -62,6 +63,10 @@ class MiniGuideComponent extends React.Component<MiniGuideProps> {
     await this.hideGuideTimeline.current?.play();
   }
 
+  openMiniGuide = () => {
+    this.state.isOpen ? this.hide() : this.show();
+  }
+
   onPressItem: ListItemPressEvent = (asset: Asset) => {
     this.props.onPressItem(asset);
   }
@@ -78,16 +83,24 @@ class MiniGuideComponent extends React.Component<MiniGuideProps> {
 
   render() {
     return (
-      <ViewRef name="Live-MiniGuide" visible={this.props.visible}>
-        <Timeline name="ShowGuide" ref={this.showGuideTimeline} />
-        <Timeline name="HideGuide" ref={this.hideGuideTimeline} />
-        <ListRef
-          name="Live-MiniGuide-List"
-          data={this.props.liveData}
-          renderItem={this.renderLiveItem}
-          extraData={this.state.isOpen}
+      <Fragment>
+        <ButtonRef
+          name="Btn-MiniGuide"
+          onPress={this.openMiniGuide}
+          visible={this.props.isLive}
         />
-      </ViewRef>
+
+        <ViewRef name="Live-MiniGuide" visible={this.props.visible}>
+          <Timeline name="ShowGuide" ref={this.showGuideTimeline} />
+          <Timeline name="HideGuide" ref={this.hideGuideTimeline} />
+          <ListRef
+            name="Live-MiniGuide-List"
+            data={this.props.liveData}
+            renderItem={this.renderLiveItem}
+            extraData={this.state.isOpen}
+          />
+        </ViewRef>
+      </Fragment>
     );
   }
 }

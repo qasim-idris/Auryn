@@ -99,10 +99,10 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
   }
 
   shouldComponentUpdate(nextProps: VideoProps, nextState: VideoState) {
-    if (nextProps.videoId !== this.props.videoId) { 
+    if (nextProps.videoId !== this.props.videoId) {
       return true;
     }
-    
+
     if (nextProps.fetched !== this.props.fetched) return true;
 
     if (nextState.error) return true;
@@ -136,7 +136,7 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
   onPlayerError = () => this.setState({ error: true, videoSource: this.fallbackVideo });
 
   render() { // eslint-disable-line max-lines-per-function
-    const { fetched, asset, isFocused } = this.props;
+    const { fetched, asset, isFocused, isLive } = this.props;
     const { enablePauseScreen } = this.state;
 
     if (!fetched) return <View />;
@@ -145,15 +145,15 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
       <View style={styles.container}>
         <VideoContextProvider>
           <AdProvider
-            pauseAdCompositionName={'CES_Ads_Ad-Coke-EndSqueeze'}
+            // pauseAdCompositionName={'CES_Ads_Ad-Coke-EndSqueeze'}
             onPauseAdClosed={() => this.videoPlayer.current?.play()}
           >
             <Composition source="Auryn_VideoContainer">
               <Timeline name="In" ref={this.inTimeline} />
               <Timeline name="Out" ref={this.outTimeline} />
 
-              { 
-                enablePauseScreen ? 
+              {
+                enablePauseScreen ?
                   <VideoPauseScreenManager
                     related={asset.similar}
                     onUpNextPress={this.props.getDetailsByIdAndType}
@@ -161,7 +161,7 @@ class VideoScreenComponent extends React.Component<VideoProps & DispatchProp, Vi
                   null
               }
 
-              <VideoControls isFocused={isFocused} asset={asset} onBackButton={this.navigateBack}>
+              <VideoControls isFocused={isFocused} asset={asset} onBackButton={this.navigateBack} isLive={isLive}>
                 <VideoRef
                   name="VideoSurface"
                   ref={this.videoPlayer}
@@ -193,6 +193,7 @@ const mapStateToProps = (store: AurynAppState, ownProps: VideoProps) => {
     videoId: store.youtubeReducer.videoId || '',
     asset: store.tmdbReducer.details.data || {},
     fetched: store.youtubeReducer.fetched || false,
+    isLive: Boolean(asset?.live),
   });
 };
 
