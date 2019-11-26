@@ -1,6 +1,6 @@
-import VideoPauseScreenManager from './pauseScreen';
+import PauseScreenManager from './pauseScreenManager';
 import VideoPlayer from './videoPlayer';
 
 export { VideoContext, VideoContextProvider, VideoContextConsumer } from './context';
 export { VideoControls } from './videoControls';
-export { VideoPauseScreenManager, VideoPlayer };
+export { PauseScreenManager, VideoPlayer };

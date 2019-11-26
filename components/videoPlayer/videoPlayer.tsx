@@ -1,5 +1,5 @@
 import React, { Component, Context, ContextType } from 'react';
-import VideoPauseScreenManager from './pauseScreen';
+import PauseScreenManager from './pauseScreenManager';
 import { Composition, VideoRef, VideoUriSource, MediaState } from '@youi/react-native-youi';
 import { Timeline } from '..';
 import { VideoControls } from './videoControls';
@@ -95,7 +95,7 @@ export class VideoPlayer extends Component<Props, State> {
         <Timeline name="In" ref={this.inTimeline} />
         <Timeline name="Out" ref={this.outTimeline} />
 
-        { enablePauseScreen ? <VideoPauseScreenManager related={related} /> : null }
+        { enablePauseScreen ? <PauseScreenManager related={related} /> : null }
 
         <VideoControls
           isFocused={isFocused}

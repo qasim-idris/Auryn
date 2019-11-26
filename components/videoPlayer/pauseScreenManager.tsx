@@ -9,17 +9,17 @@ import { Timeline } from './../timeline';
 import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
 
-interface VideoPauseScreenManagerProps extends NavigationInjectedProps{
+interface PauseScreenManagerProps extends NavigationInjectedProps{
   related: Asset[],
   getDetailsByIdAndType: (id:string, type:AssetType) => void,
   getVideoSourceByYoutubeId: (youtubeId:string) => void
 }
 
-interface VideoPauseScreenManagerState {
+interface PauseScreenManagerState {
   isCompressed: boolean;
 }
 
-class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, VideoPauseScreenManagerState> {
+class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenManagerState> {
   static contextType = VideoContext;
 
   private END_SQUEEZE_MS = 15 * 1000;
@@ -27,7 +27,7 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
   private endSqueezeCompressTimeline: RefObject<Timeline> = createRef();
   private endSqueezeExpandTimeline: RefObject<Timeline> = createRef();
 
-  constructor(props: VideoPauseScreenManagerProps) {
+  constructor(props: PauseScreenManagerProps) {
     super(props);
 
     this.state = {
@@ -35,7 +35,7 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
     }
   }
 
-  shouldComponentUpdate(nextProps:VideoPauseScreenManagerProps, nextState:VideoPauseScreenManagerState) {
+  shouldComponentUpdate(nextProps:PauseScreenManagerProps, nextState:PauseScreenManagerState) {
     if(nextState.isCompressed !== this.state.isCompressed) return true;
 
     if(nextProps.related !== this.props.related) return true;
@@ -122,4 +122,4 @@ const mapDispatchToProps = {
   getVideoSourceByYoutubeId
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(VideoPauseScreenManager));
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(PauseScreenManager));
