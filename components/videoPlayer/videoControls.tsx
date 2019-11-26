@@ -12,7 +12,7 @@ import { ViewRef, TextRef, SliderRef, FocusManager, Input, InputEventObject, But
 import { BackButton, Timeline, ToggleButton } from './../index';
 import { debounce } from 'lodash';
 import { Asset } from './../../adapters/asset';
-import { VideoContext } from './index';
+import { VideoContext } from './context';
 import { MiniGuide } from './miniGuide';
 
 interface PlayerControlProps {

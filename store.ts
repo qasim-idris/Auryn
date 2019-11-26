@@ -11,7 +11,7 @@ import createDebounce from 'redux-debounced';
 import thunk from 'redux-thunk';
 import { rootReducer, StoreState } from './reducers';
 
-import { configureStore, ConfigureStoreOptions, AnyAction } from 'redux-starter-kit';
+import { configureStore, ConfigureStoreOptions, AnyAction } from '@reduxjs/toolkit';
 
 export default configureStore({
   reducer: rootReducer,

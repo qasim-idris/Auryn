@@ -5,7 +5,7 @@ import { Timeline, LiveListItem } from '..';
 import { View } from 'react-native';
 import { AurynAppState } from '../../reducers';
 import { ListItemPressEvent } from '../listitem';
-import { VideoContext } from '.';
+import { VideoContext } from './context';
 import { Asset } from '../../adapters/asset';
 
 interface MiniGuideProps {
