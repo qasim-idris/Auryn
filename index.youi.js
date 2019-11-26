@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
+import 'react-devtools';
 import React, { Component } from 'react';
 import { AppRegistry, FormFactor } from '@youi/react-native-youi';
 import { View } from 'react-native';

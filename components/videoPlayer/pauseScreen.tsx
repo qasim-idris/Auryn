@@ -1,13 +1,18 @@
-import React, { Component, RefObject, createRef, Fragment } from 'react';
+import React, { RefObject, createRef, Fragment, Component } from 'react';
+import { connect } from 'react-redux';
+import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
 
+import { getDetailsByIdAndType } from './../../actions/tmdbActions';
 import { VideoContext } from './context';
 import { Asset, AssetType } from './../../adapters/asset';
 import { Timeline } from './../timeline';
-import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
+import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
 
-interface VideoPauseScreenManagerProps {
-  related: Asset[];
-  onUpNextPress: (id: string, type: AssetType) => void;
+interface VideoPauseScreenManagerProps extends NavigationInjectedProps{
+  related: Asset[],
+  getDetailsByIdAndType: (id:string, type:AssetType) => void,
+  getVideoSourceByYoutubeId: (youtubeId:string) => void
 }
 
 interface VideoPauseScreenManagerState {
@@ -30,7 +35,11 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
     }
   }
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps:VideoPauseScreenManagerProps, nextState:VideoPauseScreenManagerState) {
+    if(nextState.isCompressed !== this.state.isCompressed) return true;
+
+    if(nextProps.related !== this.props.related) return true;
+
     return false;
   }
 
@@ -52,28 +61,34 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
     this.endSqueezeCompressTimeline.current?.play();
   }
 
-  expandVideo = () => {
+  expandVideo = async () => {
     if(!this.state.isCompressed) return;
-
+  
+    await this.endSqueezeExpandTimeline.current?.play();
+    
     this.setState({ isCompressed: false });
-    this.endSqueezeExpandTimeline.current?.play();
   }
 
-  playOnNext = async (id = '0', type: AssetType = AssetType.MOVIE) => {
-    this.expandVideo();
+  playOnNext = async (asset:Asset) => {
+    this.props.getDetailsByIdAndType(asset.id.toString(), asset.type);
 
-    this.props.onUpNextPress(id, type);
+    this.props.getVideoSourceByYoutubeId(asset.youtubeId);
+
+    // TODO: CHECK DO I NEED THIS
+    // TODO: Do not focus the upNext by default
+    this.props.navigation.navigate('Video', { asset } );
   }
 
   render() {
     const { related } = this.props;
+    const { isCompressed } = this.state;
 
     const upnext = related[0];
     const timerText = Math.floor((this.context.duration - this.context.currentTime) / 1000).toString();
 
     return (
       <Fragment>
-        <ImageRef name="Image-Background" visible={false}/>
+        <ImageRef name="Image-Background" visible={isCompressed}/>
         <Timeline name="EndSqueeze-Compress" ref={this.endSqueezeCompressTimeline} />
         <Timeline name="EndSqueeze-Expand" ref={this.endSqueezeExpandTimeline} />
 
@@ -87,7 +102,7 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
         <ButtonRef
           name="Button-UpNext-Primary"
           visible={upnext != null}
-          onPress={() => this.playOnNext(upnext.id.toString(), upnext.type)}
+          onPress={() => this.playOnNext(upnext)}
           focusable={this.context.paused}
         >
           <ImageRef name="Image-UpNext-Primary" source={{ uri: upnext.thumbs.Backdrop  }} />
@@ -100,4 +115,11 @@ class VideoPauseScreenManager extends Component<VideoPauseScreenManagerProps, Vi
   }
 }
 
-export default VideoPauseScreenManager;
+const mapStateToProps = () => {};
+
+const mapDispatchToProps = {
+  getDetailsByIdAndType,
+  getVideoSourceByYoutubeId
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(VideoPauseScreenManager));

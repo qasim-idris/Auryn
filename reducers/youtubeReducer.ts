@@ -9,7 +9,7 @@ import { VideoUriSource } from '@youi/react-native-youi';
  *
  */
 
-interface YoutubeReducerState {
+export interface YoutubeReducerState {
   videoSource: VideoUriSource;
   videoId: string;
   fetching: boolean;

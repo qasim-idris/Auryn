@@ -6,12 +6,14 @@
  *
  */
 
-import { applyMiddleware, createStore } from 'redux';
 import promise from 'redux-promise-middleware';
 import createDebounce from 'redux-debounced';
 import thunk from 'redux-thunk';
-import { rootReducer } from './reducers';
+import { rootReducer, StoreState } from './reducers';
 
-const middleware = applyMiddleware(createDebounce(), thunk, promise);
+import { configureStore, ConfigureStoreOptions, AnyAction } from 'redux-starter-kit';
 
-export default createStore(rootReducer, middleware);
+export default configureStore({
+  reducer: rootReducer,
+  middleware: [createDebounce(), thunk, promise]
+} as ConfigureStoreOptions<StoreState, AnyAction>);
