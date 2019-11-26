@@ -12,7 +12,7 @@ import { ViewRef, TextRef, SliderRef, FocusManager, Input, InputEventObject, But
 import { BackButton, Timeline, ToggleButton } from './../index';
 import { debounce } from 'lodash';
 import { Asset } from './../../adapters/asset';
-import { VideoContext } from './context';
+import { VideoContext, VideoContextType } from './context';
 import { MiniGuide } from './miniGuide';
 
 interface PlayerControlProps {
@@ -52,6 +52,8 @@ const keys = [
 const MIN_DURATION = 3000;
 
 export class VideoControls extends React.Component<PlayerControlProps, PlayerControlState> {
+  context!:VideoContextType;
+
   static contextType = VideoContext;
 
   state = {
@@ -132,7 +134,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
   onSlidingComplete = (value: number) => {
     this.context.setScrubbingEngaged(false);
 
-    if (this.context.duration <= MIN_DURATION) return;
+    if (this.context.duration! <= MIN_DURATION) return;
 
     this.props.videoPlayerRef.current?.seek(value);
   }
@@ -161,13 +163,13 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
           <ToggleButton
             name="Btn-PlayPause"
             onPress={this.playPause}
-            toggled={!this.context.paused || this.context.pausedByScrubbing}
+            toggled={!this.context.paused || this.state.pausedByScrubbing}
             focusable={this.props.isFocused && !this.context.miniGuideOpen}
             ref={this.playButton}
           />
           <TextRef name="Duration" text={this.context.formattedTime} visible={!isLive} />
           <SliderRef
-            visible={this.context.duration > MIN_DURATION}
+            visible={this.context.duration! > MIN_DURATION}
             name="Bar"
             minimumTrackTintColor="#DA1B5B"
             maximumValue={this.context.duration}

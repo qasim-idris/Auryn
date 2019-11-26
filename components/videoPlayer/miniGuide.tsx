@@ -5,7 +5,7 @@ import { Timeline, LiveListItem } from '..';
 import { View } from 'react-native';
 import { AurynAppState } from '../../reducers';
 import { ListItemPressEvent } from '../listitem';
-import { VideoContext } from './context';
+import { VideoContext, VideoContextType } from './context';
 import { Asset } from '../../adapters/asset';
 
 interface MiniGuideProps {
@@ -24,6 +24,8 @@ const initialState = {
 };
 
 class MiniGuideComponent extends React.Component<MiniGuideProps> {
+  context!:VideoContextType;
+  
   static contextType = VideoContext;
 
   showGuideTimeline = React.createRef<Timeline>();

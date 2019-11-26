@@ -3,6 +3,7 @@ import { Composition, ButtonRef } from '@youi/react-native-youi';
 
 import { Timeline } from './../timeline';
 import { VideoContext } from './../videoPlayer/index';
+import { VideoContextType } from '../videoPlayer/context';
 
 interface Props {
   name: string;
@@ -15,6 +16,8 @@ interface State {
 }
 
 class PauseAd extends Component<Props, State> {
+  context!:VideoContextType;
+
   static contextType = VideoContext;
 
   static defaultProps = {

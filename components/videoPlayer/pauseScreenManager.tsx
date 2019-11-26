@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
 
 import { getDetailsByIdAndType } from './../../actions/tmdbActions';
-import { VideoContext } from './context';
+import { VideoContext, VideoContextType } from './context';
 import { Asset, AssetType } from './../../adapters/asset';
 import { Timeline } from './../timeline';
 import { withNavigation, NavigationInjectedProps } from 'react-navigation';
@@ -20,6 +20,7 @@ interface PauseScreenManagerState {
 }
 
 class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenManagerState> {
+  context!:VideoContextType;
   static contextType = VideoContext;
 
   private END_SQUEEZE_MS = 15 * 1000;
@@ -46,7 +47,7 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
   componentDidUpdate() {
     if(this.context.paused && this.context.scrubbingEngaged) return;
 
-    if(this.context.duration - this.context.currentTime < this.END_SQUEEZE_MS) {
+    if(this.context.duration! - this.context.currentTime! < this.END_SQUEEZE_MS) {
       this.compressVideo();
     }
     else {
@@ -73,10 +74,6 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
     this.props.getDetailsByIdAndType(asset.id.toString(), asset.type);
 
     this.props.getVideoSourceByYoutubeId(asset.youtubeId);
-
-    // TODO: CHECK DO I NEED THIS
-    // TODO: Do not focus the upNext by default
-    this.props.navigation.navigate('Video', { asset } );
   }
 
   render() {
@@ -84,7 +81,7 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
     const { isCompressed } = this.state;
 
     const upnext = related[0];
-    const timerText = Math.floor((this.context.duration - this.context.currentTime) / 1000).toString();
+    const timerText = Math.floor((this.context.duration! - this.context.currentTime!) / 1000).toString();
 
     return (
       <Fragment>
@@ -94,7 +91,7 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
 
         <ViewRef name="UpNext-Countdown" visible={upnext != null}>
           <TextRef
-            visible={this.context.duration - this.context.currentTime < this.END_SQUEEZE_MS}
+            visible={this.context.duration! - this.context.currentTime! < this.END_SQUEEZE_MS}
             name="Timer" text={timerText}
           />
         </ViewRef>

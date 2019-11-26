@@ -2,7 +2,7 @@ import React, { createContext, createRef, RefObject, Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import PauseAd from './pause-ad';
-import { VideoContext } from './../videoPlayer/context';
+import { VideoContext, VideoContextType } from './../videoPlayer/context';
 
 const END_SQUEEZE_MS = 15 * 1000;
 
@@ -16,6 +16,8 @@ interface AdProviderState {}
 const Context = createContext<AdProviderState>({});
 
 class AdProvider extends Component<AdProviderProps, AdProviderState> {
+  context!:VideoContextType;
+  
   static defaultProps = {
     pauseAdCompositionName: undefined,
     related: [],
@@ -44,7 +46,7 @@ class AdProvider extends Component<AdProviderProps, AdProviderState> {
             <PauseAd
               ref={this.pausAdRef}
               name={pauseAdCompositionName}
-              forceShow={this.context.duration - this.context.currentTime < END_SQUEEZE_MS}
+              forceShow={this.context.duration! - this.context.currentTime! < END_SQUEEZE_MS}
               onClose={onPauseAdClosed}
             /> :
             null

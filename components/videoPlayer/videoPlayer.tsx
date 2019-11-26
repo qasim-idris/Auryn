@@ -1,10 +1,10 @@
-import React, { Component, Context, ContextType } from 'react';
+import React, { Component } from 'react';
 import PauseScreenManager from './pauseScreenManager';
 import { Composition, VideoRef, VideoUriSource, MediaState } from '@youi/react-native-youi';
 import { Timeline } from '..';
 import { VideoControls } from './videoControls';
 import { Asset } from '../../adapters/asset';
-import { VideoContext, VideoContextState } from './context';
+import { VideoContext, VideoContextType } from './context';
 import { View, NativeSyntheticEvent } from 'react-native';
 
 interface Props {
@@ -20,7 +20,7 @@ interface State {
 }
 
 export class VideoPlayer extends Component<Props, State> {
-  context!:ContextType<Context<VideoContextState>>;
+  context!:VideoContextType;
 
   static contextType = VideoContext;
   static defaultProps:Pick<Props, 'onBackButton'> = {

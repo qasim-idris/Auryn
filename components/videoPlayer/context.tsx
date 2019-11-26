@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, ContextType, Context } from 'react';
 import { MediaStateOptions, PlaybackStateOptions, VideoUriSource } from '@youi/react-native-youi';
 import URLSearchParams from '@ungap/url-search-params';
 
@@ -13,6 +13,7 @@ export interface VideoContextState {
   videoSource?: VideoUriSource,
   error?: boolean,
   metadata?: { BookmarkInterval: number },
+  miniGuideOpen: boolean,
 
   setVideoSource: (videoSource:VideoUriSource) => void,
   setPaused: () => void,
@@ -23,6 +24,8 @@ export interface VideoContextState {
   setScrubbingEngaged: (scrubbingEngaged: boolean) => void
 }
 
+export type VideoContextType =ContextType<Context<VideoContextState>>;
+
 const initialState:VideoContextState = {
   paused: false,
   scrubbingEngaged: false,
@@ -30,6 +33,7 @@ const initialState:VideoContextState = {
   mediaState: 'unloaded',
   metadata: { BookmarkInterval: 1 },
   playbackState: 'paused',
+  miniGuideOpen: false,
 
   setVideoSource: () => {},
   setPaused: () => {},
