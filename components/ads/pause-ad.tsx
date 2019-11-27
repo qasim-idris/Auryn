@@ -16,7 +16,7 @@ interface State {
 }
 
 class PauseAd extends Component<Props, State> {
-  context!:VideoContextType;
+  context!: VideoContextType;
 
   static contextType = VideoContext;
 

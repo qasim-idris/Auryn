@@ -3,30 +3,33 @@ import { MediaStateOptions, PlaybackStateOptions, VideoUriSource } from '@youi/r
 import URLSearchParams from '@ungap/url-search-params';
 
 export interface VideoContextState {
-  duration?: number,
-  currentTime?: number,
-  formattedTime?: string,
-  mediaState?: MediaStateOptions,
-  playbackState?: PlaybackStateOptions,
-  paused: boolean,
-  scrubbingEngaged: boolean,
-  videoSource?: VideoUriSource,
-  error?: boolean,
-  metadata?: { BookmarkInterval: number },
-  miniGuideOpen: boolean,
+  duration?: number;
+  currentTime?: number;
+  formattedTime?: string;
+  mediaState?: MediaStateOptions;
+  playbackState?: PlaybackStateOptions;
+  paused: boolean;
+  scrubbingEngaged: boolean;
+  videoSource?: VideoUriSource;
+  error?: boolean;
+  metadata?: { BookmarkInterval: number };
+  miniGuideOpen: boolean;
+  isLive: boolean;
 
-  setVideoSource: (videoSource:VideoUriSource) => void,
-  setPaused: () => void,
-  setPlaying: () => void,
-  setDurationChanged: (value:number) => void,
-  setCurrentTimeUpdated: (currentTime:number) => void,
-  setPlayerState: (mediaState:MediaStateOptions, playbackState:PlaybackStateOptions) => void
-  setScrubbingEngaged: (scrubbingEngaged: boolean) => void
+  setVideoSource: (videoSource: VideoUriSource) => void;
+  setPaused: () => void;
+  setPlaying: () => void;
+  setDurationChanged: (value: number) => void;
+  setCurrentTimeUpdated: (currentTime: number) => void;
+  setPlayerState: (mediaState: MediaStateOptions, playbackState: PlaybackStateOptions) => void;
+  setScrubbingEngaged: (scrubbingEngaged: boolean) => void;
+  setMiniGuideOpen: (miniGuideOpen: boolean) => void;
+  setIsLive: (isLive: boolean) => void;
 }
 
 export type VideoContextType =ContextType<Context<VideoContextState>>;
 
-const initialState:VideoContextState = {
+const initialState: VideoContextState = {
   paused: false,
   scrubbingEngaged: false,
   error: false,
@@ -34,6 +37,7 @@ const initialState:VideoContextState = {
   metadata: { BookmarkInterval: 1 },
   playbackState: 'paused',
   miniGuideOpen: false,
+  isLive: false,
 
   setVideoSource: () => {},
   setPaused: () => {},
@@ -41,7 +45,9 @@ const initialState:VideoContextState = {
   setDurationChanged: () => {},
   setCurrentTimeUpdated: () => {},
   setPlayerState: () => {},
-  setScrubbingEngaged: () => {}
+  setScrubbingEngaged: () => {},
+  setMiniGuideOpen: () => {},
+  setIsLive: () => {},
 }
 
 const VideoContext = React.createContext<VideoContextState>(initialState);
@@ -51,7 +57,7 @@ type VideoContextProviderProps = {};
 class VideoContextProvider extends PureComponent<VideoContextProviderProps, VideoContextState> {
   private MIN_DURATION = 3000;
 
-  constructor(props:VideoContextProviderProps) {
+  constructor(props: VideoContextProviderProps) {
     super(props);
 
     this.state = {
@@ -62,8 +68,10 @@ class VideoContextProvider extends PureComponent<VideoContextProviderProps, Vide
       setDurationChanged: this.setDurationChanged,
       setCurrentTimeUpdated: this.setCurrentTimeUpdated,
       setPlayerState: this.setPlayerState,
-      setScrubbingEngaged: this.setScrubbingEngaged
-    };  
+      setScrubbingEngaged: this.setScrubbingEngaged,
+      setMiniGuideOpen: this.setMiniGuideOpen,
+      setIsLive: this.setIsLive
+    };
   }
 
   getDurationFromVideoUri = (): number => {
@@ -72,13 +80,13 @@ class VideoContextProvider extends PureComponent<VideoContextProviderProps, Vide
     return Math.round(Number(sourceParams.get('dur')) * 1000);
   }
 
-  setVideoSource = (videoSource:VideoUriSource) => this.setState({ videoSource });
+  setVideoSource = (videoSource: VideoUriSource) => this.setState({ videoSource });
   setPaused = () => this.setState({ paused: true });
   setPlaying = () => this.setState({ paused: false });
-  setPlayerState = (mediaState:MediaStateOptions, playbackState:PlaybackStateOptions) => 
+  setPlayerState = (mediaState: MediaStateOptions, playbackState: PlaybackStateOptions) =>
     this.setState({mediaState, playbackState});
-  
-  setDurationChanged = (value:number) => {
+
+  setDurationChanged = (value: number) => {
     const duration = value > this.MIN_DURATION ? value : this.getDurationFromVideoUri();
     this.setState({ duration });
   }
@@ -101,7 +109,11 @@ class VideoContextProvider extends PureComponent<VideoContextProviderProps, Vide
     });
   }
 
-  setScrubbingEngaged = (scrubbingEngaged:boolean) => this.setState({scrubbingEngaged});
+  setScrubbingEngaged = (scrubbingEngaged: boolean) => this.setState({scrubbingEngaged});
+
+  setMiniGuideOpen = (miniGuideOpen: boolean) => this.setState({miniGuideOpen});
+
+  setIsLive = (isLive: boolean) => this.setState({isLive});
 
   render() {
     return (

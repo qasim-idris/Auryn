@@ -19,7 +19,7 @@ interface PlayerControlProps {
   isFocused?: boolean;
   isLive?: boolean;
   asset: Asset;
-  videoPlayerRef: RefObject<VideoRef>
+  videoPlayerRef: RefObject<VideoRef>;
   onBackButton: () => void;
 }
 
@@ -52,7 +52,7 @@ const keys = [
 const MIN_DURATION = 3000;
 
 export class VideoControls extends React.Component<PlayerControlProps, PlayerControlState> {
-  context!:VideoContextType;
+  declare context: React.ContextType<typeof VideoContext>
 
   static contextType = VideoContext;
 
@@ -62,7 +62,9 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
   };
 
   private controlsHideTimeline = React.createRef<Timeline>();
+
   private controlsShowTimeline = React.createRef<Timeline>();
+
   private playButton = React.createRef<ToggleButton>();
 
   componentDidMount() {
@@ -75,9 +77,16 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
     keys.concat(mediaKeys).forEach(key => Input.removeEventListener(key, this.registerUserActivity));
   }
 
+  componentDidUpdate() {
+    if (this.context.miniGuideOpen && this.state.controlsActive) {
+      this.debounceHidingControls.cancel();
+      this.hideControls();
+    }
+  }
+
   playPause = () => {
-    this.context.paused ? 
-      this.props.videoPlayerRef.current?.play(): 
+    this.context.paused ?
+      this.props.videoPlayerRef.current?.play():
       this.props.videoPlayerRef.current?.pause();
 
     if(!this.context.paused) {
@@ -94,15 +103,24 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
     this.controlsShowTimeline.current?.play();
   }
 
+  hideControls = () => {
+    if (!this.context.isLive && this.playButton.current)
+      FocusManager.focus(this.playButton.current);
+
+    this.controlsHideTimeline.current?.play();
+    this.setState({ controlsActive: false});
+  }
+
   registerUserActivity = (keyEvent?: InputEventObject) => {
     if (keyEvent) {
       if (mediaKeys.includes(keyEvent.keyCode) && keyEvent.eventType === 'up')
         this.playPause();
     }
 
-    if (!this.state.controlsActive) this.showControls();
-
-    this.debounceHidingControls();
+    if (!this.state.controlsActive && !this.context.miniGuideOpen) {
+      this.showControls();
+      this.debounceHidingControls();
+    }
   }
 
   seekAndResume = (time: number) => {
@@ -118,7 +136,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
 
   onScrub = debounce((value: number) => {
     if (value === this.context.currentTime) return;
-    
+
     this.context.setScrubbingEngaged(true);
 
     if (!this.context.paused) {
@@ -139,16 +157,10 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
     this.props.videoPlayerRef.current?.seek(value);
   }
 
-  debounceHidingControls = debounce(() => {
-    if (!this.props.isLive && this.playButton.current)
-      FocusManager.focus(this.playButton.current);
-
-    this.controlsHideTimeline.current?.play();
-    this.setState({ controlsActive: false});
-  }, 5000);
+  debounceHidingControls = debounce(this.hideControls, 5000);
 
   render() {
-    const { asset, isFocused, isLive } = this.props;
+    const { asset, isFocused } = this.props;
 
     return (
       <ButtonRef name="Video" onPress={this.registerUserActivity} visible={isFocused}>
@@ -167,7 +179,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
             focusable={this.props.isFocused && !this.context.miniGuideOpen}
             ref={this.playButton}
           />
-          <TextRef name="Duration" text={this.context.formattedTime} visible={!isLive} />
+          <TextRef name="Duration" text={this.context.formattedTime} visible={!this.context.isLive} />
           <SliderRef
             visible={this.context.duration! > MIN_DURATION}
             name="Bar"
@@ -180,7 +192,7 @@ export class VideoControls extends React.Component<PlayerControlProps, PlayerCon
             step={1}
           />
 
-          <MiniGuide isLive={isLive}/>
+          <MiniGuide />
 
           <ViewRef name="Video-TextDetails">
             <TextRef name="Title" text={asset.title} />

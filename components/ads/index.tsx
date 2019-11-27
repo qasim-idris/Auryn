@@ -16,7 +16,7 @@ interface AdProviderState {}
 const Context = createContext<AdProviderState>({});
 
 class AdProvider extends Component<AdProviderProps, AdProviderState> {
-  context!:VideoContextType;
+  context!: VideoContextType;
   
   static defaultProps = {
     pauseAdCompositionName: undefined,

@@ -8,22 +8,22 @@ import { VideoContext, VideoContextType } from './context';
 import { View, NativeSyntheticEvent } from 'react-native';
 
 interface Props {
-  asset: Asset,
-  isFocused: boolean,
-  enablePauseScreen: boolean,
-  related: Asset[],
-  onBackButton: () => void
+  asset: Asset;
+  isFocused: boolean;
+  enablePauseScreen: boolean;
+  related: Asset[];
+  onBackButton: () => void;
 }
 
 interface State {
-  hasStartedPlaying: boolean
+  hasStartedPlaying: boolean;
 }
 
 export class VideoPlayer extends Component<Props, State> {
-  context!:VideoContextType;
+  context!: VideoContextType;
 
   static contextType = VideoContext;
-  static defaultProps:Pick<Props, 'onBackButton'> = {
+  static defaultProps: Pick<Props, 'onBackButton'> = {
     onBackButton: () => {}
   };
 
@@ -36,7 +36,7 @@ export class VideoPlayer extends Component<Props, State> {
   private outTimeline = React.createRef<Timeline>();
   private videoPlayer = React.createRef<VideoRef>();
 
-  constructor(props:Props) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -63,8 +63,8 @@ export class VideoPlayer extends Component<Props, State> {
 
   onPaused = () => this.context.setPaused();
   onPlaying = () => this.context.setPlaying();
-  onDurationChanged = (value:number) => this.context.setDurationChanged(value);
-  onCurrentTimeUpdated = (currentTime:number) => this.context.setCurrentTimeUpdated(currentTime);
+  onDurationChanged = (value: number) => this.context.setDurationChanged(value);
+  onCurrentTimeUpdated = (currentTime: number) => this.context.setCurrentTimeUpdated(currentTime);
 
   onStateChanged = (playerState: NativeSyntheticEvent<MediaState>) => {
     const { mediaState, playbackState } = playerState.nativeEvent;

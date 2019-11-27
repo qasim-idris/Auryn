@@ -10,9 +10,9 @@ import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
 
 interface PauseScreenManagerProps extends NavigationInjectedProps{
-  related: Asset[],
-  getDetailsByIdAndType: (id:string, type:AssetType) => void,
-  getVideoSourceByYoutubeId: (youtubeId:string) => void
+  related: Asset[];
+  getDetailsByIdAndType: (id: string, type: AssetType) => void;
+  getVideoSourceByYoutubeId: (youtubeId: string) => void;
 }
 
 interface PauseScreenManagerState {
@@ -20,12 +20,14 @@ interface PauseScreenManagerState {
 }
 
 class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenManagerState> {
-  context!:VideoContextType;
+  declare context: React.ContextType<typeof VideoContext>
+
   static contextType = VideoContext;
 
   private END_SQUEEZE_MS = 15 * 1000;
 
   private endSqueezeCompressTimeline: RefObject<Timeline> = createRef();
+
   private endSqueezeExpandTimeline: RefObject<Timeline> = createRef();
 
   constructor(props: PauseScreenManagerProps) {
@@ -36,7 +38,7 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
     }
   }
 
-  shouldComponentUpdate(nextProps:PauseScreenManagerProps, nextState:PauseScreenManagerState) {
+  shouldComponentUpdate(nextProps: PauseScreenManagerProps, nextState: PauseScreenManagerState) {
     if(nextState.isCompressed !== this.state.isCompressed) return true;
 
     if(nextProps.related !== this.props.related) return true;
@@ -45,6 +47,8 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
   }
 
   componentDidUpdate() {
+    if (this.context.isLive) return;
+
     if(this.context.paused && this.context.scrubbingEngaged) return;
 
     if(this.context.duration! - this.context.currentTime! < this.END_SQUEEZE_MS) {
@@ -64,13 +68,13 @@ class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenM
 
   expandVideo = async () => {
     if(!this.state.isCompressed) return;
-  
+
     await this.endSqueezeExpandTimeline.current?.play();
-    
+
     this.setState({ isCompressed: false });
   }
 
-  playOnNext = async (asset:Asset) => {
+  playOnNext = async (asset: Asset) => {
     this.props.getDetailsByIdAndType(asset.id.toString(), asset.type);
 
     this.props.getVideoSourceByYoutubeId(asset.youtubeId);

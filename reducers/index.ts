@@ -19,8 +19,8 @@ export const rootReducer = combineReducers({
 });
 
 export type StoreState = {
-  tmdbReducer: TmdbReducerState,
-  youtubeReducer: YoutubeReducerState,
+  tmdbReducer: TmdbReducerState;
+  youtubeReducer: YoutubeReducerState;
 };
 
 export type AurynAppState = ReturnType<typeof rootReducer>

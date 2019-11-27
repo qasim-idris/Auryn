@@ -18,7 +18,7 @@ import { Asset } from './../adapters/asset';
 import { AurynAppState } from './../reducers/index';
 import { RotationMode, OrientationLock } from './../components/withOrientation';
 import AdProvider from './../components/ads';
-import { VideoPlayer, VideoContextProvider } from './../components/videoPlayer';
+import { VideoPlayer, VideoContextProvider, VideoContext } from './../components/videoPlayer';
 
 interface VideoProps extends NavigationFocusInjectedProps, OrientationLock, DispatchProp {
   asset: Asset;
@@ -29,8 +29,14 @@ interface VideoProps extends NavigationFocusInjectedProps, OrientationLock, Disp
 }
 
 class VideoScreenComponent extends React.Component<VideoProps> {
+  declare context: React.ContextType<typeof VideoContext>
+
+  static contextType = VideoContext;
+
   private focusListener!: NavigationEventSubscription;
+
   private blurListener!: NavigationEventSubscription;
+
   private videoContext = React.createRef<VideoContextProvider>();
 
   componentDidMount() {
@@ -43,6 +49,8 @@ class VideoScreenComponent extends React.Component<VideoProps> {
     });
 
     this.videoContext.current?.setVideoSource(this.props.videoSource);
+
+    this.videoContext.current?.setIsLive(this.props.isLive);
   }
 
   componentWillUnmount() {
@@ -64,7 +72,7 @@ class VideoScreenComponent extends React.Component<VideoProps> {
     if (nextProps.videoId !== this.props.videoId) {
       return true;
     }
-    
+
     if (nextProps.fetched !== this.props.fetched) {
       return true;
     }
@@ -73,7 +81,8 @@ class VideoScreenComponent extends React.Component<VideoProps> {
   }
 
   navigateBack = () => {
-    // TODO: Don't navigate back when the mini guide is open.
+    if (this.videoContext.current?.state.miniGuideOpen) return true;
+
     if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'PDP' });
     else
