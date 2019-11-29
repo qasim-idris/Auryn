@@ -6,26 +6,12 @@
  *
  */
 
-import React, { Component } from 'react';
 import { AppRegistry, FormFactor } from '@youi/react-native-youi';
-import { View } from 'react-native';
-import { Provider } from 'react-redux';
-import store from './store';
-import Stack from './navigation';
-import { withOrientation } from './components';
-import { RotationMode } from './components/withOrientation';
-import { AurynHelper } from './aurynHelper';
+import YiReactApp from './src/App';
 
-export default class YiReactApp extends Component {
-  render = () =>
-    <Provider store={store}>
-      <View style={{ backgroundColor: AurynHelper.isRoku ? 'black' : 'transparent', flex: 1 }}>
-        <Stack />
-      </View>
-    </Provider>
-}
+import { withOrientation } from './src/components';
+import { RotationMode } from './src/components/withOrientation';
 
-// eslint-disable-next-line no-negated-condition
 const rotationMode = !FormFactor.isHandset ? RotationMode.Landscape : RotationMode.Portrait;
 
 AppRegistry.registerComponent('YiReactApp', () => withOrientation(YiReactApp, rotationMode));

@@ -7408,7 +7408,7 @@ yargs@^9.0.0:
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
 
-youtube-stream-url@./packages/youtube-stream-url:
+youtube-stream-url@./src/packages/youtube-stream-url:
   version "1.0.2"
   dependencies:
     axios "^0.17.1"
