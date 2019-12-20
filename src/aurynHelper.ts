@@ -1,6 +1,5 @@
-import { DeviceInfo, Ref } from '@youi/react-native-youi';
+import { DeviceInfo } from '@youi/react-native-youi';
 import { NativeModules, findNodeHandle } from 'react-native';
-import { once } from 'lodash';
 
 const systemName = DeviceInfo.getSystemName();
 const { Cloud, RefUtils } = NativeModules;
@@ -9,7 +8,7 @@ interface AurynHelper {
   hasHardwareBackButton: boolean;
   isRoku: boolean;
   updateCloudScene: (component: React.RefObject<any>) => void;
-  togglePointerEvents: (ref: React.RefObject<any>, enabled: boolean, onParentComp: boolean) => void;
+  togglePointerEvents: (ref: React.RefObject<any>, enabled: boolean, onParentComp?: boolean) => void;
 }
 
 export const AurynHelper: AurynHelper = {
@@ -22,7 +21,7 @@ export const AurynHelper: AurynHelper = {
       Cloud.sendFocusMap();
     }, 300);
   },
-  togglePointerEvents: (ref: React.RefObject<any>, enabled: boolean, onParentComp: boolean) => {
+  togglePointerEvents: (ref, enabled, onParentComp = false) => {
     if (!ref.current) return;
 
     if (onParentComp) {
