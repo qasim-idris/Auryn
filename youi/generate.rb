@@ -280,10 +280,10 @@ class GenerateOptions
             end
 
             unless(options.inline_jsbundle || options.use_jsbundle || options.ram_bundle)
-                manualIpPlatforms = ["osx", "linux", "vs2017"]
+                desktopPlatforms = ["osx", "linux", "vs2017"]
 
                 if (options.ip_address == nil)
-                  unless (manualIpPlatforms.include?(options.platform))
+                  unless (desktopPlatforms.include?(options.platform))
                     options.ip_address = GetIpAddress()
                   else
                     options.ip_address = 'localhost'

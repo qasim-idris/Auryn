@@ -12,7 +12,7 @@ include(Project.cmake)
 
 set(YI_EXCLUDED_ASSET_FILE_EXTENSIONS ".log,.aep" CACHE STRING "Comma-delimited list of file extensions whose files should be omitted during asset copying.")
 set(YI_YOUI_ENGINE_VERSION 4.999.0 CACHE STRING "Version required for the You.i Engine.")
-set(YI_VERSION_NUMBER 1.0.0.0 CACHE STRING "Build version of the application. This is the version that will be displayed to the end user in the store.")
+set(YI_VERSION_NUMBER 3.0.0.0 CACHE STRING "Build version of the application. This is the version that will be displayed to the end user in the store.")
 set(YI_BUILD_NUMBER "ENG-unversioned" CACHE STRING "Release version number that needs to be incremented for each store submission. For Apple platforms, this is the CFBundleVersion. For Android, this is the Version Code.")
 
 set(YI_BUNDLE_URL_SCHEME "yirnapp")
@@ -208,6 +208,13 @@ source_group("Source Files\\App" FILES
 )
 source_group("Resources" FILES ${YI_PLATFORM_RESOURCES_${YI_PLATFORM_UPPER}})
 
+# Load each ModuleList.cmake file into scope, where the files make use of
+# target_sources, target_link_libraries and other target based cmake functionality
+# on the PROJECT_NAME target.
+foreach(_NATIVE_INCLUDE IN LISTS YI_NATIVEMODULES_INCLUDES)
+    include("${_NATIVE_INCLUDE}")
+endforeach()
+
 # === START OF OPTION HANDLING ================================================
 
 # Instrumented builds can help with determining code coverage.
@@ -248,16 +255,17 @@ yi_configure_js_bundling(PROJECT_TARGET ${PROJECT_NAME} BASE_OUTPUT_DIR ${YI_BAS
 
 # === START OF ASSET COPYING ==================================================
 
+include(Modules/react/YiConfigureCommonReactAssets)
+yi_configure_common_react_assets(PROJECT_TARGET ${PROJECT_NAME}
+    OUTPUT_DIRECTORY ${YI_BASE_OUTPUT_DIRECTORY}
+    EXCLUDED_EXTENSIONS ${YI_EXCLUDED_ASSET_FILE_EXTENSIONS}
+)
+
 include(Modules/YiConfigureAssetCopying)
 yi_configure_asset_copying(PROJECT_TARGET ${PROJECT_NAME}
     OUTPUT_DIRECTORY ${YI_BASE_OUTPUT_DIRECTORY}
     EXCLUDED_EXTENSIONS ${YI_EXCLUDED_ASSET_FILE_EXTENSIONS}
     ADDITIONAL_ASSET_PATHS ${YI_NATIVEMODULES_AE_ASSET_PATHS}
-)
-include(Modules/react/YiConfigureCommonReactAssets)
-yi_configure_common_react_assets(PROJECT_TARGET ${PROJECT_NAME}
-    OUTPUT_DIRECTORY ${YI_BASE_OUTPUT_DIRECTORY}
-    EXCLUDED_EXTENSIONS ${YI_EXCLUDED_ASSET_FILE_EXTENSIONS}
 )
 
 # === END OF ASSET COPYING ====================================================

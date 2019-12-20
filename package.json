@@ -12,15 +12,15 @@
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.0.4",
 		"@ungap/url-search-params": "^0.1.2",
-		"@youi/react-native-youi": "5.8.0",
+		"@youi/react-native-youi": "5.10.0",
 		"react": "16.6.3",
 		"react-native": "0.58.6",
-		"react-navigation": "^2.13.10",
+		"react-navigation": "matanbareketyoui/react-navigation#2.18.4",
 		"react-redux": "^6.0.0",
 		"redux-debounced": "^0.5.0",
 		"redux-promise-middleware": "^6.1.0",
 		"redux-thunk": "^2.3.0",
-		"youtube-stream-url": "./src/packages/youtube-stream-url"
+		"youtube-stream-url": "matanbareketyoui/youtube-stream-url"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.0.0",

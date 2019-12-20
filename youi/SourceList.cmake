@@ -11,10 +11,12 @@ set (YI_PROJECT_SOURCE
     src/AppFactory.cpp
     src/OrientationLockModule.cpp
     src/TrackpadModule.cpp
+    src/RefUtilsModule.cpp
 )
 
 set (YI_PROJECT_HEADERS
     src/App.h
     src/OrientationLockModule.h
     src/TrackpadModule.h
+    src/RefUtilsModule.h
 )
