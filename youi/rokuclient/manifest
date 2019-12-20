@@ -6,37 +6,31 @@ major_version=1
 minor_version=1
 build_version=1
  
+# Channel Assets, Splash / Loading Screen Artwork:
+#=================================================
+
 # HD 720p assets
-mm_icon_focus_hd=pkg:/images/Icon-210.png
-splash_screen_hd=pkg:/images/splashscreen720.png
+mm_icon_focus_hd=pkg:/images/mm_icon_focus_hd.jpg
+splash_screen_hd=pkg:/images/Splash_HD.png
 
 # Optional HD 1080p assets
-splash_screen_fhd=pkg:/images/splashscreen1080.png
+splash_screen_fhd=pkg:/images/Splash_FHD.png
 
 # SD 480p assets
 # Note: By specifying the HD 720p assets here, Roku will know to scale both the assets and the app
 #       This allows for universal scaling support
-mm_icon_focus_sd=pkg:/images/Icon-210.png
-splash_screen_sd=pkg:/images/splashscreen720.png
+mm_icon_focus_sd=pkg:/images/mm_icon_focus_hd.jpg
+splash_screen_sd=pkg:/images/Splash_HD.png
 
-# Optional Splash Background Color / Display Time Configuration
-splash_color=#dc234b
+## Optional
+#=========
+splash_color=#808080
 splash_min_time=0
 
 ## Resolution
 #ui_resolutions=sd,hd,fhd
- 
-#confirm_partner_button=1
 
 #bs_libs_required=roku_ads_lib
-
-##DRM Options
-#requires_aaxs_drm=1
-#requires_aaxs_version=1.0
-#requires_verimatrix_drm=1
-#requires_verimatrix_version=1.0
-requires_widevine_drm=1
-requires_widevine_version=1.0
 
 ## See manifest params at https://sdkdocs.roku.com/display/sdkdoc/Roku+Channel+Manifest
 
@@ -47,10 +41,10 @@ port=80
 sessionTimeoutSeconds=14400
 
 #DEBUG_PRINT_VIDEO_DRM: Print videoheader and drmparams to the Roku console.
-bs_const=ENABLE_DEBUG_JSON=false;ENABLE_IAP_START_UP=false;ENABLE_RALE=false;EXPORT_PROFILER=false;DEBUG_PRINT_VIDEO_DRM=true;ENABLE_DEBUG_ERROR_DIALOG=false;ENABLE_TIMERS=false
+#bs_const=ENABLE_DEBUG_JSON=false;
 
-secure=true
-shared_secret=testSharedSecret
+#secure=true
+#shared_secret=secret
 
 supports_input_launch=1
 
