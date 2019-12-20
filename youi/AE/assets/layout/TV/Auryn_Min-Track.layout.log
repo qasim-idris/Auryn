@@ -1,15 +1,15 @@
 activecomp {
   name: "Auryn_Min-Track"
-  width: 1400
+  width: 1500
   height: 12
-  defaultcameradistance: 1944.4445
+  defaultcameradistance: 2083.3333
   layer {
-    name: "Magenta-Red Solid 4"
+    name: "Magenta-Red Solid 5"
     id: 690012515
     sourceid: 519935
     transform {
       anchorPoint {
-        x: 700
+        x: 750
         y: 6
         z: 0
       }
@@ -19,7 +19,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 700
+        x: 750
         y: 6
         z: 0
       }
@@ -49,11 +49,11 @@ sources {
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
-    red: 0.91286766529083252
-    green: 0.032904054969549179
-    blue: 0.33563414216041565
+    red: 0.91372549533843994
+    green: 0.0313725508749485
+    blue: 0.33725491166114807
   }
-  width: 1400
+  width: 1500
   height: 12
   copy_source: false
 }

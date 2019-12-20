@@ -1,8 +1,8 @@
 activecomp {
   name: "Auryn_List-PDP"
-  width: 1920
+  width: 1764
   height: 400
-  defaultcameradistance: 2666.6667
+  defaultcameradistance: 2450
   classname: "CYIListView"
   bgcolor {
     alpha: 1
@@ -21,5 +21,9 @@ activecomp {
   properties {
     key: "layout"
     value: "CYIRowLayout"
+  }
+  properties {
+    key: "clip"
+    value: "false"
   }
 }

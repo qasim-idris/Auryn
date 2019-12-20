@@ -12,17 +12,6 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 1978
-  targetname: "Title"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 1979
   targetname: "Live-Metadata"
   keytimes {
     datatype: AE_INT_DATA

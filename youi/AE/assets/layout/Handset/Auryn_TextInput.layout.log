@@ -1,50 +1,16 @@
 activecomp {
   name: "Auryn_TextInput"
-  width: 860
-  height: 140
-  defaultcameradistance: 1194.4445
-  layer {
-    name: "Text-BG 3"
-    id: 1920
-    sourceid: 2507
-    transform {
-      anchorPoint {
-        x: 430
-        y: 70
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 429.9375
-        y: 69.9375
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
+  width: 998
+  height: 126
+  defaultcameradistance: 1386.1111
   layer {
     name: "Text-BG 2"
-    id: 1921
+    id: 1920
     sourceid: 2441
     transform {
       anchorPoint {
-        x: 422
-        y: 62
+        x: 499
+        y: 63
         z: 0
       }
       scale {
@@ -53,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 429.9375
-        y: 69.9375
+        x: 498.9375
+        y: 62.9375
         z: 0
       }
       orientation {
@@ -73,7 +39,7 @@ activecomp {
   }
   layer {
     name: "Text"
-    id: 1922
+    id: 1921
     sourceid: -1
     transform {
       anchorPoint {
@@ -87,8 +53,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 58
-        y: 86
+        x: 127
+        y: 78.438538
         z: 0
       }
       orientation {
@@ -106,14 +72,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 55
+      fontSize: 42
       fontColor {
         alpha: 1
-        red: 0.69020003080368042
-        green: 0.68234997987747192
-        blue: 0.73332995176315308
+        red: 0.95293992757797241
+        green: 0.95293992757797241
+        blue: 0.95293992757797241
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "Search"
@@ -123,8 +89,8 @@ activecomp {
   }
   layer {
     name: "InputProperties"
-    id: 1923
-    sourceid: 2459
+    id: 1922
+    sourceid: 1040
     transform {
       anchorPoint {
         x: 25
@@ -137,7 +103,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 776.75
+        x: 842.75
         y: -11.177275
         z: 0
       }
@@ -154,7 +120,75 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1922
+    parentid: 1921
+  }
+  layer {
+    name: "Icon-Search.png"
+    id: 1923
+    sourceid: 104
+    transform {
+      anchorPoint {
+        x: 22.5
+        y: 23.5
+        z: 0
+      }
+      scale {
+        x: 0.76
+        y: 0.76
+        z: 1
+      }
+      position {
+        x: 59.5
+        y: 63
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Icon-Search-Active.png"
+    id: 1924
+    sourceid: 980
+    transform {
+      anchorPoint {
+        x: 17.5
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 59.5
+        y: 63
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
   }
   classname: "CYIPasswordTextEditView"
   bgcolor {
@@ -171,43 +205,34 @@ activecomp {
     key: "componentSubtype"
     value: "protected"
   }
-}
-sources {
-  uid: 2507
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
+  properties {
+    key: "caret-color"
+    value: "#F1F1F1"
   }
-  width: 860
-  height: 140
-  copy_source: false
 }
 sources {
   uid: 2441
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
-    red: 0
-    green: 0.015530876815319061
-    blue: 0.039644606411457062
+    red: 0.13725490868091583
+    green: 0.13725490868091583
+    blue: 0.13725490868091583
   }
-  width: 844
-  height: 124
+  width: 998
+  height: 126
   copy_source: false
 }
 sources {
-  uid: 3
+  uid: 2
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }
 sources {
-  uid: 2459
+  uid: 1040
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
@@ -218,4 +243,26 @@ sources {
   width: 50
   height: 145
   copy_source: false
+}
+sources {
+  uid: 104
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Search.png"
+  width: 45
+  height: 47
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 980
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Search-Active.png"
+  width: 35
+  height: 35
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
 }

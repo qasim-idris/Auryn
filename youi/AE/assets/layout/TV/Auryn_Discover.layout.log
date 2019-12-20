@@ -1,8 +1,8 @@
 activecomp {
   name: "Auryn_Discover"
-  width: 1920
-  height: 900
-  defaultcameradistance: 2666.6667
+  width: 1740
+  height: 839
+  defaultcameradistance: 2416.6667
   classname: "CYIListView"
   bgcolor {
     alpha: 1
@@ -21,5 +21,9 @@ activecomp {
   properties {
     key: "useComponentScrollingView"
     value: "true"
+  }
+  properties {
+    key: "clip"
+    value: "false"
   }
 }

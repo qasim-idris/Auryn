@@ -1,0 +1,101 @@
+activecomp {
+  name: "Auryn_Backdrop-Large-Unfocused-Text"
+  width: 938
+  height: 200
+  defaultcameradistance: 1302.7778
+  layer {
+    name: "Unfocus-Text-Title"
+    id: 690016780
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 248.5
+        y: 90.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 282.76
+        y: 174
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 48
+      fontColor {
+        alpha: 1
+        red: 0.964709997177124
+        green: 0.94510000944137573
+        blue: 0.93332993984222412
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 861
+      boundsHeight: 104
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: true
+    }
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "clip"
+    value: "true"
+  }
+  properties {
+    key: "layout"
+    value: "CYIRowLayout"
+  }
+  properties {
+    key: "padding-left"
+    value: "33"
+  }
+  properties {
+    key: "gravity"
+    value: "bottom-left"
+  }
+  properties {
+    key: "padding-bottom"
+    value: "33"
+  }
+}
+sources {
+  uid: 1
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Bold"
+  copy_source: true
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
+}

@@ -4,13 +4,13 @@ activecomp {
   height: 1080
   defaultcameradistance: 2666.6667
   layer {
-    name: "List-Movies"
+    name: "Dark Blue Solid 1"
     id: 743
-    sourceid: 360
+    sourceid: 690016639
     transform {
       anchorPoint {
         x: 960
-        y: 200
+        y: 86
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 960
-        y: 644
+        x: 50
+        y: -24
         z: 0
       }
       orientation {
@@ -36,69 +36,16 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 750
-  }
-  layer {
-    name: "Popular Movies"
-    id: 744
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 440
-        y: 60
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 537.72
-        y: 452.28012
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 36
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Medium"
-      isPointText: false
-      boundsWidth: 880
-      boundsHeight: 68
-      isLabel: true
-      text: "Popular Movies"
-      multiline: true
-      isAllCaps: false
-    }
     parentid: 750
   }
   layer {
     name: "List-PDP"
-    id: 745
-    sourceid: 360
+    id: 744
+    sourceid: 690016871
     transform {
       anchorPoint {
-        x: 960
-        y: 200
+        x: 882
+        y: 0
         z: 0
       }
       scale {
@@ -108,7 +55,7 @@ activecomp {
       }
       position {
         x: 960
-        y: 250
+        y: 50
         z: 0
       }
       orientation {
@@ -124,11 +71,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 750
+    parentid: 748
   }
   layer {
     name: "Popular Shows 2"
-    id: 746
+    id: 745
     sourceid: -1
     transform {
       anchorPoint {
@@ -161,14 +108,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 36
+      fontSize: 29
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 880
       boundsHeight: 68
@@ -177,11 +124,11 @@ activecomp {
       multiline: true
       isAllCaps: false
     }
-    parentid: 750
+    parentid: 748
   }
   layer {
     name: "TextInput"
-    id: 747
+    id: 746
     sourceid: 1023
     transform {
       anchorPoint {
@@ -195,8 +142,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 50
-        y: -110
+        x: 603
+        y: -6
         z: 0
       }
       orientation {
@@ -212,11 +159,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 749
+    parentid: 751
   }
   layer {
     name: "Btn-Back"
-    id: 748
+    id: 747
     sourceid: 690011939
     transform {
       anchorPoint {
@@ -231,7 +178,7 @@ activecomp {
       }
       position {
         x: 45
-        y: -113
+        y: -68
         z: 0
       }
       orientation {
@@ -247,46 +194,12 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 751
-  }
-  layer {
-    name: "ScaleWidthPropCenterAnchor"
-    id: 749
-    sourceid: 690011406
-    transform {
-      anchorPoint {
-        x: 50
-        y: 50
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 960
-        y: 540
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
+    parentid: 749
   }
   layer {
     name: "ScaleWidthPropLeftAnchor"
-    id: 750
-    sourceid: 690011406
+    id: 748
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 0
@@ -319,8 +232,8 @@ activecomp {
   }
   layer {
     name: "ScaleWidthPropTopRightAnchor"
-    id: 751
-    sourceid: 690011406
+    id: 749
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 100
@@ -334,6 +247,74 @@ activecomp {
       }
       position {
         x: 1920
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropTopAnchor"
+    id: 750
+    sourceid: 1480
+    transform {
+      anchorPoint {
+        x: 50
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "ScaleWidthPropTopLeftAnchor"
+    id: 751
+    sourceid: 1480
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
         y: 0
         z: 0
       }
@@ -365,25 +346,38 @@ activecomp {
     key: "rows"
     value: "2"
   }
-  childtemplates: "Auryn_List-PDP"
+  childtemplates: "Auryn_List-Search"
   childtemplates: "Auryn_TextInput"
   childtemplates: "Auryn_Btn-Back"
 }
 sources {
-  uid: 360
-  srctype: AE_COMP_SRC
-  name: "Auryn_List-PDP.layout"
+  uid: 690016639
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.090196080505847931
+    green: 0.090196080505847931
+    blue: 0.0941176488995552
+  }
   width: 1920
-  height: 400
+  height: 172
+  copy_source: false
+}
+sources {
+  uid: 690016871
+  srctype: AE_COMP_SRC
+  name: "Auryn_List-Search.layout"
+  width: 1764
+  height: 738
   copy_source: true
 }
 sources {
-  uid: 2
+  uid: 3
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
 }
 sources {
   uid: 1023
@@ -402,7 +396,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011406
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

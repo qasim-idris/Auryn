@@ -61,62 +61,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 840
-  targetname: "Red Solid 36"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 841
-  targetname: "Red Solid 35"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 842
-  targetname: "Red Solid 34"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 843
-  targetname: "Red Solid 33"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 844
-  targetname: "Button-PlayPause-Fill.png"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 845
-  targetname: "Btn-Play_2.png"
+  targetname: "PlayIcon.png"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
@@ -126,30 +71,30 @@ tracks {
 }
 tracks {
   binding: SCALE
-  targetid: 845
-  targetname: "Btn-Play_2.png"
+  targetid: 840
+  targetname: "PlayIcon.png"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 0
     inttype: AE_INTERP_LINEAR
-    fvalue1: 1
-    fvalue2: 1
+    fvalue1: 1.66
+    fvalue2: 1.66
     fvalue3: 1
   }
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 3
     inttype: AE_INTERP_LINEAR
-    fvalue1: 1
-    fvalue2: 1
+    fvalue1: 1.66
+    fvalue2: 1.66
     fvalue3: 1
   }
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 3.01666
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.969493
-    fvalue2: 0.969493
+    fvalue1: 1.629493
+    fvalue2: 1.629493
     fvalue3: 1
     isCookedKeytime: true
   }
@@ -157,8 +102,8 @@ tracks {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 3.06664
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.83091944
-    fvalue2: 0.83091944
+    fvalue1: 1.4909195
+    fvalue2: 1.4909195
     fvalue3: 1
     isCookedKeytime: true
   }
@@ -166,8 +111,8 @@ tracks {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 3.0833333
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.8
-    fvalue2: 0.8
+    fvalue1: 1.46
+    fvalue2: 1.46
     fvalue3: 1
   }
   trackName: "Scale"
@@ -181,7 +126,7 @@ markers {
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 845
+    targetid: 840
     binding: SCALE
   }
   alltracks: false

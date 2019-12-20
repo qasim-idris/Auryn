@@ -12,6 +12,28 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 224
+  targetname: "Image-UpNext-Primary"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 225
+  targetname: "Live-Asset-Gradient-2.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 226
   targetname: "Duration"
   keytimes {
     datatype: AE_INT_DATA
@@ -22,7 +44,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 224
+  targetid: 226
   targetname: "Duration"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -133,7 +155,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 225
+  targetid: 227
   targetname: "Subhead"
   keytimes {
     datatype: AE_INT_DATA
@@ -144,7 +166,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 225
+  targetid: 227
   targetname: "Subhead"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -255,7 +277,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 226
+  targetid: 228
   targetname: "Title"
   keytimes {
     datatype: AE_INT_DATA
@@ -266,7 +288,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 226
+  targetid: 228
   targetname: "Title"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -374,28 +396,6 @@ tracks {
     fvalue3: 0
   }
   trackName: "Position"
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 227
-  targetname: "Image-UpNext-Primary"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 228
-  targetname: "Live-Asset-Gradient-2.png"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
 }
 tracks {
   binding: IS_VISIBLE
@@ -940,15 +940,15 @@ markers {
   duration: 0.16666667
   name: "Press"
   tracksSelection {
-    targetid: 224
-    binding: POSITION
-  }
-  tracksSelection {
-    targetid: 225
-    binding: POSITION
-  }
-  tracksSelection {
     targetid: 226
+    binding: POSITION
+  }
+  tracksSelection {
+    targetid: 227
+    binding: POSITION
+  }
+  tracksSelection {
+    targetid: 228
     binding: POSITION
   }
   tracksSelection {

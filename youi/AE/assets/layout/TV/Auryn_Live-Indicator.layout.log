@@ -4,42 +4,8 @@ activecomp {
   height: 40
   defaultcameradistance: 138.88889
   layer {
-    name: "Live-Indicator-Pill.png"
-    id: 690012750
-    sourceid: 690012665
-    transform {
-      anchorPoint {
-        x: 49.5
-        y: 20
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 50
-        y: 20
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
     name: "Live-Icon"
-    id: 690012751
+    id: 690012750
     sourceid: 690012765
     transform {
       anchorPoint {
@@ -73,7 +39,7 @@ activecomp {
   }
   layer {
     name: "LIVE"
-    id: 690012752
+    id: 690012751
     sourceid: -1
     transform {
       anchorPoint {
@@ -113,7 +79,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 64
       boundsHeight: 17
@@ -132,17 +98,6 @@ activecomp {
   childtemplates: "Auryn_Live-Icon"
 }
 sources {
-  uid: 690012665
-  srctype: AE_IMAGE_SRC
-  name: "Live-Indicator-Pill.png"
-  width: 99
-  height: 40
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
   uid: 690012765
   srctype: AE_COMP_SRC
   name: "Auryn_Live-Icon.layout"
@@ -151,10 +106,10 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 3
+  uid: 2
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

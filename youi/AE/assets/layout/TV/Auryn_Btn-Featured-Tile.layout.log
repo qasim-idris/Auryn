@@ -181,7 +181,7 @@ activecomp {
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 953
       boundsHeight: 54
@@ -261,8 +261,8 @@ sources {
 sources {
   uid: 5
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

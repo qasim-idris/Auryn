@@ -6,7 +6,7 @@ activecomp {
   layer {
     name: "VideoSurface"
     id: 2006
-    sourceid: 2430
+    sourceid: 621
     transform {
       anchorPoint {
         x: 960
@@ -50,7 +50,7 @@ activecomp {
   }
 }
 sources {
-  uid: 2430
+  uid: 621
   srctype: AE_SOLID_SRC
   color {
     alpha: 1

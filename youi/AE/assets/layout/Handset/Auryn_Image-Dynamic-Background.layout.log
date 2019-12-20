@@ -1,7 +1,7 @@
 activecomp {
   name: "Auryn_Image-Dynamic-Background"
   width: 1080
-  height: 1920
+  height: 822
   defaultcameradistance: 1500
   layer {
     name: "ImageNode"
@@ -10,7 +10,7 @@ activecomp {
     transform {
       anchorPoint {
         x: 540
-        y: 960
+        y: 411
         z: 0
       }
       scale {
@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 540
-        y: 959.537
+        y: 410.537
         z: 0
       }
       orientation {
@@ -31,7 +31,7 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
@@ -67,6 +67,6 @@ sources {
     blue: 0.94509804248809814
   }
   width: 1080
-  height: 1920
+  height: 822
   copy_source: false
 }

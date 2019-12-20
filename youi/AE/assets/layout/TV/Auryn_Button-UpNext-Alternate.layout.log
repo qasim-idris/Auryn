@@ -346,7 +346,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 246
       boundsHeight: 31
@@ -398,7 +398,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "39m"
@@ -445,8 +445,8 @@ sources {
 sources {
   uid: 3
   srctype: AE_FONT_SRC
-  name: "Poppins-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Poppins-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

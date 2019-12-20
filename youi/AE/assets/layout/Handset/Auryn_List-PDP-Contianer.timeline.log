@@ -647,7 +647,13 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 4.4333334
-    inttype: AE_INTERP_LINEAR
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 5
+    inttype: AE_INTERP_HOLD
     fvalue1: 0
   }
   trackName: "Opacity"
@@ -669,7 +675,7 @@ markers {
 }
 markers {
   starttime: 4
-  duration: 1.0166667
+  duration: 1
   name: "ContentOut"
   tracksSelection {
     targetid: 1382

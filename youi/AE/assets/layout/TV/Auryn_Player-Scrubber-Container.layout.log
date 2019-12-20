@@ -19,7 +19,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 1760
+        x: 1726
         y: 323.36017
         z: 0
       }
@@ -38,14 +38,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_CENTER
-      fontSize: 36
+      fontSize: 24
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.92548996210098267
+        green: 0.92548996210098267
+        blue: 0.92548996210098267
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 224
       boundsHeight: 52
@@ -70,7 +70,7 @@ activecomp {
     sourceid: 519942
     transform {
       anchorPoint {
-        x: 750
+        x: 0
         y: 30
         z: 0
       }
@@ -80,7 +80,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 960
+        x: 147
         y: 294
         z: 0
       }
@@ -113,16 +113,16 @@ activecomp {
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
 }
 sources {
   uid: 519942
   srctype: AE_COMP_SRC
   name: "Auryn_Player-Scrubber.layout"
-  width: 1500
+  width: 1600
   height: 60
   copy_source: true
 }

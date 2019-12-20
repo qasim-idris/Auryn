@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 103.25999
-        y: 528.5
+        y: 878.5
         z: 0
       }
       orientation {
@@ -38,21 +38,22 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 28
+      fontSize: 36
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 891
-      boundsHeight: 36
+      boundsHeight: 1400
       isLabel: true
       text: ""
       multiline: true
       ellipsis: true
+      leading: 65
       isAllCaps: false
     }
     classname: "CYISDFAtlasTextSceneNode"
@@ -64,6 +65,10 @@ activecomp {
       key: "text-overflow"
       value: "ellipsis"
     }
+    properties {
+      key: "leading"
+      value: "65"
+    }
   }
   layer {
     name: "Featured"
@@ -72,7 +77,7 @@ activecomp {
     transform {
       anchorPoint {
         x: 248.5
-        y: 40.5
+        y: 50.5
         z: 0
       }
       scale {
@@ -82,7 +87,7 @@ activecomp {
       }
       position {
         x: 246.132
-        y: 478.5
+        y: 828.5
         z: 0
       }
       orientation {
@@ -100,21 +105,21 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 38
+      fontSize: 42
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 953
-      boundsHeight: 30
+      boundsHeight: 40
       isLabel: true
       text: "Featured"
       multiline: true
-      isAllCaps: false
+      isAllCaps: true
     }
     classname: "CYISDFAtlasTextSceneNode"
     properties {
@@ -139,7 +144,7 @@ activecomp {
       }
       position {
         x: 259.26
-        y: 320.5
+        y: 390.5
         z: 0
       }
       orientation {
@@ -157,21 +162,22 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 28
+      fontSize: 36
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 893
-      boundsHeight: 138
+      boundsHeight: 354
       isLabel: true
       text: ""
       multiline: true
       ellipsis: true
+      leading: 65
       isAllCaps: false
     }
     classname: "CYISDFAtlasTextSceneNode"
@@ -183,6 +189,10 @@ activecomp {
       key: "text-overflow"
       value: "ellipsis"
     }
+    properties {
+      key: "leading"
+      value: "65"
+    }
   }
   layer {
     name: "Overview"
@@ -191,7 +201,7 @@ activecomp {
     transform {
       anchorPoint {
         x: 248.5
-        y: 40.5
+        y: 48.5
         z: 0
       }
       scale {
@@ -201,7 +211,7 @@ activecomp {
       }
       position {
         x: 247.508
-        y: 268.5
+        y: 338.5
         z: 0
       }
       orientation {
@@ -219,21 +229,21 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 38
+      fontSize: 42
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 953
-      boundsHeight: 30
+      boundsHeight: 38
       isLabel: true
       text: "Overview"
       multiline: true
-      isAllCaps: false
+      isAllCaps: true
     }
     classname: "CYISDFAtlasTextSceneNode"
     properties {
@@ -258,7 +268,7 @@ activecomp {
       }
       position {
         x: 102.25999
-        y: 44.5
+        y: 114.5
         z: 0
       }
       orientation {
@@ -276,14 +286,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 80
+      fontSize: 62
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 895
       boundsHeight: 180
@@ -291,7 +301,7 @@ activecomp {
       text: ""
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
     classname: "CYISDFAtlasTextSceneNode"
     properties {
@@ -301,6 +311,72 @@ activecomp {
     properties {
       key: "text-overflow"
       value: "ellipsis"
+    }
+  }
+  layer {
+    name: "Text-Metadata"
+    id: 1360
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 248.5
+        y: 40.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 248.69034
+        y: 56.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 30
+      fontColor {
+        alpha: 1
+        red: 0.50195997953414917
+        green: 0.50195997953414917
+        blue: 0.50195997953414917
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 1137
+      boundsHeight: 24
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: true
+    }
+    classname: "CYISDFAtlasTextSceneNode"
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+    properties {
+      key: "margin-bottom"
+      value: "-30"
     }
   }
   bgcolor {
@@ -314,27 +390,31 @@ activecomp {
     value: "CYIColumnLayout"
   }
   properties {
-    key: "gravity"
-    value: "left"
-  }
-  properties {
     key: "padding-top"
     value: "-10"
+  }
+  properties {
+    key: "height"
+    value: "fit-content"
+  }
+  properties {
+    key: "spacing"
+    value: "60"
   }
 }
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
 }
 sources {
   uid: 2
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

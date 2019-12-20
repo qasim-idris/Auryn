@@ -1,11 +1,45 @@
 activecomp {
   name: "Auryn_Btn-Poster-Small"
-  width: 980
-  height: 600
-  defaultcameradistance: 1361.1111
+  width: 473
+  height: 890
+  defaultcameradistance: 656.94446
+  layer {
+    name: "Dark Gray Solid 9"
+    id: 869
+    sourceid: 690017003
+    transform {
+      anchorPoint {
+        x: 236.5
+        y: 91
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 236.5
+        y: 799
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
   layer {
     name: "Background"
-    id: 869
+    id: 870
     sourceid: 2420
     transform {
       anchorPoint {
@@ -36,6 +70,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 871
     properties {
       key: "layoutable"
       value: "false"
@@ -47,7 +82,7 @@ activecomp {
   }
   layer {
     name: "Image-Dynamic"
-    id: 870
+    id: 871
     sourceid: 1222
     transform {
       anchorPoint {
@@ -56,13 +91,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.1825
+        y: 1.1825
         z: 1
       }
       position {
-        x: 200
-        y: 600
+        x: 236.5
+        y: 709.5
         z: 0
       }
       orientation {
@@ -88,55 +123,13 @@ activecomp {
     }
   }
   layer {
-    name: "Gradient-Bottom_2.png"
-    id: 871
-    sourceid: 91
-    transform {
-      anchorPoint {
-        x: 0.5
-        y: 250
-        z: 0
-      }
-      scale {
-        x: 400
-        y: 1
-        z: 1
-      }
-      position {
-        x: 200
-        y: 351
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    properties {
-      key: "layoutable"
-      value: "false"
-    }
-    properties {
-      key: "item-gravity"
-      value: "bottom-left"
-    }
-  }
-  layer {
-    name: "Text-Details"
+    name: "Poster-Small-Metadata"
     id: 872
-    sourceid: -1
+    sourceid: 690016227
     transform {
       anchorPoint {
-        x: 248.5
-        y: 4.5
+        x: 236.5
+        y: 60
         z: 0
       }
       scale {
@@ -145,8 +138,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 726.092
-        y: 186.5
+        x: 236.5
+        y: 774
         z: 0
       }
       orientation {
@@ -162,106 +155,6 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 30
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Medium"
-      isPointText: false
-      boundsWidth: 452
-      boundsHeight: 376
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: false
-    }
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
-    properties {
-      key: "margin-left"
-      value: "450"
-    }
-  }
-  layer {
-    name: "Text-Title"
-    id: 873
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 248.5
-        y: 72.5
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 726.02
-        y: 184.5
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 45
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 452
-      boundsHeight: 122
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: false
-    }
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
-    properties {
-      key: "margin-top"
-      value: "20"
-    }
-    properties {
-      key: "margin-left"
-      value: "450"
-    }
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -291,14 +184,24 @@ activecomp {
     value: "20"
   }
   properties {
-    key: "layout"
-    value: "CYIColumnLayout"
-  }
-  properties {
     key: "padding-left"
     value: "50"
   }
   childtemplates: "Auryn_Image-Dynamic-2x3"
+  childtemplates: "Auryn_Poster-Small-Metadata"
+}
+sources {
+  uid: 690017003
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.10196078568696976
+    green: 0.10196078568696976
+    blue: 0.10196078568696976
+  }
+  width: 473
+  height: 182
+  copy_source: false
 }
 sources {
   uid: 2420
@@ -322,29 +225,10 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 91
-  srctype: AE_IMAGE_SRC
-  name: "Gradient-Bottom_2.png"
-  width: 1
-  height: 500
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
+  uid: 690016227
+  srctype: AE_COMP_SRC
+  name: "Auryn_Poster-Small-Metadata.layout"
+  width: 473
+  height: 120
   copy_source: true
-}
-sources {
-  uid: 4
-  srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
-  copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
-}
-sources {
-  uid: 5
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
 }

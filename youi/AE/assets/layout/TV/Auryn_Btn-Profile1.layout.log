@@ -4,57 +4,23 @@ activecomp {
   height: 400
   defaultcameradistance: 347.22223
   layer {
-    name: "White Solid 14"
-    id: 259618
-    sourceid: 259638
-    transform {
-      anchorPoint {
-        x: 125
-        y: 125
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 125
-        y: 125
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
     name: "Profile-Buster.png"
-    id: 259619
+    id: 259618
     sourceid: 259949
     transform {
       anchorPoint {
-        x: 121
-        y: 121
+        x: 204.5
+        y: 204.5
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.5789
+        y: 0.5789
         z: 1
       }
       position {
         x: 125
-        y: 125
+        y: 110
         z: 0
       }
       orientation {
@@ -70,6 +36,41 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+  }
+  layer {
+    name: "Circle-Btn-Profile.png"
+    id: 259619
+    sourceid: 690016368
+    transform {
+      anchorPoint {
+        x: 207.5
+        y: 207.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 204.5
+        y: 204.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.02
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 259618
   }
   layer {
     name: "Name"
@@ -88,7 +89,7 @@ activecomp {
       }
       position {
         x: 123
-        y: 285
+        y: 357
         z: 0
       }
       orientation {
@@ -99,26 +100,83 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.7
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_CENTER
-      fontSize: 32
+      fontSize: 43
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-ExtraBold"
       isPointText: false
       boundsWidth: 249
       boundsHeight: 42
       isLabel: true
-      text: "Buster"
+      text: "Robert"
+      multiline: true
+      ellipsis: true
+      isAllCaps: false
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+  }
+  layer {
+    name: "Name-Focused"
+    id: 259621
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 282
+        y: 55
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 123
+        y: 372
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 100
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Montserrat-ExtraBold"
+      isPointText: false
+      boundsWidth: 567
+      boundsHeight: 112
+      isLabel: true
+      text: "Robert"
       multiline: true
       ellipsis: true
       isAllCaps: false
@@ -130,7 +188,7 @@ activecomp {
   }
   layer {
     name: "Active User"
-    id: 259621
+    id: 259622
     sourceid: -1
     transform {
       anchorPoint {
@@ -145,7 +203,98 @@ activecomp {
       }
       position {
         x: 123
-        y: 328
+        y: 428
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 19
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 249
+      boundsHeight: 25
+      isLabel: true
+      text: ""
+      multiline: true
+      isAllCaps: true
+    }
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+  }
+  layer {
+    name: "Icon-Check-Profile.png"
+    id: 259623
+    sourceid: 690016377
+    transform {
+      anchorPoint {
+        x: 17.5
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 61
+        y: -77
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 259624
+  }
+  layer {
+    name: "Focus_Ctrl"
+    id: 259624
+    sourceid: 690016380
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1.7274141
+        y: 1.7274141
+        z: 1
+      }
+      position {
+        x: 204.5
+        y: 204.5
         z: 0
       }
       orientation {
@@ -161,28 +310,42 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 24
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+    parentid: 259618
+  }
+  layer {
+    name: "Icon-Check-Profile-Focused.png"
+    id: 259625
+    sourceid: 690016376
+    transform {
+      anchorPoint {
+        x: 23.5
+        y: 23.5
+        z: 0
       }
-      fontName: "Raleway-Medium"
-      isPointText: false
-      boundsWidth: 249
-      boundsHeight: 25
-      isLabel: true
-      text: ""
-      multiline: true
-      isAllCaps: false
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 312.87225
+        y: 74.48912
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
     }
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 259619
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -201,24 +364,22 @@ activecomp {
   }
 }
 sources {
-  uid: 259638
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 1
-    green: 1
-    blue: 1
-  }
-  width: 250
-  height: 250
-  copy_source: false
-}
-sources {
   uid: 259949
   srctype: AE_IMAGE_SRC
   name: "Profile-Buster.png"
-  width: 242
-  height: 242
+  width: 409
+  height: 409
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690016368
+  srctype: AE_IMAGE_SRC
+  name: "Circle-Btn-Profile.png"
+  width: 415
+  height: 415
   numberOfFrames: 1
   fps: 0
   loops: 1
@@ -227,16 +388,45 @@ sources {
 sources {
   uid: 3
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-ExtraBold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
+  file_name: "yi_Montserrat-Extra Bold.otf"
+  style_name: "Extra Bold"
 }
 sources {
   uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 690016377
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Check-Profile.png"
+  width: 35
+  height: 35
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690016380
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}
+sources {
+  uid: 690016376
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Check-Profile-Focused.png"
+  width: 47
+  height: 47
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
 }

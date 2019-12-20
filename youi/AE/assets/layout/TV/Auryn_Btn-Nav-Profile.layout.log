@@ -4,23 +4,23 @@ activecomp {
   height: 60
   defaultcameradistance: 83.333336
   layer {
-    name: "FocusCirlce.png"
+    name: "Backdrop-Gradient-Small.png"
     id: 604
-    sourceid: 690012410
+    sourceid: 690015186
     transform {
       anchorPoint {
-        x: 25
-        y: 25
+        x: 292
+        y: 0.5
         z: 0
       }
       scale {
-        x: 1.16
-        y: 1.16
+        x: 1
+        y: 78
         z: 1
       }
       position {
         x: 30
-        y: 30
+        y: -96
         z: 0
       }
       orientation {
@@ -30,8 +30,8 @@ activecomp {
       }
       rotationX: 0
       rotationY: 0
-      rotationZ: 0
-      opacity: 0
+      rotationZ: 90
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
@@ -43,8 +43,8 @@ activecomp {
     sourceid: 979
     transform {
       anchorPoint {
-        x: 15
-        y: 19.5
+        x: 18
+        y: 16.5
         z: 0
       }
       scale {
@@ -77,13 +77,13 @@ activecomp {
     sourceid: 965
     transform {
       anchorPoint {
-        x: 15
-        y: 19.5
+        x: 24.5
+        y: 22.5
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.76
+        y: 0.76
         z: 1
       }
       position {
@@ -99,7 +99,7 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.5
     }
     acceptsshadows: true
     acceptslights: true
@@ -122,11 +122,11 @@ activecomp {
   }
 }
 sources {
-  uid: 690012410
+  uid: 690015186
   srctype: AE_IMAGE_SRC
-  name: "FocusCirlce.png"
-  width: 50
-  height: 50
+  name: "Backdrop-Gradient-Small.png"
+  width: 292
+  height: 1
   numberOfFrames: 1
   fps: 0
   loops: 1
@@ -136,8 +136,8 @@ sources {
   uid: 979
   srctype: AE_IMAGE_SRC
   name: "Icon-Profile-Active.png"
-  width: 30
-  height: 39
+  width: 36
+  height: 33
   numberOfFrames: 1
   fps: 0
   loops: 1
@@ -147,8 +147,8 @@ sources {
   uid: 965
   srctype: AE_IMAGE_SRC
   name: "Icon-Profile.png"
-  width: 30
-  height: 39
+  width: 49
+  height: 45
   numberOfFrames: 1
   fps: 0
   loops: 1

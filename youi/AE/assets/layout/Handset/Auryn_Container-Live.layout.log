@@ -10,7 +10,7 @@ activecomp {
     transform {
       anchorPoint {
         x: 540
-        y: 675
+        y: 753
         z: 0
       }
       scale {
@@ -54,6 +54,6 @@ sources {
   srctype: AE_COMP_SRC
   name: "Auryn_Live-List-Container.layout"
   width: 1080
-  height: 1350
+  height: 1506
   copy_source: true
 }

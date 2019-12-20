@@ -1,0 +1,22 @@
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690015282
+  targetname: "Backdrop-Shadow-Large-PDP.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690015283
+  targetname: "Btn-Backdrop-LargePDP"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}

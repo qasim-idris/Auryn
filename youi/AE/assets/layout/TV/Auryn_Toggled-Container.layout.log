@@ -1,0 +1,72 @@
+activecomp {
+  name: "Auryn_Toggled-Container"
+  width: 150
+  height: 120
+  defaultcameradistance: 208.33333
+  layer {
+    name: "title-toggled"
+    id: 690015309
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 100
+        y: 21.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 74.159828
+        y: 92.458122
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 17
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 200
+      boundsHeight: 33
+      isLabel: true
+      text: "Discover"
+      multiline: true
+      isAllCaps: true
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+}
+sources {
+  uid: 1
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Bold"
+  copy_source: true
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
+}

@@ -43,6 +43,18 @@ tracks {
     inttype: AE_INTERP_LINEAR
     fvalue1: 0.6
   }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 2.3333333
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 2.35
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.6
+  }
   trackName: "Opacity"
 }
 tracks {
@@ -803,6 +815,10 @@ markers {
   starttime: 2.3333333
   duration: 0.016666668
   name: "Press-Checked"
+  tracksSelection {
+    targetid: 519960
+    binding: OPACITY
+  }
   alltracks: false
   id: 23
   looping: false

@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Btn-Nav-List"
-  width: 234
+  width: 225
   height: 140
-  defaultcameradistance: 325
+  defaultcameradistance: 312.5
   layer {
-    name: "toggle-line"
+    name: "title"
     id: 690014383
-    sourceid: 26
+    sourceid: -1
     transform {
       anchorPoint {
-        x: 30
-        y: 6
+        x: 101.59588
+        y: -0.00016403198
         z: 0
       }
       scale {
@@ -19,8 +19,60 @@ activecomp {
         z: 1
       }
       position {
-        x: 116.5
-        y: 125.5
+        x: 111.03012
+        y: 82.44
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.6
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 23
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 200
+      boundsHeight: 33
+      isLabel: true
+      text: "Discover"
+      multiline: true
+      isAllCaps: true
+    }
+  }
+  layer {
+    name: "Nav-Icon-Toggled"
+    id: 690014384
+    sourceid: 690015906
+    transform {
+      anchorPoint {
+        x: 30
+        y: 27.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 112.25
+        y: 42
         z: 0
       }
       orientation {
@@ -38,13 +90,13 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "title"
-    id: 690014384
-    sourceid: -1
+    name: "Nav-Icon"
+    id: 690014385
+    sourceid: 690015921
     transform {
       anchorPoint {
-        x: 101.59588
-        y: -0.00016403198
+        x: 30
+        y: 27.5
         z: 0
       }
       scale {
@@ -53,8 +105,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 115.53012
-        y: 55.94
+        x: 112.25
+        y: 42
         z: 0
       }
       orientation {
@@ -65,29 +117,11 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0.5
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 38
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 200
-      boundsHeight: 33
-      isLabel: true
-      text: "Discover"
-      multiline: true
-      isAllCaps: false
-    }
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -104,23 +138,30 @@ activecomp {
     key: "componentType"
     value: "button"
   }
+  childtemplates: "Auryn_Nav-Icon-Toggled"
+  childtemplates: "Auryn_Nav-Icon"
 }
 sources {
-  uid: 26
-  srctype: AE_IMAGE_SRC
-  name: "activeTab-underline-white_2.png"
-  width: 60
-  height: 12
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
-  uid: 2
+  uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
+}
+sources {
+  uid: 690015906
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav-Icon-Toggled.layout"
+  width: 60
+  height: 55
+  copy_source: true
+}
+sources {
+  uid: 690015921
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav-Icon.layout"
+  width: 60
+  height: 55
+  copy_source: true
 }

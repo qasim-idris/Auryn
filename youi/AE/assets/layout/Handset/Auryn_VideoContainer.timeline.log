@@ -752,9 +752,9 @@ tracks {
   }
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
-    timeOffset: 2.4829385
+    timeOffset: 2.4995985
     inttype: AE_INTERP_LINEAR
-    fvalue1: -92.35701
+    fvalue1: -94.924492
     fvalue2: 539.078
     fvalue3: 0
     isCookedKeytime: true
@@ -1724,9 +1724,9 @@ tracks {
   }
   keytimes {
     datatype: AE_FLOAT_DATA
-    timeOffset: 2.4829385
+    timeOffset: 2.4995985
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.65794218
+    fvalue1: 0.64843184
     isCookedKeytime: true
   }
   keytimes {
@@ -2204,6 +2204,20 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 1
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 279.4202
+    fvalue2: 664.54395
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 1.5
     inttype: AE_INTERP_HOLD
     sInTangentX: 0
     sInTangentY: 0
@@ -2742,6 +2756,12 @@ tracks {
   }
   keytimes {
     datatype: AE_FLOAT_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
     timeOffset: 4
     inttype: AE_INTERP_LINEAR
     fvalue1: 0
@@ -3111,7 +3131,27 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 1
-    inttype: AE_INTERP_LINEAR
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 412
+    fvalue2: 893
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
     fvalue1: 412
     fvalue2: 893
     fvalue3: 0
@@ -3638,7 +3678,13 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 1
-    inttype: AE_INTERP_LINEAR
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
     fvalue1: 0
   }
   keytimes {
@@ -4758,6 +4804,20 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 5
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 90
+    fvalue2: 60
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 5.5
     inttype: AE_INTERP_HOLD
     sInTangentX: 0
     sInTangentY: 0
@@ -5931,6 +5991,14 @@ tracks {
     fvalue2: 0.41
     fvalue3: 1
   }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 5.5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0.41
+    fvalue2: 0.41
+    fvalue3: 1
+  }
   trackName: "Scale"
 }
 markers {
@@ -5974,7 +6042,7 @@ markers {
 }
 markers {
   starttime: 2
-  duration: 0.48333332
+  duration: 0.5
   name: "Squeeze"
   tracksSelection {
     targetid: 1994

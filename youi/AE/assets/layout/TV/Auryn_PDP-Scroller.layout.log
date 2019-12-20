@@ -38,43 +38,8 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Image-Dynamic-Background"
-    id: 390
-    sourceid: 322
-    transform {
-      anchorPoint {
-        x: 718
-        y: 0
-        z: 0
-      }
-      scale {
-        x: 1.55
-        y: 1.55
-        z: 1
-      }
-      position {
-        x: 50.000004
-        y: -1111
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 396
-  }
-  layer {
     name: "List-PDP-Container"
-    id: 391
+    id: 390
     sourceid: 690012230
     transform {
       anchorPoint {
@@ -88,8 +53,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 960
-        y: -332
+        x: 50
+        y: 740
         z: 0
       }
       orientation {
@@ -108,13 +73,13 @@ activecomp {
     parentid: 395
   }
   layer {
-    name: "Layout-PDP-Meta"
-    id: 392
-    sourceid: 342
+    name: "White Solid 28"
+    id: 391
+    sourceid: 690016252
     transform {
       anchorPoint {
-        x: 600
-        y: 300
+        x: 880
+        y: 2
         z: 0
       }
       scale {
@@ -123,8 +88,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 1184
-        y: 402.45996
+        x: 50
+        y: 764
         z: 0
       }
       orientation {
@@ -140,15 +105,16 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 395
   }
   layer {
-    name: "Btn-Poster-Large-Comp"
-    id: 393
-    sourceid: 690012113
+    name: "Container-Layout-PDP-Top"
+    id: 392
+    sourceid: 690016257
     transform {
       anchorPoint {
-        x: 200
-        y: 350
+        x: 880
+        y: 343.5
         z: 0
       }
       scale {
@@ -157,8 +123,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 334
-        y: -144
+        x: 50
+        y: 343.5
         z: 0
       }
       orientation {
@@ -167,18 +133,18 @@ activecomp {
         z: 0
       }
       rotationX: 0
-      rotationY: -101.9912
+      rotationY: 0
       rotationZ: 0
       opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 397
+    parentid: 395
   }
   layer {
     name: "Btn-Back"
-    id: 394
+    id: 393
     sourceid: 690011939
     transform {
       anchorPoint {
@@ -209,114 +175,12 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 398
-  }
-  layer {
-    name: "ScaleWidthPropBottomLeftAnchor"
-    id: 395
-    sourceid: 690011406
-    transform {
-      anchorPoint {
-        x: 0
-        y: 100
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 0
-        y: 1080
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "ScaleWidthPropCenterAnchor"
-    id: 396
-    sourceid: 690011406
-    transform {
-      anchorPoint {
-        x: 50
-        y: 50
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 960
-        y: 540
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "ScaleWidthPropLeftAnchor"
-    id: 397
-    sourceid: 690011406
-    transform {
-      anchorPoint {
-        x: 0
-        y: 50
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 0
-        y: 540
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
+    parentid: 394
   }
   layer {
     name: "ScaleWidthPropTopRightAnchor"
-    id: 398
-    sourceid: 690011406
+    id: 394
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 100
@@ -347,12 +211,46 @@ activecomp {
     acceptslights: true
     castsshadows: false
   }
+  layer {
+    name: "ScaleWidthPropTopAnchor"
+    id: 395
+    sourceid: 1480
+    transform {
+      anchorPoint {
+        x: 50
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 960
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
   classname: "CYIScrollingView"
   bgcolor {
     alpha: 1
-    red: 0.086274509803921567
-    green: 0.11372549019607843
-    blue: 0.14509803921568629
+    red: 0.29019607843137257
+    green: 0.29019607843137257
+    blue: 0.29019607843137257
   }
   properties {
     key: "componentSubtype"
@@ -366,10 +264,8 @@ activecomp {
     key: "vertical-scroll"
     value: "true"
   }
-  childtemplates: "Auryn_Image-Dynamic-Background"
   childtemplates: "Auryn_List-PDP-Contianer"
-  childtemplates: "Auryn_Layout-PDP-Meta"
-  childtemplates: "Auryn_Btn-Poster-Large-Comp"
+  childtemplates: "Auryn_Container-Layout-PDP-Top"
   childtemplates: "Auryn_Btn-Back"
 }
 sources {
@@ -386,14 +282,6 @@ sources {
   copy_source: false
 }
 sources {
-  uid: 322
-  srctype: AE_COMP_SRC
-  name: "Auryn_Image-Dynamic-Background.layout"
-  width: 1436
-  height: 1436
-  copy_source: true
-}
-sources {
   uid: 690012230
   srctype: AE_COMP_SRC
   name: "Auryn_List-PDP-Contianer.layout"
@@ -402,19 +290,24 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 342
-  srctype: AE_COMP_SRC
-  name: "Auryn_Layout-PDP-Meta.layout"
-  width: 1200
-  height: 600
-  copy_source: true
+  uid: 690016252
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.99054843187332153
+    green: 0.99054843187332153
+    blue: 0.99054843187332153
+  }
+  width: 1760
+  height: 4
+  copy_source: false
 }
 sources {
-  uid: 690012113
+  uid: 690016257
   srctype: AE_COMP_SRC
-  name: "Auryn_Btn-Poster-Large-Comp.layout"
-  width: 400
-  height: 700
+  name: "Auryn_Container-Layout-PDP-Top.layout"
+  width: 1760
+  height: 687
   copy_source: true
 }
 sources {
@@ -426,7 +319,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011406
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

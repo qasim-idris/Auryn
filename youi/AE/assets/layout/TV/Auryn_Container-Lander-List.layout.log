@@ -9,8 +9,8 @@ activecomp {
     sourceid: 690014533
     transform {
       anchorPoint {
-        x: 960
-        y: 450
+        x: 882
+        y: 410
         z: 0
       }
       scale {
@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 960
-        y: 450
+        y: 428
         z: 0
       }
       orientation {
@@ -43,13 +43,17 @@ activecomp {
     green: 0.11372549019607843
     blue: 0.14509803921568629
   }
+  properties {
+    key: "clip"
+    value: "true"
+  }
   childtemplates: "Auryn_Lander-List"
 }
 sources {
   uid: 690014533
   srctype: AE_COMP_SRC
   name: "Auryn_Lander-List.layout"
-  width: 1920
-  height: 900
+  width: 1764
+  height: 820
   copy_source: true
 }

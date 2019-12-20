@@ -1,0 +1,144 @@
+activecomp {
+  name: "Auryn_Btn-Poster-Basic"
+  width: 326
+  height: 490
+  defaultcameradistance: 452.77777
+  layer {
+    name: "Background"
+    id: 690016924
+    sourceid: 2420
+    transform {
+      anchorPoint {
+        x: 200
+        y: 300
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 200
+        y: 300
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690016925
+    properties {
+      key: "layoutable"
+      value: "false"
+    }
+    properties {
+      key: "item-gravity"
+      value: "bottom-left"
+    }
+  }
+  layer {
+    name: "Image-Dynamic"
+    id: 690016925
+    sourceid: 1222
+    transform {
+      anchorPoint {
+        x: 200
+        y: 600
+        z: 0
+      }
+      scale {
+        x: 0.815
+        y: 0.815
+        z: 1
+      }
+      position {
+        x: 163
+        y: 489.5
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "layoutable"
+      value: "false"
+    }
+    properties {
+      key: "item-gravity"
+      value: "bottom-left"
+    }
+  }
+  classname: "CYIPushButtonView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentSubtype"
+    value: "push"
+  }
+  properties {
+    key: "componentType"
+    value: "button"
+  }
+  properties {
+    key: "clip"
+    value: "true"
+  }
+  properties {
+    key: "padding-bottom"
+    value: "30"
+  }
+  properties {
+    key: "spacing"
+    value: "20"
+  }
+  properties {
+    key: "padding-left"
+    value: "50"
+  }
+  childtemplates: "Auryn_Image-Dynamic-2x3"
+}
+sources {
+  uid: 2420
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+  width: 400
+  height: 600
+  copy_source: false
+}
+sources {
+  uid: 1222
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-Dynamic-2x3.layout"
+  width: 400
+  height: 600
+  copy_source: true
+}

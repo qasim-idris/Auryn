@@ -9,7 +9,7 @@ activecomp {
     sourceid: 690014383
     transform {
       anchorPoint {
-        x: 117
+        x: 112.5
         y: 70
         z: 0
       }
@@ -49,7 +49,7 @@ sources {
   uid: 690014383
   srctype: AE_COMP_SRC
   name: "Auryn_Btn-Nav-List.layout"
-  width: 234
+  width: 225
   height: 140
   copy_source: true
 }

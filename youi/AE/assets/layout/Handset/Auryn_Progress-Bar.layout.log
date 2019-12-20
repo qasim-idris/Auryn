@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Progress-Bar"
-  width: 861
-  height: 6
-  defaultcameradistance: 1195.8334
+  width: 525
+  height: 8
+  defaultcameradistance: 729.16669
   layer {
     name: "BG"
     id: 1847
     sourceid: 690012748
     transform {
       anchorPoint {
-        x: 430
-        y: 3
+        x: 262.5
+        y: 4
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 430.5
-        y: 3
+        x: 262.5
+        y: 4
         z: 0
       }
       orientation {
@@ -44,7 +44,7 @@ activecomp {
     transform {
       anchorPoint {
         x: 0
-        y: 3
+        y: 4
         z: 0
       }
       scale {
@@ -54,7 +54,7 @@ activecomp {
       }
       position {
         x: 0
-        y: 3
+        y: 4
         z: 0
       }
       orientation {
@@ -92,12 +92,12 @@ sources {
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
-    red: 0
-    green: 0
-    blue: 0
+    red: 0.94509804248809814
+    green: 0.94509804248809814
+    blue: 0.94509804248809814
   }
-  width: 860
-  height: 6
+  width: 525
+  height: 8
   copy_source: false
 }
 sources {
@@ -105,11 +105,11 @@ sources {
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
-    red: 0.015686275437474251
-    green: 0.56470590829849243
-    blue: 0.99215686321258545
+    red: 0.92549020051956177
+    green: 0.10980392247438431
+    blue: 0.14509804546833038
   }
-  width: 861
-  height: 6
+  width: 525
+  height: 8
   copy_source: false
 }

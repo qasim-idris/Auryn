@@ -72,17 +72,6 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 413
-  targetname: "Text-Details"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 414
   targetname: "Text-Title"
   keytimes {
     datatype: AE_INT_DATA

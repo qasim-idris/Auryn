@@ -1,12 +1,12 @@
 activecomp {
   name: "Auryn_Btn-Backdrop-Small"
-  width: 510
-  height: 276
-  defaultcameradistance: 708.33331
+  width: 536
+  height: 468
+  defaultcameradistance: 744.44446
   layer {
     name: "Black Solid 6"
     id: 410
-    sourceid: 2426
+    sourceid: 376
     transform {
       anchorPoint {
         x: 267
@@ -14,13 +14,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.56
+        y: 1.56
         z: 1
       }
       position {
-        x: 255
-        y: 138
+        x: 268
+        y: 234
         z: 0
       }
       orientation {
@@ -48,13 +48,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1.05
-        y: 1.05
+        x: 1.625
+        y: 1.625
         z: 1
       }
       position {
-        x: 255
-        y: 138
+        x: 268
+        y: 234
         z: 0
       }
       orientation {
@@ -87,8 +87,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 255
-        y: 290
+        x: 268
+        y: 468
         z: 0
       }
       orientation {
@@ -106,13 +106,13 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Text-Details"
+    name: "Text-Title"
     id: 413
     sourceid: -1
     transform {
       anchorPoint {
-        x: 248.5
-        y: 40.5
+        x: 219.09024
+        y: 26.639847
         z: 0
       }
       scale {
@@ -121,8 +121,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 287.26
-        y: 235.5
+        x: 268
+        y: 425.63983
         z: 0
       }
       orientation {
@@ -139,78 +139,17 @@ activecomp {
     acceptslights: true
     castsshadows: false
     textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 18
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Medium"
-      isPointText: false
-      boundsWidth: 454
-      boundsHeight: 63
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: false
-    }
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
-  }
-  layer {
-    name: "Text-Title"
-    id: 414
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 248.5
-        y: 40.5
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 286.26
-        y: 195.5
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
+      justification: AE_TEXT_CENTER
       fontSize: 36
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.92548996210098267
+        green: 0.92548996210098267
+        blue: 0.92548996210098267
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
-      boundsWidth: 462
+      boundsWidth: 438
       boundsHeight: 54
       isLabel: true
       text: ""
@@ -249,7 +188,7 @@ activecomp {
   childtemplates: "Auryn_Image-Dynamic-Half"
 }
 sources {
-  uid: 2426
+  uid: 376
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
@@ -283,16 +222,8 @@ sources {
 sources {
   uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
-}
-sources {
-  uid: 5
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

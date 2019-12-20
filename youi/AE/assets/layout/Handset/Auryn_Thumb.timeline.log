@@ -1,7 +1,7 @@
 tracks {
   binding: IS_VISIBLE
   targetid: 1938
-  targetname: "Player-Thumb_2.png"
+  targetname: "Player-Thumb.png"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0

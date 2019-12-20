@@ -22,4 +22,16 @@ activecomp {
     key: "useComponentScrollingView"
     value: "true"
   }
+  properties {
+    key: "height"
+    value: "fill-parent"
+  }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
+  }
+  properties {
+    key: "vertical-overpull"
+    value: "80"
+  }
 }

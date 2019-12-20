@@ -185,7 +185,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Helvetica"
+      fontName: "Montserrat-Medium"
       isPointText: true
       isLabel: true
       text: " 39m"
@@ -235,7 +235,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "S2 E1  \342\200\242  Sorry Baby"
@@ -285,7 +285,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 397
       boundsHeight: 48
@@ -298,7 +298,7 @@ activecomp {
   layer {
     name: "Scale_Ctrl"
     id: 1019
-    sourceid: 2483
+    sourceid: 1492
     transform {
       anchorPoint {
         x: 0
@@ -392,21 +392,21 @@ sources {
 sources {
   uid: 5
   srctype: AE_FONT_SRC
-  name: "Helvetica"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Helvetica.ttc"
-  style_name: "Regular"
+  file_name: "yi_Montserrat-Medium.otf"
+  style_name: "Medium"
 }
 sources {
   uid: 6
   srctype: AE_FONT_SRC
-  name: "Poppins-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Poppins-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }
 sources {
-  uid: 2483
+  uid: 1492
   srctype: AE_NULL_SRC
   width: 100
   height: 100

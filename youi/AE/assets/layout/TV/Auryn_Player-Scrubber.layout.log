@@ -1,8 +1,8 @@
 activecomp {
   name: "Auryn_Player-Scrubber"
-  width: 1500
+  width: 1600
   height: 60
-  defaultcameradistance: 2083.3333
+  defaultcameradistance: 2222.2222
   layer {
     name: "Max-Track"
     id: 519942
@@ -109,7 +109,7 @@ activecomp {
   layer {
     name: "ScalePropCenterAnchor"
     id: 519945
-    sourceid: 690011406
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 50
@@ -117,12 +117,12 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.0665635
+        y: 1.0665635
         z: 1
       }
       position {
-        x: 750
+        x: 800
         y: 30
         z: 0
       }
@@ -163,7 +163,7 @@ sources {
   uid: 690012527
   srctype: AE_COMP_SRC
   name: "Auryn_Max-Track.layout"
-  width: 1400
+  width: 1500
   height: 12
   copy_source: true
 }
@@ -171,7 +171,7 @@ sources {
   uid: 690012515
   srctype: AE_COMP_SRC
   name: "Auryn_Min-Track.layout"
-  width: 1400
+  width: 1500
   height: 12
   copy_source: true
 }
@@ -184,7 +184,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011406
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Image-Dynamic-Live-Asset"
-  width: 694
-  height: 250
-  defaultcameradistance: 963.88892
+  width: 525
+  height: 344
+  defaultcameradistance: 729.16669
   layer {
     name: "ImageNode"
     id: 1270
     sourceid: 690014118
     transform {
       anchorPoint {
-        x: 347
-        y: 125
+        x: 262.5
+        y: 172
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 347
-        y: 125
+        x: 262.5
+        y: 172
         z: 0
       }
       orientation {
@@ -31,7 +31,7 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
@@ -66,7 +66,7 @@ sources {
     green: 0.76186209917068481
     blue: 0.76186209917068481
   }
-  width: 694
-  height: 250
+  width: 525
+  height: 344
   copy_source: false
 }

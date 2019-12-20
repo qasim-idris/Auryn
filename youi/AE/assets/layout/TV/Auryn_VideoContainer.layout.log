@@ -87,8 +87,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 146
-        y: 725
+        x: 117
+        y: 738
         z: 0
       }
       orientation {
@@ -121,7 +121,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 412
+        x: 407.25
         y: 893
         z: 0
       }

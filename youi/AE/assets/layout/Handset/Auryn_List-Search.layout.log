@@ -1,0 +1,37 @@
+activecomp {
+  name: "Auryn_List-Search"
+  width: 1044
+  height: 1620
+  defaultcameradistance: 1450
+  classname: "CYIListView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentSubtype"
+    value: "streaming"
+  }
+  properties {
+    key: "componentType"
+    value: "list"
+  }
+  properties {
+    key: "layout"
+    value: "CYIGridLayout"
+  }
+  properties {
+    key: "spacing"
+    value: "0"
+  }
+  properties {
+    key: "vertical-overpull"
+    value: "80"
+  }
+  properties {
+    key: "columns"
+    value: "3"
+  }
+}

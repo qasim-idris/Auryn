@@ -77,18 +77,18 @@ activecomp {
     sourceid: 922
     transform {
       anchorPoint {
-        x: 200
+        x: 400
         y: 2
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.0001
+        y: 0.95238096
         z: 1
       }
       position {
-        x: 200
-        y: 2
+        x: 378.4762
+        y: 4.1904764
         z: 0
       }
       orientation {
@@ -104,6 +104,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 267
   }
   layer {
     name: "Red Solid 5"
@@ -111,18 +112,18 @@ activecomp {
     sourceid: 920
     transform {
       anchorPoint {
-        x: 200
+        x: 400
         y: 2
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.0001
+        y: 0.95238096
         z: 1
       }
       position {
-        x: 200
-        y: 598
+        x: 378.4762
+        y: 571.80951
         z: 0
       }
       orientation {
@@ -138,6 +139,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 267
   }
   layer {
     name: "Red Solid 4"
@@ -145,18 +147,18 @@ activecomp {
     sourceid: 918
     transform {
       anchorPoint {
-        x: 2
+        x: 4
         y: 300
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.0001
+        y: 0.95238096
         z: 1
       }
       position {
-        x: 398
-        y: 300
+        x: 378.4762
+        y: 288
         z: 0
       }
       orientation {
@@ -172,6 +174,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 267
   }
   layer {
     name: "Red Solid 3"
@@ -179,18 +182,18 @@ activecomp {
     sourceid: 916
     transform {
       anchorPoint {
-        x: 2
+        x: 4
         y: 300
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.0001
+        y: 0.95238096
         z: 1
       }
       position {
-        x: 2
-        y: 300
+        x: 1.3333334
+        y: 288
         z: 0
       }
       orientation {
@@ -206,6 +209,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 267
   }
   layer {
     name: "Button-PlayPause-Fill.png"

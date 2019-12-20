@@ -4,9 +4,9 @@ activecomp {
   height: 48
   defaultcameradistance: 66.666664
   layer {
-    name: "Player-Thumb_2.png"
+    name: "Player-Thumb.png"
     id: 1938
-    sourceid: 123
+    sourceid: 520045
     transform {
       anchorPoint {
         x: 24
@@ -45,9 +45,9 @@ activecomp {
   }
 }
 sources {
-  uid: 123
+  uid: 520045
   srctype: AE_IMAGE_SRC
-  name: "Player-Thumb_2.png"
+  name: "Player-Thumb.png"
   width: 48
   height: 48
   numberOfFrames: 1

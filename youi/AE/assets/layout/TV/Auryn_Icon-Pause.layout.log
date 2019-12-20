@@ -6,7 +6,7 @@ activecomp {
   layer {
     name: "White Solid 15"
     id: 519991
-    sourceid: 519988
+    sourceid: 2524
     transform {
       anchorPoint {
         x: 6
@@ -40,7 +40,7 @@ activecomp {
   layer {
     name: "White Solid 15"
     id: 519992
-    sourceid: 519988
+    sourceid: 2524
     transform {
       anchorPoint {
         x: 6
@@ -79,7 +79,7 @@ activecomp {
   }
 }
 sources {
-  uid: 519988
+  uid: 2524
   srctype: AE_SOLID_SRC
   color {
     alpha: 1

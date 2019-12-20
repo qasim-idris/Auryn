@@ -14,14 +14,14 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
-        z: 1
+        x: 2.03
+        y: 2.03
+        z: 2.03
       }
       position {
         x: 200
         y: 300
-        z: 0
+        z: 409
       }
       orientation {
         x: 0
@@ -31,7 +31,7 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
@@ -47,6 +47,10 @@ activecomp {
   properties {
     key: "componentType"
     value: "image"
+  }
+  properties {
+    key: "clip"
+    value: "true"
   }
 }
 sources {

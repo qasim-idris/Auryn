@@ -19,9 +19,9 @@ activecomp {
         z: 1
       }
       position {
-        x: 346
+        x: 446
         y: 180
-        z: 0
+        z: 250
       }
       orientation {
         x: 0
@@ -36,7 +36,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 718
+    parentid: 717
   }
   layer {
     name: "Btn-Profile2"
@@ -56,7 +56,7 @@ activecomp {
       position {
         x: 50
         y: 180
-        z: 0
+        z: 325
       }
       orientation {
         x: 0
@@ -71,7 +71,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 718
+    parentid: 717
   }
   layer {
     name: "Btn-Profile1"
@@ -89,9 +89,9 @@ activecomp {
         z: 1
       }
       position {
-        x: -256
+        x: -356
         y: 180
-        z: 0
+        z: 500
       }
       orientation {
         x: 0
@@ -106,7 +106,7 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 718
+    parentid: 717
   }
   layer {
     name: "Title"
@@ -125,7 +125,7 @@ activecomp {
       }
       position {
         x: 539.72
-        y: 380.28012
+        y: 368.28012
         z: 0
       }
       orientation {
@@ -143,14 +143,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_CENTER
-      fontSize: 60
+      fontSize: 38
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 1722
       boundsHeight: 68
@@ -161,60 +161,8 @@ activecomp {
     }
   }
   layer {
-    name: "Message"
-    id: 716
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 440
-        y: 60
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 539.72
-        y: 1010.2802
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 24
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Medium"
-      isPointText: false
-      boundsWidth: 1722
-      boundsHeight: 48
-      isLabel: true
-      text: "Manage account settings at TheMovieDB.org/MyAccount"
-      multiline: true
-      isAllCaps: false
-    }
-  }
-  layer {
     name: "Btn-Back"
-    id: 717
+    id: 716
     sourceid: 690011939
     transform {
       anchorPoint {
@@ -245,12 +193,12 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 719
+    parentid: 718
   }
   layer {
     name: "ScalePropCenterAnchor"
-    id: 718
-    sourceid: 690011406
+    id: 717
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 50
@@ -283,8 +231,8 @@ activecomp {
   }
   layer {
     name: "ScalePropTopRightAnchor"
-    id: 719
-    sourceid: 690011406
+    id: 718
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 100
@@ -361,17 +309,9 @@ sources {
 sources {
   uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
-}
-sources {
-  uid: 5
-  srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
-  copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
 }
 sources {
@@ -383,7 +323,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011406
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

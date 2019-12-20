@@ -320,7 +320,13 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 4.4
-    inttype: AE_INTERP_LINEAR
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 5.0166669
+    inttype: AE_INTERP_HOLD
     fvalue1: 0
   }
   trackName: "Opacity"
@@ -647,7 +653,13 @@ tracks {
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 4.4333334
-    inttype: AE_INTERP_LINEAR
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 5.0166669
+    inttype: AE_INTERP_HOLD
     fvalue1: 0
   }
   trackName: "Opacity"

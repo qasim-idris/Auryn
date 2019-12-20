@@ -1,7 +1,7 @@
 tracks {
   binding: IS_VISIBLE
   targetid: 1172
-  targetname: "Text-Detail-2"
+  targetname: "Text-Detail-1"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
@@ -12,18 +12,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 1173
-  targetname: "\342\200\242"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 1174
-  targetname: "Text-Detail-1"
+  targetname: "Text-Title"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0

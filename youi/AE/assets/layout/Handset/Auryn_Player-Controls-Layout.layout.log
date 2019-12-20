@@ -86,10 +86,6 @@ activecomp {
     blue: 0.14509803921568629
   }
   properties {
-    key: "layout"
-    value: "CYIColumnLayout"
-  }
-  properties {
     key: "gravity"
     value: "bottom-left"
   }

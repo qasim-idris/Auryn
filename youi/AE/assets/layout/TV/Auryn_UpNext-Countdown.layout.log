@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 263
-        y: 49.51593
+        x: 141
+        y: 63.661621
         z: 0
       }
       orientation {
@@ -38,14 +38,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 58
+      fontSize: 28
       fontColor {
         alpha: 1
         red: 0.94510000944137573
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "10s"
@@ -70,7 +70,7 @@ activecomp {
       }
       position {
         x: 0
-        y: 49.278809
+        y: 63.661621
         z: 0
       }
       orientation {
@@ -81,21 +81,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0.5
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 58
+      fontSize: 28
       fontColor {
         alpha: 1
-        red: 0.94510000944137573
-        green: 0.94510000944137573
-        blue: 0.94510000944137573
+        red: 0.84706008434295654
+        green: 0.84706008434295654
+        blue: 0.84706008434295654
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "Up Next"
@@ -111,18 +111,18 @@ activecomp {
   }
   properties {
     key: "gravity"
-    value: "left"
+    value: "bottom-left"
   }
   properties {
-    key: "spacing"
-    value: "20"
+    key: "layout"
+    value: "CYIRowLayout"
   }
 }
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Poppins-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Poppins-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

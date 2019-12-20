@@ -4,18 +4,18 @@ activecomp {
   height: 60
   defaultcameradistance: 83.333336
   layer {
-    name: "Icon-Search_2.png"
+    name: "Icon-Search.png"
     id: 724
     sourceid: 104
     transform {
       anchorPoint {
-        x: 17.5
-        y: 17.5
+        x: 22.5
+        y: 23.5
         z: 0
       }
       scale {
-        x: -0.8
-        y: 0.8
+        x: 0.76
+        y: 0.76
         z: 1
       }
       position {
@@ -56,9 +56,9 @@ activecomp {
 sources {
   uid: 104
   srctype: AE_IMAGE_SRC
-  name: "Icon-Search_2.png"
-  width: 35
-  height: 35
+  name: "Icon-Search.png"
+  width: 45
+  height: 47
   numberOfFrames: 1
   fps: 0
   loops: 1

@@ -20,17 +20,3 @@ tracks {
     ivalue1: 1
   }
 }
-markers {
-  starttime: 4
-  duration: 0.33333334
-  name: "Compress"
-  alltracks: false
-  looping: false
-}
-markers {
-  starttime: 5
-  duration: 0.33333334
-  name: "Expand"
-  alltracks: false
-  looping: false
-}

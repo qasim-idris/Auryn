@@ -1,8 +1,8 @@
 activecomp {
   name: "Auryn_Metadata"
-  width: 750
+  width: 410
   height: 50
-  defaultcameradistance: 1041.6666
+  defaultcameradistance: 569.44446
   layer {
     name: "Text-TimeRemaining"
     id: 1636
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 116.1987
-        y: 27.493641
+        x: 68.6987
+        y: 26.493641
         z: 0
       }
       orientation {
@@ -38,17 +38,17 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 33
+      fontSize: 31
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
-      boundsWidth: 629
-      boundsHeight: 27
+      boundsWidth: 348
+      boundsHeight: 36
       isLabel: true
       text: ""
       multiline: true
@@ -81,8 +81,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 62
-        y: 25
+        x: 24.5
+        y: 24
         z: 0
       }
       orientation {
@@ -114,25 +114,21 @@ activecomp {
     value: "CYIRowLayout"
   }
   properties {
-    key: "padding-left"
-    value: "38"
+    key: "gravity"
+    value: "left"
   }
   properties {
     key: "spacing"
-    value: "20.0"
-  }
-  properties {
-    key: "gravity"
-    value: "left"
+    value: "20"
   }
   childtemplates: "Auryn_Image-Dynamic-Live-Logo"
 }
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
 }
 sources {

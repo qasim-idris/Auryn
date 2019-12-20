@@ -31,21 +31,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.7
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 32
+      fontSize: 28
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 1406
       boundsHeight: 82
@@ -66,69 +66,8 @@ activecomp {
     }
   }
   layer {
-    name: "Title"
-    id: 1978
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 36
-        y: 127.99998
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 34
-        y: 404.28616
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 80
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 1398
-      boundsHeight: 153
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: false
-    }
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
-  }
-  layer {
     name: "Live-Metadata"
-    id: 1979
+    id: 1978
     sourceid: 1467
     transform {
       anchorPoint {
@@ -143,7 +82,7 @@ activecomp {
       }
       position {
         x: 325
-        y: 234
+        y: 340
         z: 0
       }
       orientation {
@@ -179,18 +118,10 @@ activecomp {
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
-}
-sources {
-  uid: 2
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
 }
 sources {
   uid: 1467

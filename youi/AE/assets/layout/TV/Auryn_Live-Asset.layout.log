@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Live-Asset"
-  width: 876
-  height: 214
-  defaultcameradistance: 1216.6666
+  width: 848
+  height: 233
+  defaultcameradistance: 1177.7778
   layer {
-    name: "Image-Dynamic-Live-Asset"
+    name: "Background"
     id: 690012635
-    sourceid: 690012646
+    sourceid: 690015329
     transform {
       anchorPoint {
-        x: 275
-        y: 99
+        x: 424
+        y: 116.5
         z: 0
       }
       scale {
@@ -19,7 +19,217 @@ activecomp {
         z: 1
       }
       position {
-        x: 163
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690012644
+  }
+  layer {
+    name: "Live-Gradient.png"
+    id: 690012636
+    sourceid: 690015331
+    transform {
+      anchorPoint {
+        x: 424
+        y: 0.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 233
+        z: 1
+      }
+      position {
+        x: 853
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690012644
+  }
+  layer {
+    name: "Circle.png"
+    id: 690012637
+    sourceid: 690015785
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 6.5
+        y: 13.019351
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690012640
+  }
+  layer {
+    name: "Progress-Bar"
+    id: 690012638
+    sourceid: 690012736
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 312.939
+        y: 0.010167369
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690012644
+  }
+  layer {
+    name: "Live-PlayIcon.png"
+    id: 690012639
+    sourceid: 690015531
+    transform {
+      anchorPoint {
+        x: 46
+        y: 46
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 312
+        y: 0.48064861
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690012644
+  }
+  layer {
+    name: "Live-PlayIcon-Focused.png"
+    id: 690012640
+    sourceid: 690015530
+    transform {
+      anchorPoint {
+        x: 8
+        y: 13
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 314.5
+        y: 0.48064861
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.05
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 690012644
+  }
+  layer {
+    name: "Image-Dynamic-Live-Asset"
+    id: 690012641
+    sourceid: 690012646
+    transform {
+      anchorPoint {
+        x: 77
+        y: 116.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: -347
         y: 0
         z: 0
       }
@@ -36,256 +246,11 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "border-top"
-    id: 690012636
-    sourceid: 690012678
-    transform {
-      anchorPoint {
-        x: 438
-        y: 4
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 0
-        y: -103
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "border-bottom"
-    id: 690012637
-    sourceid: 690012678
-    transform {
-      anchorPoint {
-        x: 438
-        y: 4
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 0
-        y: 103
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "border-left"
-    id: 690012638
-    sourceid: 690012836
-    transform {
-      anchorPoint {
-        x: 4
-        y: 99
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: -434
-        y: 0
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "border-right"
-    id: 690012639
-    sourceid: 690012682
-    transform {
-      anchorPoint {
-        x: 4
-        y: 99
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 434
-        y: 0
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "Dark Gray Solid 4"
-    id: 690012640
-    sourceid: 690012675
-    transform {
-      anchorPoint {
-        x: 400
-        y: 101
-        z: 0
-      }
-      scale {
-        x: 0.7575
-        y: 1
-        z: 1
-      }
-      position {
-        x: -128
-        y: 2
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "Live-Asset-Gradient-2.png"
-    id: 690012641
-    sourceid: 690012664
-    transform {
-      anchorPoint {
-        x: 136.5
-        y: 99
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 8.5
-        y: 0
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
-  }
-  layer {
-    name: "Progress-Bar"
-    id: 690012642
-    sourceid: 690012736
-    transform {
-      anchorPoint {
-        x: 430.5
-        y: 3
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 0.99775213
-        z: 1
-      }
-      position {
-        x: -0.5
-        y: 96
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 690012646
+    parentid: 690012644
   }
   layer {
     name: "Metadata"
-    id: 690012643
+    id: 690012642
     sourceid: 690012711
     transform {
       anchorPoint {
@@ -299,8 +264,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 200
-        y: 170
+        x: 348
+        y: 179.5
         z: 0
       }
       orientation {
@@ -318,13 +283,13 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Details"
-    id: 690012644
-    sourceid: 690012596
+    name: "Container-Details"
+    id: 690012643
+    sourceid: 690015536
     transform {
       anchorPoint {
-        x: 250
-        y: 25
+        x: 317.5
+        y: 58.5
         z: 0
       }
       scale {
@@ -333,8 +298,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 250
-        y: 90
+        x: 463.5
+        y: 101.5
         z: 0
       }
       orientation {
@@ -350,72 +315,10 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-  }
-  layer {
-    name: "Text-Title"
-    id: 690012645
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 0.67199707
-        y: 22.25
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 38
-        y: 62.2502
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 30
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 763
-      boundsHeight: 32
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: false
-    }
-    classname: "CYISDFAtlasTextSceneNode"
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
   }
   layer {
     name: "SCALE"
-    id: 690012646
+    id: 690012644
     sourceid: 690012838
     transform {
       anchorPoint {
@@ -429,8 +332,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 438
-        y: 107
+        x: 424
+        y: 116.5
         z: 0
       }
       orientation {
@@ -466,77 +369,41 @@ activecomp {
     key: "componentType"
     value: "button"
   }
-  childtemplates: "Auryn_Image-Dynamic-Live-Asset"
   childtemplates: "Auryn_Progress-Bar"
+  childtemplates: "Auryn_Image-Dynamic-Live-Asset"
   childtemplates: "Auryn_Metadata"
-  childtemplates: "Auryn_Details"
+  childtemplates: "Auryn_Container-Details"
 }
 sources {
-  uid: 690012646
-  srctype: AE_COMP_SRC
-  name: "Auryn_Image-Dynamic-Live-Asset.layout"
-  width: 550
-  height: 198
+  uid: 690015329
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+  width: 848
+  height: 233
+  copy_source: false
+}
+sources {
+  uid: 690015331
+  srctype: AE_IMAGE_SRC
+  name: "Live-Gradient.png"
+  width: 848
+  height: 1
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
   copy_source: true
 }
 sources {
-  uid: 690012678
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.92549020051956177
-    green: 0.10980392247438431
-    blue: 0.14117647707462311
-  }
-  width: 876
-  height: 8
-  copy_source: false
-}
-sources {
-  uid: 690012836
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.92549002170562744
-    green: 0.10980399698019028
-    blue: 0.1411760002374649
-  }
-  width: 8
-  height: 198
-  copy_source: false
-}
-sources {
-  uid: 690012682
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.92549002170562744
-    green: 0.10980399698019028
-    blue: 0.1411760002374649
-  }
-  width: 8
-  height: 198
-  copy_source: false
-}
-sources {
-  uid: 690012675
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.0941176488995552
-    green: 0.0941176488995552
-    blue: 0.0941176488995552
-  }
-  width: 400
-  height: 198
-  copy_source: false
-}
-sources {
-  uid: 690012664
+  uid: 690015785
   srctype: AE_IMAGE_SRC
-  name: "Live-Asset-Gradient-2.png"
-  width: 273
-  height: 198
+  name: "Circle.png"
+  width: 96
+  height: 96
   numberOfFrames: 1
   fps: 0
   loops: 1
@@ -546,8 +413,38 @@ sources {
   uid: 690012736
   srctype: AE_COMP_SRC
   name: "Auryn_Progress-Bar.layout"
-  width: 861
-  height: 6
+  width: 96
+  height: 96
+  copy_source: true
+}
+sources {
+  uid: 690015531
+  srctype: AE_IMAGE_SRC
+  name: "Live-PlayIcon.png"
+  width: 92
+  height: 92
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015530
+  srctype: AE_IMAGE_SRC
+  name: "Live-PlayIcon-Focused.png"
+  width: 16
+  height: 26
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690012646
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-Dynamic-Live-Asset.layout"
+  width: 154
+  height: 233
   copy_source: true
 }
 sources {
@@ -559,20 +456,12 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690012596
+  uid: 690015536
   srctype: AE_COMP_SRC
-  name: "Auryn_Details.layout"
-  width: 500
-  height: 50
+  name: "Auryn_Container-Details.layout"
+  width: 635
+  height: 117
   copy_source: true
-}
-sources {
-  uid: 10
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
 }
 sources {
   uid: 690012838

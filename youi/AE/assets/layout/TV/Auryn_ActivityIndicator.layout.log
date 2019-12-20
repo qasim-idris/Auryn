@@ -41,7 +41,7 @@ activecomp {
   layer {
     name: "ScalePropTopLeftAnchor"
     id: 520034
-    sourceid: 690011406
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 0
@@ -89,7 +89,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011406
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

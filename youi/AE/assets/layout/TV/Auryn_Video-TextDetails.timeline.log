@@ -12,7 +12,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 520012
-  targetname: "Title"
+  targetname: "Live-Metadata"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
@@ -23,7 +23,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 520013
-  targetname: "Live-Metadata"
+  targetname: "Title"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0

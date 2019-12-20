@@ -36,14 +36,6 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    properties {
-      key: "margin-bottom"
-      value: "24"
-    }
-    properties {
-      key: "margin-top"
-      value: "28"
-    }
   }
   layer {
     name: "Video-TextDetails"
@@ -78,10 +70,6 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    properties {
-      key: "margin-left"
-      value: "88"
-    }
   }
   bgcolor {
     alpha: 1
@@ -92,10 +80,6 @@ activecomp {
   properties {
     key: "clip"
     value: "true"
-  }
-  properties {
-    key: "layout"
-    value: "CYIColumnLayout"
   }
   properties {
     key: "gravity"

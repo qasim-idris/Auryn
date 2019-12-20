@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Live-MiniGuide-List"
-  width: 888
+  width: 991
   height: 1080
-  defaultcameradistance: 1233.3334
+  defaultcameradistance: 1376.3889
   layer {
     name: "Live-Asset"
     id: 1500
     sourceid: 1406
     transform {
       anchorPoint {
-        x: 438
-        y: 125
+        x: 495.5
+        y: 172
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 444
-        y: 125
+        x: 495.5
+        y: 169
         z: 0
       }
       orientation {
@@ -66,11 +66,7 @@ activecomp {
   }
   properties {
     key: "padding-top"
-    value: "15"
-  }
-  properties {
-    key: "padding-left"
-    value: "5"
+    value: "60"
   }
   properties {
     key: "padding-right"
@@ -85,6 +81,14 @@ activecomp {
     value: "true"
   }
   properties {
+    key: "vertical-overpull"
+    value: "60"
+  }
+  properties {
+    key: "padding-bottom"
+    value: "60"
+  }
+  properties {
     key: "insert-after-layer-id"
     value: "-1"
   }
@@ -94,7 +98,7 @@ sources {
   uid: 1406
   srctype: AE_COMP_SRC
   name: "Auryn_Live-Asset.layout"
-  width: 876
-  height: 250
+  width: 991
+  height: 344
   copy_source: true
 }

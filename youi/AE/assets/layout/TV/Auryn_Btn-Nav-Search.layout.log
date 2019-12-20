@@ -4,18 +4,86 @@ activecomp {
   height: 60
   defaultcameradistance: 83.333336
   layer {
-    name: "FocusCirlce.png"
+    name: "Backdrop-Gradient-Small.png"
     id: 585
-    sourceid: 690012410
+    sourceid: 690015186
     transform {
       anchorPoint {
-        x: 25
-        y: 25
+        x: 292
+        y: 0.5
         z: 0
       }
       scale {
-        x: 1.16
-        y: 1.16
+        x: 1
+        y: 78
+        z: 1
+      }
+      position {
+        x: 30
+        y: -96
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 90
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Icon-Search.png"
+    id: 586
+    sourceid: 104
+    transform {
+      anchorPoint {
+        x: 22.5
+        y: 23.5
+        z: 0
+      }
+      scale {
+        x: 0.76
+        y: 0.76
+        z: 1
+      }
+      position {
+        x: 30.034828
+        y: 29.95812
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Icon-Search-Active.png"
+    id: 587
+    sourceid: 980
+    transform {
+      anchorPoint {
+        x: 17.5
+        y: 17.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
         z: 1
       }
       position {
@@ -32,74 +100,6 @@ activecomp {
       rotationY: 0
       rotationZ: 0
       opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Icon-Search-Active.png"
-    id: 586
-    sourceid: 980
-    transform {
-      anchorPoint {
-        x: 17.5
-        y: 17.5
-        z: 0
-      }
-      scale {
-        x: -0.8
-        y: 0.8
-        z: 1
-      }
-      position {
-        x: 30.034828
-        y: 30.95812
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Icon-Search.png"
-    id: 587
-    sourceid: 963
-    transform {
-      anchorPoint {
-        x: 17.5
-        y: 17.5
-        z: 0
-      }
-      scale {
-        x: -0.8
-        y: 0.8
-        z: 1
-      }
-      position {
-        x: 30.034828
-        y: 30.95812
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
@@ -122,11 +122,22 @@ activecomp {
   }
 }
 sources {
-  uid: 690012410
+  uid: 690015186
   srctype: AE_IMAGE_SRC
-  name: "FocusCirlce.png"
-  width: 50
-  height: 50
+  name: "Backdrop-Gradient-Small.png"
+  width: 292
+  height: 1
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 104
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Search.png"
+  width: 45
+  height: 47
   numberOfFrames: 1
   fps: 0
   loops: 1
@@ -136,17 +147,6 @@ sources {
   uid: 980
   srctype: AE_IMAGE_SRC
   name: "Icon-Search-Active.png"
-  width: 35
-  height: 35
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
-  uid: 963
-  srctype: AE_IMAGE_SRC
-  name: "Icon-Search.png"
   width: 35
   height: 35
   numberOfFrames: 1

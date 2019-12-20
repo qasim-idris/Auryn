@@ -1,8 +1,8 @@
 activecomp {
   name: "Auryn_Btn-Backdrop-Small"
-  width: 510
-  height: 276
-  defaultcameradistance: 708.33331
+  width: 456
+  height: 264
+  defaultcameradistance: 633.33331
   layer {
     name: "Black Solid 6"
     id: 27
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 255
-        y: 138
+        x: 228
+        y: 132
         z: 0
       }
       orientation {
@@ -53,8 +53,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 255
-        y: 138
+        x: 228
+        y: 132
         z: 0
       }
       orientation {
@@ -87,8 +87,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 255
-        y: 290
+        x: 228
+        y: 268
         z: 0
       }
       orientation {
@@ -106,149 +106,13 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Red Solid 18"
+    name: "Unfocus-Text-Title"
     id: 30
-    sourceid: 163
-    transform {
-      anchorPoint {
-        x: 267
-        y: 2
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 255
-        y: 2
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Red Solid 17"
-    id: 31
-    sourceid: 165
-    transform {
-      anchorPoint {
-        x: 267
-        y: 2
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 255
-        y: 274
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Red Solid 16"
-    id: 32
-    sourceid: 161
-    transform {
-      anchorPoint {
-        x: 2
-        y: 150
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 508
-        y: 138
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Red Solid 15"
-    id: 33
-    sourceid: 159
-    transform {
-      anchorPoint {
-        x: 2
-        y: 150
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 2
-        y: 138
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Text-Details"
-    id: 34
     sourceid: -1
     transform {
       anchorPoint {
-        x: 248.5
-        y: 40.5
+        x: 0.13293457
+        y: -1.6692352
         z: 0
       }
       scale {
@@ -257,8 +121,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 287.26
-        y: 235.5
+        x: 24.892929
+        y: 220.33076
         z: 0
       }
       orientation {
@@ -269,29 +133,29 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0
+      opacity: 0.5
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 18
+      fontSize: 24
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Bold"
       isPointText: false
-      boundsWidth: 454
-      boundsHeight: 63
+      boundsWidth: 399
+      boundsHeight: 31
       isLabel: true
       text: ""
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
     properties {
       key: "text-placeholder"
@@ -301,15 +165,50 @@ activecomp {
       key: "text-overflow"
       value: "ellipsis"
     }
+  }
+  layer {
+    name: "Backdrop-Gradient-Small.png"
+    id: 31
+    sourceid: 690015186
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0.5
+        z: 0
+      }
+      scale {
+        x: 1.01
+        y: 266.6
+        z: 1
+      }
+      position {
+        x: 229
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 34
   }
   layer {
     name: "Text-Title"
-    id: 35
+    id: 32
     sourceid: -1
     transform {
       anchorPoint {
-        x: 248.5
-        y: 40.5
+        x: 0.13293457
+        y: -1.6692352
         z: 0
       }
       scale {
@@ -318,8 +217,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 286.26
-        y: 255.5
+        x: 416.89294
+        y: -58.669235
         z: 0
       }
       orientation {
@@ -330,30 +229,31 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0.8
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 36
+      fontSize: 24
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
-      boundsWidth: 462
-      boundsHeight: 54
+      boundsWidth: 222
+      boundsHeight: 85
       isLabel: true
       text: ""
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
+    parentid: 34
     properties {
       key: "text-placeholder"
       value: "true"
@@ -362,6 +262,102 @@ activecomp {
       key: "text-overflow"
       value: "ellipsis"
     }
+  }
+  layer {
+    name: "Text-Metadata"
+    id: 33
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0.072509766
+        y: -0.91049194
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 294.89294
+        y: -87.910492
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.6
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 16
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 202
+      boundsHeight: 26
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: true
+    }
+    parentid: 34
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+  }
+  layer {
+    name: "Opacity_Ctrl"
+    id: 34
+    sourceid: 690016680
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 228
+        y: 132
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -417,70 +413,28 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 163
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 534
-  height: 4
-  copy_source: false
-}
-sources {
-  uid: 165
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 534
-  height: 4
-  copy_source: false
-}
-sources {
-  uid: 161
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 4
-  height: 300
-  copy_source: false
-}
-sources {
-  uid: 159
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 4
-  height: 300
-  copy_source: false
-}
-sources {
-  uid: 8
+  uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
-}
-sources {
-  uid: 9
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
+}
+sources {
+  uid: 690015186
+  srctype: AE_IMAGE_SRC
+  name: "Backdrop-Gradient-Small.png"
+  width: 292
+  height: 1
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690016680
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
 }

@@ -1,7 +1,7 @@
 tracks {
   binding: IS_VISIBLE
   targetid: 690014383
-  targetname: "toggle-line"
+  targetname: "title"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
@@ -12,150 +12,73 @@ tracks {
 tracks {
   binding: OPACITY
   targetid: 690014383
-  targetname: "toggle-line"
+  targetname: "title"
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 0
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0
+    fvalue1: 0.6
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 3.1666667
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 1
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 3.3333333
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 1
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 3.5
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0
-  }
-  trackName: "Opacity"
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 690014384
-  targetname: "title"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: POSITION
-  targetid: 690014384
-  targetname: "title"
-  keytimes {
-    datatype: AE_FLOAT_VECTOR_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 115.53012
-    fvalue2: 55.94
-    fvalue3: 0
-  }
-  keytimes {
-    datatype: AE_FLOAT_VECTOR_DATA
-    timeOffset: 3.1666667
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 115.53012
-    fvalue2: 55.94
-    fvalue3: 0
-  }
-  keytimes {
-    datatype: AE_FLOAT_VECTOR_DATA
-    timeOffset: 3.3333333
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 115.53012
-    fvalue2: 55.94
-    fvalue3: 0
-  }
-  trackName: "Position"
-}
-tracks {
-  binding: OPACITY
-  targetid: 690014384
-  targetname: "title"
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.5
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 3
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.5
+    fvalue1: 0.6
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.01666
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.51394731
+    fvalue1: 0.61115783
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.03332
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.55181265
+    fvalue1: 0.64145011
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.04998
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.60763109
+    fvalue1: 0.68610489
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.06664
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.67543769
+    fvalue1: 0.74035013
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.0999599
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.82315582
+    fvalue1: 0.85852468
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.1166198
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.89113754
+    fvalue1: 0.9129101
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.1332798
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.94724774
+    fvalue1: 0.95779824
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.1499398
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.98552167
+    fvalue1: 0.98841739
     isCookedKeytime: true
   }
   keytimes {
@@ -174,69 +97,69 @@ tracks {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.3499932
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.98605269
+    fvalue1: 0.98884219
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.3666532
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.94818735
+    fvalue1: 0.95854986
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.3833132
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.89236891
+    fvalue1: 0.91389513
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.3999732
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.82456231
+    fvalue1: 0.8596499
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.4332931
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.67684418
+    fvalue1: 0.74147528
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.4499531
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.60886246
+    fvalue1: 0.68708992
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.4666131
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.5527522
+    fvalue1: 0.64220178
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.483273
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.51447833
+    fvalue1: 0.61158264
     isCookedKeytime: true
   }
   keytimes {
     datatype: AE_FLOAT_DATA
     timeOffset: 3.5
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0.5
+    fvalue1: 0.6
   }
   trackName: "Opacity"
 }
 tracks {
   binding: SCALE
-  targetid: 690014384
+  targetid: 690014383
   targetname: "title"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -262,22 +185,376 @@ tracks {
     fvalue2: 0.9
     fvalue3: 1
   }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 2.3333333
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+    fvalue2: 1
+    fvalue3: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 2.35
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.9
+    fvalue2: 0.9
+    fvalue3: 1
+  }
   trackName: "Scale"
 }
-markers {
-  starttime: 1
-  duration: 0.16666667
-  name: "FocusIn"
-  alltracks: false
-  id: 21
-  looping: false
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690014384
+  targetname: "Nav-Icon-Toggled"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: OPACITY
+  targetid: 690014384
+  targetname: "Nav-Icon-Toggled"
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.01666
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.045391418
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.03332
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.31800389
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.04998
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.6231119
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.06664
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.77637434
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.0832999
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.86689305
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.0999599
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.92454231
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1166198
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.96157908
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1332798
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.98427171
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1499398
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.99629295
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1666667
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3333333
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3499932
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.996439
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3666532
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.98460007
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3833132
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.96214575
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3999732
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.92543817
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4166331
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.86828077
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4332931
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.77859777
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4499531
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.62711579
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4666131
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.32597858
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.483273
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.04767907
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.5
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0
+  }
+  trackName: "Opacity"
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690014385
+  targetname: "Nav-Icon"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: OPACITY
+  targetid: 690014385
+  targetname: "Nav-Icon"
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.01666
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.95460862
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.03332
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.68199611
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.04998
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.3768881
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.06664
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.22362566
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.0832999
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.13310693
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.0999599
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.075457685
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1166198
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.038420923
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1332798
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.015728287
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1499398
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.0037070804
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.1666667
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3333333
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3499932
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.0035609957
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3666532
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.015399959
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3833132
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.0378542
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.3999732
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.074561857
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4166331
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.13171919
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4332931
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.22140224
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4499531
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.37288421
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.4666131
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.67402136
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.483273
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0.95232093
+    isCookedKeytime: true
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 3.5
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  trackName: "Opacity"
 }
 markers {
   starttime: 2
   duration: 0.016666668
   name: "Press"
   tracksSelection {
-    targetid: 690014384
+    targetid: 690014383
     binding: SCALE
   }
   alltracks: false
@@ -288,6 +565,10 @@ markers {
   starttime: 2.3333333
   duration: 0.016666668
   name: "Press-Checked"
+  tracksSelection {
+    targetid: 690014383
+    binding: SCALE
+  }
   alltracks: false
   id: 23
   looping: false
@@ -302,10 +583,10 @@ markers {
   }
   tracksSelection {
     targetid: 690014384
-    binding: POSITION
+    binding: OPACITY
   }
   tracksSelection {
-    targetid: 690014384
+    targetid: 690014385
     binding: OPACITY
   }
   alltracks: false
@@ -322,10 +603,10 @@ markers {
   }
   tracksSelection {
     targetid: 690014384
-    binding: POSITION
+    binding: OPACITY
   }
   tracksSelection {
-    targetid: 690014384
+    targetid: 690014385
     binding: OPACITY
   }
   alltracks: false

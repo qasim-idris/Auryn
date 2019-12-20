@@ -1,8 +1,8 @@
 activecomp {
   name: "Auryn_Btn-Poster-Large"
-  width: 400
-  height: 600
-  defaultcameradistance: 555.55554
+  width: 490
+  height: 750
+  defaultcameradistance: 680.55554
   layer {
     name: "Background"
     id: 838
@@ -14,13 +14,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.25
+        y: 1.25
         z: 1
       }
       position {
-        x: 200
-        y: 300
+        x: 245
+        y: 375
         z: 0
       }
       orientation {
@@ -48,13 +48,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1.05
-        y: 1.05
+        x: 1.25
+        y: 1.25
         z: 1
       }
       position {
-        x: 200
-        y: 300
+        x: 245
+        y: 375
         z: 0
       }
       orientation {
@@ -72,193 +72,23 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Red Solid 36"
+    name: "PlayIcon.png"
     id: 840
-    sourceid: 690014215
+    sourceid: 690015184
     transform {
       anchorPoint {
-        x: 4
-        y: 300
+        x: 38
+        y: 38
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.66
+        y: 1.66
         z: 1
       }
       position {
-        x: 4
-        y: 300
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Red Solid 35"
-    id: 841
-    sourceid: 690014213
-    transform {
-      anchorPoint {
-        x: 4
-        y: 300
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 396
-        y: 300
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Red Solid 34"
-    id: 842
-    sourceid: 690014211
-    transform {
-      anchorPoint {
-        x: 200
-        y: 4
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 200
-        y: 596
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Red Solid 33"
-    id: 843
-    sourceid: 690014209
-    transform {
-      anchorPoint {
-        x: 200
-        y: 4
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 200
-        y: 4
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Button-PlayPause-Fill.png"
-    id: 844
-    sourceid: 797
-    transform {
-      anchorPoint {
-        x: 65
-        y: 65
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 200
-        y: 303
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Btn-Play_2.png"
-    id: 845
-    sourceid: 45
-    transform {
-      anchorPoint {
-        x: 15
-        y: 25
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 201
-        y: 303
+        x: 245
+        y: 375
         z: 0
       }
       orientation {
@@ -318,74 +148,11 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690014215
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 8
-  height: 600
-  copy_source: false
-}
-sources {
-  uid: 690014213
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 8
-  height: 600
-  copy_source: false
-}
-sources {
-  uid: 690014211
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 400
-  height: 8
-  copy_source: false
-}
-sources {
-  uid: 690014209
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.90588235855102539
-    green: 0.20000000298023224
-    blue: 0.23529411852359772
-  }
-  width: 400
-  height: 8
-  copy_source: false
-}
-sources {
-  uid: 797
+  uid: 690015184
   srctype: AE_IMAGE_SRC
-  name: "Button-PlayPause-Fill.png"
-  width: 130
-  height: 130
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
-  uid: 45
-  srctype: AE_IMAGE_SRC
-  name: "Btn-Play_2.png"
-  width: 40
-  height: 50
+  name: "PlayIcon.png"
+  width: 76
+  height: 76
   numberOfFrames: 1
   fps: 0
   loops: 1

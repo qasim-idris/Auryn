@@ -9,8 +9,8 @@ activecomp {
     sourceid: 1086
     transform {
       anchorPoint {
-        x: 540
-        y: 300
+        x: 262.5
+        y: 471
         z: 0
       }
       scale {
@@ -82,7 +82,7 @@ sources {
   uid: 1086
   srctype: AE_COMP_SRC
   name: "Auryn_Container-Btn-Poster-Small.layout"
-  width: 1080
-  height: 600
+  width: 525
+  height: 942
   copy_source: true
 }

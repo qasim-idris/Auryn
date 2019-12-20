@@ -1,0 +1,62 @@
+activecomp {
+  name: "Auryn_Nav-Icon"
+  width: 60
+  height: 55
+  defaultcameradistance: 83.333336
+  layer {
+    name: "ImageNode"
+    id: 690016212
+    sourceid: 690015904
+    transform {
+      anchorPoint {
+        x: 15
+        y: 15
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 30
+        y: 27
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  classname: "CYIImageView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentType"
+    value: "image"
+  }
+}
+sources {
+  uid: 690015904
+  srctype: AE_IMAGE_SRC
+  name: "Default-Nav-Icon.png"
+  width: 30
+  height: 30
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}

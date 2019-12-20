@@ -1,0 +1,154 @@
+activecomp {
+  name: "Auryn_Text-Container"
+  width: 376
+  height: 96
+  defaultcameradistance: 522.22223
+  layer {
+    name: "Text-Details"
+    id: 690016656
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 248.5
+        y: 4.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 256.092
+        y: 59.536484
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 18
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 361
+      boundsHeight: 124
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: false
+    }
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+  }
+  layer {
+    name: "Text-Title"
+    id: 690016657
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 256
+        y: 40.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 256.02002
+        y: 55.609585
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 30
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 374
+      boundsHeight: 76
+      isLabel: true
+      text: ""
+      multiline: true
+      ellipsis: true
+      isAllCaps: true
+    }
+    properties {
+      key: "text-placeholder"
+      value: "true"
+    }
+    properties {
+      key: "text-overflow"
+      value: "ellipsis"
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "clip"
+    value: "false"
+  }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
+  }
+  properties {
+    key: "gravity"
+    value: "top"
+  }
+}
+sources {
+  uid: 1
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Bold"
+  copy_source: true
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
+}

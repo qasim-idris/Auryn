@@ -10,6 +10,112 @@ tracks {
   }
 }
 tracks {
+  binding: POSITION
+  targetid: 690014663
+  targetname: "Player-Scrubber-Container"
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 960
+    fvalue2: 962
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 1
+    inttype: AE_INTERP_HOLD
+    sInTangentX: -0
+    sInTangentY: -0
+    sInTangentZ: -0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 960
+    fvalue2: 962
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 960
+    fvalue2: 962
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 2
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 960
+    fvalue2: 1091
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 2.5
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 960
+    fvalue2: 1091
+    fvalue3: 0
+  }
+  trackName: "Position"
+}
+tracks {
+  binding: OPACITY
+  targetid: 690014663
+  targetname: "Player-Scrubber-Container"
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 1
+    inttype: AE_INTERP_HOLD
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 2
+    inttype: AE_INTERP_HOLD
+    fvalue1: 1
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 2.5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 1
+  }
+  trackName: "Opacity"
+}
+tracks {
   binding: IS_VISIBLE
   targetid: 690014664
   targetname: "Video-TextDetails"
@@ -20,17 +126,111 @@ tracks {
     ivalue1: 1
   }
 }
+tracks {
+  binding: POSITION
+  targetid: 690014664
+  targetname: "Video-TextDetails"
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 790
+    fvalue2: 696
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 1
+    inttype: AE_INTERP_HOLD
+    sInTangentX: -0
+    sInTangentY: -0
+    sInTangentZ: -0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 790
+    fvalue2: 696
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 790
+    fvalue2: 696
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 2
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 790
+    fvalue2: 816
+    fvalue3: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_VECTOR_DATA
+    timeOffset: 2.5
+    inttype: AE_INTERP_HOLD
+    sInTangentX: 0
+    sInTangentY: 0
+    sInTangentZ: 0
+    sOutTangentX: 0
+    sOutTangentY: 0
+    sOutTangentZ: 0
+    fvalue1: 790
+    fvalue2: 816
+    fvalue3: 0
+  }
+  trackName: "Position"
+}
 markers {
   starttime: 1
   duration: 0.5
-  name: "Show"
+  name: "Set-VOD"
+  tracksSelection {
+    targetid: 690014663
+    binding: POSITION
+  }
+  tracksSelection {
+    targetid: 690014663
+    binding: OPACITY
+  }
+  tracksSelection {
+    targetid: 690014664
+    binding: POSITION
+  }
   alltracks: false
   looping: false
 }
 markers {
-  starttime: 6
+  starttime: 2
   duration: 0.5
-  name: "Hide"
+  name: "Set-Live"
+  tracksSelection {
+    targetid: 690014663
+    binding: POSITION
+  }
+  tracksSelection {
+    targetid: 690014663
+    binding: OPACITY
+  }
+  tracksSelection {
+    targetid: 690014664
+    binding: POSITION
+  }
   alltracks: false
   looping: false
 }

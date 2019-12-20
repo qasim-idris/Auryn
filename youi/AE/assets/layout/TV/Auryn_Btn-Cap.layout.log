@@ -75,7 +75,7 @@ activecomp {
   layer {
     name: "Null 2"
     id: 690011387
-    sourceid: 690011400
+    sourceid: 2476
     transform {
       anchorPoint {
         x: 0
@@ -145,7 +145,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011400
+  uid: 2476
   srctype: AE_NULL_SRC
   width: 100
   height: 100

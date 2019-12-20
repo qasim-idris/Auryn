@@ -1,15 +1,15 @@
 activecomp {
   name: "Auryn_Nav-List"
-  width: 782
-  height: 140
-  defaultcameradistance: 1086.1111
+  width: 1002
+  height: 187
+  defaultcameradistance: 1391.6666
   layer {
     name: "Btn-Nav-List"
     id: 690014353
     sourceid: 690014383
     transform {
       anchorPoint {
-        x: 117
+        x: 112.5
         y: 70
         z: 0
       }
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 671
-        y: 70
+        x: 781
+        y: 93.5
         z: 0
       }
       orientation {
@@ -47,7 +47,7 @@ activecomp {
     sourceid: 690014383
     transform {
       anchorPoint {
-        x: 117
+        x: 112.5
         y: 70
         z: 0
       }
@@ -57,8 +57,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 484.33334
-        y: 70
+        x: 594.33331
+        y: 93.5
         z: 0
       }
       orientation {
@@ -85,7 +85,7 @@ activecomp {
     sourceid: 690014383
     transform {
       anchorPoint {
-        x: 117
+        x: 112.5
         y: 70
         z: 0
       }
@@ -95,8 +95,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 297.66666
-        y: 70
+        x: 407.66666
+        y: 93.5
         z: 0
       }
       orientation {
@@ -123,7 +123,7 @@ activecomp {
     sourceid: 690014383
     transform {
       anchorPoint {
-        x: 117
+        x: 112.5
         y: 70
         z: 0
       }
@@ -133,8 +133,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 111
-        y: 70
+        x: 221
+        y: 93.5
         z: 0
       }
       orientation {
@@ -184,7 +184,7 @@ sources {
   uid: 690014383
   srctype: AE_COMP_SRC
   name: "Auryn_Btn-Nav-List.layout"
-  width: 234
+  width: 225
   height: 140
   copy_source: true
 }

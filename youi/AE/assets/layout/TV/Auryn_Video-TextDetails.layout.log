@@ -31,21 +31,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.7
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 32
+      fontSize: 28
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 1406
       boundsHeight: 160
@@ -66,8 +66,42 @@ activecomp {
     }
   }
   layer {
-    name: "Title"
+    name: "Live-Metadata"
     id: 520012
+    sourceid: 690013003
+    transform {
+      anchorPoint {
+        x: 250
+        y: 25
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 250
+        y: 345
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Title"
+    id: 520013
     sourceid: -1
     transform {
       anchorPoint {
@@ -82,7 +116,7 @@ activecomp {
       }
       position {
         x: 3
-        y: 334.28613
+        y: 324.28613
         z: 0
       }
       orientation {
@@ -100,14 +134,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 60
+      fontSize: 40
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 1398
       boundsHeight: 153
@@ -115,7 +149,7 @@ activecomp {
       text: ""
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
     classname: "CYISDFAtlasTextSceneNode"
     properties {
@@ -126,40 +160,6 @@ activecomp {
       key: "text-placeholder"
       value: "true"
     }
-  }
-  layer {
-    name: "Live-Metadata"
-    id: 520013
-    sourceid: 690013003
-    transform {
-      anchorPoint {
-        x: 250
-        y: 25
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 250
-        y: 232
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
   }
   bgcolor {
     alpha: 1
@@ -175,23 +175,19 @@ activecomp {
     key: "gravity"
     value: "bottom-left"
   }
+  properties {
+    key: "padding-left"
+    value: "108"
+  }
   childtemplates: "Auryn_Live-Metadata"
 }
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
-}
-sources {
-  uid: 2
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
-  copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
 }
 sources {
   uid: 690013003
@@ -200,4 +196,12 @@ sources {
   width: 500
   height: 50
   copy_source: true
+}
+sources {
+  uid: 3
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Bold"
+  copy_source: true
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
 }

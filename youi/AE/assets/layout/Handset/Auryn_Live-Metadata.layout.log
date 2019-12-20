@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 288.24973
-        y: 25.046743
+        x: 98.419937
+        y: 31.516935
         z: 0
       }
       orientation {
@@ -31,21 +31,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.6
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 33
+      fontSize: 16
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 454
       boundsHeight: 28
@@ -53,7 +53,7 @@ activecomp {
       text: ""
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
     properties {
       key: "text-placeholder"
@@ -65,7 +65,7 @@ activecomp {
     }
   }
   layer {
-    name: "\342\200\242"
+    name: "Seperator"
     id: 1468
     sourceid: -1
     transform {
@@ -80,8 +80,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 262.602
-        y: 36.909103
+        x: 91.772217
+        y: 37.158562
         z: 0
       }
       orientation {
@@ -92,28 +92,28 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.6
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_CENTER
-      fontSize: 24
+      fontSize: 16
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 41
       boundsHeight: 42
       isLabel: true
       text: "\342\200\242"
       multiline: true
-      isAllCaps: false
+      isAllCaps: true
     }
   }
   layer {
@@ -132,8 +132,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 78
-        y: 26.02964
+        x: 5.1702118
+        y: 30.850834
         z: 0
       }
       orientation {
@@ -144,21 +144,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.6
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 33
+      fontSize: 16
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 309
       boundsHeight: 26
@@ -166,7 +166,7 @@ activecomp {
       text: ""
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
     properties {
       key: "text-placeholder"
@@ -175,79 +175,6 @@ activecomp {
     properties {
       key: "text-overflow"
       value: "ellipsis"
-    }
-  }
-  layer {
-    name: "Live-dot.png"
-    id: 1470
-    sourceid: 690012999
-    transform {
-      anchorPoint {
-        x: 20
-        y: 20
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 31
-        y: 25.875
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Live-Icon"
-    id: 1471
-    sourceid: 1425
-    transform {
-      anchorPoint {
-        x: 17.5
-        y: 17.5
-        z: 0
-      }
-      scale {
-        x: 1.5
-        y: 1.5
-        z: 1
-      }
-      position {
-        x: 20.175781
-        y: 20.25
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 1470
-    properties {
-      key: "layoutable"
-      value: "false"
     }
   }
   classname: "CYIPushButtonView"
@@ -281,32 +208,12 @@ activecomp {
     key: "padding-left"
     value: "5"
   }
-  childtemplates: "Auryn_Live-Icon"
 }
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
-}
-sources {
-  uid: 690012999
-  srctype: AE_IMAGE_SRC
-  name: "Live-dot.png"
-  width: 40
-  height: 40
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
-  uid: 1425
-  srctype: AE_COMP_SRC
-  name: "Auryn_Live-Icon.layout"
-  width: 35
-  height: 35
-  copy_source: true
 }

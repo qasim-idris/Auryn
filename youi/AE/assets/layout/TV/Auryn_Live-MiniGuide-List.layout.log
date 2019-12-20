@@ -3,6 +3,44 @@ activecomp {
   width: 888
   height: 1080
   defaultcameradistance: 1233.3334
+  layer {
+    name: "Live-Asset"
+    id: 690013018
+    sourceid: 690012635
+    transform {
+      anchorPoint {
+        x: 424
+        y: 116.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 424
+        y: 118
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "placeholder"
+      value: "true"
+    }
+  }
   classname: "CYIListView"
   bgcolor {
     alpha: 1
@@ -46,4 +84,25 @@ activecomp {
     key: "padding-right"
     value: "5"
   }
+  properties {
+    key: "up-magnet-offset"
+    value: "60"
+  }
+  properties {
+    key: "down-magnet-offset"
+    value: "60"
+  }
+  properties {
+    key: "insert-after-layer-id"
+    value: "-1"
+  }
+  childtemplates: "Auryn_Live-Asset"
+}
+sources {
+  uid: 690012635
+  srctype: AE_COMP_SRC
+  name: "Auryn_Live-Asset.layout"
+  width: 848
+  height: 233
+  copy_source: true
 }

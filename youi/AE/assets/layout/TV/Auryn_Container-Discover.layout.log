@@ -9,8 +9,8 @@ activecomp {
     sourceid: 15
     transform {
       anchorPoint {
-        x: 960
-        y: 450
+        x: 870
+        y: 419.5
         z: 0
       }
       scale {
@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 960
-        y: 450
+        y: 419.5
         z: 0
       }
       orientation {
@@ -49,7 +49,7 @@ sources {
   uid: 15
   srctype: AE_COMP_SRC
   name: "Auryn_Discover.layout"
-  width: 1920
-  height: 900
+  width: 1740
+  height: 839
   copy_source: true
 }

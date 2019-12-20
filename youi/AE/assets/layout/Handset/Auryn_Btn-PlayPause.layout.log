@@ -4,42 +4,8 @@ activecomp {
   height: 150
   defaultcameradistance: 208.33333
   layer {
-    name: "PlayPause-Circle_2.png"
-    id: 781
-    sourceid: 156
-    transform {
-      anchorPoint {
-        x: 40
-        y: 40
-        z: 0
-      }
-      scale {
-        x: 0.98
-        y: 0.98
-        z: 1
-      }
-      position {
-        x: 75
-        y: 75
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0.6
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
     name: "Btn-Play_2.png"
-    id: 782
+    id: 781
     sourceid: 45
     transform {
       anchorPoint {
@@ -73,7 +39,7 @@ activecomp {
   }
   layer {
     name: "Icon-Pause"
-    id: 783
+    id: 782
     sourceid: 1197
     transform {
       anchorPoint {
@@ -121,17 +87,6 @@ activecomp {
     value: "button"
   }
   childtemplates: "Auryn_Icon-Pause"
-}
-sources {
-  uid: 156
-  srctype: AE_IMAGE_SRC
-  name: "PlayPause-Circle_2.png"
-  width: 80
-  height: 80
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
 }
 sources {
   uid: 45

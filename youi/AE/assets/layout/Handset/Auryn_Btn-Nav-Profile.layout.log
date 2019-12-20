@@ -4,18 +4,18 @@ activecomp {
   height: 60
   defaultcameradistance: 83.333336
   layer {
-    name: "Icon-Profile_2.png"
+    name: "Icon-Profile.png"
     id: 672
-    sourceid: 102
+    sourceid: 965
     transform {
       anchorPoint {
-        x: 15
-        y: 19.5
+        x: 24.5
+        y: 22.5
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 0.76
+        y: 0.76
         z: 1
       }
       position {
@@ -54,11 +54,11 @@ activecomp {
   }
 }
 sources {
-  uid: 102
+  uid: 965
   srctype: AE_IMAGE_SRC
-  name: "Icon-Profile_2.png"
-  width: 30
-  height: 39
+  name: "Icon-Profile.png"
+  width: 49
+  height: 45
   numberOfFrames: 1
   fps: 0
   loops: 1

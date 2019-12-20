@@ -1,53 +1,6 @@
 tracks {
   binding: IS_VISIBLE
   targetid: 781
-  targetname: "PlayPause-Circle_2.png"
-  keytimes {
-    datatype: AE_INT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_HOLD
-    ivalue1: 1
-  }
-}
-tracks {
-  binding: OPACITY
-  targetid: 781
-  targetname: "PlayPause-Circle_2.png"
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 0
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.6
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 1
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.6
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 1.1666666
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 1
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 2
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 1
-  }
-  keytimes {
-    datatype: AE_FLOAT_DATA
-    timeOffset: 2.0166667
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0.6
-  }
-  trackName: "Opacity"
-}
-tracks {
-  binding: IS_VISIBLE
-  targetid: 782
   targetname: "Btn-Play_2.png"
   keytimes {
     datatype: AE_INT_DATA
@@ -58,7 +11,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 782
+  targetid: 781
   targetname: "Btn-Play_2.png"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -257,7 +210,7 @@ tracks {
 }
 tracks {
   binding: OPACITY
-  targetid: 782
+  targetid: 781
   targetname: "Btn-Play_2.png"
   keytimes {
     datatype: AE_FLOAT_DATA
@@ -412,7 +365,7 @@ tracks {
 }
 tracks {
   binding: IS_VISIBLE
-  targetid: 783
+  targetid: 782
   targetname: "Icon-Pause"
   keytimes {
     datatype: AE_INT_DATA
@@ -423,7 +376,7 @@ tracks {
 }
 tracks {
   binding: POSITION
-  targetid: 783
+  targetid: 782
   targetname: "Icon-Pause"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
@@ -622,7 +575,7 @@ tracks {
 }
 tracks {
   binding: OPACITY
-  targetid: 783
+  targetid: 782
   targetname: "Icon-Pause"
   keytimes {
     datatype: AE_FLOAT_DATA
@@ -776,55 +729,23 @@ tracks {
   trackName: "Opacity"
 }
 markers {
-  starttime: 1
-  duration: 0.16666667
-  name: "FocusIn"
-  tracksSelection {
-    targetid: 781
-    binding: OPACITY
-  }
-  alltracks: false
-  id: 21
-  looping: false
-}
-markers {
-  starttime: 2
-  duration: 0.016666668
-  name: "Press"
-  tracksSelection {
-    targetid: 781
-    binding: OPACITY
-  }
-  alltracks: false
-  id: 18
-  looping: false
-}
-markers {
-  starttime: 2.3333333
-  duration: 0.016666668
-  name: "Press-Checked"
-  alltracks: false
-  id: 23
-  looping: false
-}
-markers {
   starttime: 3
   duration: 0.16666667
   name: "Toggle-On"
   tracksSelection {
-    targetid: 782
+    targetid: 781
     binding: POSITION
   }
   tracksSelection {
-    targetid: 782
+    targetid: 781
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 783
+    targetid: 782
     binding: POSITION
   }
   tracksSelection {
-    targetid: 783
+    targetid: 782
     binding: OPACITY
   }
   alltracks: false
@@ -836,19 +757,19 @@ markers {
   duration: 0.16666667
   name: "Toggle-Off"
   tracksSelection {
-    targetid: 782
+    targetid: 781
     binding: POSITION
   }
   tracksSelection {
-    targetid: 782
+    targetid: 781
     binding: OPACITY
   }
   tracksSelection {
-    targetid: 783
+    targetid: 782
     binding: POSITION
   }
   tracksSelection {
-    targetid: 783
+    targetid: 782
     binding: OPACITY
   }
   alltracks: false

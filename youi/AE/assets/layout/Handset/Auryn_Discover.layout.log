@@ -22,4 +22,8 @@ activecomp {
     key: "useComponentScrollingView"
     value: "true"
   }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
+  }
 }

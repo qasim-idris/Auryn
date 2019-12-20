@@ -1,7 +1,7 @@
 activecomp {
   name: "Auryn_Container-Discover"
   width: 1080
-  height: 1350
+  height: 1506
   defaultcameradistance: 1500
   layer {
     name: "Discover"
@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 540
-        y: 675
+        y: 753
         z: 0
       }
       orientation {
@@ -42,6 +42,10 @@ activecomp {
     red: 0.086274509803921567
     green: 0.11372549019607843
     blue: 0.14509803921568629
+  }
+  properties {
+    key: "layout"
+    value: "CYIColumnLayout"
   }
   childtemplates: "Auryn_Discover"
 }

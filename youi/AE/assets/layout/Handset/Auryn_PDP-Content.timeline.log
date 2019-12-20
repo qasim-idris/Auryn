@@ -1,0 +1,88 @@
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690015823
+  targetname: "PDP-Scroller"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690015824
+  targetname: "Scroller_Ctrl"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+}
+tracks {
+  binding: OPACITY
+  targetid: 690015824
+  targetname: "Scroller_Ctrl"
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 0.5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 1.5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 4
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 5
+    inttype: AE_INTERP_HOLD
+    fvalue1: 0
+  }
+  trackName: "Opacity"
+}
+markers {
+  starttime: 0.5
+  duration: 1
+  name: "ContentIn"
+  tracksSelection {
+    targetid: 690015824
+    binding: OPACITY
+  }
+  alltracks: false
+  looping: false
+  properties {
+    key: "recursive"
+    value: "true"
+  }
+}
+markers {
+  starttime: 4
+  duration: 1
+  name: "ContentOut"
+  tracksSelection {
+    targetid: 690015824
+    binding: OPACITY
+  }
+  alltracks: false
+  looping: false
+  properties {
+    key: "recursive"
+    value: "true"
+  }
+}

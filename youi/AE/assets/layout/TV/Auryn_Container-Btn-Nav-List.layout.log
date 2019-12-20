@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Container-Btn-Nav-List"
-  width: 234
-  height: 70
-  defaultcameradistance: 325
+  width: 150
+  height: 120
+  defaultcameradistance: 208.33333
   layer {
     name: "Btn-Nav-List"
     id: 690014402
     sourceid: 690014319
     transform {
       anchorPoint {
-        x: 117
-        y: 35
+        x: 75
+        y: 60
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 117
-        y: 35
+        x: 75
+        y: 60
         z: 0
       }
       orientation {
@@ -49,7 +49,7 @@ sources {
   uid: 690014319
   srctype: AE_COMP_SRC
   name: "Auryn_Btn-Nav-List.layout"
-  width: 234
-  height: 70
+  width: 150
+  height: 120
   copy_source: true
 }

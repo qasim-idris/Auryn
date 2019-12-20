@@ -38,14 +38,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_CENTER
-      fontSize: 36
+      fontSize: 37
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.92548996210098267
+        green: 0.92548996210098267
+        blue: 0.92548996210098267
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 224
       boundsHeight: 52
@@ -70,7 +70,7 @@ activecomp {
     sourceid: 1813
     transform {
       anchorPoint {
-        x: 795
+        x: 0
         y: 30
         z: 0
       }
@@ -80,7 +80,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 885
+        x: 90
         y: 286
         z: 0
       }
@@ -109,10 +109,10 @@ activecomp {
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
+  file_name: "yi_Montserrat-Medium.otf"
+  style_name: "Medium"
 }
 sources {
   uid: 1813

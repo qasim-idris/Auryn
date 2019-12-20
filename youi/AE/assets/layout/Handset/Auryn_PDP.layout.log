@@ -4,23 +4,23 @@ activecomp {
   height: 1920
   defaultcameradistance: 1500
   layer {
-    name: "Gradient-Bottom_2.png"
+    name: "PDP-Content"
     id: 1728
-    sourceid: 91
+    sourceid: 690015823
     transform {
       anchorPoint {
-        x: 0.5
-        y: 250
+        x: 540
+        y: 960
         z: 0
       }
       scale {
-        x: 1080
+        x: 1
         y: 1
         z: 1
       }
       position {
         x: 540
-        y: 1670
+        y: 960
         z: 0
       }
       orientation {
@@ -31,28 +31,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    properties {
-      key: "layoutable"
-      value: "false"
-    }
-    properties {
-      key: "item-gravity"
-      value: "bottom"
-    }
+    parentid: 1730
   }
   layer {
-    name: "PDP-Scroller"
+    name: "PDP_Ctrl"
     id: 1729
-    sourceid: 1741
+    sourceid: 690017041
     transform {
       anchorPoint {
-        x: 540
-        y: 960
+        x: 0
+        y: 0
         z: 0
       }
       scale {
@@ -79,7 +72,40 @@ activecomp {
     acceptslights: true
     castsshadows: false
   }
-  classname: "CYIScrollingView"
+  layer {
+    name: "SizingAnchor"
+    id: 1730
+    sourceid: 1480
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
   bgcolor {
     alpha: 1
     red: 0.086274509803921567
@@ -103,35 +129,30 @@ activecomp {
     value: "false"
   }
   properties {
-    key: "componentSubtype"
-    value: "scrolling"
+    key: "scale-mode"
+    value: "fit"
   }
-  properties {
-    key: "layout"
-    value: "CYIStackLayout"
-  }
-  properties {
-    key: "padding-bottom"
-    value: "250"
-  }
-  childtemplates: "Auryn_PDP-Scroller"
+  childtemplates: "Auryn_PDP-Content"
 }
 sources {
-  uid: 91
-  srctype: AE_IMAGE_SRC
-  name: "Gradient-Bottom_2.png"
-  width: 1
-  height: 500
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
-  uid: 1741
+  uid: 690015823
   srctype: AE_COMP_SRC
-  name: "Auryn_PDP-Scroller.layout"
+  name: "Auryn_PDP-Content.layout"
   width: 1080
   height: 1920
   copy_source: true
+}
+sources {
+  uid: 690017041
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}
+sources {
+  uid: 1480
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
 }

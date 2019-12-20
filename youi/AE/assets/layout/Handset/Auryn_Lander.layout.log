@@ -4,9 +4,9 @@ activecomp {
   height: 1920
   defaultcameradistance: 1500
   layer {
-    name: "Nav"
+    name: "Lander-Layout"
     id: 1318
-    sourceid: 1673
+    sourceid: 690015806
     transform {
       anchorPoint {
         x: 540
@@ -36,60 +36,26 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    parentid: 1319
   }
   layer {
-    name: "Stack"
+    name: "SizingAnchor"
     id: 1319
-    sourceid: 1340
+    sourceid: 1480
     transform {
       anchorPoint {
-        x: 540
-        y: 675
-        z: 0
-      }
-      scale {
-        x: 1.78
-        y: 1.78
-        z: 1
-      }
-      position {
-        x: 51.261871
-        y: 72.420135
-        z: 0
-      }
-      orientation {
         x: 0
         y: 0
         z: 0
       }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 1320
-  }
-  layer {
-    name: "ScaleWidthPropCenterAnchor"
-    id: 1320
-    sourceid: 2419
-    transform {
-      anchorPoint {
-        x: 50
-        y: 50
-        z: 0
-      }
       scale {
-        x: 0.5625
-        y: 0.5625
+        x: 1
+        y: 1
         z: 1
       }
       position {
-        x: 540
-        y: 960
+        x: 0
+        y: 0
         z: 0
       }
       orientation {
@@ -112,27 +78,22 @@ activecomp {
     green: 0.11372549019607843
     blue: 0.14509803921568629
   }
-  childtemplates: "Auryn_Nav"
-  childtemplates: "Auryn_Lander-ContentStack"
+  properties {
+    key: "scale-mode"
+    value: "fit"
+  }
+  childtemplates: "Auryn_Lander-Layout"
 }
 sources {
-  uid: 1673
+  uid: 690015806
   srctype: AE_COMP_SRC
-  name: "Auryn_Nav.layout"
+  name: "Auryn_Lander-Layout.layout"
   width: 1080
   height: 1920
   copy_source: true
 }
 sources {
-  uid: 1340
-  srctype: AE_COMP_SRC
-  name: "Auryn_Lander-ContentStack.layout"
-  width: 1080
-  height: 1350
-  copy_source: true
-}
-sources {
-  uid: 2419
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

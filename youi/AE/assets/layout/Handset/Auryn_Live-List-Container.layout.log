@@ -1,7 +1,7 @@
 activecomp {
   name: "Auryn_Live-List-Container"
   width: 1080
-  height: 1350
+  height: 1506
   defaultcameradistance: 1500
   layer {
     name: "LiveList"
@@ -9,7 +9,7 @@ activecomp {
     sourceid: 1587
     transform {
       anchorPoint {
-        x: 490
+        x: 495.5
         y: 600
         z: 0
       }
@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 540
-        y: 750
+        y: 828
         z: 0
       }
       orientation {
@@ -54,7 +54,7 @@ activecomp {
       }
       position {
         x: 124.99997
-        y: 58.44442
+        y: 136.44443
         z: 0
       }
       orientation {
@@ -88,7 +88,7 @@ activecomp {
       }
       position {
         x: 240.94836
-        y: 53.032158
+        y: 131.03215
         z: 0
       }
       orientation {
@@ -113,7 +113,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 337
       boundsHeight: 48
@@ -152,7 +152,7 @@ sources {
   uid: 1587
   srctype: AE_COMP_SRC
   name: "Auryn_LiveList.layout"
-  width: 980
+  width: 991
   height: 1200
   copy_source: true
 }
@@ -167,8 +167,8 @@ sources {
 sources {
   uid: 3
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

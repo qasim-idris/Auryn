@@ -4,18 +4,52 @@ activecomp {
   height: 1080
   defaultcameradistance: 2666.6667
   layer {
-    name: "Youi_Filled_logo-large.png"
+    name: "Slash-TV.png"
     id: 187
-    sourceid: 690012483
+    sourceid: 415
     transform {
       anchorPoint {
-        x: 957
-        y: 884
+        x: 2113.5
+        y: 1024
         z: 0
       }
       scale {
-        x: 2.5
-        y: 2.5
+        x: 0.455
+        y: 0.53
+        z: 1
+      }
+      position {
+        x: 960
+        y: 540
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Logo-Hex.png"
+    id: 188
+    sourceid: 690017049
+    transform {
+      anchorPoint {
+        x: 267.5
+        y: 246.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
         z: 1
       }
       position {
@@ -31,16 +65,121 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 194
+  }
+  layer {
+    name: "Logo-Youi-Text.png"
+    id: 189
+    sourceid: 690017051
+    transform {
+      anchorPoint {
+        x: 154.5
+        y: 71
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 191
+  }
+  layer {
+    name: "Logo-Youi-Large.png"
+    id: 190
+    sourceid: 371
+    transform {
+      anchorPoint {
+        x: 551.5
+        y: 255
+        z: 0
+      }
+      scale {
+        x: 0.27810431
+        y: 0.27810431
+        z: 1
+      }
+      position {
+        x: 0
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
       opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 190
+    parentid: 191
+  }
+  layer {
+    name: "Scale_Ctrl"
+    id: 191
+    sourceid: 690017054
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 50
+        y: 50
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 194
   }
   layer {
     name: "Loader"
-    id: 188
+    id: 192
     sourceid: 212
     transform {
       anchorPoint {
@@ -71,12 +210,12 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 189
+    parentid: 193
   }
   layer {
     name: "ScalePropBottomAnchor"
-    id: 189
-    sourceid: 690011406
+    id: 193
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 50
@@ -109,8 +248,8 @@ activecomp {
   }
   layer {
     name: "ScalePropCenterAnchor"
-    id: 190
-    sourceid: 690011406
+    id: 194
+    sourceid: 1480
     transform {
       anchorPoint {
         x: 50
@@ -150,15 +289,55 @@ activecomp {
   childtemplates: "Auryn_Loader"
 }
 sources {
-  uid: 690012483
+  uid: 415
   srctype: AE_IMAGE_SRC
-  name: "Youi_Filled_logo-large.png"
-  width: 1914
-  height: 1768
+  name: "Slash-TV.png"
+  width: 4227
+  height: 2048
   numberOfFrames: 1
   fps: 0
   loops: 1
   copy_source: true
+}
+sources {
+  uid: 690017049
+  srctype: AE_IMAGE_SRC
+  name: "Logo-Hex.png"
+  width: 535
+  height: 493
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690017051
+  srctype: AE_IMAGE_SRC
+  name: "Logo-Youi-Text.png"
+  width: 309
+  height: 142
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 371
+  srctype: AE_IMAGE_SRC
+  name: "Logo-Youi-Large.png"
+  width: 1103
+  height: 510
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690017054
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
 }
 sources {
   uid: 212
@@ -169,7 +348,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 690011406
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

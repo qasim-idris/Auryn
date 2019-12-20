@@ -1,0 +1,183 @@
+activecomp {
+  name: "Auryn_Lander-Content"
+  width: 1080
+  height: 1920
+  defaultcameradistance: 1500
+  layer {
+    name: "Stack"
+    id: 690015115
+    sourceid: 1340
+    transform {
+      anchorPoint {
+        x: 540
+        y: 1738
+        z: 0
+      }
+      scale {
+        x: 1.00125
+        y: 1.00125
+        z: 1.00125
+      }
+      position {
+        x: 540.70978
+        y: 1738.3806
+        z: -1000
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "margin-bottom"
+      value: "188"
+    }
+    properties {
+      key: "height"
+      value: "fill-parent"
+    }
+    properties {
+      key: "item-gravity"
+      value: "top"
+    }
+  }
+  layer {
+    name: "Gradient-Bottom_2.png"
+    id: 690015116
+    sourceid: 91
+    transform {
+      anchorPoint {
+        x: 0.5
+        y: 250
+        z: 0
+      }
+      scale {
+        x: 1080
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 250
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 180
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "layoutable"
+      value: "false"
+    }
+    properties {
+      key: "interactive"
+      value: "off"
+    }
+  }
+  layer {
+    name: "Nav"
+    id: 690015117
+    sourceid: 1673
+    transform {
+      anchorPoint {
+        x: 540
+        y: 960
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 540
+        y: 960
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    properties {
+      key: "height"
+      value: "fill-parent"
+    }
+    properties {
+      key: "interactive"
+      value: "off"
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "scale-mode"
+    value: "fit"
+  }
+  properties {
+    key: "layout"
+    value: "CYIStackLayout"
+  }
+  properties {
+    key: "gravity"
+    value: "bottom"
+  }
+  childtemplates: "Auryn_Lander-ContentStack"
+  childtemplates: "Auryn_Nav"
+}
+sources {
+  uid: 1340
+  srctype: AE_COMP_SRC
+  name: "Auryn_Lander-ContentStack.layout"
+  width: 1080
+  height: 1738
+  copy_source: true
+}
+sources {
+  uid: 91
+  srctype: AE_IMAGE_SRC
+  name: "Gradient-Bottom_2.png"
+  width: 1
+  height: 500
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 1673
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav.layout"
+  width: 1080
+  height: 1920
+  copy_source: true
+}

@@ -31,17 +31,3 @@ tracks {
     ivalue1: 1
   }
 }
-markers {
-  starttime: 1
-  duration: 0.5
-  name: "Show"
-  alltracks: false
-  looping: false
-}
-markers {
-  starttime: 6.0166669
-  duration: 0.5
-  name: "Hide"
-  alltracks: false
-  looping: false
-}

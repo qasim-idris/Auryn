@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Btn-Profile3"
-  width: 250
-  height: 400
-  defaultcameradistance: 347.22223
+  width: 1006
+  height: 416
+  defaultcameradistance: 1397.2222
   layer {
-    name: "Profile-Tobias_2.png"
+    name: "Dark Gray Solid 6"
     id: 950
-    sourceid: 166
+    sourceid: 690016479
     transform {
       anchorPoint {
-        x: 121
-        y: 121
+        x: 499
+        y: 204
         z: 0
       }
       scale {
@@ -19,8 +19,42 @@ activecomp {
         z: 1
       }
       position {
-        x: 125
-        y: 125
+        x: 503
+        y: 208
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Profile-Tobias.png"
+    id: 951
+    sourceid: 259950
+    transform {
+      anchorPoint {
+        x: 204.5
+        y: 204.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 204.5
+        y: 208
         z: 0
       }
       orientation {
@@ -39,12 +73,12 @@ activecomp {
   }
   layer {
     name: "Name"
-    id: 951
+    id: 952
     sourceid: -1
     transform {
       anchorPoint {
         x: 123
-        y: 21
+        y: 46.999981
         z: 0
       }
       scale {
@@ -53,8 +87,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 123
-        y: 295
+        x: 569
+        y: 237.8615
         z: 0
       }
       orientation {
@@ -71,23 +105,23 @@ activecomp {
     acceptslights: true
     castsshadows: false
     textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 55
+      justification: AE_TEXT_LEFT
+      fontSize: 44
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
-      boundsWidth: 249
-      boundsHeight: 41
+      boundsWidth: 343
+      boundsHeight: 67
       isLabel: true
       text: "Tobias"
       multiline: true
       ellipsis: true
-      isAllCaps: false
+      isAllCaps: true
     }
     properties {
       key: "text-overflow"
@@ -96,7 +130,7 @@ activecomp {
   }
   layer {
     name: "Active User"
-    id: 952
+    id: 953
     sourceid: -1
     transform {
       anchorPoint {
@@ -110,8 +144,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 123
-        y: 358
+        x: 549.21942
+        y: 272
         z: 0
       }
       orientation {
@@ -122,7 +156,7 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0
     }
     acceptsshadows: true
     acceptslights: true
@@ -136,7 +170,7 @@ activecomp {
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 249
       boundsHeight: 25
@@ -149,6 +183,176 @@ activecomp {
       key: "text-placeholder"
       value: "true"
     }
+  }
+  layer {
+    name: "White Solid 30"
+    id: 954
+    sourceid: 690016485
+    transform {
+      anchorPoint {
+        x: 503
+        y: 2
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 503
+        y: 414
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "White Solid 30"
+    id: 955
+    sourceid: 690016485
+    transform {
+      anchorPoint {
+        x: 503
+        y: 2
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 503
+        y: 2
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "White Solid 31"
+    id: 956
+    sourceid: 690016488
+    transform {
+      anchorPoint {
+        x: 2
+        y: 204
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 2
+        y: 208
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "White Solid 31"
+    id: 957
+    sourceid: 690016488
+    transform {
+      anchorPoint {
+        x: 2
+        y: 204
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 1004
+        y: 208
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Icon-Check-Profile-Handset.png"
+    id: 958
+    sourceid: 690016601
+    transform {
+      anchorPoint {
+        x: 25
+        y: 25
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 941
+        y: 65
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -167,29 +371,79 @@ activecomp {
   }
 }
 sources {
-  uid: 166
+  uid: 690016479
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.10196078568696976
+    green: 0.10196078568696976
+    blue: 0.10196078568696976
+  }
+  width: 998
+  height: 408
+  copy_source: false
+}
+sources {
+  uid: 259950
   srctype: AE_IMAGE_SRC
-  name: "Profile-Tobias_2.png"
-  width: 242
-  height: 242
+  name: "Profile-Tobias.png"
+  width: 409
+  height: 409
   numberOfFrames: 1
   fps: 0
   loops: 1
   copy_source: true
 }
 sources {
-  uid: 2
+  uid: 3
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }
 sources {
-  uid: 3
+  uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
+}
+sources {
+  uid: 690016485
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.94509804248809814
+    green: 0.94509804248809814
+    blue: 0.94509804248809814
+  }
+  width: 1006
+  height: 4
+  copy_source: false
+}
+sources {
+  uid: 690016488
+  srctype: AE_SOLID_SRC
+  color {
+    alpha: 1
+    red: 0.94509798288345337
+    green: 0.94509798288345337
+    blue: 0.94509798288345337
+  }
+  width: 4
+  height: 408
+  copy_source: false
+}
+sources {
+  uid: 690016601
+  srctype: AE_IMAGE_SRC
+  name: "Icon-Check-Profile-Handset.png"
+  width: 50
+  height: 50
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
 }

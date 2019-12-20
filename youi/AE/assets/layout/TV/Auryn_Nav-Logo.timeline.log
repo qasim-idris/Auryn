@@ -9,10 +9,3 @@ tracks {
     ivalue1: 1
   }
 }
-markers {
-  starttime: 1
-  duration: 6.0166669
-  name: "Loop"
-  alltracks: false
-  looping: false
-}

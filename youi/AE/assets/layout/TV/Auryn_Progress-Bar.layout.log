@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Progress-Bar"
-  width: 861
-  height: 6
-  defaultcameradistance: 1195.8334
+  width: 96
+  height: 96
+  defaultcameradistance: 133.33333
   layer {
-    name: "BG"
+    name: "Progress-Bar10.png"
     id: 690012736
-    sourceid: 690012748
+    sourceid: 690015606
     transform {
       anchorPoint {
-        x: 430
-        y: 3
+        x: 48
+        y: 48
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 430.5
-        y: 3
+        x: 48
+        y: 48
         z: 0
       }
       orientation {
@@ -31,30 +31,346 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 0.5
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
+    ishidden: true
   }
   layer {
-    name: "ProgressBar"
+    name: "Progress-Bar09.png"
     id: 690012737
-    sourceid: 690012734
+    sourceid: 690015607
     transform {
       anchorPoint {
-        x: 0
-        y: 3
+        x: 48
+        y: 48
         z: 0
       }
       scale {
-        x: 0
+        x: 1
         y: 1
         z: 1
       }
       position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
         x: 0
-        y: 3
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar08.png"
+    id: 690012738
+    sourceid: 690015608
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar07.png"
+    id: 690012739
+    sourceid: 690015609
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar06.png"
+    id: 690012740
+    sourceid: 690015610
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar05.png"
+    id: 690012741
+    sourceid: 690015611
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar04.png"
+    id: 690012742
+    sourceid: 690015612
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar03.png"
+    id: 690012743
+    sourceid: 690015613
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar02.png"
+    id: 690012744
+    sourceid: 690015614
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar01.png"
+    id: 690012745
+    sourceid: 690015615
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    ishidden: true
+  }
+  layer {
+    name: "Progress-Bar00.png"
+    id: 690012746
+    sourceid: 690015605
+    transform {
+      anchorPoint {
+        x: 48
+        y: 48
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 48
+        y: 48
         z: 0
       }
       orientation {
@@ -86,30 +402,129 @@ activecomp {
     key: "componentType"
     value: "bar"
   }
+  properties {
+    key: "clip"
+    value: "false"
+  }
 }
 sources {
-  uid: 690012748
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0
-    green: 0
-    blue: 0
-  }
-  width: 860
-  height: 6
-  copy_source: false
+  uid: 690015606
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar10.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
 }
 sources {
-  uid: 690012734
-  srctype: AE_SOLID_SRC
-  color {
-    alpha: 1
-    red: 0.015686275437474251
-    green: 0.56470590829849243
-    blue: 0.99215686321258545
-  }
-  width: 861
-  height: 6
-  copy_source: false
+  uid: 690015607
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar09.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015608
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar08.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015609
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar07.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015610
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar06.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015611
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar05.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015612
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar04.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015613
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar03.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015614
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar02.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015615
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar01.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690015605
+  srctype: AE_IMAGE_SRC
+  name: "Progress-Bar00.png"
+  width: 96
+  height: 96
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
 }

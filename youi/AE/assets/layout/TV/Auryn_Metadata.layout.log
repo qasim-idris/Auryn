@@ -41,11 +41,11 @@ activecomp {
       fontSize: 16
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 763
       boundsHeight: 24
@@ -130,9 +130,9 @@ activecomp {
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
 }
 sources {

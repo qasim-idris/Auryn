@@ -1,16 +1,16 @@
 activecomp {
   name: "Auryn_Live-Asset-Root"
-  width: 876
-  height: 214
-  defaultcameradistance: 1216.6666
+  width: 848
+  height: 233
+  defaultcameradistance: 1177.7778
   layer {
     name: "Live-Asset"
     id: 690014103
     sourceid: 690012635
     transform {
       anchorPoint {
-        x: 438
-        y: 107
+        x: 424
+        y: 116.5
         z: 0
       }
       scale {
@@ -19,8 +19,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 437.5
-        y: 107
+        x: 423.5
+        y: 116.5
         z: 0
       }
       orientation {
@@ -69,7 +69,7 @@ sources {
   uid: 690012635
   srctype: AE_COMP_SRC
   name: "Auryn_Live-Asset.layout"
-  width: 876
-  height: 214
+  width: 848
+  height: 233
   copy_source: true
 }

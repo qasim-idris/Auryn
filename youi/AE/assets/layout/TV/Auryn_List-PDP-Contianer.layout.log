@@ -9,7 +9,7 @@ activecomp {
     sourceid: 360
     transform {
       anchorPoint {
-        x: 960
+        x: 882
         y: 200
         z: 0
       }
@@ -19,7 +19,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 960
+        x: 950
         y: 883
         z: 0
       }
@@ -53,7 +53,7 @@ activecomp {
         z: 1
       }
       position {
-        x: 379.26
+        x: 326.07596
         y: 664.5
         z: 0
       }
@@ -72,28 +72,28 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 28
+      fontSize: 29
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 1367
       boundsHeight: 60
       isLabel: true
       text: "More Like This"
       multiline: true
-      isAllCaps: false
+      isAllCaps: true
     }
   }
   bgcolor {
     alpha: 1
-    red: 0.086274509803921567
-    green: 0.11372549019607843
-    blue: 0.14509803921568629
+    red: 0.30588235294117649
+    green: 0.30588235294117649
+    blue: 0.30588235294117649
   }
   properties {
     key: "horizontal-scroll"
@@ -109,15 +109,15 @@ sources {
   uid: 360
   srctype: AE_COMP_SRC
   name: "Auryn_List-PDP.layout"
-  width: 1920
+  width: 1764
   height: 400
   copy_source: true
 }
 sources {
   uid: 2
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

@@ -1,26 +1,26 @@
 activecomp {
   name: "Auryn_Btn-Backdrop-Large"
-  width: 1044
-  height: 576
-  defaultcameradistance: 1450
+  width: 1080
+  height: 1080
+  defaultcameradistance: 1500
   layer {
     name: "Black Solid 7"
     id: 345
-    sourceid: 2427
+    sourceid: 378
     transform {
       anchorPoint {
         x: 533.5
-        y: 300
+        y: 600
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.8
+        y: 1.8
         z: 1
       }
       position {
-        x: 522
-        y: 288
+        x: 540
+        y: 1080
         z: 0
       }
       orientation {
@@ -48,13 +48,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.875
+        y: 1.875
         z: 1
       }
       position {
-        x: 522
-        y: 288
+        x: 540
+        y: 540
         z: 0
       }
       orientation {
@@ -82,13 +82,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1081
-        y: 0.35
+        x: 2039.2172
+        y: 0.66024607
         z: 1
       }
       position {
-        x: 522
-        y: 590
+        x: 540
+        y: 1080
         z: 0
       }
       orientation {
@@ -121,8 +121,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 287.76
-        y: 518.5
+        x: 501.76
+        y: 989.5
         z: 0
       }
       orientation {
@@ -133,21 +133,21 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0.76
     }
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 24
+      fontSize: 26
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.92548996210098267
+        green: 0.92548996210098267
+        blue: 0.92548996210098267
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 953
       boundsHeight: 83
@@ -182,8 +182,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 286.76
-        y: 466.5
+        x: 500.76
+        y: 925.5
         z: 0
       }
       orientation {
@@ -201,14 +201,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_LEFT
-      fontSize: 48
+      fontSize: 49
       fontColor {
         alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+        red: 0.92548996210098267
+        green: 0.92548996210098267
+        blue: 0.92548996210098267
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 953
       boundsHeight: 54
@@ -226,6 +226,40 @@ activecomp {
       key: "text-overflow"
       value: "ellipsis"
     }
+  }
+  layer {
+    name: "PlayIcon.png"
+    id: 350
+    sourceid: 690015184
+    transform {
+      anchorPoint {
+        x: 0
+        y: 76
+        z: 0
+      }
+      scale {
+        x: 1.54
+        y: 1.54
+        z: 1
+      }
+      position {
+        x: 90
+        y: 988
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -249,7 +283,7 @@ activecomp {
   childtemplates: "Auryn_Image-Dynamic-Full"
 }
 sources {
-  uid: 2427
+  uid: 378
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
@@ -283,16 +317,19 @@ sources {
 sources {
   uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
 }
 sources {
-  uid: 5
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  uid: 690015184
+  srctype: AE_IMAGE_SRC
+  name: "PlayIcon.png"
+  width: 76
+  height: 76
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
 }

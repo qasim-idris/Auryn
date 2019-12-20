@@ -1,60 +1,26 @@
 activecomp {
   name: "Auryn_Live-Asset"
-  width: 876
-  height: 250
-  defaultcameradistance: 1216.6666
+  width: 991
+  height: 344
+  defaultcameradistance: 1376.3889
   layer {
-    name: "Image-Dynamic-Live-Asset"
+    name: "Dark Gray Solid 5"
     id: 1406
-    sourceid: 1270
+    sourceid: 690014150
     transform {
       anchorPoint {
-        x: 347
-        y: 125
+        x: 468
+        y: 175.47475
         z: 0
       }
       scale {
-        x: 1
+        x: 2.1175213
         y: 1
         z: 1
       }
       position {
-        x: 531
-        y: 125
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0.6
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "Live-Asset-Gradient-2.png"
-    id: 1407
-    sourceid: 690012664
-    transform {
-      anchorPoint {
-        x: 136.5
-        y: 99
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1.27
-        z: 1
-      }
-      position {
-        x: 446.5
-        y: 125
+        x: 991
+        y: 175.47475
         z: 0
       }
       orientation {
@@ -72,23 +38,23 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Dark Gray Solid 5"
-    id: 1408
-    sourceid: 690014150
+    name: "Image-Dynamic-Live-Asset"
+    id: 1407
+    sourceid: 1270
     transform {
       anchorPoint {
-        x: 400
-        y: 127.52525
+        x: 0
+        y: 172
         z: 0
       }
       scale {
-        x: 0.7575
+        x: 1
         y: 1
         z: 1
       }
       position {
-        x: 310
-        y: 127.52525
+        x: 0
+        y: 172
         z: 0
       }
       orientation {
@@ -107,12 +73,12 @@ activecomp {
   }
   layer {
     name: "Progress-Bar"
-    id: 1409
+    id: 1408
     sourceid: 1847
     transform {
       anchorPoint {
-        x: 430.5
-        y: 3
+        x: 0
+        y: 8
         z: 0
       }
       scale {
@@ -121,8 +87,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 438
-        y: 247.00674
+        x: 0
+        y: 344
         z: 0
       }
       orientation {
@@ -141,11 +107,11 @@ activecomp {
   }
   layer {
     name: "Metadata"
-    id: 1410
+    id: 1409
     sourceid: 1636
     transform {
       anchorPoint {
-        x: 375
+        x: 205
         y: 25
         z: 0
       }
@@ -155,8 +121,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 375
-        y: 198
+        x: 768
+        y: 293
         z: 0
       }
       orientation {
@@ -175,12 +141,12 @@ activecomp {
   }
   layer {
     name: "Details"
-    id: 1411
+    id: 1410
     sourceid: 1172
     transform {
       anchorPoint {
-        x: 300
-        y: 25
+        x: 183
+        y: 86
         z: 0
       }
       scale {
@@ -189,8 +155,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 300
-        y: 117.99998
+        x: 746
+        y: 121.5
         z: 0
       }
       orientation {
@@ -208,23 +174,23 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "Text-Title"
-    id: 1412
-    sourceid: -1
+    name: "PlayIcon.png"
+    id: 1411
+    sourceid: 690015184
     transform {
       anchorPoint {
-        x: 0.67199707
-        y: 22.25
+        x: 38
+        y: 38
         z: 0
       }
       scale {
-        x: 1
-        y: 1
+        x: 1.5
+        y: 1.5
         z: 1
       }
       position {
-        x: 31
-        y: 60.2502
+        x: 262.5
+        y: 172
         z: 0
       }
       orientation {
@@ -240,34 +206,6 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    textinfo {
-      justification: AE_TEXT_LEFT
-      fontSize: 55
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 793
-      boundsHeight: 42
-      isLabel: true
-      text: ""
-      multiline: true
-      ellipsis: true
-      isAllCaps: false
-    }
-    classname: "CYISDFAtlasTextSceneNode"
-    properties {
-      key: "text-placeholder"
-      value: "true"
-    }
-    properties {
-      key: "text-overflow"
-      value: "ellipsis"
-    }
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -294,50 +232,39 @@ activecomp {
   childtemplates: "Auryn_Details"
 }
 sources {
-  uid: 1270
-  srctype: AE_COMP_SRC
-  name: "Auryn_Image-Dynamic-Live-Asset.layout"
-  width: 694
-  height: 250
-  copy_source: true
-}
-sources {
-  uid: 690012664
-  srctype: AE_IMAGE_SRC
-  name: "Live-Asset-Gradient-2.png"
-  width: 273
-  height: 198
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
   uid: 690014150
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
-    red: 0.0941176488995552
-    green: 0.0941176488995552
-    blue: 0.0941176488995552
+    red: 0.10196078568696976
+    green: 0.10196078568696976
+    blue: 0.10196078568696976
   }
-  width: 400
-  height: 250
+  width: 468
+  height: 344
   copy_source: false
+}
+sources {
+  uid: 1270
+  srctype: AE_COMP_SRC
+  name: "Auryn_Image-Dynamic-Live-Asset.layout"
+  width: 525
+  height: 344
+  copy_source: true
 }
 sources {
   uid: 1847
   srctype: AE_COMP_SRC
   name: "Auryn_Progress-Bar.layout"
-  width: 861
-  height: 6
+  width: 525
+  height: 8
   copy_source: true
 }
 sources {
   uid: 1636
   srctype: AE_COMP_SRC
   name: "Auryn_Metadata.layout"
-  width: 750
+  width: 410
   height: 50
   copy_source: true
 }
@@ -345,15 +272,18 @@ sources {
   uid: 1172
   srctype: AE_COMP_SRC
   name: "Auryn_Details.layout"
-  width: 600
-  height: 50
+  width: 366
+  height: 172
   copy_source: true
 }
 sources {
-  uid: 7
-  srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  uid: 690015184
+  srctype: AE_IMAGE_SRC
+  name: "PlayIcon.png"
+  width: 76
+  height: 76
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
 }

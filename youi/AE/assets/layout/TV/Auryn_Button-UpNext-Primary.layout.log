@@ -39,8 +39,77 @@ activecomp {
     parentid: 233
   }
   layer {
-    name: "Duration"
+    name: "Image-UpNext-Primary"
     id: 224
+    sourceid: 547
+    transform {
+      anchorPoint {
+        x: 273
+        y: 95
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 153
+        y: 0
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    parentid: 233
+  }
+  layer {
+    name: "Live-Asset-Gradient-2.png"
+    id: 225
+    sourceid: 690012664
+    transform {
+      anchorPoint {
+        x: 136.5
+        y: 99
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 0.96
+        z: 1
+      }
+      position {
+        x: 432
+        y: 99
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Duration"
+    id: 226
     sourceid: -1
     transform {
       anchorPoint {
@@ -80,7 +149,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Helvetica"
+      fontName: "Montserrat-Medium"
       isPointText: true
       isLabel: true
       text: " 39m"
@@ -90,7 +159,7 @@ activecomp {
   }
   layer {
     name: "Subhead"
-    id: 225
+    id: 227
     sourceid: -1
     transform {
       anchorPoint {
@@ -130,7 +199,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "S2 E1  \342\200\242  Sorry Baby"
@@ -140,7 +209,7 @@ activecomp {
   }
   layer {
     name: "Title"
-    id: 226
+    id: 228
     sourceid: -1
     transform {
       anchorPoint {
@@ -180,7 +249,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
       boundsWidth: 403
       boundsHeight: 39
@@ -189,75 +258,6 @@ activecomp {
       multiline: true
       isAllCaps: false
     }
-  }
-  layer {
-    name: "Image-UpNext-Primary"
-    id: 227
-    sourceid: 547
-    transform {
-      anchorPoint {
-        x: 273
-        y: 95
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 153
-        y: 0
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    parentid: 233
-  }
-  layer {
-    name: "Live-Asset-Gradient-2.png"
-    id: 228
-    sourceid: 690012664
-    transform {
-      anchorPoint {
-        x: 136.5
-        y: 99
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 0.96
-        z: 1
-      }
-      position {
-        x: 432
-        y: 99
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 1
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
   }
   layer {
     name: "Focus-Left-Button-Primary"
@@ -464,22 +464,6 @@ sources {
   copy_source: false
 }
 sources {
-  uid: 2
-  srctype: AE_FONT_SRC
-  name: "Helvetica"
-  copy_source: true
-  file_name: "yi_Helvetica.ttc"
-  style_name: "Regular"
-}
-sources {
-  uid: 3
-  srctype: AE_FONT_SRC
-  name: "Poppins-Bold"
-  copy_source: true
-  file_name: "yi_Poppins-Bold.otf"
-  style_name: "Bold"
-}
-sources {
   uid: 547
   srctype: AE_COMP_SRC
   name: "Auryn_Image-UpNext-Primary.layout"
@@ -497,6 +481,22 @@ sources {
   fps: 0
   loops: 1
   copy_source: true
+}
+sources {
+  uid: 4
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Medium"
+  copy_source: true
+  file_name: "yi_Montserrat-Medium.otf"
+  style_name: "Medium"
+}
+sources {
+  uid: 5
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Bold"
+  copy_source: true
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
 }
 sources {
   uid: 1483

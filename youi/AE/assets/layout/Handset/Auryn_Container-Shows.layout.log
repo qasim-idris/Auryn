@@ -1,7 +1,7 @@
 activecomp {
   name: "Auryn_Container-Shows"
   width: 1080
-  height: 1350
+  height: 1506
   defaultcameradistance: 1500
   layer {
     name: "Shows"
@@ -20,7 +20,7 @@ activecomp {
       }
       position {
         x: 540
-        y: 675
+        y: 753
         z: 0
       }
       orientation {

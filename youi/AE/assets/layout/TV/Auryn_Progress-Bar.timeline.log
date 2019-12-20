@@ -1,10 +1,16 @@
 tracks {
   binding: IS_VISIBLE
   targetid: 690012736
-  targetname: "BG"
+  targetname: "Progress-Bar10.png"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.1166667
     inttype: AE_INTERP_HOLD
     ivalue1: 1
   }
@@ -12,51 +18,302 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 690012737
-  targetname: "ProgressBar"
+  targetname: "Progress-Bar09.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.1
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.1166667
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012738
+  targetname: "Progress-Bar08.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0833334
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.1
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012739
+  targetname: "Progress-Bar07.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0666667
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0833334
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012740
+  targetname: "Progress-Bar06.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0500001
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0666667
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012741
+  targetname: "Progress-Bar05.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0333334
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0500001
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012742
+  targetname: "Progress-Bar04.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0166668
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0333334
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012743
+  targetname: "Progress-Bar03.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0.99999994
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 1.0166667
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012744
+  targetname: "Progress-Bar02.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0.98333329
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0.99999994
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012745
+  targetname: "Progress-Bar01.png"
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0.96666664
+    inttype: AE_INTERP_HOLD
+    ivalue1: 1
+  }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0.98333329
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
+}
+tracks {
+  binding: IS_VISIBLE
+  targetid: 690012746
+  targetname: "Progress-Bar00.png"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
     inttype: AE_INTERP_HOLD
     ivalue1: 1
   }
+  keytimes {
+    datatype: AE_INT_DATA
+    timeOffset: 0.96666664
+    inttype: AE_INTERP_HOLD
+    ivalue1: 0
+  }
 }
 tracks {
-  binding: SCALE
-  targetid: 690012737
-  targetname: "ProgressBar"
+  binding: OPACITY
+  targetid: 690012746
+  targetname: "Progress-Bar00.png"
   keytimes {
-    datatype: AE_FLOAT_VECTOR_DATA
+    datatype: AE_FLOAT_DATA
     timeOffset: 0
     inttype: AE_INTERP_LINEAR
-    fvalue1: 0
-    fvalue2: 1
-    fvalue3: 1
+    fvalue1: 1
   }
   keytimes {
-    datatype: AE_FLOAT_VECTOR_DATA
-    timeOffset: 1
-    inttype: AE_INTERP_LINEAR
-    fvalue1: 0
-    fvalue2: 1
-    fvalue3: 1
-  }
-  keytimes {
-    datatype: AE_FLOAT_VECTOR_DATA
-    timeOffset: 2.6666667
+    datatype: AE_FLOAT_DATA
+    timeOffset: 0.95
     inttype: AE_INTERP_LINEAR
     fvalue1: 1
-    fvalue2: 1
-    fvalue3: 1
   }
-  trackName: "Scale"
+  keytimes {
+    datatype: AE_FLOAT_DATA
+    timeOffset: 1.1333333
+    inttype: AE_INTERP_LINEAR
+    fvalue1: 1
+  }
+  trackName: "Opacity"
 }
 markers {
-  starttime: 1
-  duration: 1.6666666
+  starttime: 0.95
+  duration: 0.18333334
   name: "ProgressStart"
   tracksSelection {
+    targetid: 690012736
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
     targetid: 690012737
-    binding: SCALE
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012738
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012739
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012740
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012741
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012742
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012743
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012744
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012745
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012746
+    binding: IS_VISIBLE
+  }
+  tracksSelection {
+    targetid: 690012746
+    binding: OPACITY
   }
   alltracks: false
   id: 27

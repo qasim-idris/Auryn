@@ -6,7 +6,7 @@ activecomp {
   layer {
     name: "Red Solid 20"
     id: 259598
-    sourceid: 259614
+    sourceid: 2508
     transform {
       anchorPoint {
         x: 100
@@ -40,7 +40,7 @@ activecomp {
   layer {
     name: "Deep Royal Blue Solid 12"
     id: 259599
-    sourceid: 259616
+    sourceid: 2448
     transform {
       anchorPoint {
         x: 97
@@ -74,7 +74,7 @@ activecomp {
   layer {
     name: "Dark Royal Blue Solid 4"
     id: 259600
-    sourceid: 259791
+    sourceid: 2439
     transform {
       anchorPoint {
         x: 97
@@ -147,7 +147,7 @@ activecomp {
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Medium"
+      fontName: "Montserrat-Medium"
       isPointText: false
       boundsWidth: 200
       boundsHeight: 33
@@ -174,7 +174,7 @@ activecomp {
   }
 }
 sources {
-  uid: 259614
+  uid: 2508
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
@@ -187,7 +187,7 @@ sources {
   copy_source: false
 }
 sources {
-  uid: 259616
+  uid: 2448
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
@@ -200,7 +200,7 @@ sources {
   copy_source: false
 }
 sources {
-  uid: 259791
+  uid: 2439
   srctype: AE_SOLID_SRC
   color {
     alpha: 1
@@ -215,8 +215,8 @@ sources {
 sources {
   uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Medium"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
+  file_name: "yi_Montserrat-Medium.otf"
   style_name: "Medium"
 }

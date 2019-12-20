@@ -14,14 +14,14 @@ activecomp {
         z: 0
       }
       scale {
-        x: 1
-        y: 1
-        z: 1
+        x: 1.6
+        y: 1.6
+        z: 1.6
       }
       position {
         x: 522
         y: 288
-        z: 0
+        z: 333
       }
       orientation {
         x: 0
@@ -31,7 +31,7 @@ activecomp {
       rotationX: 0
       rotationY: 0
       rotationZ: 0
-      opacity: 1
+      opacity: 0
     }
     acceptsshadows: true
     acceptslights: true

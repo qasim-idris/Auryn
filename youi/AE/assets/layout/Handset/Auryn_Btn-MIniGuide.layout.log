@@ -1,5 +1,5 @@
 activecomp {
-  name: "Auryn_Btn-MIniGuide"
+  name: "Auryn_Btn-MiniGuide"
   width: 400
   height: 80
   defaultcameradistance: 555.55554
@@ -77,7 +77,7 @@ activecomp {
     sourceid: -1
     transform {
       anchorPoint {
-        x: 100
+        x: 168.66792
         y: 21.5
         z: 0
       }
@@ -113,9 +113,9 @@ activecomp {
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: false
-      boundsWidth: 200
+      boundsWidth: 337
       boundsHeight: 33
       isLabel: true
       text: "View TV Guide"
@@ -164,8 +164,8 @@ sources {
 sources {
   uid: 3
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

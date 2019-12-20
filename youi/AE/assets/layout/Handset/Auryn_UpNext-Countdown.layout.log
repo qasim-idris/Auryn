@@ -45,7 +45,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "10s"
@@ -95,7 +95,7 @@ activecomp {
         green: 0.94510000944137573
         blue: 0.94510000944137573
       }
-      fontName: "Poppins-Bold"
+      fontName: "Montserrat-Bold"
       isPointText: true
       isLabel: true
       text: "Up Next"
@@ -117,12 +117,16 @@ activecomp {
     key: "spacing"
     value: "20"
   }
+  properties {
+    key: "layout"
+    value: "CYIRowLayout"
+  }
 }
 sources {
   uid: 1
   srctype: AE_FONT_SRC
-  name: "Poppins-Bold"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Poppins-Bold.otf"
+  file_name: "yi_Montserrat-Bold.otf"
   style_name: "Bold"
 }

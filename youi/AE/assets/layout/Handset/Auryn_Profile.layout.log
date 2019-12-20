@@ -9,8 +9,8 @@ activecomp {
     sourceid: 950
     transform {
       anchorPoint {
-        x: 125
-        y: 200
+        x: 503
+        y: 208
         z: 0
       }
       scale {
@@ -19,9 +19,9 @@ activecomp {
         z: 1
       }
       position {
-        x: 346
-        y: 180
-        z: 0
+        x: 50
+        y: 495
+        z: 275
       }
       orientation {
         x: 0
@@ -44,8 +44,8 @@ activecomp {
     sourceid: 932
     transform {
       anchorPoint {
-        x: 125
-        y: 200
+        x: 503
+        y: 208
         z: 0
       }
       scale {
@@ -55,8 +55,8 @@ activecomp {
       }
       position {
         x: 50
-        y: 180
-        z: 0
+        y: 64
+        z: 444
       }
       orientation {
         x: 0
@@ -79,8 +79,8 @@ activecomp {
     sourceid: 907
     transform {
       anchorPoint {
-        x: 125
-        y: 200
+        x: 503
+        y: 208
         z: 0
       }
       scale {
@@ -89,9 +89,9 @@ activecomp {
         z: 1
       }
       position {
-        x: -256
-        y: 180
-        z: 0
+        x: 50
+        y: -367
+        z: 500
       }
       orientation {
         x: 0
@@ -125,7 +125,7 @@ activecomp {
       }
       position {
         x: 119.72
-        y: 800.28015
+        y: 0
         z: 0
       }
       orientation {
@@ -143,14 +143,14 @@ activecomp {
     castsshadows: false
     textinfo {
       justification: AE_TEXT_CENTER
-      fontSize: 80
+      fontSize: 44
       fontColor {
         alpha: 1
         red: 1
         green: 1
         blue: 1
       }
-      fontName: "Raleway-Bold"
+      fontName: "Montserrat-SemiBold"
       isPointText: false
       boundsWidth: 1722
       boundsHeight: 68
@@ -161,60 +161,8 @@ activecomp {
     }
   }
   layer {
-    name: "Message"
-    id: 1832
-    sourceid: -1
-    transform {
-      anchorPoint {
-        x: 440
-        y: 60
-        z: 0
-      }
-      scale {
-        x: 1
-        y: 1
-        z: 1
-      }
-      position {
-        x: 119.72
-        y: 1430.2802
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-    textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 33
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
-      }
-      fontName: "Raleway-Bold"
-      isPointText: false
-      boundsWidth: 1722
-      boundsHeight: 48
-      isLabel: true
-      text: "Manage account settings at TheMovieDB.org/MyAccount"
-      multiline: true
-      isAllCaps: false
-    }
-  }
-  layer {
     name: "Btn-Back"
-    id: 1833
+    id: 1832
     sourceid: 305
     transform {
       anchorPoint {
@@ -228,7 +176,7 @@ activecomp {
         z: 1
       }
       position {
-        x: -948
+        x: 32
         y: -91
         z: 0
       }
@@ -245,16 +193,16 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    parentid: 1835
+    parentid: 1833
   }
   layer {
-    name: "ScalePropCenterAnchor"
-    id: 1834
-    sourceid: 2419
+    name: "ScalePropTopLeftAnchor"
+    id: 1833
+    sourceid: 1480
     transform {
       anchorPoint {
-        x: 50
-        y: 50
+        x: 0
+        y: 0
         z: 0
       }
       scale {
@@ -263,8 +211,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 540
-        y: 960
+        x: 0
+        y: 0
         z: 0
       }
       orientation {
@@ -282,13 +230,13 @@ activecomp {
     castsshadows: false
   }
   layer {
-    name: "ScalePropTopRightAnchor"
-    id: 1835
-    sourceid: 2419
+    name: "ScaleWidthPropCenterAnchor"
+    id: 1834
+    sourceid: 1480
     transform {
       anchorPoint {
-        x: 100
-        y: 0
+        x: 50
+        y: 50
         z: 0
       }
       scale {
@@ -297,8 +245,8 @@ activecomp {
         z: 1
       }
       position {
-        x: 1080
-        y: 0
+        x: 540
+        y: 960
         z: 0
       }
       orientation {
@@ -338,33 +286,33 @@ sources {
   uid: 950
   srctype: AE_COMP_SRC
   name: "Auryn_Btn-Profile3.layout"
-  width: 250
-  height: 400
+  width: 1006
+  height: 416
   copy_source: true
 }
 sources {
   uid: 932
   srctype: AE_COMP_SRC
   name: "Auryn_Btn-Profile2.layout"
-  width: 250
-  height: 400
+  width: 1006
+  height: 416
   copy_source: true
 }
 sources {
   uid: 907
   srctype: AE_COMP_SRC
   name: "Auryn_Btn-Profile1.layout"
-  width: 250
-  height: 400
+  width: 1006
+  height: 416
   copy_source: true
 }
 sources {
   uid: 4
   srctype: AE_FONT_SRC
-  name: "Raleway-Bold"
+  name: "Montserrat-SemiBold"
   copy_source: true
-  file_name: "yi_Raleway-Bold.otf"
-  style_name: "Bold"
+  file_name: "yi_Montserrat-Semi Bold.otf"
+  style_name: "Semi Bold"
 }
 sources {
   uid: 305
@@ -375,7 +323,7 @@ sources {
   copy_source: true
 }
 sources {
-  uid: 2419
+  uid: 1480
   srctype: AE_NULL_SRC
   width: 100
   height: 100

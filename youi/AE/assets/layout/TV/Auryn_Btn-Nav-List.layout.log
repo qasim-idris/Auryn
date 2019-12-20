@@ -1,26 +1,26 @@
 activecomp {
   name: "Auryn_Btn-Nav-List"
-  width: 234
-  height: 70
-  defaultcameradistance: 325
+  width: 150
+  height: 120
+  defaultcameradistance: 208.33333
   layer {
-    name: "toggle-line"
+    name: "Backdrop-Gradient-Small.png"
     id: 690014319
-    sourceid: 690012418
+    sourceid: 690015186
     transform {
       anchorPoint {
-        x: 20
-        y: 3
+        x: 292
+        y: 0.5
         z: 0
       }
       scale {
         x: 1
-        y: 1
+        y: 152.82
         z: 1
       }
       position {
-        x: 116.5
-        y: 56.75
+        x: 75
+        y: -90
         z: 0
       }
       orientation {
@@ -30,42 +30,8 @@ activecomp {
       }
       rotationX: 0
       rotationY: 0
-      rotationZ: 0
-      opacity: 0
-    }
-    acceptsshadows: true
-    acceptslights: true
-    castsshadows: false
-  }
-  layer {
-    name: "tab-discover-focus.png"
-    id: 690014320
-    sourceid: 690012419
-    transform {
-      anchorPoint {
-        x: 84.5
-        y: 25
-        z: 0
-      }
-      scale {
-        x: 1.1
-        y: 1.1
-        z: 1
-      }
-      position {
-        x: 116.5
-        y: 32.5
-        z: 0
-      }
-      orientation {
-        x: 0
-        y: 0
-        z: 0
-      }
-      rotationX: 0
-      rotationY: 0
-      rotationZ: 0
-      opacity: 0
+      rotationZ: 90
+      opacity: 1
     }
     acceptsshadows: true
     acceptslights: true
@@ -73,7 +39,7 @@ activecomp {
   }
   layer {
     name: "title"
-    id: 690014321
+    id: 690014320
     sourceid: -1
     transform {
       anchorPoint {
@@ -87,8 +53,60 @@ activecomp {
         z: 1
       }
       position {
-        x: 116.15983
-        y: 42.458118
+        x: 74.159828
+        y: 93.458122
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0.5
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 17
+      fontColor {
+        alpha: 1
+        red: 0.94510000944137573
+        green: 0.94510000944137573
+        blue: 0.94510000944137573
+      }
+      fontName: "Montserrat-Bold"
+      isPointText: false
+      boundsWidth: 200
+      boundsHeight: 33
+      isLabel: true
+      text: "Discover"
+      multiline: true
+      isAllCaps: true
+    }
+  }
+  layer {
+    name: "Nav-Icon"
+    id: 690014321
+    sourceid: 690016212
+    transform {
+      anchorPoint {
+        x: 30
+        y: 27.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 0
+        y: -2
         z: 0
       }
       orientation {
@@ -104,24 +122,109 @@ activecomp {
     acceptsshadows: true
     acceptslights: true
     castsshadows: false
-    textinfo {
-      justification: AE_TEXT_CENTER
-      fontSize: 28
-      fontColor {
-        alpha: 1
-        red: 1
-        green: 1
-        blue: 1
+    parentid: 690014322
+  }
+  layer {
+    name: "Toggle-Ctrl"
+    id: 690014322
+    sourceid: 690017005
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
       }
-      fontName: "Raleway-Medium"
-      isPointText: false
-      boundsWidth: 200
-      boundsHeight: 33
-      isLabel: true
-      text: "Discover"
-      multiline: true
-      isAllCaps: false
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 75
+        y: 40
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
     }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Toggled-Container"
+    id: 690014323
+    sourceid: 690015309
+    transform {
+      anchorPoint {
+        x: 75
+        y: 60
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 75
+        y: 60
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "Nav-Icon-Toggled"
+    id: 690014324
+    sourceid: 690016200
+    transform {
+      anchorPoint {
+        x: 30
+        y: 27.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 75
+        y: 38
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
   }
   classname: "CYIPushButtonView"
   bgcolor {
@@ -142,34 +245,57 @@ activecomp {
     key: "clip"
     value: "false"
   }
+  childtemplates: "Auryn_Nav-Icon"
+  childtemplates: "Auryn_Toggled-Container"
+  childtemplates: "Auryn_Nav-Icon-Toggled"
 }
 sources {
-  uid: 690012418
+  uid: 690015186
   srctype: AE_IMAGE_SRC
-  name: "activeTab-underline.png"
-  width: 40
-  height: 6
+  name: "Backdrop-Gradient-Small.png"
+  width: 292
+  height: 1
   numberOfFrames: 1
   fps: 0
   loops: 1
   copy_source: true
 }
 sources {
-  uid: 690012419
-  srctype: AE_IMAGE_SRC
-  name: "tab-discover-focus.png"
-  width: 169
-  height: 50
-  numberOfFrames: 1
-  fps: 0
-  loops: 1
-  copy_source: true
-}
-sources {
-  uid: 3
+  uid: 2
   srctype: AE_FONT_SRC
-  name: "Raleway-Medium"
+  name: "Montserrat-Bold"
   copy_source: true
-  file_name: "yi_Raleway-Medium.otf"
-  style_name: "Medium"
+  file_name: "yi_Montserrat-Bold.otf"
+  style_name: "Bold"
+}
+sources {
+  uid: 690016212
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav-Icon.layout"
+  width: 60
+  height: 55
+  copy_source: true
+}
+sources {
+  uid: 690017005
+  srctype: AE_NULL_SRC
+  width: 100
+  height: 100
+  copy_source: false
+}
+sources {
+  uid: 690015309
+  srctype: AE_COMP_SRC
+  name: "Auryn_Toggled-Container.layout"
+  width: 150
+  height: 120
+  copy_source: true
+}
+sources {
+  uid: 690016200
+  srctype: AE_COMP_SRC
+  name: "Auryn_Nav-Icon-Toggled.layout"
+  width: 60
+  height: 55
+  copy_source: true
 }
