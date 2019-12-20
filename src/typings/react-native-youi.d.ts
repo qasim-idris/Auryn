@@ -6,7 +6,18 @@
 /* eslint-disable max-lines */
 declare module '@youi/react-native-youi' {
   import React from 'react';
-  import { TextInputProps, TextStyle, ScrollViewProps, NativeEventSubscription, NativeSyntheticEvent, ScrollView, SliderProps, StyleProp, ViewStyle, ImageResizeMode } from 'react-native';
+  import {
+    TextInputProps,
+    TextStyle,
+    ScrollViewProps,
+    NativeEventSubscription,
+    NativeSyntheticEvent,
+    ScrollView,
+    SliderProps,
+    StyleProp,
+    ViewStyle,
+    ImageResizeMode,
+  } from 'react-native';
 
   export interface BackHandlerConstructor {
     exitApp: () => void;
@@ -121,6 +132,8 @@ declare module '@youi/react-native-youi' {
     source: VideoUriSource;
 
     muted?: boolean;
+
+    metadata?: any;
   }
 
   export type PlaybackStateOptions = 'playing' | 'paused' | 'buffering';
@@ -245,8 +258,7 @@ declare module '@youi/react-native-youi' {
 
   export interface CompositionProps {
     source: string;
-
-    onTimelinesLoaded?(): void;
+    style?: StyleProp<ViewStyle>;
   }
 
   export class Composition extends React.Component<CompositionProps> {}
@@ -327,6 +339,11 @@ declare module '@youi/react-native-youi' {
 
     onBlur?(): void;
 
+    onCompositionDidLoad?(ref: ButtonRef): void;
+
+    /**
+     *  DEPRECATED
+     */
     onTimelinesLoaded?(timelines: { [key: string]: TimelineRef }): void;
   }
 
@@ -371,8 +388,6 @@ declare module '@youi/react-native-youi' {
     };
 
     resizeMode?: 'contain' | 'cover' | 'stretch' | 'center' | 'repeat';
-
-    onTimelinesLoaded?(): void;
 
     onLoad?(): void;
 
@@ -468,7 +483,7 @@ declare module '@youi/react-native-youi' {
      */
     _timelineId: number;
 
-    play(): void;
+    play(frame?: number): void;
 
     pause(): void;
 
@@ -515,11 +530,13 @@ declare module '@youi/react-native-youi' {
     onPlayReverse?(): void;
 
     onStartedReverse?(): void;
+
+    onCompositionDidLoad(ref: TimelineRef): void;
   }
 
   export class TimelineRef extends React.Component<RefProps & TimelineRefProps> {}
 
-  export class Video extends React.Component<VideoRefProps>  {
+  export class Video extends React.Component<VideoRefProps> {
     ref: any;
 
     seek: (value: number) => void;
@@ -541,8 +558,6 @@ declare module '@youi/react-native-youi' {
     onFocus?: () => void;
 
     visible?: boolean;
-
-    onTimelinesLoaded?(): void;
   }
 
   export class ViewRef extends React.Component<RefProps & ViewRefProps> {}
