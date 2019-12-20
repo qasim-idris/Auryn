@@ -18,11 +18,15 @@ export enum RotationMode {
   AutoUpright = 6
 }
 
-// This function takes a component...
 export const withOrientation = (WrappedComponent: any, InitialRotationMode: RotationMode) =>
   class extends React.Component {
     componentWillMount() {
-      OrientationLock.setRotationMode(InitialRotationMode || RotationMode.Auto);
+      if (InitialRotationMode !== undefined) {
+        OrientationLock.setRotationMode(InitialRotationMode);
+      } else {
+        OrientationLock.setRotationMode(RotationMode.Auto);
+      }
+
     }
 
     setRotationMode = (rotationMode: RotationMode) => {
