@@ -5,13 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  *
  */
-
-import { AppRegistry, FormFactor } from '@youi/react-native-youi';
+import { AppRegistry } from 'react-native';
 import YiReactApp from './src/App';
 
-import { withOrientation } from './src/components';
-import { RotationMode } from './src/components/withOrientation';
-
-const rotationMode = !FormFactor.isHandset ? RotationMode.Landscape : RotationMode.Portrait;
-
-AppRegistry.registerComponent('YiReactApp', () => withOrientation(YiReactApp, rotationMode));
+AppRegistry.registerComponent('YiReactApp', YiReactApp);
