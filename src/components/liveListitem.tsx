@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Composition, TextRef, ButtonRef, ImageRef, ViewRef } from '@youi/react-native-youi';
-import { movieGenres } from '../data/live';
+import { Composition, TextRef, ButtonRef, ImageRef, ViewRef, FormFactor } from '@youi/react-native-youi';
+
 import { Timeline } from '.';
 import { Asset } from '../adapters/asset';
 import { ListItemFocusEvent, ListItemPressEvent } from './listitem';
-
 
 interface LiveListItemProps {
   onPress?: ListItemPressEvent;
@@ -16,15 +15,14 @@ interface LiveListItemProps {
 }
 
 export class LiveListItem extends Component<LiveListItemProps> {
-  static getRemainingString = (movie: Asset) => {
-    if (!movie.live) return '0';
+  static getRemainingString = (movie?: Asset) => {
+    if (!movie?.live) return '0';
     const remaining = movie.live.duration - movie.live.elapsed;
 
-    if (remaining < 60)
-      return `${remaining % 60}min`;
+    if (remaining < 60) return `${remaining % 60}min`;
 
     return `${(remaining - (remaining % 60)) / 60}h ${remaining % 60}min`;
-  }
+  };
 
   shouldComponentUpdate(nextProps: LiveListItemProps) {
     return nextProps.focusable !== this.props.focusable;
@@ -41,13 +39,13 @@ export class LiveListItem extends Component<LiveListItemProps> {
 
   onFocus = () => {
     this.props.onFocus?.(this.props.data, this.buttonRef, this.props.shouldChangeFocus);
-  }
+  };
 
   onPress = () => {
     this.props.onPress?.(this.props.data, this.buttonRef);
-  }
+  };
 
-  getGenresString = () => this.props.data.genres?.map(id => movieGenres.find(genre => genre.id === id)?.name).join(', ');
+  getGenresString = () => this.props.data.genres?.map((genre) => genre.name).join(', ');
 
   render() {
     return (
@@ -60,23 +58,19 @@ export class LiveListItem extends Component<LiveListItemProps> {
           focusable={this.props.focusable}
           visible={this.props.visible}
         >
-          <ImageRef
-            name="Image-Dynamic-Live-Asset"
-            source={ { uri: this.props.data.thumbs.Backdrop } } />
+          <ImageRef name="Image-Dynamic-Live-Asset" source={{ uri: this.props.data.thumbs.Poster }} />
           <TextRef name="Text-Title" text={this.props.data.title} />
-          <ViewRef name="Details">
-            <TextRef name="Text-Detail-1" visible={false} />
-            <TextRef name="•" visible={false} />
-            <TextRef name="Text-Detail-2" text={this.getGenresString()} />
-          </ViewRef>
+
+          <TextRef name="Text-Detail-1" text={this.getGenresString()} />
+          {FormFactor.isTV ?? <TextRef name="Text-Detail-2" text={this.getGenresString()} />}
+
           <ViewRef name="Metadata">
             <ImageRef
               style={{ resizeMode: 'contain' }}
               name="Image-Dynamic-Live-Logo"
-              source={ { uri: `res://drawable/default/${this.props.data.live?.channel.name}.png` } } />
-            <TextRef
-              name="Text-TimeRemaining"
-              text={`${LiveListItem.getRemainingString(this.props.data)} remaining`} />
+              source={{ uri: `res://drawable/default/${this.props.data.live?.channel.name}.png` }}
+            />
+            <TextRef name="Text-TimeRemaining" text={`${LiveListItem.getRemainingString(this.props.data)} remaining`} />
           </ViewRef>
           <ViewRef name="Progress-Bar">
             <Timeline name="ProgressStart" ref={this.progressTimeline} />
