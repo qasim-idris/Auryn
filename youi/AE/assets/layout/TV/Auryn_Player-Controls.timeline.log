@@ -1755,7 +1755,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 519921
-  targetname: "Btn-MiniGuide"
+  targetname: "Btn-TvGuide"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0
@@ -1766,7 +1766,7 @@ tracks {
 tracks {
   binding: POSITION
   targetid: 519921
-  targetname: "Btn-MiniGuide"
+  targetname: "Btn-TvGuide"
   keytimes {
     datatype: AE_FLOAT_VECTOR_DATA
     timeOffset: 0
@@ -3837,7 +3837,7 @@ tracks {
 tracks {
   binding: IS_VISIBLE
   targetid: 519924
-  targetname: "Live-MiniGuide"
+  targetname: "Live-TvGuide"
   keytimes {
     datatype: AE_INT_DATA
     timeOffset: 0

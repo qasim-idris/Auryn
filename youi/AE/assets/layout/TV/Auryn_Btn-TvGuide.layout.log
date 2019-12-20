@@ -1,0 +1,175 @@
+activecomp {
+  name: "Auryn_Btn-TvGuide"
+  width: 400
+  height: 80
+  defaultcameradistance: 555.55554
+  layer {
+    name: "MiniGuide-button-outline.png"
+    id: 690012982
+    sourceid: 690012980
+    transform {
+      anchorPoint {
+        x: 200
+        y: 40
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 199.75
+        y: 38.75
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "MiniGuide-button-filled.png"
+    id: 690012983
+    sourceid: 690012979
+    transform {
+      anchorPoint {
+        x: 200
+        y: 40
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 199.75
+        y: 38.75
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 0
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "View TV Guide"
+    id: 690012984
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 165.5
+        y: 21.5
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 199.15982
+        y: 48.458118
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_CENTER
+      fontSize: 28
+      fontColor {
+        alpha: 1
+        red: 1
+        green: 1
+        blue: 1
+      }
+      fontName: "Montserrat-Medium"
+      isPointText: false
+      boundsWidth: 331
+      boundsHeight: 33
+      isLabel: true
+      text: "View TV Guide"
+      multiline: true
+      isAllCaps: false
+    }
+  }
+  classname: "CYIPushButtonView"
+  bgcolor {
+    alpha: 1
+    red: 0.086274509803921567
+    green: 0.11372549019607843
+    blue: 0.14509803921568629
+  }
+  properties {
+    key: "componentSubtype"
+    value: "push"
+  }
+  properties {
+    key: "componentType"
+    value: "button"
+  }
+  properties {
+    key: "clip"
+    value: "false"
+  }
+}
+sources {
+  uid: 690012980
+  srctype: AE_IMAGE_SRC
+  name: "MiniGuide-button-outline.png"
+  width: 400
+  height: 80
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 690012979
+  srctype: AE_IMAGE_SRC
+  name: "MiniGuide-button-filled.png"
+  width: 400
+  height: 80
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 3
+  srctype: AE_FONT_SRC
+  name: "Montserrat-Medium"
+  copy_source: true
+  file_name: "yi_Montserrat-Medium.otf"
+  style_name: "Medium"
+}

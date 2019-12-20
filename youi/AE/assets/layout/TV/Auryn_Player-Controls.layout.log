@@ -73,7 +73,7 @@ activecomp {
     parentid: 519926
   }
   layer {
-    name: "Btn-MiniGuide"
+    name: "Btn-TvGuide"
     id: 519921
     sourceid: 690012982
     transform {
@@ -178,7 +178,7 @@ activecomp {
     parentid: 519925
   }
   layer {
-    name: "Live-MiniGuide"
+    name: "Live-TvGuide"
     id: 519924
     sourceid: 690014557
     transform {
@@ -392,10 +392,10 @@ activecomp {
     value: "true"
   }
   childtemplates: "Auryn_Player-Controls-Layout"
-  childtemplates: "Auryn_Btn-MiniGuide"
+  childtemplates: "Auryn_Btn-TvGuide"
   childtemplates: "Auryn_Container-Btn-PlayPause"
   childtemplates: "Auryn_Btn-Back"
-  childtemplates: "Auryn_Live-MiniGuide"
+  childtemplates: "Auryn_Live-TvGuide"
 }
 sources {
   uid: 891
@@ -419,7 +419,7 @@ sources {
 sources {
   uid: 690012982
   srctype: AE_COMP_SRC
-  name: "Auryn_Btn-MiniGuide.layout"
+  name: "Auryn_Btn-TvGuide.layout"
   width: 400
   height: 80
   copy_source: true
@@ -443,7 +443,7 @@ sources {
 sources {
   uid: 690014557
   srctype: AE_COMP_SRC
-  name: "Auryn_Live-MiniGuide.layout"
+  name: "Auryn_Live-TvGuide.layout"
   width: 1920
   height: 1080
   copy_source: true
