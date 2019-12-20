@@ -20,6 +20,7 @@
 #include <YiCloudModule.h>
 #include "TrackpadModule.h"
 #include "OrientationLockModule.h"
+#include "RefUtilsModule.h"
 
 App::App() = default;
 
@@ -54,6 +55,7 @@ bool App::UserInit()
     GetReactNativeViewController().AddModule<Cloud>();
     GetReactNativeViewController().AddModule<TrackpadModule>();
     GetReactNativeViewController().AddModule<OrientationLockModule>();
+    GetReactNativeViewController().AddModule<RefUtilsModule>();
 
     #if (YI_CLOUD_SERVER)
         GetReactNativeViewController().AddModule<CloudConfig>();
