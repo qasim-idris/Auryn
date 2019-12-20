@@ -7,8 +7,9 @@
  */
 
 import React from 'react';
-import { View } from 'react-native';
-import { ListItem, ListItemPressEvent, ListItemFocusEvent } from './listitem';
+import { View, StyleSheet } from 'react-native';
+import { FormFactor } from '@youi/react-native-youi';
+import { ListItem, ListItemPressEvent, ListItemFocusEvent, ImageType } from './listitem';
 import { Asset } from '../adapters/asset';
 
 interface TvContainerProps {
@@ -18,17 +19,20 @@ interface TvContainerProps {
   focusable?: boolean;
 }
 
-// eslint-disable-next-line max-len
 export const TvContainer: React.FunctionComponent<TvContainerProps> = ({ data, onPressItem, onFocusItem, focusable }) => {
   if (data.length !== 2) return null;
+  const imageType: ImageType = {
+    type: FormFactor.isHandset ? 'Poster' : 'Backdrop',
+    size: 'Small'
+  };
   return (
-    <View>
+    <View style={styles.container}>
       <ListItem
         focusable={focusable}
         onPress={onPressItem}
         onFocus={onFocusItem}
         shouldChangeFocus={false}
-        imageType={{ type: 'Backdrop', size: 'Small' }}
+        imageType={imageType}
         data={data[0]}
       />
       <ListItem
@@ -36,9 +40,16 @@ export const TvContainer: React.FunctionComponent<TvContainerProps> = ({ data, o
         onPress={onPressItem}
         onFocus={onFocusItem}
         shouldChangeFocus={false}
-        imageType={{ type: 'Backdrop', size: 'Small' }}
+        imageType={imageType}
         data={data[1]}
       />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: FormFactor.isHandset ? 'row' : 'column',
+    justifyContent:'center'
+  }
+})

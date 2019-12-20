@@ -6,13 +6,12 @@
  *
  */
 
-/* eslint-disable max-len */
-
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { ListItem } from '.';
 import { Asset } from '../adapters/asset';
 import { ListItemPressEvent, ListItemFocusEvent } from './listitem';
+import { FormFactor } from '@youi/react-native-youi';
 
 interface DiscoverContainerProps {
   data: Asset[];
@@ -22,7 +21,6 @@ interface DiscoverContainerProps {
   index: number;
 }
 
-// eslint-disable-next-line max-lines-per-function
 export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> = ({
   data,
   onPressItem,
@@ -33,7 +31,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
   if (data.length !== 3) return null;
 
   const smallItems = (
-    <View style={{ flexDirection: 'row' }}>
+    <View style={styles.smallContainer}>
       <ListItem
         focusable={focusable}
         onPress={onPressItem}
@@ -64,7 +62,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
   );
   if (index % 2) {
     return (
-      <View style={{ backgroundColor: 'black' }}>
+      <View style={styles.transparent}>
         {smallItems}
         {largeItem}
       </View>
@@ -72,9 +70,19 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
   }
 
   return (
-    <View style={{ backgroundColor: 'black' }}>
+    <View style={styles.transparent}>
       {largeItem}
       {smallItems}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  smallContainer: {
+    flexDirection: 'row',
+    justifyContent: FormFactor.isHandset ? 'space-between' : 'flex-start'
+  },
+  transparent: {
+    backgroundColor: 'transparent'
+  }
+})
