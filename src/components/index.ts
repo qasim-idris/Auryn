@@ -20,3 +20,4 @@ export { Error } from './error';
 export { withOrientation } from './withOrientation';
 export { LiveContainer } from './liveContainer';
 export { LiveListItem } from './liveListitem';
+export { BackgroundImage } from './backgroundImage';
