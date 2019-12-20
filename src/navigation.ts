@@ -23,7 +23,7 @@ const stackOptions: StackNavigatorConfig = {
     containerStyle: {
       backgroundColor: 'transparent',
     },
-    screenInterpolator: () => { },
+    screenInterpolator: () => {},
   }),
 };
 
@@ -35,11 +35,12 @@ const AppStack = createNavigator(
     Search: { screen: Screens.Search },
     Profile: { screen: Screens.Profile },
     Video: { screen: Screens.Video },
+    AdOverlay: { screen: Screens.AdOverlay },
   },
   {
     ...stackOptions,
     initialRouteName: 'Lander',
-  }
+  },
 );
 
 const SplashStack = createStackNavigator(
@@ -47,7 +48,7 @@ const SplashStack = createStackNavigator(
   {
     ...stackOptions,
     initialRouteName: 'Splash',
-  }
+  },
 );
 
 const rootNavigationStack = createSwitchNavigator({
