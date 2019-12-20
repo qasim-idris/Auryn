@@ -72,7 +72,7 @@ class SplashScreen extends React.Component<SplashProps> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#2C2C2F',
   },
 });
 
