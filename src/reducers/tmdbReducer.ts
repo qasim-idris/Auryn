@@ -90,7 +90,7 @@ const initialState: TmdbReducerState = { // eslint-disable-line max-lines-per-fu
     error: null,
   },
   search: {
-    data: { tv: [], movies: [] },
+    data: [],
     fetching: false,
     fetched: false,
     error: null,
@@ -244,10 +244,7 @@ export const tmdbReducer = (state = initialState, action: TmdbActionTypes): Tmdb
       };
 
     case 'TMDB_SEARCH_FULFILLED':
-      const data = {
-        movies: normalize(action.payload.results.filter(it => it.media_type === 'movie'), 10),
-        tv: normalize(action.payload.results.filter(it => it.media_type === 'tv'), 10),
-      };
+      const data = normalize(action.payload.results, 40);
       return {
         ...state,
         search: {
@@ -275,7 +272,7 @@ export const tmdbReducer = (state = initialState, action: TmdbActionTypes): Tmdb
     case 'TMDB_SEARCH_CLEAR':
       return {
         ...state,
-        search: { data: { tv: [], movies: [] } },
+        search: { data: [] },
       };
     default:
       return state;

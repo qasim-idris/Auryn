@@ -18,7 +18,7 @@ export interface YoutubeReducerState {
 }
 
 const initalState: YoutubeReducerState = {
-  videoSource: { uri: 'https://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes.m3u8', type: 'HLS' },
+  videoSource: { uri: 'https://playertest.longtailvideo.com/adaptive/oceans_aes/oceans_aes-audio=65000-video=2042000.m3u8', type: 'HLS' },
   videoId: Date.now().toString(),
   fetching: false,
   fetched: false,

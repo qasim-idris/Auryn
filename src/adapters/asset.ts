@@ -9,7 +9,10 @@ export interface Asset {
   id: number | string;
   youtubeId: string;
   type: AssetType;
-  genres?: number[];
+  genres?: { id: number; name: string }[];
+  runtime: number;
+  seasons: number;
+  episodes: number;
   live?: Live;
   releaseDate: string;
 }
@@ -33,4 +36,5 @@ export interface AssetImages {
 export enum AssetType {
   TV = 'tv',
   MOVIE = 'movie',
+  AD = 'ad',
 }

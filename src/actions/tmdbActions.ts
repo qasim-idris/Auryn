@@ -70,7 +70,7 @@ export const prefetchDetails = (id: number | string, type: AssetType) => (dispat
         key: 'CACHE_DETAILS',
       },
     },
-    payload: fetch(`http://api.themoviedb.org/3/${type}/${id}?append_to_response=similar,videos,credits&api_key=${tmdbApiKey}`)
+    payload: fetch(`http://api.themoviedb.org/3/${type}/${id}?append_to_response=similar,videos,credits,genres,runtime,number_of_episodes,number_of_seasons&api_key=${tmdbApiKey}`)
       .then(response => response.json())
       .then(json => {
         json.type = type;
@@ -91,7 +91,7 @@ export const getDetailsByIdAndType = (id: number | string, type: AssetType) => (
 
   return dispatch({
     type: 'TMDB_DETAILS',
-    payload: fetch(`http://api.themoviedb.org/3/${type}/${id}?append_to_response=similar,videos,credits&api_key=${tmdbApiKey}`)
+    payload: fetch(`http://api.themoviedb.org/3/${type}/${id}?append_to_response=similar,videos,credits,genres,runtime,number_of_episodes,number_of_seasons&api_key=${tmdbApiKey}`)
       .then(response => response.json())
       .then(json => {
         json.type = type;

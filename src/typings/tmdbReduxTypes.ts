@@ -64,5 +64,5 @@ export interface TmdbReducerState {
   tv: TmdbState<Asset[]>;
   details: TmdbState<Asset>;
   cache: TmdbState<TmdbApi[]>;
-  search: TmdbState<TmdbSearch>;
+  search: TmdbState<Asset[]>;
 }
