@@ -7,21 +7,22 @@
  */
 
 import React from 'react';
-import { Composition, BackHandler, TextInputRef, FocusManager } from '@youi/react-native-youi';
+import { View, BackHandler } from 'react-native';
+import { Composition, TextInputRef, FocusManager, TextRef,FormFactor } from '@youi/react-native-youi';
 import { Timeline, List, BackButton } from '../components';
 import { NavigationActions, withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { connect } from 'react-redux';
 import { Asset } from '../adapters/asset';
-import { View } from 'react-native';
 import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
 import { getDetailsByIdAndType, prefetchDetails, search } from '../actions/tmdbActions';
 import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
+import { ListType } from '../components/list';
 
 type SearchDispatchProps = typeof mapDispatchToProps;
 
 interface SearchProps extends NavigationFocusInjectedProps, SearchDispatchProps {
-  data: { tv: Asset[]; movies: Asset[] };
+  data: Asset[];
 }
 
 class SearchScreen extends React.Component<SearchProps> {
@@ -79,7 +80,7 @@ class SearchScreen extends React.Component<SearchProps> {
   search = (query: string) => this.props.search(query);
 
   render() { // eslint-disable-line max-lines-per-function
-    const { isFocused, data: { movies, tv } } = this.props;
+    const { isFocused, data } = this.props;
 
     if (!isFocused)
       return <View />;
@@ -97,25 +98,21 @@ class SearchScreen extends React.Component<SearchProps> {
           onChangeText={this.search}
         />
 
-        {tv || !AurynHelper.isRoku ? <List
+        <TextRef name="Popular Shows 2" text={`${data.length} Results Found`} />
+
+        {data || !AurynHelper.isRoku ? <List
           name="List-PDP"
-          data={tv}
+          data={data}
+          type={ListType.Search}
+          horizontal={false}
           focusable={isFocused}
           onPressItem={this.onPressItem}
           onFocusItem={this.onFocusItem}
-          extraData={tv}
+          extraData={data}
+          numColumns={FormFactor.isHandset ? 3 : 6}
         />
           : null
         }
-        {movies || !AurynHelper.isRoku ? <List
-          name="List-Movies"
-          data={movies}
-          focusable={isFocused}
-          onPressItem={this.onPressItem}
-          onFocusItem={this.onFocusItem}
-          extraData={movies}
-        />
-          : null}
 
         <Timeline name="SearchOut" ref={this.outTimeline} />
         <Timeline name="SearchIn" autoplay/>
