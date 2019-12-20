@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import { Composition, BackHandler, ButtonRef, TextRef, FocusManager } from '@youi/react-native-youi';
+import { BackHandler } from 'react-native';
+import { Composition, ButtonRef, TextRef, FocusManager } from '@youi/react-native-youi';
 import { Timeline, BackButton } from '../components';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { AurynHelper } from '../aurynHelper';
@@ -67,6 +68,11 @@ class ProfileScreen extends React.Component<ProfileProps, ProfileState> {
         ref={(i + 1 === this.state.activeButtonIndex) ? this.activeButton : null}
       >
         <TextRef name="Active User" text={this.state.activeButtonIndex === i + 1 ? 'Active User' : ''} />
+        <Timeline name="Toggle-On"
+          playOnTrue={this.state.activeButtonIndex === i+1}
+          autoplay={this.state.activeButtonIndex === i+1}
+        />
+        <Timeline name="Toggle-Off" playOnTrue={this.state.activeButtonIndex !== i+1}/>
       </ButtonRef>);
 
     return (
