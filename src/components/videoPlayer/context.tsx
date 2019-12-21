@@ -34,8 +34,6 @@ interface VideoContextState {
   setIsCompressed: (isCompressed: boolean) => void;
 }
 
-export type VideoContextType = React.ContextType<React.Context<VideoContextState>>;
-
 const initialState: VideoContextState = {
   asset: undefined,
   paused: false,
