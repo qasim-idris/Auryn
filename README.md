@@ -1,5 +1,7 @@
 # Auryn
-![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn.png)
+![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-Handset.png)
+![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-Tablet.png)
+![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-TV.png)
 
 Auryn is a simple React-Native sample application running on You.i Engine one.
 It's primary purpose is to show a movie and TV experience using You.i's After
