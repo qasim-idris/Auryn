@@ -7,8 +7,9 @@
  */
 
 import React from 'react';
-import { Composition, TextRef, ButtonRef, ImageRef } from '@youi/react-native-youi';
+import { Composition, TextRef, ButtonRef, ImageRef, FormFactor } from '@youi/react-native-youi';
 import { Asset } from '../adapters/asset';
+import { View, StyleSheet } from 'react-native';
 
 export type ListItemFocusEvent =
   (asset: Asset, innerRef: React.RefObject<ButtonRef>, shouldChangeFocus?: boolean)
@@ -29,7 +30,7 @@ interface ListItemProps {
 
 export interface ImageType {
   type: 'Poster' | 'Backdrop';
-  size: 'Small' | 'Large';
+  size: 'Basic' | 'Small' | 'Wide' | 'Large';
 }
 
 export class ListItem extends React.Component<ListItemProps> {
@@ -57,26 +58,63 @@ export class ListItem extends React.Component<ListItemProps> {
     this.props.onPress?.(this.props.data, this.innerRef);
   }
 
+  getGenresString = () => this.props.data.genres?.map(genre => genre?.name).join(', ');
+
+  getTileMetadata = () => {
+    const metadata = [];
+    if (FormFactor.isTV && this.props.imageType.type === 'Backdrop') {
+      metadata.push(<TextRef name="Text-Metadata" text={this.props.data.type} />);
+      metadata.push(<TextRef name="Unfocus-Text-Title" text={this.props.data.title} />);
+      if (this.props.imageType.size == 'Large') {
+        metadata.push(<TextRef name="Text-Details" text={this.props.data.details} />);
+      }
+    }
+
+    if(FormFactor.isHandset && this.props.imageType.size === 'Wide'){
+      metadata.push(<TextRef name="Text-Metadata" text={`Season ${Math.ceil(Math.random()*6)}`} />);
+    }
+
+    if (FormFactor.isHandset && this.props.imageType.size === 'Large' && this.props.imageType.type === 'Backdrop') {
+      metadata.push(<TextRef name="Text-Details" text={this.getGenresString()} />);
+    }
+
+    if (this.props.imageType.size === 'Small' && this.props.imageType.type === 'Poster') {
+      metadata.push(<TextRef name="Text-Details" text={this.getGenresString()} />);
+    }
+
+    return <React.Fragment>{metadata}</React.Fragment>
+  }
   render() {
     const { data, imageType, focusable } = this.props;
 
     return (
-      <Composition source={this.compositionName}>
-        <ButtonRef
-          focusable={focusable}
-          ref={this.innerRef}
-          onFocus={this.onFocus}
-          onPress={this.onPress}
-          name={this.buttonName}
-        >
-          <ImageRef
-            name="Image-Dynamic"
-            source={{ uri: imageType.size === 'Small' ? data.thumbs[imageType.type] : data.images[imageType.type] }}
-          />
-          <TextRef name="Text-Details" text={data.details} />
-          <TextRef name="Text-Title" text={data.title} />
-        </ButtonRef>
-      </Composition>
+      <View style={FormFactor.isTV && imageType.size === 'Basic' ? styles.listItem : null}>
+        <Composition source={this.compositionName}>
+          <ButtonRef
+            focusable={focusable}
+            ref={this.innerRef}
+            onFocus={this.onFocus}
+            onPress={this.onPress}
+            name={this.buttonName}
+          >
+            <ImageRef
+              name="Image-Dynamic"
+              source={{ uri: ['Small', 'Basic'].includes(imageType.size) ? data.thumbs[imageType.type] : data.images[imageType.type] }}
+            />
+
+            {imageType.size !== 'Basic' ?? <TextRef name="Text-Title" text={data.title} style={{ color:'#f6f1ee' }}/>}
+
+            {this.getTileMetadata()}
+          </ButtonRef>
+        </Composition>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  listItem: {
+    marginRight: 22,
+    marginBottom: 22
+  }
+})
