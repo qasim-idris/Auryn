@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React from 'react';
 import { NativeModules } from 'react-native';
 
@@ -20,13 +19,14 @@ export enum RotationMode {
 
 export const withOrientation = (WrappedComponent: any, InitialRotationMode: RotationMode) =>
   class extends React.Component {
+    displayName = "withOrientation";
+
     componentWillMount() {
       if (InitialRotationMode !== undefined) {
         OrientationLock.setRotationMode(InitialRotationMode);
       } else {
         OrientationLock.setRotationMode(RotationMode.Auto);
       }
-
     }
 
     setRotationMode = (rotationMode: RotationMode) => {
