@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Composition, VideoRef, VideoUriSource, MediaState, ViewRef } from '@youi/react-native-youi';
 import { View, NativeSyntheticEvent } from 'react-native';
 import { AurynHelper } from '../../aurynHelper';
@@ -21,7 +21,7 @@ const initialState = {
   hasStartedPlaying: false,
 };
 
-export class VideoPlayer extends Component<VideoPlayerProps> {
+export class VideoPlayer extends React.Component<VideoPlayerProps> {
   declare context: React.ContextType<typeof VideoContext>;
 
   static contextType = VideoContext;
