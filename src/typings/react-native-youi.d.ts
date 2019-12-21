@@ -13,7 +13,7 @@ declare module '@youi/react-native-youi' {
     NativeEventSubscription,
     NativeSyntheticEvent,
     ScrollView,
-    SliderProps,
+    Slider,
     StyleProp,
     ViewStyle,
     ImageResizeMode,
@@ -558,6 +558,8 @@ declare module '@youi/react-native-youi' {
     onFocus?: () => void;
 
     visible?: boolean;
+
+    style?: StyleProp<ViewStyle>;
   }
 
   export class ViewRef extends React.Component<RefProps & ViewRefProps> {}
