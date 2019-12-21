@@ -219,7 +219,7 @@ class VideoControlsComponent extends React.Component<PlayerControlProps, PlayerC
 
           {FormFactor.isHandset ? <TextRef name="Title" text={asset.title} /> : null}
           <ViewRef name="Video-TextDetails">
-            {FormFactor.isTV ? <TextRef name="Title" text={asset.title} /> : null}
+            {!FormFactor.isHandset ? <TextRef name="Title" text={asset.title} /> : null}
             <ViewRef name="Live-Metadata" visible={this.context.isLive}>
               <TextRef name="Text-Detail-1" text={LiveListItem.getRemainingString(this.props.liveData.find(it => it.id === this.props.asset.id))}/>
               <TextRef name="Text-Detail-2" text={this.props.asset.genres?.map(genre => genre?.name).join(', ')}/>

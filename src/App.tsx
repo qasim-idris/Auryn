@@ -8,7 +8,7 @@ import { BackgroundImage } from './components';
 export default class YiReactApp extends React.Component {
   render = () =>
     <Provider store={store}>
-      <BackgroundImage source={FormFactor.isTV ? 'res://drawable/default/CES-auryn-10ft-bg.png' : 'res://drawable/default/Gradient-Bottom-2.png'}>
+      <BackgroundImage source={!FormFactor.isHandset ? 'res://drawable/default/CES-auryn-10ft-bg.png' : 'res://drawable/default/Gradient-Bottom-2.png'}>
         <Stack />
       </BackgroundImage>
     </Provider>

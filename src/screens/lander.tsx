@@ -213,7 +213,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       <Composition source="Auryn_Container-Lander-List" key="movies" style={styles.listOffset}>
         <List
           name="Lander-List"
-          type={FormFactor.isTV ? ListType.Poster : ListType.Grid}
+          type={!FormFactor.isHandset ? ListType.Poster : ListType.Grid}
           data={movies}
           ref={this.lists[1]}
           focusable={isFocused && currentListIndex === 1}
@@ -225,7 +225,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       <Composition source="Auryn_Container-Lander-List" key="shows">
         <List
           name="Lander-List"
-          type={FormFactor.isTV ? ListType.Grid : ListType.WideBackdrop}
+          type={!FormFactor.isHandset ? ListType.Grid : ListType.WideBackdrop}
           data={tv}
           ref={this.lists[2]}
           focusable={isFocused && currentListIndex === 2}

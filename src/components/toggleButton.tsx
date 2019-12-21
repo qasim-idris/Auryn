@@ -96,7 +96,7 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
               />
             </React.Fragment>
             : null}
-          {FormFactor.isTV ? <TextRef name="title-toggled" text={this.props.title} /> : null}
+          {!FormFactor.isHandset ? <TextRef name="title-toggled" text={this.props.title} /> : null}
         </React.Fragment>
         : null}
       {AurynHelper.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}

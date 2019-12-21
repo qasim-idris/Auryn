@@ -62,7 +62,7 @@ export class LiveListItem extends Component<LiveListItemProps> {
           <TextRef name="Text-Title" text={this.props.data.title} />
 
           <TextRef name="Text-Detail-1" text={this.getGenresString()} />
-          {FormFactor.isTV ? <TextRef name="Text-Detail-2" text={this.getGenresString()} /> : null}
+          {!FormFactor.isHandset ? <TextRef name="Text-Detail-2" text={this.getGenresString()} /> : null}
 
           <ViewRef name="Metadata">
             <ImageRef

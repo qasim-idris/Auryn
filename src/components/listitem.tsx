@@ -62,7 +62,7 @@ export class ListItem extends React.Component<ListItemProps> {
 
   getTileMetadata = () => {
     const metadata = [];
-    if (FormFactor.isTV && this.props.imageType.type === 'Backdrop') {
+    if (!FormFactor.isHandset && this.props.imageType.type === 'Backdrop') {
       metadata.push(<TextRef name="Text-Metadata" text={this.props.data.type} />);
       metadata.push(<TextRef name="Unfocus-Text-Title" text={this.props.data.title} />);
       if (this.props.imageType.size == 'Large') {
@@ -88,7 +88,7 @@ export class ListItem extends React.Component<ListItemProps> {
     const { data, imageType, focusable } = this.props;
 
     return (
-      <View style={FormFactor.isTV && imageType.size === 'Basic' ? styles.listItem : null}>
+      <View style={!FormFactor.isHandset && imageType.size === 'Basic' ? styles.listItem : null}>
         <Composition source={this.compositionName}>
           <ButtonRef
             focusable={focusable}
