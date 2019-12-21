@@ -11,7 +11,6 @@ import { View, BackHandler } from 'react-native';
 import { VideoUriSource, FormFactor } from '@youi/react-native-youi';
 import { connect, DispatchProp } from 'react-redux';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
-
 import { withOrientation } from './../components';
 import { Asset } from './../adapters/asset';
 import { AurynAppState } from './../reducers/index';
@@ -99,15 +98,13 @@ class VideoScreenComponent extends React.Component<VideoProps> {
 
     return (
       <View style={styles.container}>
-        <VideoContextProvider>
-          <VideoPlayer
-            asset={asset}
-            isFocused={isFocused}
-            related={asset.similar}
-            enablePauseScreen={true}
-            onBackButton={this.navigateBack}
-          />
-        </VideoContextProvider>
+        <VideoPlayer
+          asset={asset}
+          isFocused={isFocused}
+          related={asset.similar}
+          enablePauseScreen={true}
+          onBackButton={this.navigateBack}
+        />
       </View>
     );
   }
@@ -131,7 +128,12 @@ const mapStateToProps = (store: AurynAppState, ownProps: VideoProps) => {
   };
 };
 
+const VideoScreenWithContext: React.FunctionComponent<VideoProps> = (props) =>
+  <VideoContextProvider>
+    <VideoScreenComponent {...props}/>
+  </VideoContextProvider>
+
 const withNavigationAndRedux = withNavigationFocus(
-  connect(mapStateToProps)(VideoScreenComponent as any),
+  connect(mapStateToProps)(VideoScreenWithContext as any),
 );
 export const VideoScreen = withOrientation(withNavigationAndRedux, RotationMode.Landscape);
