@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import { Composition, ViewRef, ButtonRef, FocusManager, BackHandler, ListRef, FormFactor } from '@youi/react-native-youi';
+import { BackHandler, StyleSheet } from 'react-native';
+import { Composition, ViewRef, ButtonRef, FocusManager, ListRef, FormFactor } from '@youi/react-native-youi';
 import { Timeline, List } from '../components';
 import {
   withNavigationFocus,
@@ -43,7 +44,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
   lists = Array.from(Array(4)).map(() => React.createRef<List>());
 
-  lastFocusItem = React.createRef<ButtonRef>();
+  lastFocusItem? = React.createRef<ButtonRef>();
 
   lastFocusNavItem = React.createRef<ButtonRef>();
 
@@ -52,6 +53,8 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
   blurListener!: NavigationEventSubscription;
 
   outTimeline = React.createRef<Timeline>();
+
+  navOutTimeline = React.createRef<Timeline>();
 
   navInTimeline = React.createRef<Timeline>();
 
@@ -81,14 +84,19 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
       this.navInTimeline.current?.play();
       this.inTimeline.current?.play();
-
     });
-    this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
+    this.blurListener = this.props.navigation.addListener('didBlur', () =>
+      BackHandler.removeEventListener('hardwareBackPress', this.navigateBack),
+    );
   }
 
   navigateBack = () => {
     if (this.menuButtons[this.state.currentListIndex].current)
       FocusManager.focus(this.menuButtons[this.state.currentListIndex].current);
+
+    // Scroll up the live page to prevent overflow
+    if (this.state.currentListIndex === 3)
+      this.lists[3].current?.scrollToIndex(0);
     return true;
   };
 
@@ -106,11 +114,11 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     else if (screen === 'Profile')
       this.lastFocusNavItem = this.profileButton;
 
-    await this.outTimeline.current?.play();
+    await Promise.all([this.navOutTimeline.current?.play, this.outTimeline.current?.play]);
     this.props.navigation.dispatch(navigateAction);
   };
 
-  scrollToViewByIndex: ToggleButtonPress = index => {
+  scrollToViewByIndex: ToggleButtonPress = (index) => {
     this.setState({ currentListIndex: index });
 
     if (AurynHelper.isRoku) return;
@@ -120,10 +128,11 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
         FocusManager.setNextFocus(this.menuButtons[i].current, this.lists[index].current, 'down');
     }
 
-    if (this.menuButtons[index].current
-      && this.searchButton.current
-      && this.profileButton.current
-      && this.lists[index].current
+    if (
+      this.menuButtons[index].current &&
+      this.searchButton.current &&
+      this.profileButton.current &&
+      this.lists[index].current
     ) {
       FocusManager.setNextFocus(this.searchButton.current, this.lists[index].current, 'down');
       FocusManager.setNextFocus(this.profileButton.current, this.lists[index].current, 'down');
@@ -143,6 +152,12 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     this.lastFocusItem = ref;
 
     if (shouldChangeFocus === false || AurynHelper.isRoku || !ref.current) return;
+
+    // Live list should not focus back to nav
+    if (this.state.currentListIndex === 3) {
+      FocusManager.setNextFocus(ref.current, ref.current, 'right');
+      return;
+    }
 
     if (this.menuButtons[this.state.currentListIndex].current) {
       FocusManager.setNextFocus(ref.current, this.menuButtons[this.state.currentListIndex].current, 'up');
@@ -165,7 +180,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       params: { asset },
     });
     this.props.getDetailsByIdAndType(id, type);
-    await this.outTimeline.current?.play();
+    await Promise.all([this.navOutTimeline.current?.play, this.outTimeline.current?.play]);
     this.props.navigation.dispatch(navigateAction);
   };
 
@@ -176,8 +191,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
   onViewableItemsChanged = () => {
     AurynHelper.updateCloudScene(this.scroller);
-  }
-
+  };
 
   // eslint-disable-next-line max-lines-per-function
   render() {
@@ -196,21 +210,22 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           onPressItem={this.onPressItem}
         />
       </Composition>,
-      <Composition source="Auryn_Container-Lander-List" key="movies">
+      <Composition source="Auryn_Container-Lander-List" key="movies" style={styles.listOffset}>
         <List
           name="Lander-List"
-          type={ListType.Poster}
+          type={FormFactor.isTV ? ListType.Poster : ListType.Grid}
           data={movies}
           ref={this.lists[1]}
           focusable={isFocused && currentListIndex === 1}
           onFocusItem={this.onFocusItem}
           onPressItem={this.onPressItem}
+          snapToAlignment={'center'}
         />
       </Composition>,
       <Composition source="Auryn_Container-Lander-List" key="shows">
         <List
           name="Lander-List"
-          type={ListType.Grid}
+          type={FormFactor.isTV ? ListType.Grid : ListType.WideBackdrop}
           data={tv}
           ref={this.lists[2]}
           focusable={isFocused && currentListIndex === 2}
@@ -218,9 +233,9 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           onPressItem={this.onPressItem}
         />
       </Composition>,
-      <Composition source="Auryn_Container-Lander-List" key="live">
+      <Composition source="Auryn_Container-Live" key="live" style={styles.listOffset}>
         <List
-          name="Lander-List"
+          name="LiveList"
           type={ListType.Live}
           data={live}
           ref={this.lists[3]}
@@ -243,10 +258,30 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
           onPressItem={this.scrollToViewByIndex}
           initialToggleIndex={0}
         >
-          <ToggleButton title="Discover" ref={this.menuButtons[0]} />
-          <ToggleButton title="Movies" ref={this.menuButtons[1]} />
-          <ToggleButton title="Shows" ref={this.menuButtons[2]} />
-          <ToggleButton title="Live" ref={this.menuButtons[3]} />
+          <ToggleButton
+            title="Discover"
+            icon="res://drawable/default/Default-Nav-Icon.png"
+            iconToggled="res://drawable/default/Default-Toggled-Nav-Icon.png"
+            ref={this.menuButtons[0]}
+          />
+          <ToggleButton
+            title="Movies"
+            icon="res://drawable/default/Movie-Nav-Icon.png"
+            iconToggled="res://drawable/default/Movie-Toggled-Nav-Icon.png"
+            ref={this.menuButtons[1]}
+          />
+          <ToggleButton
+            title="Shows"
+            icon="res://drawable/default/Series-Nav-Icon.png"
+            iconToggled="res://drawable/default/Series-Toggled-Nav-Icon.png"
+            ref={this.menuButtons[2]}
+          />
+          <ToggleButton
+            title="Live"
+            icon="res://drawable/default/Live-Nav-Icon.png"
+            iconToggled="res://drawable/default/Live-Toggled-Nav-Icon.png"
+            ref={this.menuButtons[3]}
+          />
         </NavigationBar>
         <ButtonRef
           name="Btn-Nav-Search"
@@ -275,16 +310,18 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
 
         <ViewRef name="Nav">
           <Timeline name="In" ref={this.navInTimeline} />
-          <Timeline name="Out" />
-        </ViewRef>
-
-        <ViewRef name="Nav-Logo">
-          <Timeline name="Loop" loop={true} />
+          <Timeline name="Out" ref={this.navOutTimeline} />
         </ViewRef>
       </Composition>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  listOffset: {
+    marginTop: FormFactor.isHandset ? 232 : 0,
+  },
+});
 
 const mapStateToProps = (store: AurynAppState) => ({
   discover: store.tmdbReducer.discover.data,
