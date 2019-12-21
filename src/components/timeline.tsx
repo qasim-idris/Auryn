@@ -10,20 +10,12 @@ import React from 'react';
 import { TimelineRef, TimelineRefProps } from '@youi/react-native-youi';
 
 interface TimelineProps extends TimelineRefProps {
-  onCompleted: () => void;
-  name: string;
-  autoplay: boolean;
+  autoplay?: boolean;
   playOnChange?: any;
   playOnTrue?: boolean;
 }
 
 export class Timeline extends React.PureComponent<TimelineProps> {
-  static defaultProps = {
-    onCompleted: () => {},
-    onCompositionDidLoad: () => {},
-    direction: 'forward',
-    autoplay: false,
-  };
 
   innerRef = React.createRef<TimelineRef>();
 
@@ -47,10 +39,8 @@ export class Timeline extends React.PureComponent<TimelineProps> {
     return (
       <TimelineRef
         {...this.props}
-        name={this.props.name}
         ref={this.innerRef}
         loop={this.props.loop || this.props.name.toLowerCase() === 'loop'}
-        onCompositionDidLoad={(ref) => this.props.onCompositionDidLoad(ref)}
         onCompleted={this.onCompleted}
       />
     );
@@ -72,6 +62,6 @@ export class Timeline extends React.PureComponent<TimelineProps> {
   onCompleted = () => {
     if (!this.props.loop) this.resolve?.('onCompleted');
 
-    this.props.onCompleted();
+    this.props.onCompleted?.();
   };
 }
