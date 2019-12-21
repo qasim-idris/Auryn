@@ -4,9 +4,8 @@ import Stack from './navigation';
 import { FormFactor } from '@youi/react-native-youi';
 import { Provider } from 'react-redux';
 import { BackgroundImage } from './components';
-import { withOrientation, RotationMode } from './components/withOrientation';
 
-class YiReactApp extends React.Component {
+export default class YiReactApp extends React.Component {
   render = () =>
     <Provider store={store}>
       <BackgroundImage source={FormFactor.isTV ? 'res://drawable/default/CES-auryn-10ft-bg.png' : 'res://drawable/default/Gradient-Bottom-2.png'}>
@@ -14,7 +13,3 @@ class YiReactApp extends React.Component {
       </BackgroundImage>
     </Provider>
 }
-
-const rotationMode = !FormFactor.isHandset ? RotationMode.Landscape : RotationMode.Portrait;
-
-export default withOrientation(YiReactApp, rotationMode);
