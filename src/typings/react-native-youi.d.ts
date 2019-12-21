@@ -75,6 +75,14 @@ declare module '@youi/react-native-youi' {
 
     maximumTrackTintColor?: string;
 
+    maximumValue?: number;
+
+    thumbImage?: ImageURISource;
+
+    step?: number;
+
+    onSlidingComplete?: (value: number) => void;
+
     onValueChange?: (value: number) => void;
 
     onFocus?: () => void;
@@ -548,7 +556,9 @@ declare module '@youi/react-native-youi' {
     stop: () => void;
   }
 
-  export class SliderRef extends React.Component<RefProps & SliderProps> {}
+  export class SliderRef extends React.Component<RefProps & SliderProps> {
+
+  }
 
   export interface ViewRefProps {
     name: string;
