@@ -7,17 +7,22 @@
  */
 
 import React from 'react';
-import { withNavigationFocus, NavigationActions, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import {
-  BackHandler,
+  withNavigationFocus,
+  NavigationActions,
+  NavigationEventSubscription,
+  NavigationFocusInjectedProps,
+} from 'react-navigation';
+import { View, BackHandler } from 'react-native';
+import {
   ButtonRef,
   Composition,
   ImageRef,
   TextRef,
   ViewRef,
   FocusManager,
+  FormFactor,
 } from '@youi/react-native-youi';
-import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { Timeline, List, BackButton } from '../components';
 import { Asset } from '../adapters/asset';
@@ -61,20 +66,20 @@ class PdpScreen extends React.Component<PdpProps> {
       this.props.navigation.popToTop();
 
     return true;
-  }
+  };
 
-  onPressItem: ListItemPressEvent = async asset => {
+  onPressItem: ListItemPressEvent = async (asset) => {
     const { id, type } = asset;
     this.props.getDetailsByIdAndType(id, type);
     await this.contentOutTimeline.current?.play();
     this.props.navigation.navigate({ routeName: 'PDP', params: { asset }, key: id.toString() });
     if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
-    this.contentInTimeline.current?.play();
-  }
+    await this.contentInTimeline.current?.play();
+  };
 
-  onFocusItem: ListItemFocusEvent = asset => {
+  onFocusItem: ListItemFocusEvent = (asset) => {
     this.props.prefetchDetails(asset.id, asset.type);
-  }
+  };
 
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
@@ -83,10 +88,11 @@ class PdpScreen extends React.Component<PdpProps> {
       this.videoOutTimeline.current?.play();
     });
 
-    this.blurListener = this.props.navigation.addListener('didBlur', () => BackHandler.removeEventListener('hardwareBackPress', this.navigateBack));
+    this.blurListener = this.props.navigation.addListener('didBlur', () =>
+      BackHandler.removeEventListener('hardwareBackPress', this.navigateBack),
+    );
 
-    if (this.posterButton.current)
-      FocusManager.focus(this.posterButton.current);
+    if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
   }
 
   componentWillUnmount() {
@@ -97,11 +103,9 @@ class PdpScreen extends React.Component<PdpProps> {
 
   shouldComponentUpdate(nextProps: PdpProps) {
     // Re-render if lost/gained focus
-    if (nextProps.isFocused !== this.props.isFocused)
-      return true;
+    if (nextProps.isFocused !== this.props.isFocused) return true;
 
-    if (nextProps.fetched && !this.props.fetched)
-      return true;
+    if (nextProps.fetched && !this.props.fetched) return true;
 
     // Only render if the asset.id matches the requested pdp asset id
     return nextProps.asset.id === nextProps.navigation.getParam('asset').id;
@@ -109,20 +113,57 @@ class PdpScreen extends React.Component<PdpProps> {
 
   playVideo = async () => {
     await this.videoInTimeline.current?.play();
-    this.props.navigation.dispatch(NavigationActions.navigate({
-      routeName: 'Video',
-    }));
-  }
+    this.props.navigation.dispatch(
+      NavigationActions.navigate({
+        routeName: 'Video',
+      }),
+    );
+  };
 
   onFocusPoster = () => {
     this.props.getVideoSourceByYoutubeId(this.props.asset.youtubeId);
+  };
+
+  getMetadataString() {
+    const { asset } = this.props;
+
+    // Asset Type
+    let metadataString = `${asset.type}`;
+
+    // Season # or Runtime #
+    switch (asset.type) {
+      case 'tv':
+        if (!asset.seasons)
+          break;
+
+        metadataString = metadataString.concat(` | ${asset.seasons} Season${asset.seasons > 1 ? 's' : ''}`)
+        break;
+
+      case 'movie':
+        if (!asset.runtime)
+          break;
+
+        const hours = (asset.runtime / 60);
+        const roundedHours = Math.floor(hours);
+        const minutes = (hours - roundedHours) * 60;
+        const roundedMinutes = Math.round(minutes);
+
+        metadataString = metadataString.concat(` | ${roundedHours} hr ${roundedMinutes} min`)
+
+        break;
+    }
+
+    // Genres
+    metadataString = metadataString.concat(` | ${this.props.asset.genres?.map(genre => genre.name).join(', ')}`)
+
+    return metadataString;
   }
 
-  render() { // eslint-disable-line max-lines-per-function
+  render() {
+    // eslint-disable-line max-lines-per-function
     const { asset, fetched, isFocused } = this.props;
 
-    if (!fetched || !isFocused)
-      return <View/>;
+    if (!fetched || !isFocused) return <View />;
 
     return (
       <Composition source="Auryn_PDP">
@@ -131,11 +172,12 @@ class PdpScreen extends React.Component<PdpProps> {
         <Timeline name="PDPIn" autoplay />
         <Timeline name="PDPOut" ref={this.outTimeline} />
 
-        <ViewRef name="PDP-Scroller" visible={isFocused && fetched}>
-          <BackButton
-            focusable={isFocused}
-            onPress={this.navigateBack}
-          />
+        <ViewRef
+          name="PDP-Scroller"
+          visible={isFocused && fetched}
+          style={{ backgroundColor: FormFactor.isHandset ? 'black' : 'transparent' }}
+        >
+          <BackButton focusable={isFocused} onPress={this.navigateBack} />
           <List
             name="List-PDP"
             type={ListType.SmallBackdrop}
@@ -145,15 +187,11 @@ class PdpScreen extends React.Component<PdpProps> {
             onFocusItem={this.onFocusItem}
           />
 
-          <Timeline
-            name="ContentIn"
-            ref={this.contentInTimeline}
-            autoplay
-          />
+          <Timeline name="ContentIn" ref={this.contentInTimeline} autoplay />
           <Timeline name="ContentOut" ref={this.contentOutTimeline} />
 
           <ButtonRef
-            name="Btn-Poster-Large"
+            name={!FormFactor.isHandset ? 'Btn-Backdrop-LargePDP' : 'Btn-Poster-Large'}
             focusable={isFocused}
             onPress={this.playVideo}
             ref={this.posterButton}
@@ -161,22 +199,27 @@ class PdpScreen extends React.Component<PdpProps> {
           >
             <ImageRef
               name="Image-Dynamic"
-              source={{ uri: asset.thumbs.Poster }}
+              source={{ uri: FormFactor.isHandset ? asset.images.Poster : asset.images.Backdrop }}
             />
           </ButtonRef>
 
-          <ImageRef
-            name="Image-Dynamic-Background"
-            source={{ uri: asset.images.Backdrop }}
-          />
+          {FormFactor.isHandset ? (
+            <ImageRef name="Image-Dynamic-Background" source={{ uri: asset.images.Backdrop }} />
+          ) : null}
 
           <ViewRef name="Layout-PDP-Meta">
-            <TextRef name="Text-Title" text={asset.title} />
-            <TextRef name="Text-Overview" text={asset.details} />
-            <TextRef name="Text-Featured" text={asset.extra} />
+            <TextRef
+              name="Text-Metadata"
+              text={this.getMetadataString()}
+              style={{ color: '#808080' }}
+            />
+            <TextRef name="Text-Title" text={asset.title} style={{ color: '#ececec' }} />
+            <TextRef name="Text-Overview" text={asset.details} style={{ color: '#ececec' }} />
+            <TextRef name="Text-Featured" text={asset.extra} style={{ color: '#ececec' }} />
+
             <Timeline name="In2" autoplay />
           </ViewRef>
-
+          <TextRef name="Text-ListTitle" style={{ color: '#ececec' }} />
         </ViewRef>
       </Composition>
     );
