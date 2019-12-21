@@ -114,7 +114,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     else if (screen === 'Profile')
       this.lastFocusNavItem = this.profileButton;
 
-    await Promise.all([this.navOutTimeline.current?.play, this.outTimeline.current?.play]);
+    await Promise.all([this.navOutTimeline.current?.play(), this.outTimeline.current?.play()]);
     this.props.navigation.dispatch(navigateAction);
   };
 
@@ -180,7 +180,7 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
       params: { asset },
     });
     this.props.getDetailsByIdAndType(id, type);
-    await Promise.all([this.navOutTimeline.current?.play, this.outTimeline.current?.play]);
+    await Promise.all([this.navOutTimeline.current?.play(), this.outTimeline.current?.play()]);
     this.props.navigation.dispatch(navigateAction);
   };
 
