@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Timeline, LiveListItem } from '..';
 import { AurynAppState } from '../../reducers';
 import { ListItemPressEvent } from '../listitem';
-import { VideoContext, VideoContextType } from './context';
+import { VideoContext } from './context';
 import { Asset } from '../../adapters/asset';
 import { getDetailsByIdAndType } from '../../actions/tmdbActions';
 import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';

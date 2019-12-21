@@ -4,7 +4,7 @@ import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
 
 import { getDetailsByIdAndType } from './../../actions/tmdbActions';
 import { VideoContext } from './context';
-import { Asset, AssetType } from './../../adapters/asset';
+import { Asset } from './../../adapters/asset';
 import { Timeline } from './../timeline';
 import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
