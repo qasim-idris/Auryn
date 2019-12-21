@@ -539,7 +539,7 @@ declare module '@youi/react-native-youi' {
 
     onStartedReverse?(): void;
 
-    onCompositionDidLoad(ref: TimelineRef): void;
+    onCompositionDidLoad?(ref: TimelineRef): void;
   }
 
   export class TimelineRef extends React.Component<RefProps & TimelineRefProps> {}
