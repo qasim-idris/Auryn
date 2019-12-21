@@ -6,8 +6,8 @@
  *
  */
 
-import React, { Fragment } from 'react';
-import { ButtonRef, RefProps, TextRef, FocusManager } from '@youi/react-native-youi';
+import React from 'react';
+import { ButtonRef, RefProps, TextRef, ImageRef, FocusManager, FormFactor } from '@youi/react-native-youi';
 import { Timeline } from '.';
 import { AurynHelper } from '../aurynHelper';
 
@@ -21,6 +21,8 @@ export interface ToggleButtonProps extends Omit<RefProps, 'name'> {
   onFocus?: (buttonRef: React.RefObject<ButtonRef>) => void;
   onPress?: ToggleButtonPress;
   isRadio?: boolean;
+  icon?: string;
+  iconToggled?: string;
   title?: string;
   focusOnMount?: boolean;
 }
@@ -57,21 +59,14 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
     }
   }
 
-  onFocus = () => {
-    if (this.props.onFocus)
-      this.props.onFocus(this.innerRef);
-  };
+  onFocus = () => { this.props.onFocus?.(this.innerRef); };
 
   onPress = () => {
-    if (this.props.onPress)
-      this.props.onPress(this.props.index);
+    this.props.onPress?.(this.props.index);
 
-    if (this.props.onToggle)
-      this.props.onToggle(this.props.index);
+    this.props.onToggle?.(this.props.index);
 
-    this.setState({
-      toggled: !this.state.toggled,
-    });
+    this.setState({ toggled: !this.state.toggled });
   };
 
   render = () => (
@@ -81,6 +76,7 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
       ref={this.innerRef}
       onFocus={this.onFocus}
       onPress={this.onPress}
+      visible={this.props.visible}
     >
       <Timeline
         name="Toggle-On"
@@ -88,10 +84,23 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
         ref={this.toggleOnTimeline}
         autoplay={this.props.toggled}
       />
-      {this.props.title ? <Fragment>
-        <TextRef name="title" text={this.props.title}/>
-      </Fragment> : null}
-      {AurynHelper.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
+      {this.props.title ??
+        <React.Fragment>
+          <TextRef name="title" text={this.props.title} style={{ color: '#F1F1F1' }} />
+          {this.props.name === 'Btn-Nav-List' ??
+            <React.Fragment>
+              <ImageRef name="Nav-Icon" source={{ uri: this.props.icon }} />
+              <ImageRef
+                name="Nav-Icon-Toggled"
+                style={{ resizeMode: 'contain' }}
+                source={{ uri: this.props.iconToggled }}
+              />
+            </React.Fragment>
+          }
+          {FormFactor.isTV ?? <TextRef name="title-toggled" text={this.props.title} />}
+        </React.Fragment>
+      }
+      {AurynHelper.isRoku ?? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} />}
     </ButtonRef>
   );
 }
