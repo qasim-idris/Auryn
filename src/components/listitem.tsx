@@ -102,7 +102,7 @@ export class ListItem extends React.Component<ListItemProps> {
               source={{ uri: ['Small', 'Basic'].includes(imageType.size) ? data.thumbs[imageType.type] : data.images[imageType.type] }}
             />
 
-            {imageType.size !== 'Basic' ?? <TextRef name="Text-Title" text={data.title} style={{ color:'#f6f1ee' }}/>}
+            {imageType.size !== 'Basic' ? <TextRef name="Text-Title" text={data.title} style={{ color:'#f6f1ee' }}/> : null}
 
             {this.getTileMetadata()}
           </ButtonRef>

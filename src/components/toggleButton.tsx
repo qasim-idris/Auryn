@@ -15,7 +15,7 @@ export type ToggleButtonPress = (index: number) => void;
 
 export interface ToggleButtonProps extends Omit<RefProps, 'name'> {
   name?: string;
-  index: number;
+  index?: number;
   toggled?: boolean;
   onToggle?: (index: number) => void;
   onFocus?: (buttonRef: React.RefObject<ButtonRef>) => void;
@@ -29,9 +29,6 @@ export interface ToggleButtonProps extends Omit<RefProps, 'name'> {
 
 export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggled?: boolean }> {
   static defaultProps = {
-    onToggle: () => {},
-    onFocus: () => {},
-    onPress: () => {},
     index: 0,
   };
 
@@ -62,9 +59,11 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
   onFocus = () => { this.props.onFocus?.(this.innerRef); };
 
   onPress = () => {
-    this.props.onPress?.(this.props.index);
+    if (this.props.index !== undefined) {
+      this.props.onPress?.(this.props.index);
 
-    this.props.onToggle?.(this.props.index);
+      this.props.onToggle?.(this.props.index);
+    }
 
     this.setState({ toggled: !this.state.toggled });
   };
@@ -84,10 +83,10 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
         ref={this.toggleOnTimeline}
         autoplay={this.props.toggled}
       />
-      {this.props.title ??
+      {this.props.title ?
         <React.Fragment>
           <TextRef name="title" text={this.props.title} style={{ color: '#F1F1F1' }} />
-          {this.props.name === 'Btn-Nav-List' ??
+          {this.props.name === 'Btn-Nav-List' ?
             <React.Fragment>
               <ImageRef name="Nav-Icon" source={{ uri: this.props.icon }} />
               <ImageRef
@@ -96,11 +95,11 @@ export class ToggleButton extends React.PureComponent<ToggleButtonProps, { toggl
                 source={{ uri: this.props.iconToggled }}
               />
             </React.Fragment>
-          }
-          {FormFactor.isTV ?? <TextRef name="title-toggled" text={this.props.title} />}
+            : null}
+          {FormFactor.isTV ? <TextRef name="title-toggled" text={this.props.title} /> : null}
         </React.Fragment>
-      }
-      {AurynHelper.isRoku ?? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} />}
+        : null}
+      {AurynHelper.isRoku ? <Timeline name="Toggle-Off" ref={this.toggleOffTimeline} /> : null}
     </ButtonRef>
   );
 }
