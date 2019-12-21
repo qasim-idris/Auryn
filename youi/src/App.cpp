@@ -12,6 +12,7 @@
 #include <automation/YiWebDriverLocator.h>
 #include <cxxreact/JSBigString.h>
 #include <glog/logging.h>
+#include <platform/YiDeviceBridgeLocator.h>
 
 // Native Modules
 #if (YI_CLOUD_SERVER)
@@ -72,4 +73,23 @@ bool App::UserStart()
 void App::UserUpdate()
 {
     PlatformApp::UserUpdate();
+}
+
+void App::DoSetupAssetLocatorConfiguration()
+{
+    auto *pDeviceBridge = CYIDeviceBridgeLocator::GetDeviceTypeBridge();
+    if (pDeviceBridge)
+    {
+        if (pDeviceBridge->GetDeviceType() == CYIDeviceTypeBridge::Type::Desktop)
+        {
+            // spoof desktop as `tv` for dev purposes
+            SetupAssetLocatorConfiguration("tv");
+        }
+        
+        if (pDeviceBridge->GetDeviceType() == CYIDeviceTypeBridge::Type::Tablet)
+        {
+            // spoof desktop as `tv` for dev purposes
+            SetupAssetLocatorConfiguration("tv");
+        }
+    }
 }

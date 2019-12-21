@@ -23,6 +23,7 @@ protected:
     virtual bool UserInit() override;
     virtual bool UserStart() override;
     virtual void UserUpdate() override;
+    virtual void DoSetupAssetLocatorConfiguration() override;    
 
 private:
 };
