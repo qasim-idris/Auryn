@@ -1,8 +1,10 @@
-import React, { PureComponent, ContextType, Context } from 'react';
+import React from 'react';
 import { MediaStateOptions, PlaybackStateOptions, VideoUriSource } from '@youi/react-native-youi';
 import URLSearchParams from '@ungap/url-search-params';
+import { Asset } from '../../adapters/asset';
 
-export interface VideoContextState {
+interface VideoContextState {
+  asset?: Asset;
   duration?: number;
   currentTime?: number;
   formattedTime?: string;
@@ -13,8 +15,10 @@ export interface VideoContextState {
   videoSource?: VideoUriSource;
   error?: boolean;
   metadata?: { BookmarkInterval: number };
-  miniGuideOpen: boolean;
+  tvGuideOpen: boolean;
   isLive: boolean;
+  isEnding: boolean;
+  isCompressed: boolean;
 
   setVideoSource: (videoSource: VideoUriSource) => void;
   setPaused: () => void;
@@ -23,21 +27,27 @@ export interface VideoContextState {
   setCurrentTimeUpdated: (currentTime: number) => void;
   setPlayerState: (mediaState: MediaStateOptions, playbackState: PlaybackStateOptions) => void;
   setScrubbingEngaged: (scrubbingEngaged: boolean) => void;
-  setMiniGuideOpen: (miniGuideOpen: boolean) => void;
+  setTvGuideOpen: (tvGuideOpen: boolean) => void;
   setIsLive: (isLive: boolean) => void;
+  setIsEnding: (isEnding: boolean) => void;
+  setAsset: (asset: Asset) => void;
+  setIsCompressed: (isCompressed: boolean) => void;
 }
 
-export type VideoContextType =ContextType<Context<VideoContextState>>;
+export type VideoContextType = React.ContextType<React.Context<VideoContextState>>;
 
 const initialState: VideoContextState = {
+  asset: undefined,
   paused: false,
   scrubbingEngaged: false,
   error: false,
   mediaState: 'unloaded',
   metadata: { BookmarkInterval: 1 },
   playbackState: 'paused',
-  miniGuideOpen: false,
+  tvGuideOpen: false,
   isLive: false,
+  isEnding: false,
+  isCompressed: false,
 
   setVideoSource: () => {},
   setPaused: () => {},
@@ -46,18 +56,19 @@ const initialState: VideoContextState = {
   setCurrentTimeUpdated: () => {},
   setPlayerState: () => {},
   setScrubbingEngaged: () => {},
-  setMiniGuideOpen: () => {},
+  setTvGuideOpen: () => {},
   setIsLive: () => {},
-}
+  setIsEnding: () => {},
+  setAsset: () => {},
+  setIsCompressed: () => {},
+};
 
 const VideoContext = React.createContext<VideoContextState>(initialState);
 
-type VideoContextProviderProps = {};
+const MIN_DURATION = 3000;
 
-class VideoContextProvider extends PureComponent<VideoContextProviderProps, VideoContextState> {
-  private MIN_DURATION = 3000;
-
-  constructor(props: VideoContextProviderProps) {
+class VideoContextProvider extends React.PureComponent<{}, VideoContextState> {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -69,8 +80,11 @@ class VideoContextProvider extends PureComponent<VideoContextProviderProps, Vide
       setCurrentTimeUpdated: this.setCurrentTimeUpdated,
       setPlayerState: this.setPlayerState,
       setScrubbingEngaged: this.setScrubbingEngaged,
-      setMiniGuideOpen: this.setMiniGuideOpen,
-      setIsLive: this.setIsLive
+      setTvGuideOpen: this.setTvGuideOpen,
+      setIsLive: this.setIsLive,
+      setIsEnding: this.setIsEnding,
+      setAsset: this.setAsset,
+      setIsCompressed: this.setIsCompressed,
     };
   }
 
@@ -78,20 +92,24 @@ class VideoContextProvider extends PureComponent<VideoContextProviderProps, Vide
     const sourceParams = new URLSearchParams(this.state.videoSource?.uri);
 
     return Math.round(Number(sourceParams.get('dur')) * 1000);
-  }
+  };
 
   setVideoSource = (videoSource: VideoUriSource) => this.setState({ videoSource });
   setPaused = () => this.setState({ paused: true });
   setPlaying = () => this.setState({ paused: false });
   setPlayerState = (mediaState: MediaStateOptions, playbackState: PlaybackStateOptions) =>
-    this.setState({mediaState, playbackState});
+    this.setState({ mediaState, playbackState });
 
   setDurationChanged = (value: number) => {
-    const duration = value > this.MIN_DURATION ? value : this.getDurationFromVideoUri();
+    const duration = value > MIN_DURATION ? value : this.getDurationFromVideoUri();
     this.setState({ duration });
-  }
+  };
 
-  setCurrentTimeUpdated = (currentTime: number) => { // eslint-disable-line max-statements
+  setAsset = (asset: Asset) => {
+    this.setState({ asset });
+  };
+
+  setCurrentTimeUpdated = (currentTime: number) => {
     if (isNaN(currentTime)) return;
 
     let sec = Math.floor(currentTime / 1000);
@@ -105,22 +123,22 @@ class VideoContextProvider extends PureComponent<VideoContextProviderProps, Vide
 
     this.setState({
       currentTime,
-      formattedTime: `${hourString}${minSting}:${secString}`
+      formattedTime: `${hourString}${minSting}:${secString}`,
     });
-  }
+  };
 
-  setScrubbingEngaged = (scrubbingEngaged: boolean) => this.setState({scrubbingEngaged});
+  setScrubbingEngaged = (scrubbingEngaged: boolean) => this.setState({ scrubbingEngaged });
 
-  setMiniGuideOpen = (miniGuideOpen: boolean) => this.setState({miniGuideOpen});
+  setTvGuideOpen = (tvGuideOpen: boolean) => this.setState({ tvGuideOpen });
 
-  setIsLive = (isLive: boolean) => this.setState({isLive});
+  setIsLive = (isLive: boolean) => this.setState({ isLive });
+
+  setIsEnding = (isEnding: boolean) => this.setState({ isEnding });
+
+  setIsCompressed = (isCompressed: boolean) => this.setState({ isCompressed });
 
   render() {
-    return (
-      <VideoContext.Provider value={this.state}>
-        {this.props.children}
-      </VideoContext.Provider>
-    );
+    return <VideoContext.Provider value={this.state}>{this.props.children}</VideoContext.Provider>;
   }
 }
 

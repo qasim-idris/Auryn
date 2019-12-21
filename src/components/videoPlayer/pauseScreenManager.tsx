@@ -1,117 +1,120 @@
-import React, { RefObject, createRef, Fragment, Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
 
 import { getDetailsByIdAndType } from './../../actions/tmdbActions';
-import { VideoContext, VideoContextType } from './context';
+import { VideoContext } from './context';
 import { Asset, AssetType } from './../../adapters/asset';
 import { Timeline } from './../timeline';
 import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
 
-interface PauseScreenManagerProps extends NavigationInjectedProps{
+type PauseScreenDispatchProps = typeof mapDispatchToProps;
+
+interface PauseScreenManagerProps extends NavigationInjectedProps, PauseScreenDispatchProps {
   related: Asset[];
-  getDetailsByIdAndType: (id: string, type: AssetType) => void;
-  getVideoSourceByYoutubeId: (youtubeId: string) => void;
+  onClosed: () => void;
 }
 
-interface PauseScreenManagerState {
-  isCompressed: boolean;
-}
+const END_SQUEEZE_MS = 15 * 1000;
 
-class PauseScreenManager extends Component<PauseScreenManagerProps, PauseScreenManagerState> {
-  declare context: React.ContextType<typeof VideoContext>
+class PauseScreenManager extends React.Component<PauseScreenManagerProps> {
+  declare context: React.ContextType<typeof VideoContext>;
 
   static contextType = VideoContext;
 
-  private END_SQUEEZE_MS = 15 * 1000;
+  endSqueezeCompressTimeline = React.createRef<Timeline>();
 
-  private endSqueezeCompressTimeline: RefObject<Timeline> = createRef();
+  endSqueezeExpandTimeline = React.createRef<Timeline>();
 
-  private endSqueezeExpandTimeline: RefObject<Timeline> = createRef();
-
-  constructor(props: PauseScreenManagerProps) {
-    super(props);
-
-    this.state = {
-      isCompressed: false
-    }
-  }
-
-  shouldComponentUpdate(nextProps: PauseScreenManagerProps, nextState: PauseScreenManagerState) {
-    if(nextState.isCompressed !== this.state.isCompressed) return true;
-
-    if(nextProps.related !== this.props.related) return true;
-
-    return false;
+  shouldComponentUpdate(nextProps: PauseScreenManagerProps) {
+    return (nextProps.related !== this.props.related)
   }
 
   componentDidUpdate() {
-    if (this.context.isLive) return;
+    const { currentTime, duration, isLive, paused, scrubbingEngaged } = this.context;
 
-    if(this.context.paused && this.context.scrubbingEngaged) return;
+    if (isLive) return;
 
-    if(this.context.duration! - this.context.currentTime! < this.END_SQUEEZE_MS) {
+    if (paused && scrubbingEngaged) return;
+
+    if (duration && currentTime && duration - currentTime < END_SQUEEZE_MS) {
+      this.context.setIsEnding(true);
       this.compressVideo();
-    }
-    else {
-      this.context.paused ? this.compressVideo() : this.expandVideo();
+    } else if (this.context.paused) {
+      this.context.setIsEnding(true);
+      this.compressVideo();
+    } else {
+      this.context.setIsEnding(false);
+      this.expandVideo();
     }
   }
 
   compressVideo = () => {
-    if(this.state.isCompressed) return;
+    if (this.context.isCompressed) return;
 
-    this.setState({ isCompressed: true });
+    this.context.setIsCompressed(true);
     this.endSqueezeCompressTimeline.current?.play();
-  }
+  };
 
   expandVideo = async () => {
-    if(!this.state.isCompressed) return;
+    if (!this.context.isCompressed) return;
 
     await this.endSqueezeExpandTimeline.current?.play();
 
-    this.setState({ isCompressed: false });
-  }
+    this.context.setIsCompressed(false);
+  };
 
   playOnNext = async (asset: Asset) => {
     this.props.getDetailsByIdAndType(asset.id.toString(), asset.type);
 
     this.props.getVideoSourceByYoutubeId(asset.youtubeId);
-  }
+  };
+
+  renderUpNextButton = (upNext: Asset) => {
+    if (upNext == null) {
+      return <ButtonRef name="Button-UpNext-Primary" visible={false} focusable={false} />;
+    }
+
+    const backdropImage =
+      upNext.thumbs && upNext.thumbs.Backdrop ? (
+        <ImageRef name="Image-UpNext-Primary" source={{ uri: upNext.thumbs.Backdrop }} />
+      ) : null;
+
+    return (
+      <ButtonRef
+        name="Button-UpNext-Primary"
+        onPress={() => this.playOnNext(upNext)}
+        focusable={this.context.isCompressed}
+      >
+        {backdropImage}
+        <TextRef name="Title" text={upNext.title} />
+        <TextRef name="Subhead" text={upNext.releaseDate} />
+        <TextRef name="Duration" text={'45m'} />
+      </ButtonRef>
+    );
+  };
 
   render() {
     const { related } = this.props;
-    const { isCompressed } = this.state;
+    const { currentTime, duration, paused } = this.context;
 
     const upnext = related[0];
-    const timerText = Math.floor((this.context.duration! - this.context.currentTime!) / 1000).toString();
+    const timerText = duration && currentTime ? Math.floor((duration - currentTime) / 1000) : '';
+    const isTimerVisible = duration && currentTime ? duration - currentTime < END_SQUEEZE_MS : false;
 
     return (
-      <Fragment>
-        <ImageRef name="Image-Background" visible={isCompressed}/>
+      <React.Fragment>
+        <ImageRef name="Image-Background" visible={paused} />
         <Timeline name="EndSqueeze-Compress" ref={this.endSqueezeCompressTimeline} />
         <Timeline name="EndSqueeze-Expand" ref={this.endSqueezeExpandTimeline} />
 
-        <ViewRef name="UpNext-Countdown" visible={upnext != null}>
-          <TextRef
-            visible={this.context.duration! - this.context.currentTime! < this.END_SQUEEZE_MS}
-            name="Timer" text={timerText}
-          />
+        <ViewRef name="UpNext-Countdown" visible={upnext !== null}>
+          <TextRef visible={isTimerVisible} name="Timer" text={timerText.toString()} />
         </ViewRef>
 
-        <ButtonRef
-          name="Button-UpNext-Primary"
-          visible={upnext != null}
-          onPress={() => this.playOnNext(upnext)}
-          focusable={this.context.paused}
-        >
-          <ImageRef name="Image-UpNext-Primary" source={{ uri: upnext.thumbs.Backdrop  }} />
-          <TextRef name="Title" text={upnext && (upnext.title)} />
-          <TextRef name="Subhead" text={upnext && (upnext.releaseDate)} />
-          <TextRef name="Duration" text={'45m'} />
-        </ButtonRef>
-      </Fragment>
+        {this.renderUpNextButton(upnext)}
+      </React.Fragment>
     );
   }
 }
@@ -120,7 +123,7 @@ const mapStateToProps = () => {};
 
 const mapDispatchToProps = {
   getDetailsByIdAndType,
-  getVideoSourceByYoutubeId
+  getVideoSourceByYoutubeId,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(PauseScreenManager));
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(PauseScreenManager as any));
