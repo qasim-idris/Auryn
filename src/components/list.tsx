@@ -25,7 +25,7 @@ interface ListProps<T>  {
   onPressItem?: ListItemPressEvent;
   onFocusItem?: ListItemFocusEvent;
   name: string;
-  horizontal: boolean;
+  horizontal?: boolean;
   data: T[];
   snapToAlignment?: "start" | "center" | "end";
   numColumns?: number;
