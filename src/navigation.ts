@@ -34,8 +34,7 @@ const AppStack = createNavigator(
     PDP: { screen: Screens.Pdp },
     Search: { screen: Screens.Search },
     Profile: { screen: Screens.Profile },
-    Video: { screen: Screens.Video },
-    AdOverlay: { screen: Screens.AdOverlay },
+    Video: { screen: Screens.Video }
   },
   {
     ...stackOptions,
