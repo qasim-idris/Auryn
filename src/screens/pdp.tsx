@@ -60,7 +60,9 @@ class PdpScreen extends React.Component<PdpProps> {
   navigateBack = async () => {
     await this.outTimeline.current?.play();
 
-    if (AurynHelper.isRoku)
+    if (this.props.navigation.getParam('fromSearch'))
+      this.props.navigation.navigate({ routeName: 'Search'});
+    else if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'Lander' });
     else
       this.props.navigation.popToTop();
@@ -72,7 +74,7 @@ class PdpScreen extends React.Component<PdpProps> {
     const { id, type } = asset;
     this.props.getDetailsByIdAndType(id, type);
     await this.contentOutTimeline.current?.play();
-    this.props.navigation.navigate({ routeName: 'PDP', params: { asset }, key: id.toString() });
+    this.props.navigation.navigate({ routeName: 'PDP', params: { asset, fromSearch: this.props.navigation.getParam('fromSearch') }, key: id.toString() });
     if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
     await this.contentInTimeline.current?.play();
   };

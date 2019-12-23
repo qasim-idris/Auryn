@@ -66,7 +66,7 @@ class SearchScreen extends React.Component<SearchProps> {
     this.props.getDetailsByIdAndType(asset.id, asset.type);
     const navigateAction = NavigationActions.navigate({
       routeName: 'PDP',
-      params: { asset },
+      params: { asset, fromSearch: true },
       key: asset.id.toString(),
     });
     await this.outTimeline.current?.play();
