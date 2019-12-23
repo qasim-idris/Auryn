@@ -291,6 +291,8 @@ declare module '@youi/react-native-youi' {
 
   type Ref = any;
 
+  export type FocusDirection = 'up' | 'down' | 'right' | 'left' | 'forward' | 'reverse';
+
   interface FocusManagerInterface {
     getTag(refOrTag: Ref): void;
 
@@ -326,7 +328,7 @@ declare module '@youi/react-native-youi' {
     setNextFocus(
       fromRefOrTag: Ref,
       toRefOrTag: Ref,
-      focusDirection: 'up' | 'down' | 'right' | 'left' | 'forward' | 'reverse',
+      focusDirection: FocusDirection,
     ): void;
   }
 

@@ -31,7 +31,6 @@ export const TvContainer: React.FunctionComponent<TvContainerProps> = ({ data, o
         focusable={focusable}
         onPress={onPressItem}
         onFocus={onFocusItem}
-        shouldChangeFocus={false}
         imageType={imageType}
         data={data[0]}
       />
@@ -39,7 +38,6 @@ export const TvContainer: React.FunctionComponent<TvContainerProps> = ({ data, o
         focusable={focusable}
         onPress={onPressItem}
         onFocus={onFocusItem}
-        shouldChangeFocus={false}
         imageType={imageType}
         data={data[1]}
       />

@@ -7,12 +7,12 @@
  */
 
 import React from 'react';
-import { Composition, TextRef, ButtonRef, ImageRef, FormFactor } from '@youi/react-native-youi';
+import { Composition, TextRef, ButtonRef, ImageRef, FormFactor, FocusDirection } from '@youi/react-native-youi';
 import { Asset } from '../adapters/asset';
 import { View, StyleSheet } from 'react-native';
 
 export type ListItemFocusEvent =
-  (asset: Asset, innerRef: React.RefObject<ButtonRef>, shouldChangeFocus?: boolean)
+  (asset: Asset, innerRef: React.RefObject<ButtonRef>, nextFocusDirection?: FocusDirection)
   => void | Promise<void>
 
 export type ListItemPressEvent =
@@ -22,7 +22,7 @@ export type ListItemPressEvent =
 interface ListItemProps {
   imageType: ImageType;
   data: Asset;
-  shouldChangeFocus?: boolean;
+  nextFocusDirection?: FocusDirection;
   onFocus?: ListItemFocusEvent;
   onPress?: ListItemPressEvent;
   focusable?: boolean;
@@ -51,7 +51,7 @@ export class ListItem extends React.Component<ListItemProps> {
   }
 
   onFocus = () => {
-    this.props.onFocus?.(this.props.data, this.innerRef, this.props.shouldChangeFocus);
+    this.props.onFocus?.(this.props.data, this.innerRef, this.props.nextFocusDirection);
   }
 
   onPress = () => {

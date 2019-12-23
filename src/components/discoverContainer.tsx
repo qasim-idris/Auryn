@@ -36,7 +36,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
         focusable={focusable}
         onPress={onPressItem}
         onFocus={onFocusItem}
-        shouldChangeFocus={index % 2 !== 0}
+        nextFocusDirection={index % 2 !== 0 ? 'up' : undefined}
         imageType={{ type: 'Backdrop', size: 'Small' }}
         data={data[0]}
       />
@@ -44,7 +44,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
         focusable={focusable}
         onPress={onPressItem}
         onFocus={onFocusItem}
-        shouldChangeFocus={index % 2 !== 0}
+        nextFocusDirection={index % 2 !== 0 ? 'up' : undefined}
         imageType={{ type: 'Backdrop', size: 'Small' }}
         data={data[1]}
       />
@@ -55,7 +55,7 @@ export const DiscoverContainer: React.FunctionComponent<DiscoverContainerProps> 
       focusable={focusable}
       onPress={onPressItem}
       onFocus={onFocusItem}
-      shouldChangeFocus={index % 2 === 0}
+      nextFocusDirection={index % 2 === 0 ? 'up' : undefined}
       imageType={{ type: 'Backdrop', size: 'Large' }}
       data={data[2]}
     />

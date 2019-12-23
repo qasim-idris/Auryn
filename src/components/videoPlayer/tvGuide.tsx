@@ -112,7 +112,6 @@ class TvGuideComponent extends React.Component<TvGuideProps> {
         data={item}
         focusable={this.state.isOpen}
         ref={index === 0 ? this.firstListItem : null}
-        shouldChangeFocus={false}
       />
     </View>
   );

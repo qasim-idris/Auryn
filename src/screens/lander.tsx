@@ -145,22 +145,15 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     });
   };
 
-  // eslint-disable-next-line max-params
-  onFocusItem: ListItemFocusEvent = (asset, ref, shouldChangeFocus) => {
+  onFocusItem: ListItemFocusEvent = (asset, ref, nextFocusDirection) => {
     const { id, type } = asset;
     this.props.prefetchDetails(id, type);
     this.lastFocusItem = ref;
 
-    if (shouldChangeFocus === false || AurynHelper.isRoku || !ref.current) return;
-
-    // Live list should not focus back to nav
-    if (this.state.currentListIndex === 3) {
-      FocusManager.setNextFocus(ref.current, ref.current, 'right');
-      return;
-    }
+    if (!nextFocusDirection || AurynHelper.isRoku || !ref.current) return;
 
     if (this.menuButtons[this.state.currentListIndex].current) {
-      FocusManager.setNextFocus(ref.current, this.menuButtons[this.state.currentListIndex].current, 'up');
+      FocusManager.setNextFocus(ref.current, this.menuButtons[this.state.currentListIndex].current, nextFocusDirection);
       for (let index = 0; index < this.lists.length; index++)
         FocusManager.setNextFocus(this.menuButtons[index].current, ref.current, 'down');
     }
@@ -171,7 +164,6 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
     }
   };
 
-  // eslint-disable-next-line max-params
   onPressItem: ListItemPressEvent = async (asset, ref) => {
     const { id, type } = asset;
     this.lastFocusItem = ref;

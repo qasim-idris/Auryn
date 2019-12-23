@@ -22,7 +22,6 @@ export const LiveContainer: React.FunctionComponent<LiveContainerProps> = ({ dat
         onFocus={onFocus}
         focusable={focusable}
         data={data[0]}
-        shouldChangeFocus={false}
       />
       <View style={styles.separator}/>
       <LiveListItem
@@ -30,7 +29,7 @@ export const LiveContainer: React.FunctionComponent<LiveContainerProps> = ({ dat
         focusable={focusable}
         onFocus={onFocus}
         data={data[1]}
-        shouldChangeFocus={true}
+        nextFocusDirection={'right'}
       />
     </View>
   );
