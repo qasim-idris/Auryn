@@ -98,10 +98,10 @@ class SearchScreen extends React.Component<SearchProps> {
           onChangeText={this.search}
         />
 
-        <TextRef name="Popular Shows 2" text={`${data.length} Results Found`} />
+        <TextRef name="Results" text={`${data.length} Results Found`} visible={data.length !== 0}/>
 
         {data || !AurynHelper.isRoku ? <List
-          name="List-PDP"
+          name="List-Search"
           data={data}
           type={ListType.Search}
           horizontal={false}

@@ -39,7 +39,7 @@ activecomp {
     parentid: 750
   }
   layer {
-    name: "List-PDP"
+    name: "List-Search"
     id: 744
     sourceid: 690016871
     transform {
@@ -74,7 +74,7 @@ activecomp {
     parentid: 748
   }
   layer {
-    name: "Popular Shows 2"
+    name: "Results"
     id: 745
     sourceid: -1
     transform {
@@ -120,7 +120,7 @@ activecomp {
       boundsWidth: 880
       boundsHeight: 68
       isLabel: true
-      text: "Popular Shows"
+      text: "0 Results Found"
       multiline: true
       isAllCaps: false
     }
