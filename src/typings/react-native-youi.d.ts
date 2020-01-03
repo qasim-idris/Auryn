@@ -208,6 +208,9 @@ declare module '@youi/react-native-youi' {
   interface VideoUriSource {
     uri: string;
     type: string;
+    startTimeMs?: number;
+    drmScheme?: string;
+    headers?: any;
   }
 
   export type VideoRefFunction = (video: VideoRef) => void;

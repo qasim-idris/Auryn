@@ -18,7 +18,11 @@ const fromApi = (fillSimilar = true): Asset => ({
   id: 1234567,
   youtubeId: 'nO_DIwuGBnA',
   type: AssetType.TV,
-  genres: [28, 12],
+  genres: [{id: 28, name: 'Action'}, {id: 12, name: 'Adventure'}],
+  runtime: 3600,
+  seasons: 4,
+  episodes: 22,
+  releaseDate: "05/24/2015"
 });
 
 export { fromApi };
