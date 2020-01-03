@@ -8,29 +8,16 @@
 
 import React from 'react';
 import { View, BackHandler } from 'react-native';
-import { VideoUriSource, FormFactor } from '@youi/react-native-youi';
-import { connect, DispatchProp } from 'react-redux';
+import { FormFactor } from '@youi/react-native-youi';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { withOrientation } from './../components';
-import { Asset } from './../adapters/asset';
-import { AurynAppState } from './../reducers/index';
 import { RotationMode, OrientationLock } from './../components/withOrientation';
-import { VideoPlayer, VideoContextProvider, VideoContext } from './../components/videoPlayer';
+import { VideoPlayer, VideoContextProvider } from './../components/videoPlayer';
 import { AurynHelper } from '../aurynHelper';
 
-interface VideoProps extends NavigationFocusInjectedProps, OrientationLock, DispatchProp {
-  asset: Asset;
-  fetched: boolean;
-  videoId: string;
-  videoSource: VideoUriSource;
-  isLive: boolean;
-}
+interface VideoProps extends NavigationFocusInjectedProps, OrientationLock { }
 
-class VideoScreenComponent extends React.Component<VideoProps> {
-  declare context: React.ContextType<typeof VideoContext>;
-
-  static contextType = VideoContext;
-
+class VideoScreenComponent extends React.PureComponent<VideoProps> {
   focusListener!: NavigationEventSubscription;
 
   blurListener!: NavigationEventSubscription;
@@ -43,10 +30,6 @@ class VideoScreenComponent extends React.Component<VideoProps> {
     this.blurListener = this.props.navigation.addListener('didBlur', () => {
       BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
     });
-
-    this.context.setVideoSource(this.props.videoSource);
-
-    this.context.setIsLive(this.props.isLive);
   }
 
   componentWillUnmount() {
@@ -56,31 +39,7 @@ class VideoScreenComponent extends React.Component<VideoProps> {
     BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
   }
 
-  componentDidUpdate(prevProps: VideoProps) {
-    if (this.props.videoId !== prevProps.videoId) {
-      this.context.setVideoSource(this.props.videoSource);
-    }
-
-    if (!prevProps.fetched && this.props.fetched) {
-      this.context.setVideoSource(this.props.videoSource);
-    }
-  }
-
-  shouldComponentUpdate(nextProps: VideoProps) {
-    if (nextProps.videoId !== this.props.videoId) {
-      return true;
-    }
-
-    if (nextProps.fetched !== this.props.fetched) {
-      return true;
-    }
-
-    return false;
-  }
-
   navigateBack = () => {
-    if (this.context.tvGuideOpen) return true;
-
     if (AurynHelper.isRoku)
       this.props.navigation.navigate({ routeName: 'PDP' });
     else
@@ -92,19 +51,17 @@ class VideoScreenComponent extends React.Component<VideoProps> {
   };
 
   render() {
-    const { fetched, asset, isFocused, isLive } = this.props;
-
-    if (!fetched && !isLive) return <View />;
+    const { isFocused } = this.props;
 
     return (
       <View style={styles.container}>
-        <VideoPlayer
-          asset={asset}
-          isFocused={isFocused}
-          related={asset.similar}
-          enablePauseScreen={true}
-          onBackButton={this.navigateBack}
-        />
+        <VideoContextProvider>
+          <VideoPlayer
+            isFocused={isFocused}
+            enablePauseScreen={true}
+            onBackButton={this.navigateBack}
+          />
+        </VideoContextProvider>
       </View>
     );
   }
@@ -117,23 +74,7 @@ const styles = {
   },
 };
 
-const mapStateToProps = (store: AurynAppState, ownProps: VideoProps) => {
-  const asset: Asset = ownProps.navigation.getParam('asset');
-  return {
-    videoSource: asset?.live?.streams?.[0] ?? (store.youtubeReducer.videoSource || { uri: '', type: '' }),
-    videoId: store.youtubeReducer.videoId || '',
-    asset: store.tmdbReducer.details.data || {},
-    fetched: store.youtubeReducer.fetched || false,
-    isLive: Boolean(asset?.live),
-  };
-};
 
-const VideoScreenWithContext: React.FunctionComponent<VideoProps> = (props) =>
-  <VideoContextProvider>
-    <VideoScreenComponent {...props}/>
-  </VideoContextProvider>
+const withNavigation = withNavigationFocus(VideoScreenComponent);
 
-const withNavigationAndRedux = withNavigationFocus(
-  connect(mapStateToProps)(VideoScreenWithContext as any),
-);
-export const VideoScreen = withOrientation(withNavigationAndRedux, RotationMode.Landscape);
+export const VideoScreen = withOrientation(withNavigation, RotationMode.Landscape);

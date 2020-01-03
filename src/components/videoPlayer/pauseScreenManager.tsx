@@ -1,19 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { ImageRef, ViewRef, TextRef, ButtonRef } from '@youi/react-native-youi';
-
-import { getDetailsByIdAndType } from './../../actions/tmdbActions';
 import { VideoContext } from './context';
 import { Asset } from './../../adapters/asset';
 import { Timeline } from './../timeline';
-import { withNavigation, NavigationInjectedProps } from 'react-navigation';
-import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
 
-type PauseScreenDispatchProps = typeof mapDispatchToProps;
-
-interface PauseScreenManagerProps extends NavigationInjectedProps, PauseScreenDispatchProps {
-  related: Asset[];
-  onClosed: () => void;
+interface PauseScreenManagerProps {
+  onClosed?: () => void;
 }
 
 const END_SQUEEZE_MS = 15 * 1000;
@@ -26,10 +18,6 @@ class PauseScreenManager extends React.Component<PauseScreenManagerProps> {
   endSqueezeCompressTimeline = React.createRef<Timeline>();
 
   endSqueezeExpandTimeline = React.createRef<Timeline>();
-
-  shouldComponentUpdate(nextProps: PauseScreenManagerProps) {
-    return (nextProps.related !== this.props.related)
-  }
 
   componentDidUpdate() {
     const { currentTime, duration, isLive, paused, scrubbingEngaged } = this.context;
@@ -51,7 +39,7 @@ class PauseScreenManager extends React.Component<PauseScreenManagerProps> {
   }
 
   compressVideo = () => {
-    if (this.context.isCompressed) return;
+    if (this.context.isCompressed || !this.context.currentTime || this.context.currentTime < 1000) return;
 
     this.context.setIsCompressed(true);
     this.endSqueezeCompressTimeline.current?.play();
@@ -66,9 +54,7 @@ class PauseScreenManager extends React.Component<PauseScreenManagerProps> {
   };
 
   playOnNext = async (asset: Asset) => {
-    this.props.getDetailsByIdAndType(asset.id.toString(), asset.type);
-
-    this.props.getVideoSourceByYoutubeId(asset.youtubeId);
+    this.context.setAsset(asset);
   };
 
   renderUpNextButton = (upNext: Asset) => {
@@ -96,10 +82,9 @@ class PauseScreenManager extends React.Component<PauseScreenManagerProps> {
   };
 
   render() {
-    const { related } = this.props;
-    const { currentTime, duration, paused } = this.context;
+    const { currentTime, duration, paused, asset } = this.context;
 
-    const upnext = related[0];
+    const upnext = asset.similar[0] || asset;
     const timerText = duration && currentTime ? Math.floor((duration - currentTime) / 1000) : '';
     const isTimerVisible = duration && currentTime ? duration - currentTime < END_SQUEEZE_MS : false;
 
@@ -119,11 +104,4 @@ class PauseScreenManager extends React.Component<PauseScreenManagerProps> {
   }
 }
 
-const mapStateToProps = () => {};
-
-const mapDispatchToProps = {
-  getDetailsByIdAndType,
-  getVideoSourceByYoutubeId,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(PauseScreenManager as any));
+export default PauseScreenManager;

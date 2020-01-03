@@ -72,8 +72,8 @@ class PdpScreen extends React.Component<PdpProps> {
 
   onPressItem: ListItemPressEvent = async (asset) => {
     const { id, type } = asset;
-    this.props.getDetailsByIdAndType(id, type);
     await this.contentOutTimeline.current?.play();
+    this.props.getDetailsByIdAndType(id, type);
     this.props.navigation.navigate({ routeName: 'PDP', params: { asset, fromSearch: this.props.navigation.getParam('fromSearch') }, key: id.toString() });
     if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
     await this.contentInTimeline.current?.play();
@@ -86,8 +86,11 @@ class PdpScreen extends React.Component<PdpProps> {
   componentDidMount() {
     this.focusListener = this.props.navigation.addListener('didFocus', () => {
       BackHandler.addEventListener('hardwareBackPress', this.navigateBack);
-
       this.videoOutTimeline.current?.play();
+      setTimeout(() => {
+        if (this.posterButton.current)
+          FocusManager.focus(this.posterButton.current)
+      }, 1);
     });
 
     this.blurListener = this.props.navigation.addListener('didBlur', () =>
@@ -101,16 +104,6 @@ class PdpScreen extends React.Component<PdpProps> {
     this.focusListener.remove();
     this.blurListener.remove();
     BackHandler.removeEventListener('hardwareBackPress', this.navigateBack);
-  }
-
-  shouldComponentUpdate(nextProps: PdpProps) {
-    // Re-render if lost/gained focus
-    if (nextProps.isFocused !== this.props.isFocused) return true;
-
-    if (nextProps.fetched && !this.props.fetched) return true;
-
-    // Only render if the asset.id matches the requested pdp asset id
-    return nextProps.asset.id === nextProps.navigation.getParam('asset').id;
   }
 
   playVideo = async () => {
@@ -162,7 +155,6 @@ class PdpScreen extends React.Component<PdpProps> {
   }
 
   render() {
-    // eslint-disable-line max-lines-per-function
     const { asset, fetched, isFocused } = this.props;
 
     if (!fetched || !isFocused) return <View />;

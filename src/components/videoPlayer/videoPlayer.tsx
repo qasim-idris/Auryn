@@ -1,19 +1,16 @@
 import React from 'react';
-import { Composition, VideoRef, VideoUriSource, MediaState, ViewRef } from '@youi/react-native-youi';
-import { View, NativeSyntheticEvent } from 'react-native';
+import { Composition, VideoRef, MediaState, ViewRef } from '@youi/react-native-youi';
+import {  NativeSyntheticEvent, View } from 'react-native';
 import { AurynHelper } from '../../aurynHelper';
 import { Timeline } from '..';
 import { VideoControls } from './videoControls';
-import { Asset } from '../../adapters/asset';
 import { VideoContext } from './context';
-import { once } from 'lodash';
 import PauseScreenManager from './pauseScreenManager';
+import { fromApi } from '../../adapters/dummyAdapter';
 
 interface VideoPlayerProps {
-  asset: Asset;
   isFocused: boolean;
   enablePauseScreen: boolean;
-  related: Asset[];
   onBackButton: () => void;
 }
 
@@ -21,30 +18,23 @@ const initialState = {
   hasStartedPlaying: false,
 };
 
-export class VideoPlayer extends React.Component<VideoPlayerProps> {
+const rokuMetadata = { mute: true, BookmarkInterval: 1 }
+
+export default class VideoPlayer extends React.Component<VideoPlayerProps> {
   declare context: React.ContextType<typeof VideoContext>;
 
   static contextType = VideoContext;
 
   state = initialState;
 
-  fallbackVideo: VideoUriSource = {
-    uri: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
-    type: 'HLS',
-  };
-
   inTimeline = React.createRef<Timeline>();
   outTimeline = React.createRef<Timeline>();
   videoPlayer = React.createRef<VideoRef>();
   videoViewRef = React.createRef<ViewRef>();
 
-  componentDidUpdate() {
-    if (this.videoViewRef.current) {
-      this.disablePointerEvents();
-    }
+  componentDidMount() {
+    AurynHelper.togglePointerEvents(this.videoViewRef, false)
   }
-
-  disablePointerEvents = once(() => AurynHelper.togglePointerEvents(this.videoViewRef, false))
 
   onPlayerReady = () => {
     this.videoPlayer.current?.play();
@@ -52,6 +42,8 @@ export class VideoPlayer extends React.Component<VideoPlayerProps> {
   };
 
   onBackButton = async () => {
+    if (this.context.tvGuideOpen) return true;
+
     if (this.context.mediaState === 'preparing') return true;
 
     await this.outTimeline.current?.play();
@@ -61,7 +53,7 @@ export class VideoPlayer extends React.Component<VideoPlayerProps> {
     this.props.onBackButton();
   };
 
-  onPlayerError = () => this.context.setVideoSource(this.fallbackVideo);
+  onPlayerError = () => this.context.setAsset(fromApi(true));
   onPaused = () => this.context.setPaused();
   onPlaying = () => this.context.setPlaying();
   onDurationChanged = (value: number) => this.context.setDurationChanged(value);
@@ -69,7 +61,6 @@ export class VideoPlayer extends React.Component<VideoPlayerProps> {
 
   onStateChanged = (playerState: NativeSyntheticEvent<MediaState>) => {
     const { mediaState, playbackState } = playerState.nativeEvent;
-
     if (!this.state.hasStartedPlaying && mediaState === 'ready' && playbackState === 'playing') {
       this.setState({ hasStartedPlaying: true });
       this.context.setPlayerState(mediaState, playbackState);
@@ -81,28 +72,29 @@ export class VideoPlayer extends React.Component<VideoPlayerProps> {
   };
 
   render() {
-    const { asset, isFocused, related, onBackButton } = this.props;
-
-    if (!this.context.videoSource) return <View />;
+    const { isFocused, onBackButton } = this.props;
+    const { videoSource } = this.context;
+    if (!videoSource) return <View/>;
 
     return (
       <Composition source="Auryn_VideoContainer">
         <Timeline name="In" ref={this.inTimeline} />
         <Timeline name="Out" ref={this.outTimeline} />
 
-        <PauseScreenManager related={related} onClosed={this.videoPlayer.current?.play} />
+        <PauseScreenManager onClosed={this.videoPlayer.current?.play} />
 
+        {/* TODO Check if we can move the ref to video container */}
         <ViewRef name="Video" ref={this.videoViewRef} />
+
         <VideoControls
           isFocused={isFocused}
-          asset={asset}
           videoPlayerRef={this.videoPlayer}
           onBackButton={onBackButton}
         >
           <VideoRef
             name="VideoSurface"
             ref={this.videoPlayer}
-            source={this.context.videoSource}
+            source={videoSource}
             onPlaybackComplete={onBackButton}
             onReady={this.onPlayerReady}
             onErrorOccurred={this.onPlayerError}
@@ -112,12 +104,13 @@ export class VideoPlayer extends React.Component<VideoPlayerProps> {
             onCurrentTimeUpdated={this.onCurrentTimeUpdated}
             onStateChanged={this.onStateChanged}
             muted
-            metadata={{mute: true}}
+            metadata={rokuMetadata}
+            key={videoSource.uri}
           />
         </VideoControls>
+
+
       </Composition>
     );
   }
 }
-
-export default VideoPlayer;

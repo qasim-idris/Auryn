@@ -174,9 +174,8 @@ class VideoControlsComponent extends React.Component<PlayerControlProps, PlayerC
   debounceHidingControls = debounce(this.hideControls, 5000);
 
   render() {
-    const { asset, isFocused } = this.props;
-    const { duration } = this.context;
-
+    const { isFocused } = this.props;
+    const { asset, duration, isLive, paused, formattedTime, currentTime } = this.context;
     const isSliderVisible = duration && duration > MIN_DURATION ? true : false;
 
     return (
@@ -186,24 +185,24 @@ class VideoControlsComponent extends React.Component<PlayerControlProps, PlayerC
           <BackButton focusable={isFocused} onPress={this.props.onBackButton} />
           <Timeline name="Show" ref={this.controlsShowTimeline} />
           <Timeline name="Hide" ref={this.controlsHideTimeline} />
-          <Timeline name="Set-Live" playOnTrue={this.state.controlsActive && this.context.isLive} />
+          <Timeline name="Set-Live" playOnTrue={this.state.controlsActive && isLive} />
 
           <ToggleButton
             name="Btn-PlayPause"
             onPress={this.playPause}
-            toggled={!this.context.paused || this.state.pausedByScrubbing}
-            focusable={!this.context.isLive}
+            toggled={!paused || this.state.pausedByScrubbing}
+            focusable={!isLive}
             ref={this.playButton}
-            visible={this.state.controlsActive && !this.context.isLive}
+            visible={this.state.controlsActive && !isLive}
           />
           <ViewRef name="Player-Scrubber-Container">
-            <TextRef name="Duration" text={this.context.formattedTime} visible={!this.context.isLive}/>
+            <TextRef name="Duration" text={formattedTime} visible={!isLive}/>
             <SliderRef
               visible={isSliderVisible}
               name="Bar"
               minimumTrackTintColor="#DA1B5B"
-              maximumValue={this.context.duration}
-              value={this.context.currentTime}
+              maximumValue={duration}
+              value={currentTime}
               thumbImage={{ uri: 'res://drawable/default/Player-Thumb.png' }}
               onSlidingComplete={this.onSlidingComplete}
               onValueChange={this.onScrub}
@@ -211,18 +210,18 @@ class VideoControlsComponent extends React.Component<PlayerControlProps, PlayerC
             />
           </ViewRef>
 
-          <TvGuide asset={this.props.asset}/>
+          <TvGuide />
           <ButtonRef
             name="Btn-TvGuide"
-            visible={this.context.isLive}
+            visible={isLive}
           />
 
           {FormFactor.isHandset ? <TextRef name="Title" text={asset.title} /> : null}
           <ViewRef name="Video-TextDetails">
             {!FormFactor.isHandset ? <TextRef name="Title" text={asset.title} /> : null}
-            <ViewRef name="Live-Metadata" visible={this.context.isLive}>
-              <TextRef name="Text-Detail-1" text={LiveListItem.getRemainingString(this.props.liveData.find(it => it.id === this.props.asset.id))}/>
-              <TextRef name="Text-Detail-2" text={this.props.asset.genres?.map(genre => genre?.name).join(', ')}/>
+            <ViewRef name="Live-Metadata" visible={isLive}>
+              <TextRef name="Text-Detail-1" text={LiveListItem.getRemainingString(this.props.liveData.find(it => it.id === asset.id))}/>
+              <TextRef name="Text-Detail-2" text={asset.genres?.map(genre => genre?.name).join(', ')}/>
             </ViewRef>
             <TextRef name="Details" visible={false} text={asset.details} />
           </ViewRef>

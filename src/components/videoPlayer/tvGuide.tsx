@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 import { View, BackHandler } from 'react-native';
-import { ListRef, ListItem, ViewRef, FocusManager, ButtonRef, VideoUriSource } from '@youi/react-native-youi';
+import { ListRef, ListItem, ViewRef, FocusManager, ButtonRef } from '@youi/react-native-youi';
 import { connect } from 'react-redux';
 import { Timeline, LiveListItem } from '..';
 import { AurynAppState } from '../../reducers';
@@ -16,7 +16,6 @@ type TvGuideDispatchProps = typeof mapDispatchToProps;
 
 interface TvGuideProps extends TvGuideDispatchProps {
   liveData: Asset[];
-  asset: Asset;
   visible: boolean;
   onPressItem: ListItemPressEvent;
   onOpen: () => void;
@@ -94,13 +93,9 @@ class TvGuideComponent extends React.Component<TvGuideProps> {
   onPressItem: ListItemPressEvent = (asset: Asset) => {
     this.props.onPressItem?.(asset);
 
-    if (asset.id === this.props.asset.id) return;
+    if (asset.id === this.context.asset.id) return;
 
-    const source =
-      asset.live?.streams[0].uri === this.context.videoSource?.uri ? asset.live?.streams[1] : asset.live?.streams[0];
-    this.props.getDetailsByIdAndType(asset.id, asset.type);
-    this.props.getVideoSourceByYoutubeId(asset.youtubeId);
-    this.context.setVideoSource(source as VideoUriSource);
+    this.context.setAsset(asset);
 
     this.hide();
   };
@@ -117,16 +112,18 @@ class TvGuideComponent extends React.Component<TvGuideProps> {
   );
 
   render() {
+    const { isLive, tvGuideOpen } = this.context;
+
     return (
       <Fragment>
         <ButtonRef
           name="Btn-TvGuide"
           onPress={this.openTvGuide}
-          visible={this.context.isLive}
-          focusable={!this.context.tvGuideOpen}
+          visible={isLive}
+          focusable={!tvGuideOpen}
         />
 
-        <ViewRef name="Live-TvGuide" visible={this.context.isLive}>
+        <ViewRef name="Live-TvGuide" visible={isLive}>
           <Timeline name="ShowGuide" ref={this.showGuideTimeline} />
           <Timeline name="HideGuide" ref={this.hideGuideTimeline} />
           <ListRef
