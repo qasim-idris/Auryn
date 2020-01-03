@@ -8,8 +8,7 @@ import { AurynAppState } from '../../reducers';
 import { ListItemPressEvent } from '../listitem';
 import { VideoContext } from './context';
 import { Asset } from '../../adapters/asset';
-import { getDetailsByIdAndType } from '../../actions/tmdbActions';
-import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
+import { getDetailsByAsset } from '../../actions/tmdbActions';
 import { AurynHelper } from '../../aurynHelper';
 
 type TvGuideDispatchProps = typeof mapDispatchToProps;
@@ -95,7 +94,7 @@ class TvGuideComponent extends React.Component<TvGuideProps> {
 
     if (asset.id === this.context.asset.id) return;
 
-    this.context.setAsset(asset);
+    this.context.setAsset(asset, true);
 
     this.hide();
   };
@@ -140,8 +139,7 @@ class TvGuideComponent extends React.Component<TvGuideProps> {
 }
 
 const mapDispatchToProps = {
-  getDetailsByIdAndType,
-  getVideoSourceByYoutubeId,
+  getDetailsByAsset,
 };
 
 const mapStateToProps = (store: AurynAppState) => ({

@@ -5,7 +5,7 @@ import { Asset } from '../../adapters/asset';
 import { fromApi } from '../../adapters/dummyAdapter';
 import { connect } from 'react-redux';
 import { AurynAppState } from '../../reducers';
-import { prefetchDetails, getDetailsByIdAndType } from '../../actions/tmdbActions';
+import { prefetchDetails, getDetailsByAsset } from '../../actions/tmdbActions';
 import { getVideoSourceByYoutubeId } from '../../actions/youtubeActions';
 
 type ContextDispatchProps = typeof mapDispatchToProps;
@@ -14,6 +14,7 @@ interface ContextProps extends ContextDispatchProps {
   videoSource: VideoUriSource;
   asset: Asset;
   videoId: string;
+  live: Asset[];
 }
 
 interface VideoContextState {
@@ -29,7 +30,7 @@ interface VideoContextState {
   error?: boolean;
   metadata?: { BookmarkInterval: number };
   tvGuideOpen: boolean;
-  isLive: boolean;
+  isLive?: boolean;
   isEnding: boolean;
   isCompressed: boolean;
 
@@ -40,9 +41,8 @@ interface VideoContextState {
   setPlayerState: (mediaState: MediaStateOptions, playbackState: PlaybackStateOptions) => void;
   setScrubbingEngaged: (scrubbingEngaged: boolean) => void;
   setTvGuideOpen: (tvGuideOpen: boolean) => void;
-  setIsLive: (isLive: boolean) => void;
   setIsEnding: (isEnding: boolean) => void;
-  setAsset: (asset: Asset) => void;
+  setAsset: (asset: Asset, isLive?: boolean) => void;
   setIsCompressed: (isCompressed: boolean) => void;
 }
 
@@ -67,7 +67,6 @@ const initialState: VideoContextState = {
   setPlayerState: () => {},
   setScrubbingEngaged: () => {},
   setTvGuideOpen: () => {},
-  setIsLive: () => {},
   setIsEnding: () => {},
   setAsset: () => {},
   setIsCompressed: () => {},
@@ -90,7 +89,6 @@ class VideoContextProvider extends React.PureComponent<ContextProps, VideoContex
       setPlayerState: this.setPlayerState,
       setScrubbingEngaged: this.setScrubbingEngaged,
       setTvGuideOpen: this.setTvGuideOpen,
-      setIsLive: this.setIsLive,
       setIsEnding: this.setIsEnding,
       setAsset: this.setAsset,
       setIsCompressed: this.setIsCompressed,
@@ -104,25 +102,34 @@ class VideoContextProvider extends React.PureComponent<ContextProps, VideoContex
   };
 
   componentDidMount() {
-    this.setAsset(this.props.asset)
+    this.setAsset(this.props.asset);
   }
 
   componentDidUpdate(prevProps: ContextProps) {
-    if (this.props.asset.youtubeId !== prevProps.asset.youtubeId) {
-      this.props.getVideoSourceByYoutubeId(this.props.asset.youtubeId);
-      this.setState({videoSource: { uri:'', type: ''}});
-    }
+    if (this.state.isLive) {
+      if (this.props.asset !== prevProps.asset && this.props.asset.live) {
+        const videoSource = this.state.videoSource.uri === this.props.asset.live?.streams[0].uri
+          ? this.props.asset.live?.streams[1]
+          : this.props.asset.live?.streams[0];
+        this.setState({asset: this.props.asset, videoSource});
+      }
+    } else {
+      if (this.props.asset.youtubeId !== prevProps.asset.youtubeId) {
+        this.props.getVideoSourceByYoutubeId(this.props.asset.youtubeId);
+        this.setState({videoSource: { uri:'', type: ''}});
+      }
 
-    if (this.props.videoSource !== this.state.videoSource) {
-      this.setState({videoSource: this.props.videoSource});
-    }
+      if (this.props.videoSource !== this.state.videoSource) {
+        this.setState({videoSource: this.props.videoSource});
+      }
 
-    if (this.props.asset !== prevProps.asset) {
-      this.setState({asset: this.props.asset});
-    }
+      if (this.props.asset !== prevProps.asset) {
+        this.setState({asset: this.props.asset});
+      }
 
-    if (this.props.videoId !== prevProps.videoId) {
-      this.setState({ videoSource: this.props.videoSource});
+      if (this.props.videoId !== prevProps.videoId) {
+        this.setState({ videoSource: this.props.videoSource});
+      }
     }
   }
 
@@ -137,10 +144,12 @@ class VideoContextProvider extends React.PureComponent<ContextProps, VideoContex
   };
 
   setAsset = (asset: Asset) => {
+    const isLive = Boolean(asset.live);
     if (!asset && this.props.asset) {
-      this.setState({asset: this.props.asset});
+      this.setState({asset: this.props.asset, isLive});
     } else {
-      this.props.getDetailsByIdAndType(asset.id, asset.type);
+      this.props.getDetailsByAsset(asset, { isLive });
+      this.setState({isLive});
     }
   };
 
@@ -166,8 +175,6 @@ class VideoContextProvider extends React.PureComponent<ContextProps, VideoContex
 
   setTvGuideOpen = (tvGuideOpen: boolean) => this.setState({ tvGuideOpen });
 
-  setIsLive = (isLive: boolean) => this.setState({ isLive });
-
   setIsEnding = (isEnding: boolean) => this.setState({ isEnding });
 
   setIsCompressed = (isCompressed: boolean) => this.setState({ isCompressed });
@@ -184,14 +191,15 @@ const mapStateToProps = (store: AurynAppState) => {
     fetched: store.youtubeReducer.fetched,
     videoSource: store.youtubeReducer.videoSource,
     videoId: store.youtubeReducer.videoId,
-    asset: store.tmdbReducer.details.data
+    asset: store.tmdbReducer.details.data,
+    live: store.tmdbReducer.live.data,
   };
 };
 
 const mapDispatchToProps = {
   getVideoSourceByYoutubeId,
   prefetchDetails,
-  getDetailsByIdAndType,
+  getDetailsByAsset,
 };
 
 const ConnectedVideoContextProvider = connect(mapStateToProps, mapDispatchToProps)(VideoContextProvider as any);

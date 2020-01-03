@@ -12,12 +12,16 @@ import { FormFactor } from '@youi/react-native-youi';
 import { withNavigationFocus, NavigationEventSubscription, NavigationFocusInjectedProps } from 'react-navigation';
 import { withOrientation } from './../components';
 import { RotationMode, OrientationLock } from './../components/withOrientation';
-import { VideoPlayer, VideoContextProvider } from './../components/videoPlayer';
+import { VideoPlayer, VideoContextProvider, VideoContext } from './../components/videoPlayer';
 import { AurynHelper } from '../aurynHelper';
 
 interface VideoProps extends NavigationFocusInjectedProps, OrientationLock { }
 
 class VideoScreenComponent extends React.PureComponent<VideoProps> {
+  declare context: React.ContextType<typeof VideoContext>;
+
+  static contextType = VideoContext;
+
   focusListener!: NavigationEventSubscription;
 
   blurListener!: NavigationEventSubscription;

@@ -184,10 +184,14 @@ export const tmdbReducer = (state = initialState, action: TmdbActionTypes): Tmdb
       };
 
     case 'TMDB_DETAILS_FULFILLED':
+      const asset = fromApi(action.payload);
+      if (action.meta.isLive) {
+        asset.live = state.live.data?.find(it => it.id === asset.id && it.type == asset.type)?.live;
+      }
       return {
         ...state,
         details: {
-          data: fromApi(action.payload),
+          data: asset,
           fetching: false,
           fetched: true,
         },

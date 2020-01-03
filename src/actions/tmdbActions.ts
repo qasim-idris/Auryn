@@ -11,7 +11,7 @@
 import { tmdbApiKey } from '../secrets';
 import { Dispatch } from 'redux';
 import { TmdbApi } from '../adapters/tmdbAdapter';
-import { AssetType } from '../adapters/asset';
+import { AssetType, Asset } from '../adapters/asset';
 import { TmdbActionTypes, TmdbStore } from '../typings/tmdbReduxTypes';
 
 const familyFilter = false;
@@ -79,13 +79,18 @@ export const prefetchDetails = (id: number | string, type: AssetType) => (dispat
   });
 };
 
-export const getDetailsByIdAndType = (id: number | string, type: AssetType) => (dispatch: Dispatch, getState: () => TmdbStore) => {
+export const getDetailsByAsset = (asset: Asset, config?: { isLive?: boolean}) => (dispatch: Dispatch, getState: () => TmdbStore) => {
+  const { id, type } = asset;
   const { tmdbReducer: { cache: { data } } } = getState();
+
   const cachedPayload = (data as TmdbApi[]).find(it => it.id === id && it.type === type);
   if (cachedPayload) {
     return dispatch({
       type: 'TMDB_DETAILS',
       payload: Promise.resolve(cachedPayload),
+      meta: {
+        isLive: config?.isLive
+      }
     });
   }
 
@@ -97,6 +102,9 @@ export const getDetailsByIdAndType = (id: number | string, type: AssetType) => (
         json.type = type;
         return json;
       }),
+    meta: {
+      isLive: config?.isLive
+    }
   });
 };
 

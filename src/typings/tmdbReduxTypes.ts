@@ -22,6 +22,7 @@ interface TmdbApiDetailActions {
 interface TmdbApiDetailActionsFulfilled {
   type: 'TMDB_DETAILS_FULFILLED' | 'TMDB_CACHE_FULFILLED';
   payload: TmdbApi;
+  meta: { isLive?: boolean };
 }
 
 interface TmdbApiActionsRejected {

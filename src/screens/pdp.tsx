@@ -29,7 +29,7 @@ import { Asset } from '../adapters/asset';
 import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
 import { ListType } from '../components/list';
-import { prefetchDetails, getDetailsByIdAndType } from '../actions/tmdbActions';
+import { prefetchDetails, getDetailsByAsset } from '../actions/tmdbActions';
 import { getVideoSourceByYoutubeId } from '../actions/youtubeActions';
 import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
 
@@ -71,9 +71,9 @@ class PdpScreen extends React.Component<PdpProps> {
   };
 
   onPressItem: ListItemPressEvent = async (asset) => {
-    const { id, type } = asset;
+    const { id } = asset;
     await this.contentOutTimeline.current?.play();
-    this.props.getDetailsByIdAndType(id, type);
+    this.props.getDetailsByAsset(asset);
     this.props.navigation.navigate({ routeName: 'PDP', params: { asset, fromSearch: this.props.navigation.getParam('fromSearch') }, key: id.toString() });
     if (this.posterButton.current) FocusManager.focus(this.posterButton.current);
     await this.contentInTimeline.current?.play();
@@ -228,7 +228,7 @@ const mapStateToProps = (store: AurynAppState) => ({
 const mapDispatchToProps = {
   getVideoSourceByYoutubeId,
   prefetchDetails,
-  getDetailsByIdAndType,
+  getDetailsByAsset,
 };
 
 export const Pdp = withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(PdpScreen as any));

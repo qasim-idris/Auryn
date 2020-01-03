@@ -211,6 +211,7 @@ declare module '@youi/react-native-youi' {
     startTimeMs?: number;
     drmScheme?: string;
     headers?: any;
+    id?: any;
   }
 
   export type VideoRefFunction = (video: VideoRef) => void;

@@ -22,7 +22,7 @@ import { AurynAppState } from '../reducers';
 import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
 import { ToggleButtonPress, ToggleButton } from '../components/toggleButton';
 import { ListType } from '../components/list';
-import { prefetchDetails, getDetailsByIdAndType } from '../actions/tmdbActions';
+import { prefetchDetails, getDetailsByAsset } from '../actions/tmdbActions';
 import { NavigationBar } from '../components/navigationBar';
 import { AurynHelper } from '../aurynHelper';
 
@@ -165,13 +165,11 @@ class LanderScreen extends React.Component<LanderProps, LanderState> {
   };
 
   onPressItem: ListItemPressEvent = async (asset, ref) => {
-    const { id, type } = asset;
     this.lastFocusItem = ref;
     const navigateAction = NavigationActions.navigate({
       routeName: asset.live ? 'Video' : 'PDP',
-      params: { asset },
     });
-    this.props.getDetailsByIdAndType(id, type);
+    this.props.getDetailsByAsset(asset, { isLive: Boolean(asset.live)});
     await Promise.all([this.navOutTimeline.current?.play(), this.outTimeline.current?.play()]);
     this.props.navigation.dispatch(navigateAction);
   };
@@ -324,7 +322,7 @@ const mapStateToProps = (store: AurynAppState) => ({
 
 const mapDispatchToProps = {
   prefetchDetails,
-  getDetailsByIdAndType,
+  getDetailsByAsset,
 };
 
 export const Lander = withNavigationFocus(connect(mapStateToProps, mapDispatchToProps)(LanderScreen as any));

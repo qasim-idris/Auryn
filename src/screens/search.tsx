@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 import { Asset } from '../adapters/asset';
 import { AurynHelper } from '../aurynHelper';
 import { AurynAppState } from '../reducers';
-import { getDetailsByIdAndType, prefetchDetails, search } from '../actions/tmdbActions';
+import { getDetailsByAsset, prefetchDetails, search } from '../actions/tmdbActions';
 import { ListItemFocusEvent, ListItemPressEvent } from '../components/listitem';
 import { ListType } from '../components/list';
 
@@ -63,7 +63,7 @@ class SearchScreen extends React.Component<SearchProps> {
   }
 
   onPressItem: ListItemPressEvent = async asset => {
-    this.props.getDetailsByIdAndType(asset.id, asset.type);
+    this.props.getDetailsByAsset(asset);
     const navigateAction = NavigationActions.navigate({
       routeName: 'PDP',
       params: { asset, fromSearch: true },
@@ -79,7 +79,7 @@ class SearchScreen extends React.Component<SearchProps> {
 
   search = (query: string) => this.props.search(query);
 
-  render() { // eslint-disable-line max-lines-per-function
+  render() {
     const { isFocused, data } = this.props;
 
     if (!isFocused)
@@ -126,7 +126,7 @@ const mapStateToProps = (store: AurynAppState) => ({
 });
 
 const mapDispatchToProps = {
-  getDetailsByIdAndType,
+  getDetailsByAsset,
   prefetchDetails,
   search,
 };
