@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { BackButton } from '../components';
+import { BackButton } from '../src/components';
 
 import renderer from 'react-test-renderer';
 

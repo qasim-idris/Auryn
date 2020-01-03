@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Error } from '../components';
+import { Error } from '../src/components';
 
 import renderer from 'react-test-renderer';
 

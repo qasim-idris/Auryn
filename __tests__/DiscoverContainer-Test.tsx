@@ -7,8 +7,8 @@
  */
 
 import React from 'react';
-import { DiscoverContainer } from '../components';
-import { fromApi } from '../adapters/dummyAdapter';
+import { DiscoverContainer } from '../src/components';
+import { fromApi } from '../src/adapters/dummyAdapter';
 
 import renderer from 'react-test-renderer';
 

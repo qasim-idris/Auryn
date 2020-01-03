@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { ToggleButton } from '../components';
+import { ToggleButton } from '../src/components';
 
 import renderer from 'react-test-renderer';
 

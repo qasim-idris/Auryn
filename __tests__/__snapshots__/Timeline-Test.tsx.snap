@@ -2,8 +2,6 @@
 
 exports[`renders correctly 1`] = `
 <TimelineRef
-  autoplay={false}
-  direction="forward"
   loop={false}
   name="In"
   onAborted={[Function]}

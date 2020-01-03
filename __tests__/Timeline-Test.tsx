@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Timeline } from '../components';
+import { Timeline } from '../src/components';
 
 import renderer from 'react-test-renderer';
 

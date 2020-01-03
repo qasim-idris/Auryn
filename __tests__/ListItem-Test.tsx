@@ -7,8 +7,8 @@
  */
 
 import React from 'react';
-import { ListItem } from '../components';
-import { fromApi } from '../adapters/dummyAdapter';
+import { ListItem } from '../src/components';
+import { fromApi } from '../src/adapters/dummyAdapter';
 
 import renderer from 'react-test-renderer';
 

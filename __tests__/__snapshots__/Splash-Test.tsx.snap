@@ -4,7 +4,7 @@ exports[`renders correctly 1`] = `
 <View
   style={
     Object {
-      "backgroundColor": "#000",
+      "backgroundColor": "#2C2C2F",
       "flex": 1,
     }
   }
@@ -14,8 +14,6 @@ exports[`renders correctly 1`] = `
     source="Auryn_Splash"
   >
     <TimelineRef
-      autoplay={false}
-      direction="forward"
       loop={false}
       name="SplashIn"
       onAborted={[Function]}
@@ -34,8 +32,6 @@ exports[`renders correctly 1`] = `
       onStartedReverse={[Function]}
     />
     <TimelineRef
-      autoplay={false}
-      direction="forward"
       loop={false}
       name="SplashOut"
       onAborted={[Function]}
@@ -60,7 +56,6 @@ exports[`renders correctly 1`] = `
     >
       <TimelineRef
         autoplay={true}
-        direction="forward"
         loop={true}
         name="Loop"
         onAborted={[Function]}

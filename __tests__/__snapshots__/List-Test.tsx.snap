@@ -11,13 +11,27 @@ Array [
         Array [
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -29,13 +43,27 @@ Array [
           },
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -47,69 +75,27 @@ Array [
           },
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
-            "similar": Array [],
-            "thumbs": Object {
-              "Backdrop": "https://via.placeholder.com/534x300",
-              "Poster": "https://via.placeholder.com/400x600",
-            },
-            "title": "You.i TV",
-            "type": "tv",
-            "youtubeId": "nO_DIwuGBnA",
-          },
-        ],
-        Array [
-          Object {
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
-            "id": 1234567,
-            "images": Object {
-              "Backdrop": "https://via.placeholder.com/1068x600",
-              "Poster": "https://via.placeholder.com/200x300",
-            },
-            "key": "keystring",
-            "similar": Array [],
-            "thumbs": Object {
-              "Backdrop": "https://via.placeholder.com/534x300",
-              "Poster": "https://via.placeholder.com/400x600",
-            },
-            "title": "You.i TV",
-            "type": "tv",
-            "youtubeId": "nO_DIwuGBnA",
-          },
-          Object {
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
-            "id": 1234567,
-            "images": Object {
-              "Backdrop": "https://via.placeholder.com/1068x600",
-              "Poster": "https://via.placeholder.com/200x300",
-            },
-            "key": "keystring",
-            "similar": Array [],
-            "thumbs": Object {
-              "Backdrop": "https://via.placeholder.com/534x300",
-              "Poster": "https://via.placeholder.com/400x600",
-            },
-            "title": "You.i TV",
-            "type": "tv",
-            "youtubeId": "nO_DIwuGBnA",
-          },
-          Object {
-            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
-            "id": 1234567,
-            "images": Object {
-              "Backdrop": "https://via.placeholder.com/1068x600",
-              "Poster": "https://via.placeholder.com/200x300",
-            },
-            "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -123,13 +109,27 @@ Array [
         Array [
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -141,13 +141,27 @@ Array [
           },
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -159,13 +173,27 @@ Array [
           },
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -179,13 +207,125 @@ Array [
         Array [
           Object {
             "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
             "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
             "id": 1234567,
             "images": Object {
               "Backdrop": "https://via.placeholder.com/1068x600",
               "Poster": "https://via.placeholder.com/200x300",
             },
             "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
+            "similar": Array [],
+            "thumbs": Object {
+              "Backdrop": "https://via.placeholder.com/534x300",
+              "Poster": "https://via.placeholder.com/400x600",
+            },
+            "title": "You.i TV",
+            "type": "tv",
+            "youtubeId": "nO_DIwuGBnA",
+          },
+          Object {
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
+            "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
+            "id": 1234567,
+            "images": Object {
+              "Backdrop": "https://via.placeholder.com/1068x600",
+              "Poster": "https://via.placeholder.com/200x300",
+            },
+            "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
+            "similar": Array [],
+            "thumbs": Object {
+              "Backdrop": "https://via.placeholder.com/534x300",
+              "Poster": "https://via.placeholder.com/400x600",
+            },
+            "title": "You.i TV",
+            "type": "tv",
+            "youtubeId": "nO_DIwuGBnA",
+          },
+          Object {
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
+            "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
+            "id": 1234567,
+            "images": Object {
+              "Backdrop": "https://via.placeholder.com/1068x600",
+              "Poster": "https://via.placeholder.com/200x300",
+            },
+            "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
+            "similar": Array [],
+            "thumbs": Object {
+              "Backdrop": "https://via.placeholder.com/534x300",
+              "Poster": "https://via.placeholder.com/400x600",
+            },
+            "title": "You.i TV",
+            "type": "tv",
+            "youtubeId": "nO_DIwuGBnA",
+          },
+        ],
+        Array [
+          Object {
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "episodes": 22,
+            "extra": "Director: Alan Smithee | Starring: John Doe, Jane Doe",
+            "genres": Array [
+              Object {
+                "id": 28,
+                "name": "Action",
+              },
+              Object {
+                "id": 12,
+                "name": "Adventure",
+              },
+            ],
+            "id": 1234567,
+            "images": Object {
+              "Backdrop": "https://via.placeholder.com/1068x600",
+              "Poster": "https://via.placeholder.com/200x300",
+            },
+            "key": "keystring",
+            "releaseDate": "05/24/2015",
+            "runtime": 3600,
+            "seasons": 4,
             "similar": Array [],
             "thumbs": Object {
               "Backdrop": "https://via.placeholder.com/534x300",
@@ -276,107 +416,151 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "black",
+              "backgroundColor": "transparent",
             }
           }
         >
-          <Composition
-            onTimelinesLoaded={[Function]}
-            source="Auryn_Container-Btn-Backdrop-Large"
+          <View
+            style={null}
           >
-            <YiPushButtonView
-              name="Btn-Backdrop-Large"
-              onCompositionDidLoad={[Function]}
-              onFocus={[Function]}
-              onPress={[Function]}
+            <Composition
               onTimelinesLoaded={[Function]}
+              source="Auryn_Container-Btn-Backdrop-Large"
             >
-              <YiImageView
-                name="Image-Dynamic"
+              <YiPushButtonView
+                name="Btn-Backdrop-Large"
+                onCompositionDidLoad={[Function]}
+                onFocus={[Function]}
+                onPress={[Function]}
                 onTimelinesLoaded={[Function]}
-                source={
-                  Object {
-                    "uri": "https://via.placeholder.com/1068x600",
+              >
+                <YiImageView
+                  name="Image-Dynamic"
+                  onTimelinesLoaded={[Function]}
+                  source={
+                    Object {
+                      "uri": "https://via.placeholder.com/1068x600",
+                    }
                   }
-                }
-              />
-              <YiTextSceneNode
-                name="Text-Details"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-              <YiTextSceneNode
-                name="Text-Title"
-                text="You.i TV"
-              />
-            </YiPushButtonView>
-          </Composition>
+                />
+                <YiTextSceneNode
+                  name="Text-Title"
+                  style={
+                    Object {
+                      "color": "#f6f1ee",
+                    }
+                  }
+                  text="You.i TV"
+                />
+                <YiTextSceneNode
+                  name="Text-Metadata"
+                  text="tv"
+                />
+                <YiTextSceneNode
+                  name="Unfocus-Text-Title"
+                  text="You.i TV"
+                />
+                <YiTextSceneNode
+                  name="Text-Details"
+                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                />
+              </YiPushButtonView>
+            </Composition>
+          </View>
           <View
             style={
               Object {
                 "flexDirection": "row",
+                "justifyContent": "flex-start",
               }
             }
           >
-            <Composition
-              onTimelinesLoaded={[Function]}
-              source="Auryn_Container-Btn-Backdrop-Small"
+            <View
+              style={null}
             >
-              <YiPushButtonView
-                name="Btn-Backdrop-Small"
-                onCompositionDidLoad={[Function]}
-                onFocus={[Function]}
-                onPress={[Function]}
+              <Composition
                 onTimelinesLoaded={[Function]}
+                source="Auryn_Container-Btn-Backdrop-Small"
               >
-                <YiImageView
-                  name="Image-Dynamic"
+                <YiPushButtonView
+                  name="Btn-Backdrop-Small"
+                  onCompositionDidLoad={[Function]}
+                  onFocus={[Function]}
+                  onPress={[Function]}
                   onTimelinesLoaded={[Function]}
-                  source={
-                    Object {
-                      "uri": "https://via.placeholder.com/534x300",
+                >
+                  <YiImageView
+                    name="Image-Dynamic"
+                    onTimelinesLoaded={[Function]}
+                    source={
+                      Object {
+                        "uri": "https://via.placeholder.com/534x300",
+                      }
                     }
-                  }
-                />
-                <YiTextSceneNode
-                  name="Text-Details"
-                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />
-                <YiTextSceneNode
-                  name="Text-Title"
-                  text="You.i TV"
-                />
-              </YiPushButtonView>
-            </Composition>
-            <Composition
-              onTimelinesLoaded={[Function]}
-              source="Auryn_Container-Btn-Backdrop-Small"
+                  />
+                  <YiTextSceneNode
+                    name="Text-Title"
+                    style={
+                      Object {
+                        "color": "#f6f1ee",
+                      }
+                    }
+                    text="You.i TV"
+                  />
+                  <YiTextSceneNode
+                    name="Text-Metadata"
+                    text="tv"
+                  />
+                  <YiTextSceneNode
+                    name="Unfocus-Text-Title"
+                    text="You.i TV"
+                  />
+                </YiPushButtonView>
+              </Composition>
+            </View>
+            <View
+              style={null}
             >
-              <YiPushButtonView
-                name="Btn-Backdrop-Small"
-                onCompositionDidLoad={[Function]}
-                onFocus={[Function]}
-                onPress={[Function]}
+              <Composition
                 onTimelinesLoaded={[Function]}
+                source="Auryn_Container-Btn-Backdrop-Small"
               >
-                <YiImageView
-                  name="Image-Dynamic"
+                <YiPushButtonView
+                  name="Btn-Backdrop-Small"
+                  onCompositionDidLoad={[Function]}
+                  onFocus={[Function]}
+                  onPress={[Function]}
                   onTimelinesLoaded={[Function]}
-                  source={
-                    Object {
-                      "uri": "https://via.placeholder.com/534x300",
+                >
+                  <YiImageView
+                    name="Image-Dynamic"
+                    onTimelinesLoaded={[Function]}
+                    source={
+                      Object {
+                        "uri": "https://via.placeholder.com/534x300",
+                      }
                     }
-                  }
-                />
-                <YiTextSceneNode
-                  name="Text-Details"
-                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />
-                <YiTextSceneNode
-                  name="Text-Title"
-                  text="You.i TV"
-                />
-              </YiPushButtonView>
-            </Composition>
+                  />
+                  <YiTextSceneNode
+                    name="Text-Title"
+                    style={
+                      Object {
+                        "color": "#f6f1ee",
+                      }
+                    }
+                    text="You.i TV"
+                  />
+                  <YiTextSceneNode
+                    name="Text-Metadata"
+                    text="tv"
+                  />
+                  <YiTextSceneNode
+                    name="Unfocus-Text-Title"
+                    text="You.i TV"
+                  />
+                </YiPushButtonView>
+              </Composition>
+            </View>
           </View>
         </View>
       </View>
@@ -393,7 +577,7 @@ Array [
         <View
           style={
             Object {
-              "backgroundColor": "black",
+              "backgroundColor": "transparent",
             }
           }
         >
@@ -401,15 +585,106 @@ Array [
             style={
               Object {
                 "flexDirection": "row",
+                "justifyContent": "flex-start",
               }
             }
           >
+            <View
+              style={null}
+            >
+              <Composition
+                onTimelinesLoaded={[Function]}
+                source="Auryn_Container-Btn-Backdrop-Small"
+              >
+                <YiPushButtonView
+                  name="Btn-Backdrop-Small"
+                  onCompositionDidLoad={[Function]}
+                  onFocus={[Function]}
+                  onPress={[Function]}
+                  onTimelinesLoaded={[Function]}
+                >
+                  <YiImageView
+                    name="Image-Dynamic"
+                    onTimelinesLoaded={[Function]}
+                    source={
+                      Object {
+                        "uri": "https://via.placeholder.com/534x300",
+                      }
+                    }
+                  />
+                  <YiTextSceneNode
+                    name="Text-Title"
+                    style={
+                      Object {
+                        "color": "#f6f1ee",
+                      }
+                    }
+                    text="You.i TV"
+                  />
+                  <YiTextSceneNode
+                    name="Text-Metadata"
+                    text="tv"
+                  />
+                  <YiTextSceneNode
+                    name="Unfocus-Text-Title"
+                    text="You.i TV"
+                  />
+                </YiPushButtonView>
+              </Composition>
+            </View>
+            <View
+              style={null}
+            >
+              <Composition
+                onTimelinesLoaded={[Function]}
+                source="Auryn_Container-Btn-Backdrop-Small"
+              >
+                <YiPushButtonView
+                  name="Btn-Backdrop-Small"
+                  onCompositionDidLoad={[Function]}
+                  onFocus={[Function]}
+                  onPress={[Function]}
+                  onTimelinesLoaded={[Function]}
+                >
+                  <YiImageView
+                    name="Image-Dynamic"
+                    onTimelinesLoaded={[Function]}
+                    source={
+                      Object {
+                        "uri": "https://via.placeholder.com/534x300",
+                      }
+                    }
+                  />
+                  <YiTextSceneNode
+                    name="Text-Title"
+                    style={
+                      Object {
+                        "color": "#f6f1ee",
+                      }
+                    }
+                    text="You.i TV"
+                  />
+                  <YiTextSceneNode
+                    name="Text-Metadata"
+                    text="tv"
+                  />
+                  <YiTextSceneNode
+                    name="Unfocus-Text-Title"
+                    text="You.i TV"
+                  />
+                </YiPushButtonView>
+              </Composition>
+            </View>
+          </View>
+          <View
+            style={null}
+          >
             <Composition
               onTimelinesLoaded={[Function]}
-              source="Auryn_Container-Btn-Backdrop-Small"
+              source="Auryn_Container-Btn-Backdrop-Large"
             >
               <YiPushButtonView
-                name="Btn-Backdrop-Small"
+                name="Btn-Backdrop-Large"
                 onCompositionDidLoad={[Function]}
                 onFocus={[Function]}
                 onPress={[Function]}
@@ -420,81 +695,34 @@ Array [
                   onTimelinesLoaded={[Function]}
                   source={
                     Object {
-                      "uri": "https://via.placeholder.com/534x300",
+                      "uri": "https://via.placeholder.com/1068x600",
                     }
                   }
                 />
                 <YiTextSceneNode
-                  name="Text-Details"
-                  text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />
-                <YiTextSceneNode
                   name="Text-Title"
-                  text="You.i TV"
-                />
-              </YiPushButtonView>
-            </Composition>
-            <Composition
-              onTimelinesLoaded={[Function]}
-              source="Auryn_Container-Btn-Backdrop-Small"
-            >
-              <YiPushButtonView
-                name="Btn-Backdrop-Small"
-                onCompositionDidLoad={[Function]}
-                onFocus={[Function]}
-                onPress={[Function]}
-                onTimelinesLoaded={[Function]}
-              >
-                <YiImageView
-                  name="Image-Dynamic"
-                  onTimelinesLoaded={[Function]}
-                  source={
+                  style={
                     Object {
-                      "uri": "https://via.placeholder.com/534x300",
+                      "color": "#f6f1ee",
                     }
                   }
+                  text="You.i TV"
+                />
+                <YiTextSceneNode
+                  name="Text-Metadata"
+                  text="tv"
+                />
+                <YiTextSceneNode
+                  name="Unfocus-Text-Title"
+                  text="You.i TV"
                 />
                 <YiTextSceneNode
                   name="Text-Details"
                   text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />
-                <YiTextSceneNode
-                  name="Text-Title"
-                  text="You.i TV"
                 />
               </YiPushButtonView>
             </Composition>
           </View>
-          <Composition
-            onTimelinesLoaded={[Function]}
-            source="Auryn_Container-Btn-Backdrop-Large"
-          >
-            <YiPushButtonView
-              name="Btn-Backdrop-Large"
-              onCompositionDidLoad={[Function]}
-              onFocus={[Function]}
-              onPress={[Function]}
-              onTimelinesLoaded={[Function]}
-            >
-              <YiImageView
-                name="Image-Dynamic"
-                onTimelinesLoaded={[Function]}
-                source={
-                  Object {
-                    "uri": "https://via.placeholder.com/1068x600",
-                  }
-                }
-              />
-              <YiTextSceneNode
-                name="Text-Details"
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-              <YiTextSceneNode
-                name="Text-Title"
-                text="You.i TV"
-              />
-            </YiPushButtonView>
-          </Composition>
         </View>
       </View>
       <View

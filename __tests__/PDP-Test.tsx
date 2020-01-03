@@ -8,10 +8,10 @@
 
 
 import React from 'react';
-import { Pdp } from '../screens';
+import { Pdp } from '../src/screens';
 import { Provider } from 'react-redux';
 import { navigationProp } from '../__mocks__/navigation';
-import store from '../store';
+import store from '../src/store';
 import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {

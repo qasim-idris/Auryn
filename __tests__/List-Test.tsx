@@ -7,11 +7,11 @@
  */
 
 import React from 'react';
-import { List } from '../components';
-import { fromApi } from '../adapters/dummyAdapter';
+import { List } from '../src/components';
+import { fromApi } from '../src/adapters/dummyAdapter';
 
 import renderer from 'react-test-renderer';
-import { ListType } from '../components/list';
+import { ListType } from '../src/components/list';
 
 const assets = Array.from(Array(10)).map(() => fromApi(false));
 

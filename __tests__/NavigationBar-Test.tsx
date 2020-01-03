@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { NavigationBar, ToggleButton } from '../components';
+import { NavigationBar, ToggleButton } from '../src/components';
 
 import renderer from 'react-test-renderer';
 

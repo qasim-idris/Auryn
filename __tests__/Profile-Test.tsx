@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Profile } from '../screens';
+import { Profile } from '../src/screens';
 import { navigationProp } from '../__mocks__/navigation';
 import renderer from 'react-test-renderer';
 

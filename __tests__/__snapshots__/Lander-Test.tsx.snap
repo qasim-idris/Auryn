@@ -102,6 +102,38 @@ exports[`renders correctly 1`] = `
             />
             <YiTextSceneNode
               name="title"
+              style={
+                Object {
+                  "color": "#F1F1F1",
+                }
+              }
+              text="Discover"
+            />
+            <YiImageView
+              name="Nav-Icon"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Default-Nav-Icon.png",
+                }
+              }
+            />
+            <YiImageView
+              name="Nav-Icon-Toggled"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Default-Toggled-Nav-Icon.png",
+                }
+              }
+              style={
+                Object {
+                  "resizeMode": "contain",
+                }
+              }
+            />
+            <YiTextSceneNode
+              name="title-toggled"
               text="Discover"
             />
           </YiPushButtonView>
@@ -139,6 +171,38 @@ exports[`renders correctly 1`] = `
             />
             <YiTextSceneNode
               name="title"
+              style={
+                Object {
+                  "color": "#F1F1F1",
+                }
+              }
+              text="Movies"
+            />
+            <YiImageView
+              name="Nav-Icon"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Movie-Nav-Icon.png",
+                }
+              }
+            />
+            <YiImageView
+              name="Nav-Icon-Toggled"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Movie-Toggled-Nav-Icon.png",
+                }
+              }
+              style={
+                Object {
+                  "resizeMode": "contain",
+                }
+              }
+            />
+            <YiTextSceneNode
+              name="title-toggled"
               text="Movies"
             />
           </YiPushButtonView>
@@ -176,6 +240,38 @@ exports[`renders correctly 1`] = `
             />
             <YiTextSceneNode
               name="title"
+              style={
+                Object {
+                  "color": "#F1F1F1",
+                }
+              }
+              text="Shows"
+            />
+            <YiImageView
+              name="Nav-Icon"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Series-Nav-Icon.png",
+                }
+              }
+            />
+            <YiImageView
+              name="Nav-Icon-Toggled"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Series-Toggled-Nav-Icon.png",
+                }
+              }
+              style={
+                Object {
+                  "resizeMode": "contain",
+                }
+              }
+            />
+            <YiTextSceneNode
+              name="title-toggled"
               text="Shows"
             />
           </YiPushButtonView>
@@ -213,6 +309,38 @@ exports[`renders correctly 1`] = `
             />
             <YiTextSceneNode
               name="title"
+              style={
+                Object {
+                  "color": "#F1F1F1",
+                }
+              }
+              text="Live"
+            />
+            <YiImageView
+              name="Nav-Icon"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Live-Nav-Icon.png",
+                }
+              }
+            />
+            <YiImageView
+              name="Nav-Icon-Toggled"
+              onTimelinesLoaded={[Function]}
+              source={
+                Object {
+                  "uri": "res://drawable/default/Live-Toggled-Nav-Icon.png",
+                }
+              }
+              style={
+                Object {
+                  "resizeMode": "contain",
+                }
+              }
+            />
+            <YiTextSceneNode
+              name="title-toggled"
               text="Live"
             />
           </YiPushButtonView>
@@ -233,8 +361,6 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   />
   <TimelineRef
-    autoplay={false}
-    direction="forward"
     loop={false}
     name="LanderIn"
     onAborted={[Function]}
@@ -253,8 +379,6 @@ exports[`renders correctly 1`] = `
     onStartedReverse={[Function]}
   />
   <TimelineRef
-    autoplay={false}
-    direction="forward"
     loop={false}
     name="LanderOut"
     onAborted={[Function]}
@@ -283,7 +407,6 @@ exports[`renders correctly 1`] = `
         >
           <List
             data={Array []}
-            extraData={Array []}
             name="Lander-List"
             onFocusItem={[Function]}
             onPressItem={[Function]}
@@ -292,13 +415,18 @@ exports[`renders correctly 1`] = `
         </_class>,
         <_class
           source="Auryn_Container-Lander-List"
+          style={
+            Object {
+              "marginTop": 0,
+            }
+          }
         >
           <List
             data={Array []}
-            extraData={Array []}
             name="Lander-List"
             onFocusItem={[Function]}
             onPressItem={[Function]}
+            snapToAlignment="center"
             type={1}
           />
         </_class>,
@@ -307,7 +435,6 @@ exports[`renders correctly 1`] = `
         >
           <List
             data={Array []}
-            extraData={Array []}
             name="Lander-List"
             onFocusItem={[Function]}
             onPressItem={[Function]}
@@ -315,15 +442,19 @@ exports[`renders correctly 1`] = `
           />
         </_class>,
         <_class
-          source="Auryn_Container-Lander-List"
+          source="Auryn_Container-Live"
+          style={
+            Object {
+              "marginTop": 0,
+            }
+          }
         >
           <List
             data={Array []}
-            extraData={Array []}
-            name="Lander-List"
+            name="LiveList"
             onFocusItem={[Function]}
             onPressItem={[Function]}
-            type={3}
+            type={6}
           />
         </_class>,
       ]
@@ -492,9 +623,15 @@ exports[`renders correctly 1`] = `
         <Composition
           onTimelinesLoaded={[Function]}
           source="Auryn_Container-Lander-List"
+          style={
+            Object {
+              "marginTop": 0,
+            }
+          }
         >
           <ListRef
             DEPRECATED_sendUpdatedChildFrames={false}
+            ListHeaderComponent={[Function]}
             alwaysBounceHorizontal={true}
             alwaysBounceVertical={false}
             data={Array []}
@@ -533,6 +670,7 @@ exports[`renders correctly 1`] = `
             scrollEnabled={true}
             scrollEventThrottle={50}
             sendMomentumEvents={true}
+            snapToAlignment="center"
             snapToEnd={true}
             snapToStart={true}
             stickyHeaderIndices={Array []}
@@ -562,7 +700,11 @@ exports[`renders correctly 1`] = `
                   undefined,
                 ]
               }
-            />
+            >
+              <View
+                onLayout={[Function]}
+              />
+            </ScrollContentData>
           </ListRef>
           <ViewRef
             name="Lander-List"
@@ -663,22 +805,27 @@ exports[`renders correctly 1`] = `
       >
         <Composition
           onTimelinesLoaded={[Function]}
-          source="Auryn_Container-Lander-List"
+          source="Auryn_Container-Live"
+          style={
+            Object {
+              "marginTop": 0,
+            }
+          }
         >
           <ListRef
             DEPRECATED_sendUpdatedChildFrames={false}
-            alwaysBounceHorizontal={true}
-            alwaysBounceVertical={false}
+            alwaysBounceHorizontal={false}
+            alwaysBounceVertical={true}
             data={Array []}
             disableVirtualization={false}
             getItem={[Function]}
             getItemCount={[Function]}
             getItemLayout={[Function]}
-            horizontal={true}
+            horizontal={false}
             initialNumToRender={2}
             keyExtractor={[Function]}
             maxToRenderPerBatch={10}
-            name="Lander-List"
+            name="LiveList"
             numColumns={1}
             onContentSizeChange={null}
             onEndReachedThreshold={2}
@@ -711,7 +858,7 @@ exports[`renders correctly 1`] = `
             style={
               Array [
                 Object {
-                  "flexDirection": "row",
+                  "flexDirection": "column",
                   "flexGrow": 1,
                   "flexShrink": 1,
                   "overflow": "scroll",
@@ -728,16 +875,14 @@ exports[`renders correctly 1`] = `
               onLayout={[MockFunction]}
               style={
                 Array [
-                  Object {
-                    "flexDirection": "row",
-                  },
+                  false,
                   undefined,
                 ]
               }
             />
           </ListRef>
           <ViewRef
-            name="Lander-List"
+            name="LiveList"
             onCompositionDidLoad={[Function]}
             onTimelinesLoaded={[Function]}
           />
@@ -756,8 +901,6 @@ exports[`renders correctly 1`] = `
     onTimelinesLoaded={[Function]}
   >
     <TimelineRef
-      autoplay={false}
-      direction="forward"
       loop={false}
       name="In"
       onAborted={[Function]}
@@ -776,36 +919,8 @@ exports[`renders correctly 1`] = `
       onStartedReverse={[Function]}
     />
     <TimelineRef
-      autoplay={false}
-      direction="forward"
       loop={false}
       name="Out"
-      onAborted={[Function]}
-      onCompleted={[Function]}
-      onCompletedForward={[Function]}
-      onCompletedReverse={[Function]}
-      onCompositionDidLoad={[Function]}
-      onPaused={[Function]}
-      onPausedForward={[Function]}
-      onPausedReverse={[Function]}
-      onPlay={[Function]}
-      onPlayForward={[Function]}
-      onPlayReverse={[Function]}
-      onStarted={[Function]}
-      onStartedForward={[Function]}
-      onStartedReverse={[Function]}
-    />
-  </ViewRef>
-  <ViewRef
-    name="Nav-Logo"
-    onCompositionDidLoad={[Function]}
-    onTimelinesLoaded={[Function]}
-  >
-    <TimelineRef
-      autoplay={false}
-      direction="forward"
-      loop={true}
-      name="Loop"
       onAborted={[Function]}
       onCompleted={[Function]}
       onCompletedForward={[Function]}

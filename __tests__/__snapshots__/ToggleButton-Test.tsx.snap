@@ -9,7 +9,6 @@ exports[`renders correctly 1`] = `
   onTimelinesLoaded={[Function]}
 >
   <TimelineRef
-    autoplay={false}
     direction="reverse"
     loop={false}
     name="Toggle-On"

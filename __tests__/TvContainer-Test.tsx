@@ -7,8 +7,8 @@
  */
 
 import React from 'react';
-import { TvContainer } from '../components';
-import { fromApi } from '../adapters/dummyAdapter';
+import { TvContainer } from '../src/components';
+import { fromApi } from '../src/adapters/dummyAdapter';
 
 import renderer from 'react-test-renderer';
 

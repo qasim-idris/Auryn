@@ -14,7 +14,6 @@ exports[`renders correctly 1`] = `
   />
   <TimelineRef
     autoplay={true}
-    direction="forward"
     loop={false}
     name="ProfileIn"
     onAborted={[Function]}
@@ -33,8 +32,6 @@ exports[`renders correctly 1`] = `
     onStartedReverse={[Function]}
   />
   <TimelineRef
-    autoplay={false}
-    direction="forward"
     loop={false}
     name="ProfileOut"
     onAborted={[Function]}
@@ -62,6 +59,45 @@ exports[`renders correctly 1`] = `
       name="Active User"
       text="Active User"
     />
+    <TimelineRef
+      autoplay={true}
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onCompositionDidLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+      playOnTrue={true}
+    />
+    <TimelineRef
+      loop={false}
+      name="Toggle-Off"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onCompositionDidLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+      playOnTrue={false}
+    />
   </YiPushButtonView>
   <YiPushButtonView
     name="Btn-Profile2"
@@ -73,6 +109,45 @@ exports[`renders correctly 1`] = `
       name="Active User"
       text=""
     />
+    <TimelineRef
+      autoplay={false}
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onCompositionDidLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+      playOnTrue={false}
+    />
+    <TimelineRef
+      loop={false}
+      name="Toggle-Off"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onCompositionDidLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+      playOnTrue={true}
+    />
   </YiPushButtonView>
   <YiPushButtonView
     name="Btn-Profile3"
@@ -83,6 +158,45 @@ exports[`renders correctly 1`] = `
     <YiTextSceneNode
       name="Active User"
       text=""
+    />
+    <TimelineRef
+      autoplay={false}
+      loop={false}
+      name="Toggle-On"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onCompositionDidLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+      playOnTrue={false}
+    />
+    <TimelineRef
+      loop={false}
+      name="Toggle-Off"
+      onAborted={[Function]}
+      onCompleted={[Function]}
+      onCompletedForward={[Function]}
+      onCompletedReverse={[Function]}
+      onCompositionDidLoad={[Function]}
+      onPaused={[Function]}
+      onPausedForward={[Function]}
+      onPausedReverse={[Function]}
+      onPlay={[Function]}
+      onPlayForward={[Function]}
+      onPlayReverse={[Function]}
+      onStarted={[Function]}
+      onStartedForward={[Function]}
+      onStartedReverse={[Function]}
+      playOnTrue={true}
     />
   </YiPushButtonView>
 </Composition>
