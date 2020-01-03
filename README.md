@@ -1,7 +1,9 @@
 # Auryn
-![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-Handset.png)
-![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-Tablet.png)
-![](https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-TV.png)
+<p float="left">
+  <img src="https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-Handset.png" alt="" width="257">
+  <img src="https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-Tablet.png" alt="" width="610">
+  <img src="https://raw.githubusercontent.com/YOU-i-Labs/Auryn/develop/Auryn-TV.png" alt="" width="872">
+</p>
 
 Auryn is a simple React-Native sample application running on You.i Engine one.
 It's primary purpose is to show a movie and TV experience using You.i's After
@@ -121,4 +123,3 @@ Contributing is currently closed. Please refer to
 ## License
 
 Auryn is available under the [MIT](LICENSE) license.
-
