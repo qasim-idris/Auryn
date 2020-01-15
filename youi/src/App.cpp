@@ -83,13 +83,13 @@ void App::DoSetupAssetLocatorConfiguration()
         if (pDeviceBridge->GetDeviceType() == CYIDeviceTypeBridge::Type::Desktop)
         {
             // spoof desktop as `tv` for dev purposes
-            SetupAssetLocatorConfiguration("tv");
+            SetupAssetLocatorConfiguration("TV");
         }
 
         if (pDeviceBridge->GetDeviceType() == CYIDeviceTypeBridge::Type::Tablet)
         {
             // spoof desktop as `tv` for dev purposes
-            SetupAssetLocatorConfiguration("tv");
+            SetupAssetLocatorConfiguration("TV");
             AssetLocatorConfiguration::GetInstance().SetupAssetLocatorConfiguration("tv");
         }
     }
