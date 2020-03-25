@@ -104,6 +104,7 @@ export default class VideoPlayer extends React.Component<VideoPlayerProps> {
             onCurrentTimeUpdated={this.onCurrentTimeUpdated}
             onStateChanged={this.onStateChanged}
             muted
+            mediaPlaybackControlsEnabled={true}
             metadata={rokuMetadata}
             key={videoSource.uri}
           />

@@ -141,6 +141,8 @@ declare module '@youi/react-native-youi' {
 
     muted?: boolean;
 
+    mediaPlaybackControlsEnabled?: boolean;
+
     metadata?: any;
   }
 

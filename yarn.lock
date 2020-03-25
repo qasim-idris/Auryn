@@ -1150,10 +1150,10 @@
   resolved "https://registry.yarnpkg.com/@ungap/url-search-params/-/url-search-params-0.1.2.tgz#8ba8c0527543fe675d1c29ae0a2daca842e8ee4f"
   integrity sha512-WVk5+lJ+AoNLh2sIDMhnEAgLsVQuI067hWLJCzirErH1GYiy1gs09q4+XZxYWSvdAsslKsaO4q1iXXMx2c72dA==
 
-"@youi/react-native-youi@5.10.0":
-  version "5.10.0"
-  resolved "https://youi.jfrog.io/youi/api/npm/jspkg/@youi/react-native-youi/-/@youi/react-native-youi-5.10.0.tgz#2c85660da619ad989e074287da614726493f2d63"
-  integrity sha1-LIVmDaYZrZieB0KH2mFHJkk/LWM=
+"@youi/react-native-youi@5.13.0":
+  version "5.13.0"
+  resolved "https://youi.jfrog.io/youi/api/npm/jspkg/@youi/react-native-youi/-/@youi/react-native-youi-5.13.0.tgz#bcfc92c69c50d65bdbfcc4538d08e86457b3dc79"
+  integrity sha1-vPySxpxQ1lvb/MRTjQjoZFez3Hk=
   dependencies:
     "@babel/core" "7.0.0"
     create-react-class "^15.6.3"

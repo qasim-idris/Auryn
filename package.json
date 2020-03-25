@@ -12,7 +12,7 @@
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.0.4",
 		"@ungap/url-search-params": "^0.1.2",
-		"@youi/react-native-youi": "5.10.0",
+		"@youi/react-native-youi": "5.13.0",
 		"react": "16.6.3",
 		"react-native": "0.58.6",
 		"react-navigation": "matanbareketyoui/react-navigation#2.18.4",
